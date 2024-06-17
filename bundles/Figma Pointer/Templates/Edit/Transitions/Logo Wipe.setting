@@ -1,0 +1,621 @@
+{
+	Tools = ordered() {
+		LogoTextWipe = GroupOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "/Users/qa/Documents/Fusion/Fusion Setting Files/Transitions/WIP/"
+					}
+				},
+			},
+			Inputs = ordered() {
+				CustomText = InstanceInput {
+					SourceOp = "Transform1_4",
+					Source = "CustomText",
+					Page = "Controls",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "StyledText",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "Red1Clone",
+					Name = "Color",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "Green1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "Blue1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "Alpha1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "Size",
+					Default = 0.2205,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Text1_4",
+					Source = "LineSpacingClone",
+					Default = 0.661,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Dissolve2_4",
+					Source = "Switch",
+					Name = "Use Text",
+					Page = "Controls",
+					Default = 1,
+				},
+				CustomLogo = InstanceInput {
+					SourceOp = "Letterbox1_4",
+					Source = "CustomLogo",
+					Page = "Controls",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Logo_4",
+					Source = "ClipName",
+					DefaultText = "",
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Logo_4",
+					Source = "Reverse",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Logo_4",
+					Source = "Loop",
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Transform1_4",
+					Source = "Size",
+					Name = "Logo Size",
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Transform1_4",
+					Source = "Angle",
+					Name = "Logo Angle",
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Transform1_4",
+					Source = "Edges",
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Letterbox1_4",
+					Source = "Mode",
+					Name = "Resize Mode",
+					Default = 1,
+				},
+				Animation = InstanceInput {
+					SourceOp = "DVE1_4",
+					Source = "Animation",
+					Page = "Controls",
+				},
+				Input19 = InstanceInput {
+					SourceOp = "DVE1_4",
+					Source = "ZMove",
+					Name = "Rotation Radius",
+					Default = 1.47,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "DVE1_4",
+					Source = "ZPivot",
+					Name = "Rotation Pivot",
+					Default = -0.606,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "AnimCurves3_4",
+					Source = "Scale",
+					Name = "Animated Roll",
+					Default = 20,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "DVE1_4",
+					Source = "Blank5",
+				},
+				Input22 = InstanceInput {
+					SourceOp = "DVE1_4",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "DVE1_4",
+					Source = "Quality",
+					Default = 7,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "DVE1_4",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "DVE1_4",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "DVE1_4",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				Glow = InstanceInput {
+					SourceOp = "SoftGlow1_4",
+					Source = "Glow",
+					Page = "Controls",
+				},
+				Input29 = InstanceInput {
+					SourceOp = "SoftGlow1_4",
+					Source = "Threshold",
+					Name = "Glow Threshold",
+					Default = 0.11,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "SoftGlow1_4",
+					Source = "Gain",
+					Name = "Glow Gain",
+					Default = 3.465,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "SoftGlow1_4",
+					Source = "BlendClone",
+					Name = "Glow Blend",
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Rectangle1_4",
+					Source = "Width",
+					Name = "Glow Width",
+					Default = 0.16,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Dissolve1",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Dissolve1",
+					Source = "Foreground",
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Dissolve1",
+					Source = "DFTLumaRamp.Softness",
+					Name = "Wipe Softness",
+					Default = 1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1_4",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 359.609, 148.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 687.291, 373.828, 343.645, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				Text1_4 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 23, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LineSpacing = Input { Value = 0.661, },
+						StyledText = Input { Value = "Sample\nText", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Extrabold", },
+						Size = Input { Value = 0.2205, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -139.221, 18.6888 } },
+				},
+				Dissolve2_4 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWShown = false,
+					Inputs = {
+						Mix = Input { Expression = "Switch", },
+						Background = Input {
+							SourceOp = "Transform1_4",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Shadow1_4",
+							Source = "Output",
+						},
+						Switch = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -139.221, 92.4447 } },
+					UserControls = ordered() { Switch = { CBC_TriState = false, INP_Integer = false, INP_External = false, LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "CheckboxControl", LINKS_Name = "Switch", } }
+				},
+				Logo_4 = MediaIn {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					CustomData = { MEDIA_ID = "26b6de81-8250-47ec-85c0-f25dab96f0b3", MediaProps = {
+							MEDIA_FORMAT_TYPE = "PNG",
+							MEDIA_HEIGHT = 640,
+							MEDIA_IS_SOURCE_RES = true,
+							MEDIA_LAYER_DESC = {
+							},
+							MEDIA_MARK_IN = 0,
+							MEDIA_MARK_OUT = 0,
+							MEDIA_NAME = "DRAG LOGO HERE.png",
+							MEDIA_NUM_FRAMES = 1,
+							MEDIA_NUM_LAYERS = 0,
+							MEDIA_PAR = 1,
+							MEDIA_PATH = "/Users/qa/Pictures/Logos/DRAG LOGO HERE.png",
+							MEDIA_SRC_FRAME_RATE = 24,
+							MEDIA_START_FRAME = 0,
+							MEDIA_WIDTH = 646
+						} },
+					Inputs = {
+						GlobalOut = Input { Value = 24, },
+						MediaSource = Input { Value = FuID { "MediaPool" }, },
+						MediaID = Input { Value = "7f066afa-1ad5-4456-8f47-3f3ead5acfd3", },
+						AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+						Layer = Input {
+							Value = Text {
+							},
+						},
+						ClipTimeEnd = Input { Value = 0, },
+						HoldLastFrame = Input { Value = 24, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LeftAudio = Input {
+							SourceOp = "Left_1_4",
+							Source = "Data",
+						},
+						RightAudio = Input {
+							SourceOp = "Right_1_4",
+							Source = "Data",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -285.322, 8.02542 } },
+				},
+				Left_1_4 = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Right_1_4 = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Transform1_4 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Letterbox1_4",
+							Source = "Output",
+						},
+						CustomText = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -285.322, 92.4447 } },
+					UserControls = ordered() {
+						CustomText = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 10,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Custom Text",
+						}
+					}
+				},
+				Letterbox1_4 = Letterbox {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						Mode = Input { Value = 1, },
+						HiQOnly = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Logo_4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -285.322, 54.2338 } },
+					UserControls = ordered() {
+						CustomLogo = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 7,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Custom Logo",
+						}
+					}
+				},
+				DVE1_4 = DVE {
+					CtrlWShown = false,
+					Inputs = {
+						Quality = Input { Value = 7, },
+						ZMove = Input { Value = 1.47, },
+						ZPivot = Input { Value = -0.606, },
+						YRotation = Input {
+							SourceOp = "AnimCurves2_4",
+							Source = "Value",
+						},
+						ZRotation = Input {
+							SourceOp = "AnimCurves3_4",
+							Source = "Value",
+						},
+						AlphaMode = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "Dissolve2_4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 117.858, 92.4447 } },
+					UserControls = ordered() {
+						Animation = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 9,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Animation",
+						}
+					}
+				},
+				AnimCurves2_4 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Sine" }, },
+						EaseOut = Input { Value = FuID { "Sine" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup_4",
+							Source = "Value",
+						},
+						Scale = Input { Value = 180, },
+						Offset = Input { Value = -90, },
+					},
+				},
+				AnimCurves2Lookup_4 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				AnimCurves3_4 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Sine" }, },
+						EaseOut = Input { Value = FuID { "Sine" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves3Lookup_4",
+							Source = "Value",
+						},
+						Scale = Input { Value = 20, },
+						Offset = Input {
+							Value = -10,
+							Expression = "Scale*-.5",
+						},
+					},
+				},
+				AnimCurves3Lookup_4 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				SoftGlow1_4 = SoftGlow {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Threshold = Input { Value = 0.11, },
+						Gain = Input { Value = 3.465, },
+						GlowMask = Input {
+							SourceOp = "Rectangle1_4",
+							Source = "Mask",
+						},
+						Input = Input {
+							SourceOp = "DVE1_4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 117.858, 170.644 } },
+					UserControls = ordered() {
+						Glow = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 4,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Glow",
+						}
+					}
+				},
+				Rectangle1_4 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						SoftEdge = Input { Value = 0.1307, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.16, },
+						Height = Input { Value = 2.080949, },
+						Angle = Input { Value = -20.9, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 284.031, 170.644 } },
+				},
+				Dissolve1 = Dissolve {
+					Transitions = {
+						[0] = "DFTLumaRamp"
+					},
+					CtrlWShown = false,
+					Inputs = {
+						Operation = Input { Value = FuID { "DFTLumaRamp" }, },
+						Mix = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						Map = Input {
+							SourceOp = "Background1_4",
+							Source = "Output",
+						},
+						["DFTLumaRamp.Softness"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -50.5958, 255.727 } },
+				},
+				AnimCurves1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Sine" }, },
+						EaseOut = Input { Value = FuID { "Sine" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup",
+							Source = "Value",
+						},
+					},
+				},
+				AnimCurves1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Merge1_4 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input {
+							SourceOp = "AnimCurves4_4",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "Dissolve1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "SoftGlow1_4",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 117.858, 255.727 } },
+				},
+				AnimCurves4_4 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Source = Input { Value = FuID { "Duration" }, },
+						Curve = Input { Value = FuID { "Custom" }, },
+						EaseIn = Input { Value = FuID { "Expo" }, },
+						EaseOut = Input { Value = FuID { "Expo" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves4Lookup_4",
+							Source = "Value",
+						},
+						Mirror = Input { Value = 1, },
+					},
+				},
+				AnimCurves4Lookup_4 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0.4] = { 0, RH = { 0.55, 0 } },
+							[0.85] = { 1, LH = { 0.7, 1 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Background1_4 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 23, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Horizontal" }, },
+						TopRightRed = Input { Value = 1, },
+						TopRightGreen = Input { Value = 1, },
+						TopRightBlue = Input { Value = 1, },
+						BottomLeftRed = Input { Value = 1, },
+						BottomLeftGreen = Input { Value = 1, },
+						BottomLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -50.5958, 315.49 } },
+				},
+				Shadow1_4 = Shadow {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Text1_4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -139.221, 54.3547 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "LogoTextWipe1111_4"
+}

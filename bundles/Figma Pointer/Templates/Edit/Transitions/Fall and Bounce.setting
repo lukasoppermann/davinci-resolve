@@ -1,0 +1,100 @@
+{
+	Tools = ordered() {
+		FallandBounce = GroupOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Foreground",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Quality",
+					Default = 7,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Vector1",
+					Source = "Angle",
+					Name = "Fall Angle",
+					Default = 90,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge1 = Merge {
+					CtrlWZoom = false,
+					Inputs = {
+						Quality = Input { Value = 7, },
+						Center = Input {
+							SourceOp = "Vector1",
+							Source = "Position",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 654.802, 148.182 } },
+				},
+				Vector1 = Vector {
+					CtrlWZoom = false,
+					Inputs = {
+						Distance = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+						Angle = Input { Value = 90, },
+						ImageAspect = Input { Value = 1.777778, },
+					},
+				},
+				AnimCurves2 = LUTLookup {
+					Inputs = {
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseOut = Input { Value = FuID { "Bounce" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup",
+							Source = "Value",
+						},
+						Invert = Input { Value = 1, },
+					},
+				},
+				AnimCurves2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+				}
+			},
+		}
+	},
+	ActiveTool = "FallandBounce"
+}

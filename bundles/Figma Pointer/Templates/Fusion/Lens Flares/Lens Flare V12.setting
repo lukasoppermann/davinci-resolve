@@ -1,0 +1,792 @@
+{
+	Tools = ordered() {
+		Lens_Flare_V12 = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "HS12_1",
+					Source = "Input",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "HS12_2",
+					Source = "PrimaryCenter",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "HS12_2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 299, 160, },
+				Flags = {
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 246, 64.3, },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -1.30134, 0, },
+			},
+			Tools = ordered() {
+				HS12_1 = HotSpot {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						PrimaryCenter = Input {
+							Value = { 0.272802079785264, 0.6108314479638, },
+							Expression = "HS12_2.PrimaryCenter",
+						},
+						HotSpotSize = Input { Value = 0.3, },
+						SecondaryStrength = Input { Value = 0.1570681, },
+						SecondarySize = Input { Value = 0.3, },
+						LensAberration = Input { Value = 3, },
+						Aberration = Input { Value = 2.675393, },
+						AmbientLight = Input { Disabled = true, },
+						ShowRed = Input { Value = 0, },
+						ShowGreen = Input { Value = 0, },
+						ShowBlue = Input { Value = 0, },
+						ShowAlpha = Input { Value = 0, },
+						Red = Input {
+							SourceOp = "HS12_1Red",
+							Source = "Value",
+						},
+						Green = Input {
+							SourceOp = "HS12_1Green",
+							Source = "Value",
+						},
+						Blue = Input {
+							SourceOp = "HS12_1Blue",
+							Source = "Value",
+						},
+						Alpha = Input {
+							SourceOp = "HS12_1Alpha",
+							Source = "Value",
+						},
+						Mix = Input {
+							SourceOp = "HS12_1Mix",
+							Source = "Value",
+						},
+						RadialOn = Input { Value = 1, },
+						RadialDensity = Input { Value = 0, },
+						Radial = Input {
+							SourceOp = "HS12_1Radial",
+							Source = "Value",
+						},
+						Length = Input {
+							SourceOp = "HS12_1Length",
+							Source = "Value",
+						},
+						RadialRepeat = Input { Value = 100, },
+						RadialAngle = Input { Value = -156.1905, },
+						LengthAngle = Input { Value = 363.8095, },
+						Element1Reflection1 = Input { Value = 1, },
+						Element1Reflection2 = Input { Value = 1, },
+						Element1Reflection3 = Input { Value = 1, },
+						ElementStrength1 = Input { Value = 0.1884817, },
+						ElementSize1 = Input { Value = 0.104712, },
+						ElementPosition1 = Input { Value = 0.7670157, },
+						Element2Reflection1 = Input { Value = 1, },
+						Element2Reflection2 = Input { Value = 1, },
+						Element2Reflection3 = Input { Value = 1, },
+						ElementStrength2 = Input { Value = 0.104712, },
+						ElementSize2 = Input { Value = 0.1780105, },
+						ElementType2 = Input { Value = 2, },
+						NGonSides2 = Input { Value = 5, },
+						LensRed2 = Input { Value = 1, },
+						Element3Reflection1 = Input { Value = 1, },
+						Element3Reflection2 = Input { Value = 1, },
+						Element3Reflection3 = Input { Value = 1, },
+						ElementSize3 = Input { Value = 0.1989529, },
+						Input = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -60, 10.15, }, },
+				},
+				HS12_1Red = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0343098483447744, 0, }, },
+							[0.107770859201486] = { 0.244033130111113, LH = { 0.0616965395623295, 0.247067429782884, }, RH = { 0.192490665013417, 0.238453768744932, }, },
+							[0.306714783911818] = { 0.017070477785197, LH = { 0.216092299850621, 0.0154052633947296, }, RH = { 0.59375618976945, 0.0223449467499995, }, },
+							[0.988188976377953] = { 0.00806451612903213, LH = { 0.694494249113106, 0.00806451612903213, }, },
+						},
+					},
+					SplineColor = { Red = 255, Green = 52, Blue = 52, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_1ColorChange",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_1ColorChange = BezierSpline {
+					SplineColor = { Red = 0, Green = 255, Blue = 255, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, Flags = { LockedY = true, }, },
+					},
+				},
+				HS12_1Green = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0484306209620306, 0, }, },
+							[0.152125697863753] = { 0.248065381551221, LH = { 0.0932762030962507, 0.251941010406408, }, RH = { 0.221236346897096, 0.243513987751623, }, },
+							[0.306714783911818] = { 0.0170704803087808, LH = { 0.24674548496674, 0.0183846859798556, }, RH = { 0.593736687407759, 0.0107804982690957, }, },
+							[0.988188976377953] = { 0.00806451612903213, LH = { 0.694494249113106, 0.00806451612903213, }, },
+						},
+					},
+					SplineColor = { Red = 0, Green = 255, Blue = 0, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_1ColorChange",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_1Blue = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0651188067447005, 0, }, },
+							[0.204545052764426] = { 0.256129897552572, LH = { 0.128948728336163, 0.261108416016625, }, RH = { 0.255492352339699, 0.252774680568844, }, },
+							[0.306714783911818] = { 0.0170704803087808, LH = { 0.268088144507086, 0.0172422128894337, }, RH = { 0.594817878809648, 0.0157895848246417, }, },
+							[0.988188976377953] = { 0.00806451612903213, LH = { 0.694494249113106, 0.00806451612903213, }, },
+						},
+					},
+					SplineColor = { Red = 68, Green = 68, Blue = 255, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_1ColorChange",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_1Alpha = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.106823965813735, 0, }, },
+							[0.306714783911818] = { 0.0170704803087808, LH = { 0.206836784953794, 0.0159117274509557, }, RH = { 0.581188922157685, 0.0202548421843627, }, },
+							[0.988188976377953] = { 0.00806451612903213, LH = { 0.694494249113106, 0.00806451612903213, }, },
+						},
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_1ColorChange",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_1Mix = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[-0.122047244094488] = { 0.00403225806451607, RH = { -0.0776924053848107, 0.00403225806451607, }, },
+							[0.0110172720345439] = { 0.00403225806451607, LH = { -0.0333375666751334, 0.00403225806451607, }, RH = { 0.0826136652273303, 0.00268817208306757, }, Flags = { Linear = true, }, },
+							[0.225806451612903] = { 1.20170566206279e-010, LH = { 0.154210058420117, 0.00134408610161907, }, RH = { 0.553698462013516, 0, }, Flags = { Linear = true, }, },
+							[0.919159902762922] = { 1, LH = { 0.877558214349612, 0.0456989246210263, }, RH = { 0.944762515820443, 1, }, },
+							[0.995967741935484] = { 1, LH = { 0.970365128877963, 1, }, RH = { 1.01209677415349, 0.666666666666667, }, Flags = { Linear = true, }, },
+							[1.04435483858951] = { 0, LH = { 1.0282258063715, 0.333333333333333, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 0, Green = 255, Blue = 255, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_1ColorChange1",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_1ColorChange1 = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, Flags = { LockedY = true, }, },
+					},
+				},
+				HS12_1Radial = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 1, RH = { 0.0564516129032257, 0.666666666666667, }, },
+							[0.169354838709677] = { 0, LH = { 0.112903225806451, 0.333333333333333, }, RH = { 0.282266372267591, 0.333333333333333, }, Flags = { Linear = true, }, },
+							[0.508089439383419] = { 1, LH = { 0.395177905825505, 0.666666666666667, }, RH = { 0.621722657160561, 0.667549544559812, }, Flags = { Linear = true, }, },
+							[0.848989092714844] = { 0.00264863367943496, LH = { 0.735355874937702, 0.335099089119623, }, RH = { 0.899326061809896, 0.335099089119623, }, Flags = { Linear = true, }, },
+							[1] = { 1, LH = { 0.949663030904948, 0.667549544559812, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 255, Green = 170, Blue = 48, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_1ColorChange2",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_1ColorChange2 = BezierSpline {
+					SplineColor = { Red = 255, Green = 180, Blue = 0, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, Flags = { LockedY = true, }, },
+					},
+				},
+				HS12_1Length = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 1, RH = { 0.057742782152231, 0.923387096774194, }, },
+							[0.173228346456693] = { 0.770161290322581, LH = { 0.115485564304462, 0.846774193548387, }, RH = { 0.448818897637795, 0.846774193548387, }, Flags = { Linear = true, }, },
+							[1] = { 1, LH = { 0.724409448818898, 0.923387096774194, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 170, Green = 128, Blue = 255, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_1ColorChange3",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_1ColorChange3 = BezierSpline {
+					SplineColor = { Red = 0, Green = 255, Blue = 180, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, Flags = { LockedY = true, }, },
+					},
+				},
+				HS12_2 = HotSpot {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						PrimaryCenter = Input { Value = { 0.272802079785264, 0.6108314479638, }, },
+						HotSpotSize = Input { Value = 0.1315789, },
+						Aspect = Input { Value = 17, },
+						SecondaryStrength = Input { Value = 0.1675393, },
+						LensAberration = Input { Value = 3, },
+						Aberration = Input { Value = 2.445026, },
+						AmbientLight = Input { Disabled = true, },
+						ShowRed = Input { Value = 0, },
+						ShowGreen = Input { Value = 0, },
+						ShowBlue = Input { Value = 0, },
+						ShowAlpha = Input { Value = 0, },
+						Red = Input {
+							SourceOp = "HS12_2Red",
+							Source = "Value",
+						},
+						Green = Input {
+							SourceOp = "HS12_2Green",
+							Source = "Value",
+						},
+						Blue = Input {
+							SourceOp = "HS12_2Blue",
+							Source = "Value",
+						},
+						Alpha = Input {
+							SourceOp = "HS12_2Alpha",
+							Source = "Value",
+						},
+						Mix = Input {
+							SourceOp = "HS12_2Mix",
+							Source = "Value",
+						},
+						RadialOn = Input { Value = 1, },
+						RadialLength = Input { Value = 0, },
+						Radial = Input {
+							SourceOp = "HS12_2Radial",
+							Source = "Value",
+						},
+						Length = Input {
+							SourceOp = "HS12_2Length",
+							Source = "Value",
+						},
+						RadialRepeat = Input { Value = 2, },
+						RadialAngle = Input { Value = 188.5714, },
+						LengthAngle = Input { Value = 1.904762, },
+						Element3Reflection1 = Input { Value = 1, },
+						Element3Reflection2 = Input { Value = 1, },
+						Element3Reflection3 = Input { Value = 1, },
+						ElementStrength3 = Input { Value = 0.9060773, },
+						ElementSize3 = Input { Value = 0.0942408, },
+						ElementPosition3 = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "HS12_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 60, 10.15, }, },
+				},
+				HS12_2Red = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.12745519428069, 0.00245106143301816, }, },
+							[0.887226631192231] = { 0.321218057836015, LH = { 0.443653181759568, 0.278944715392228, }, RH = { 0.93797671061071, 0.326054631100327, }, },
+							[0.979838709557249] = { 0.991935483179986, LH = { 0.948269886071682, 0.991935483179986, }, },
+						},
+					},
+					SplineColor = { Red = 255, Green = 52, Blue = 52, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_2ColorChange",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_2ColorChange = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 180, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, Flags = { LockedY = true, }, },
+					},
+				},
+				HS12_2Green = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.123129058760574, 0.00236786651901557, }, },
+							[0.858586493045873] = { 0.490383815831475, LH = { 0.425416215739368, 0.440707730770484, }, RH = { 0.919859938548402, 0.497410671205023, }, },
+							[1] = { 0.903225807037445, LH = { 0.951942610050644, 0.903225807037445, }, },
+						},
+					},
+					SplineColor = { Red = 0, Green = 255, Blue = 0, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_2ColorChange",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_2Blue = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.139784946237811, 0.00268817204801769, }, },
+							[1] = { 1, LH = { 0.497311828297473, 1, }, },
+						},
+					},
+					SplineColor = { Red = 68, Green = 68, Blue = 255, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_2ColorChange",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_2Alpha = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.138200348152401, 0.00265769900785716, }, },
+							[0.995967741815313] = { 0.608870967621765, LH = { 0.495306538607479, 0.608870967621765, }, },
+						},
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_2ColorChange",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_2Mix = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0.00191961171014199] = { 0.0038770554151831, RH = { 0.286257727682621, 0.00661696163458125, }, Flags = { Linear = true, }, },
+							[0.854933959627578] = { 0.0120967740733776, LH = { 0.5705958436551, 0.0093568678539794, }, RH = { 0.8817839300743, 0.337365591397849, }, Flags = { Linear = true, }, },
+							[0.935483870967742] = { 0.987903226046793, LH = { 0.908633900521021, 0.662634408722321, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 0, Green = 255, Blue = 255, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_2ColorChange1",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_2ColorChange1 = BezierSpline {
+					SplineColor = { Red = 255, Green = 255, Blue = 64, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, Flags = { LockedY = true, }, },
+					},
+				},
+				HS12_2Radial = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.139784946156445, 0, }, },
+							[0.419354838469336] = { 0, LH = { 0.279569892312891, 0, }, RH = { 0.428763440619874, 0.333333333333333, }, Flags = { Linear = true, }, },
+							[0.447580644920949] = { 1, LH = { 0.438172042770411, 0.666666666666667, }, RH = { 0.456401840002546, 0.668010752688172, }, Flags = { Linear = true, }, },
+							[0.474044230165741] = { 0.00403225806451625, LH = { 0.465223035084144, 0.336021505376344, }, RH = { 0.649362820110494, 0.00268817204301083, }, Flags = { Linear = true, }, },
+							[1] = { 0, LH = { 0.824681410055247, 0.00134408602150542, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 255, Green = 170, Blue = 48, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_2ColorChange2",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_2ColorChange2 = BezierSpline {
+					SplineColor = { Red = 0, Green = 127, Blue = 255, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, Flags = { LockedY = true, }, },
+					},
+				},
+				HS12_2Length = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 1, RH = { 0.333333333333333, 1, }, },
+							[1] = { 1, LH = { 0.666666666666667, 1, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 170, Green = 128, Blue = 255, },
+					CtrlWShown = false,
+					Inputs = {
+						TimeCurve = Input {
+							SourceOp = "HS12_2ColorChange3",
+							Source = "Value",
+						},
+					},
+				},
+				HS12_2ColorChange3 = BezierSpline {
+					SplineColor = { Red = 255, Green = 127, Blue = 0, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, Flags = { LockedY = true, }, },
+					},
+				},
+			},
+		},
+		HS12_1Red = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.0343098483447744, 0, }, },
+					[0.107770859201486] = { 0.244033130111113, LH = { 0.0616965395623295, 0.247067429782884, }, RH = { 0.192490665013417, 0.238453768744932, }, },
+					[0.306714783911818] = { 0.017070477785197, LH = { 0.216092299850621, 0.0154052633947296, }, RH = { 0.59375618976945, 0.0223449467499995, }, },
+					[0.988188976377953] = { 0.00806451612903213, LH = { 0.694494249113106, 0.00806451612903213, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 52, Blue = 52, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_1ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_1ColorChange = BezierSpline {
+			SplineColor = { Red = 0, Green = 255, Blue = 255, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HS12_1Green = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.0484306209620306, 0, }, },
+					[0.152125697863753] = { 0.248065381551221, LH = { 0.0932762030962507, 0.251941010406408, }, RH = { 0.221236346897096, 0.243513987751623, }, },
+					[0.306714783911818] = { 0.0170704803087808, LH = { 0.24674548496674, 0.0183846859798556, }, RH = { 0.593736687407759, 0.0107804982690957, }, },
+					[0.988188976377953] = { 0.00806451612903213, LH = { 0.694494249113106, 0.00806451612903213, }, },
+				},
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 0, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_1ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_1Blue = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.0651188067447005, 0, }, },
+					[0.204545052764426] = { 0.256129897552572, LH = { 0.128948728336163, 0.261108416016625, }, RH = { 0.255492352339699, 0.252774680568844, }, },
+					[0.306714783911818] = { 0.0170704803087808, LH = { 0.268088144507086, 0.0172422128894337, }, RH = { 0.594817878809648, 0.0157895848246417, }, },
+					[0.988188976377953] = { 0.00806451612903213, LH = { 0.694494249113106, 0.00806451612903213, }, },
+				},
+			},
+			SplineColor = { Red = 68, Green = 68, Blue = 255, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_1ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_1Alpha = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.106823965813735, 0, }, },
+					[0.306714783911818] = { 0.0170704803087808, LH = { 0.206836784953794, 0.0159117274509557, }, RH = { 0.581188922157685, 0.0202548421843627, }, },
+					[0.988188976377953] = { 0.00806451612903213, LH = { 0.694494249113106, 0.00806451612903213, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_1ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_1Mix = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[-0.122047244094488] = { 0.00403225806451607, RH = { -0.0776924053848107, 0.00403225806451607, }, },
+					[0.0110172720345439] = { 0.00403225806451607, LH = { -0.0333375666751334, 0.00403225806451607, }, RH = { 0.0826136652273303, 0.00268817208306757, }, Flags = { Linear = true, }, },
+					[0.225806451612903] = { 1.20170566206279e-010, LH = { 0.154210058420117, 0.00134408610161907, }, RH = { 0.553698462013516, 0, }, Flags = { Linear = true, }, },
+					[0.919159902762922] = { 1, LH = { 0.877558214349612, 0.0456989246210263, }, RH = { 0.944762515820443, 1, }, },
+					[0.995967741935484] = { 1, LH = { 0.970365128877963, 1, }, RH = { 1.01209677415349, 0.666666666666667, }, Flags = { Linear = true, }, },
+					[1.04435483858951] = { 0, LH = { 1.0282258063715, 0.333333333333333, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 255, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_1ColorChange1",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_1ColorChange1 = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HS12_1Radial = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 1, RH = { 0.0564516129032257, 0.666666666666667, }, },
+					[0.169354838709677] = { 0, LH = { 0.112903225806451, 0.333333333333333, }, RH = { 0.282266372267591, 0.333333333333333, }, Flags = { Linear = true, }, },
+					[0.508089439383419] = { 1, LH = { 0.395177905825505, 0.666666666666667, }, RH = { 0.621722657160561, 0.667549544559812, }, Flags = { Linear = true, }, },
+					[0.848989092714844] = { 0.00264863367943496, LH = { 0.735355874937702, 0.335099089119623, }, RH = { 0.899326061809896, 0.335099089119623, }, Flags = { Linear = true, }, },
+					[1] = { 1, LH = { 0.949663030904948, 0.667549544559812, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 170, Blue = 48, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_1ColorChange2",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_1ColorChange2 = BezierSpline {
+			SplineColor = { Red = 255, Green = 180, Blue = 0, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HS12_1Length = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 1, RH = { 0.057742782152231, 0.923387096774194, }, },
+					[0.173228346456693] = { 0.770161290322581, LH = { 0.115485564304462, 0.846774193548387, }, RH = { 0.448818897637795, 0.846774193548387, }, Flags = { Linear = true, }, },
+					[1] = { 1, LH = { 0.724409448818898, 0.923387096774194, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 170, Green = 128, Blue = 255, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_1ColorChange3",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_1ColorChange3 = BezierSpline {
+			SplineColor = { Red = 0, Green = 255, Blue = 180, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HS12_2Red = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.12745519428069, 0.00245106143301816, }, },
+					[0.887226631192231] = { 0.321218057836015, LH = { 0.443653181759568, 0.278944715392228, }, RH = { 0.93797671061071, 0.326054631100327, }, },
+					[0.979838709557249] = { 0.991935483179986, LH = { 0.948269886071682, 0.991935483179986, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 52, Blue = 52, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_2ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_2ColorChange = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 180, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HS12_2Green = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.123129058760574, 0.00236786651901557, }, },
+					[0.858586493045873] = { 0.490383815831475, LH = { 0.425416215739368, 0.440707730770484, }, RH = { 0.919859938548402, 0.497410671205023, }, },
+					[1] = { 0.903225807037445, LH = { 0.951942610050644, 0.903225807037445, }, },
+				},
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 0, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_2ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_2Blue = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.139784946237811, 0.00268817204801769, }, },
+					[1] = { 1, LH = { 0.497311828297473, 1, }, },
+				},
+			},
+			SplineColor = { Red = 68, Green = 68, Blue = 255, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_2ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_2Alpha = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.138200348152401, 0.00265769900785716, }, },
+					[0.995967741815313] = { 0.608870967621765, LH = { 0.495306538607479, 0.608870967621765, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_2ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_2Mix = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0.00191961171014199] = { 0.0038770554151831, RH = { 0.286257727682621, 0.00661696163458125, }, Flags = { Linear = true, }, },
+					[0.854933959627578] = { 0.0120967740733776, LH = { 0.5705958436551, 0.0093568678539794, }, RH = { 0.8817839300743, 0.337365591397849, }, Flags = { Linear = true, }, },
+					[0.935483870967742] = { 0.987903226046793, LH = { 0.908633900521021, 0.662634408722321, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 255, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_2ColorChange1",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_2ColorChange1 = BezierSpline {
+			SplineColor = { Red = 255, Green = 255, Blue = 64, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HS12_2Radial = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.139784946156445, 0, }, },
+					[0.419354838469336] = { 0, LH = { 0.279569892312891, 0, }, RH = { 0.428763440619874, 0.333333333333333, }, Flags = { Linear = true, }, },
+					[0.447580644920949] = { 1, LH = { 0.438172042770411, 0.666666666666667, }, RH = { 0.456401840002546, 0.668010752688172, }, Flags = { Linear = true, }, },
+					[0.474044230165741] = { 0.00403225806451625, LH = { 0.465223035084144, 0.336021505376344, }, RH = { 0.649362820110494, 0.00268817204301083, }, Flags = { Linear = true, }, },
+					[1] = { 0, LH = { 0.824681410055247, 0.00134408602150542, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 170, Blue = 48, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_2ColorChange2",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_2ColorChange2 = BezierSpline {
+			SplineColor = { Red = 0, Green = 127, Blue = 255, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HS12_2Length = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 1, RH = { 0.333333333333333, 1, }, },
+					[1] = { 1, LH = { 0.666666666666667, 1, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 170, Green = 128, Blue = 255, },
+			CtrlWShown = false,
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS12_2ColorChange3",
+					Source = "Value",
+				},
+			},
+		},
+		HS12_2ColorChange3 = BezierSpline {
+			SplineColor = { Red = 255, Green = 127, Blue = 0, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+	},
+}

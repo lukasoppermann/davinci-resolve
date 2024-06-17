@@ -1,0 +1,554 @@
+{
+	Tools = ordered() {
+		CCTV = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				TextControls = InstanceInput {
+					 SourceOp = "Background1",
+					 Source = "TextControls",
+					 Page = "Controls",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "REC_1",
+					Source = "StyledText",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "REC_1",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "REC_1",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "REC_1",
+					Source = "Size",
+					Default = 0.0407,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "REC_1",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "REC_1",
+					Source = "LineSpacingClone",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "CAM_1",
+					Source = "StyledText",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "CAM_1",
+					Source = "Font",
+					ControlGroup = 7,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "CAM_1",
+					Source = "Style",
+					ControlGroup = 7,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "CAM_1",
+					Source = "Size",
+					Default = 0.0407,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "CAM_1",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "CAM_1",
+					Source = "LineSpacingClone",
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "StyledText",
+				},
+				Input14 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "Font",
+					ControlGroup = 12,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "Style",
+					ControlGroup = 12,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "Red1Clone",
+					Name = "Color",
+					ControlGroup = 13,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "Green1Clone",
+					ControlGroup = 13,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "Blue1Clone",
+					ControlGroup = 13,
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "Alpha1Clone",
+					ControlGroup = 13,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "Size",
+					Default = 0.04,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "LineSpacingClone",
+					Default = 1,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Dissolve1",
+					Source = "Switch",
+					Name = "Record Light On",
+					Page = "Controls",
+					Default = 0,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Vector1",
+					Source = "Distance",
+					Name = "Scanlines",
+					MinScale = 0,
+					MaxScale = 0.3,
+					Default = 0.0039375,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Vector1",
+					Source = "Angle",
+					Name = "Scanline Angle",
+					Default = 90,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "BrightnessContrast1",
+					Source = "Input",
+				},
+				Input25 = InstanceInput {
+					SourceOp = "BrightnessContrast1",
+					Source = "Saturation",
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "FilmGrain1",
+					Source = "MasterXSize",
+					Name = "Noise Size",
+					Default = 2.5,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "FilmGrain1",
+					Source = "MasterStrength",
+					Name = "Noise Strength",
+					Default = 0.1,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Blur2",
+					Source = "XBlurSize",
+					Default = 1.5,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge4_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 358.377, -201.56 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 1151.72, 289.247, 399.331, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				REC_1 = TextPlus {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 201, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.940677397719651, 0.95 }, },
+						SelectElement = Input { Value = 1, },
+						Select = Input { Value = 1, },
+						Enabled2 = Input { Value = 1, },
+						StyledText = Input { Value = "REC", },
+						Font = Input { Value = "Verdana", },
+						Style = Input { Value = "Regular", },
+						Size = Input { Value = 0.0407, },
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = 1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Thickness2 = Input { Value = 0.0402, },
+						Red2 = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 49.74, 8.68268 } },
+					UserControls = ordered() {
+						RightText = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 10,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Right Text",
+						}
+					}
+				},
+				CAM_1 = TextPlus {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 201, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.05, 0.95 }, },
+						SelectElement = Input { Value = 1, },
+						Select = Input { Value = 1, },
+						Enabled2 = Input { Value = 1, },
+						StyledText = Input { Value = "CAM 4", },
+						Font = Input { Value = "Verdana", },
+						Style = Input { Value = "Regular", },
+						Size = Input { Value = 0.0407, },
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Thickness2 = Input { Value = 0.0402, },
+						Red2 = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -82.69, 56.0814 } },
+					UserControls = ordered() {
+						LeftText = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 10,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Left Text",
+						}
+					}
+				},
+				TC_1 = TextPlus {
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 201, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.5, 0.0887694214637802 }, },
+						SelectElement = Input { Value = 1, },
+						Select = Input { Value = 1, },
+						Name2 = Input { Value = "black box", },
+						Enabled2 = Input { Value = 1, },
+						StyledText = Input { Value = "TCR 10-09 18:37:11", },
+						Font = Input { Value = "Verdana", },
+						Style = Input { Value = "Regular", },
+						Size = Input { Value = 0.04, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ElementShape2 = Input { Value = 2, },
+						Level2 = Input { Value = 0, },
+						ExtendHorizontal2 = Input { Value = 0.89, },
+						ExtendVertical2 = Input { Value = 0.13, },
+						Red2 = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 530.941, 149.299 } },
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 201, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						Start = Input { Value = { 0.5, 0.5 }, },
+						End = Input {
+							SourceOp = "Vector1",
+							Source = "Position",
+						},
+						Repeat = Input { Value = FuID { "Ping-Pong" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -336.661, 48.5128 } },
+					UserControls = ordered() {
+						 TextControls = {
+							 LINKS_Name = "Text Controls",
+							 LINKID_DataType = "Number",
+							 INPID_InputControl = "LabelControl",
+							 INP_Integer = false,
+							 LBLC_DropDownButton = true,
+							 LBLC_NumInputs = 22,
+							 INP_External = false,
+						 }
+					}
+				},
+				Vector1 = Vector {
+					CtrlWZoom = false,
+					Inputs = {
+						Distance = Input { Value = 0.0039375, },
+						Angle = Input { Value = 90, },
+						ImageAspect = Input { Value = 1.777778, },
+					},
+				},
+				BrightnessContrast1 = BrightnessContrast {
+					CtrlWShown = false,
+					Inputs = {
+						Saturation = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -332.344, 85.4898 } },
+				},
+				Blur1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -201.004, 48.5128 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0.25, },
+						Background = Input {
+							SourceOp = "BrightnessContrast1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Hard Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -201.004, 77.9212 } },
+				},
+				FilmGrain1 = FilmGrain {
+					CtrlWShown = false,
+					Inputs = {
+						MasterXSize = Input { Value = 2.5, },
+						MasterOffset = Input { Value = 0.025, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -201.004, 121.398 } },
+				},
+				Blur2 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						XBlurSize = Input { Value = 1.5, },
+						Input = Input {
+							SourceOp = "FilmGrain1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -201.004, 150.832 } },
+				},
+				Merge2_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "REC_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "CAM_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 49.74, 48.5128 } },
+				},
+				Merge1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Blur2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge2_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 49.74, 150.832 } },
+				},
+				Ellipse1_1 = EllipseMask {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.9580708235602, 0.930347 }, },
+						Width = Input { Value = 0.0210661255278, },
+						Height = Input { Value = 0.0210661255278, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 380.341, 43.8788 } },
+				},
+				Background1_1 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Ellipse1_1",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 201, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.7109375, },
+						TopLeftGreen = Input { Value = 0.0679321289062, },
+						TopLeftBlue = Input { Value = 0.1463623046875, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 380.341, 76.8788 } },
+				},
+				Merge3_1 = Merge {
+					CustomData = {
+						Settings = {
+							[2] = {
+								Tools = ordered() {
+									Merge3 = Merge {
+										Inputs = {
+											Foreground = Input {
+												SourceOp = "Background1",
+												Source = "Output"
+											},
+											Background = Input {
+												SourceOp = "Merge2",
+												Source = "Output"
+											},
+											PerformDepthMerge = Input { Value = 0 }
+										},
+										CtrlWZoom = false,
+										ViewInfo = OperatorInfo { Pos = { 1636.14, 433.659 } },
+										CustomData = {
+										}
+									}
+								}
+							}
+						}
+					},
+					Inputs = {
+						Blend = Input {
+							SourceOp = "Merge3_1Blend",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "Merge1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 380.341, 150.832 } },
+				},
+				Merge3_1Blend = BezierSpline {
+					SplineColor = { Red = 205, Green = 205, Blue = 205 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 1, RH = { 1.66666666666667, 0.666666666666667 }, Flags = { Linear = true, Loop = true, PreLoop = true, Pingpong = true, PrePingpong = true } },
+						[5] = { 0, LH = { 3.33333333333333, 0.333333333333333 }, RH = { 6.66666666666667, 0.333333333333333 }, Flags = { Linear = true } },
+						[10] = { 1, LH = { 8.33333333333333, 0.666666666666667 }, RH = { 11.6666666666667, 0.666666666666667 }, Flags = { Linear = true } },
+						[15] = { 0, LH = { 13.3333333333333, 0.333333333333333 }, Flags = { Linear = true, Loop = true, PreLoop = true, Pingpong = true, PrePingpong = true } }
+					}
+				},
+				Merge4_1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Dissolve1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TC_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 530.941, 210.694 } },
+				},
+				Dissolve1 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					Inputs = {
+						Mix = Input {
+							Value = 0,
+							Expression = "Switch",
+						},
+						Background = Input {
+							SourceOp = "Merge1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 380.341, 210.694 } },
+					UserControls = ordered() {
+						Switch = {
+							CBC_TriState = false,
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "CheckboxControl",
+							LINKS_Name = "Switch",
+						}
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "CCTV"
+}

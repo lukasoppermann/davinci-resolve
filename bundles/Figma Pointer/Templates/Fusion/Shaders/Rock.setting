@@ -1,0 +1,215 @@
+{
+	Tools = ordered() {
+		Rock = GroupOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ColorGain3_1",
+					Source = "GainRed",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ColorGain3_1",
+					Source = "GainGreen",
+					Default = 0.7,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ColorGain3_1",
+					Source = "GainBlue",
+					Default = 0.5,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Diffuse.Color.Red",
+					Name = "Diffuse Color",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Diffuse.Color.Green",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Diffuse.Color.Blue",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Diffuse.Color.Alpha",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Diffuse.Opacity",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Specular.Color.Red",
+					Name = "Specular Color",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Specular.Color.Green",
+					ControlGroup = 7,
+					Default = 0.8955329405426,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Specular.Color.Blue",
+					ControlGroup = 7,
+					Default = 0.6464,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Specular.Intensity",
+					Default = 0.008,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Specular.SpreadU",
+					Default = 0.2,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "Specular.SpreadV",
+					Default = 0.2,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "BumpMap4_2_2_1_1_1",
+					Source = "HeightScale",
+					Name = "Roughness",
+					Default = 17.30776,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Ward3_2_2_1_1_1",
+					Source = "MaterialOutput",
+				},
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0, }, },
+			Tools = ordered() {
+				FastNoise5 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1024, },
+						Height = Input { Value = 512, },
+						Discontinuous = Input { Value = 1, },
+						Detail = Input { Value = 5.461538, },
+						XScale = Input { Value = 9.615385, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3300, -874.5, }, },
+				},
+				ColorGain3_1 = ColorGain {
+					Inputs = {
+						GainGreen = Input { Value = 0.7, },
+						GainBlue = Input { Value = 0.5, },
+						LiftNest = Input { Value = 0, },
+						GammaNest = Input { Value = 0, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1, },
+											{ 0.125, 0.75, },
+											{ 0.375, 0.25, },
+											{ 0.5, 0, },
+										},
+									},
+									{
+										Points = {
+											{ 0.5, 0, },
+											{ 0.625, 0.25, },
+											{ 0.875, 0.75, },
+											{ 1, 1, },
+										},
+									},
+								},
+							},
+						},
+						Input = Input {
+							SourceOp = "FastNoise2_4_2_2_2_2_1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3190, -742.5, }, },
+				},
+				FastNoise2_4_2_2_2_2_1_1_1 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1024, },
+						Height = Input { Value = 512, },
+						Detail = Input { Value = 10, },
+						XScale = Input { Value = 20, },
+						YScale = Input { Value = 20, },
+						Type = Input { Value = 1, },
+						Start = Input { Value = { 0.5, 0.495081967213115, }, },
+						End = Input { Value = { 0.89386054477784, 0.49109054378973, }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.259214222222249, 0.259816177196671, 0.26, 1, },
+									[0.196078431372549] = { 0.606450962962963, 0.606504888888889, 0.606666666666667, 1, },
+									[0.372549019607843] = { 0.693086814814814, 0.693333333333333, 0.692840296296296, 1, },
+									[0.568627450980392] = { 0.359698319727056, 0.36, 0.35968, 1, },
+									[0.737254901960784] = { 0.66, 0.66, 0.66, 1, },
+									[0.827450980392157] = { 0.439631279666401, 0.44, 0.439608888888889, 1, },
+									[0.905882352941176] = { 0.7, 0.69888, 0.69888, 1, },
+									[1] = { 0.239808, 0.24, 0.239616, 1, },
+								},
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3300, -742.5, }, },
+				},
+				Ward3_2_2_1_1_1 = MtlWard {
+					CtrlWZoom = false,
+					Inputs = {
+						["Diffuse.Color.Material"] = Input {
+							SourceOp = "ColorGain3_1",
+							Source = "Output",
+						},
+						["Specular.Nest"] = Input { Value = 1, },
+						["Specular.Color.Green"] = Input { Value = 0.8955329405426, },
+						["Specular.Color.Blue"] = Input { Value = 0.6464, },
+						["Specular.Intensity"] = Input { Value = 0.008, },
+						["Specular.SpreadU"] = Input { Value = 0.2, },
+						["Specular.SpreadV"] = Input { Value = 0.2, },
+						["Bumpmap.Material"] = Input {
+							SourceOp = "BumpMap4_2_2_1_1_1",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 18, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -3080, -742.5, }, },
+				},
+				BumpMap4_2_2_1_1_1 = BumpMap {
+					Inputs = {
+						Input = Input {
+							SourceOp = "FastNoise5",
+							Source = "Output",
+						},
+						SourceChannel = Input { Value = FuID { "Alpha", }, },
+						HeightScale = Input { Value = 17.30776, },
+						MaterialID = Input { Value = 19, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -3080, -874.5, }, },
+				},
+			},
+		},
+	},
+	ActiveTool = "Rock",
+}

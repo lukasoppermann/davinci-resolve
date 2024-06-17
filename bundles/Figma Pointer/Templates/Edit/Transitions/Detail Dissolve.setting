@@ -1,0 +1,195 @@
+{
+	Tools = ordered() {
+		DetailDissolve = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter1",
+					Source = "Input",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "PipeRouter2",
+					Source = "Input",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "DetailRecovery1",
+					Source = "balance",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "DetailRecovery1",
+					Source = "transferStrength",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "DetailRecovery1",
+					Source = "recipientDetailStrength",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "DetailRecovery1",
+					Source = "previewDetail",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "AnimCurves2",
+					Source = "Curve",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "AnimCurves2",
+					Source = "EaseIn",
+					Width = 0.5,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "AnimCurves2",
+					Source = "EaseOut",
+					Width = 0.5,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				PipeRouter1 = PipeRouter {
+					CtrlWZoom = false,
+					ViewInfo = PipeRouterInfo { Pos = { 161.598, 151.303 } },
+				},
+				PipeRouter2 = PipeRouter {
+					ViewInfo = PipeRouterInfo { Pos = { 165.428, 81.1667 } },
+				},
+				DetailRecovery1 = ofx.com.blackmagicdesign.resolvefx.DetailRecovery {
+					Inputs = {
+						Source = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+						SourceTo = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+						transferDirection = Input { Value = FuID { "TransferDirection2To1" }, },
+						detailGroup = Input { Value = 1, },
+						frequencyCutoff = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						balance = Input { Value = 0, },
+						transferStrength = Input { Value = 1, },
+						recipientDetailStrength = Input { Value = 0, },
+						previewDetail = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 275, 148.5 } },
+				},
+				AnimCurves1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						EaseIn = Input {
+							SourceOp = "Publish2",
+							Source = "Value",
+						},
+						EaseOut = Input {
+							SourceOp = "Publish3",
+							Source = "Value",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup",
+							Source = "Value",
+						},
+					},
+				},
+				Publish1 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "Linear" }, }
+					},
+				},
+				Publish2 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "None" }, }
+					},
+				},
+				Publish3 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "None" }, }
+					},
+				},
+				AnimCurves1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Blend = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "DetailRecovery1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 148.5 } },
+				},
+				AnimCurves2 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						EaseIn = Input {
+							SourceOp = "Publish2",
+							Source = "Value",
+						},
+						EaseOut = Input {
+							SourceOp = "Publish3",
+							Source = "Value",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup",
+							Source = "Value",
+						},
+					},
+				},
+				AnimCurves2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "DetailDissolve"
+}

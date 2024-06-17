@@ -1,0 +1,336 @@
+{
+	Tools = ordered() {
+		TextBox = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "StyledText",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Red1Clone",
+					Name = "Color",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Green1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Blue1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Alpha1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Size",
+					Default = 0.08,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1.262,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "LineSpacingClone",
+					Default = 1,
+				},
+				Box = InstanceInput {
+					SourceOp = "BoxColor",
+					Source = "BoxColorandShape",
+					Page = "Controls",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Box",
+					Source = "BorderWidth",
+					Default = 0.006,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Box",
+					Source = "CornerRadius",
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Box",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "BoxColor",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "BoxColor",
+					Source = "TopLeftGreen",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "BoxColor",
+					Source = "TopLeftBlue",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "BoxColor",
+					Source = "TopLeftAlpha",
+					ControlGroup = 10,
+					Default = 1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
+				},
+				Output3 = InstanceOutput {
+					SourceOp = "BoxLength",
+					Source = "Value",
+				},
+				Output4 = InstanceOutput {
+					SourceOp = "Path5",
+					Source = "Heading",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "BoxPosition",
+					Source = "Value",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "BoxLevel",
+					Source = "Value",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 220, 49.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 413.191, 117.278, 206.596, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				Text1 = TextPlus {
+					CtrlWShown = false,
+					ExtentSet = true,
+					CustomData = { Settings = {
+						} },
+					Inputs = {
+						GlobalOut = Input { Value = 500, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						CharacterSpacing = Input { Value = 1.039, },
+						StyledText = Input { Value = "Sample Text", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -9.12299, 9.95288 } },
+				},
+				Box = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Level = Input {
+							SourceOp = "BoxLevel",
+							Source = "Value",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = 0.006, },
+						Solid = Input { Value = 0, },
+						WritePosition = Input {
+							SourceOp = "BoxPosition",
+							Source = "Value",
+						},
+						WriteLength = Input {
+							SourceOp = "BoxLength",
+							Source = "Value",
+						},
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input {
+							Value = 0.408854166666667,
+							Expression = "(Text1.Output[0].DataWindow[3]-Text1.Output[0].DataWindow[1])/Text1.Output[0].Width+.1",
+						},
+						Height = Input {
+							Value = 0.186111111111111,
+							Expression = "(Text1.Output[0].DataWindow[4]-Text1.Output[0].DataWindow[2])/Text1.Output[0].Height+.1",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -144.191, 7.56198 } },
+				},
+				BoxLevel = BezierSpline {
+					SplineColor = { Red = 130, Green = 246, Blue = 132 },
+					NameSet = true,
+					KeyFrames = {
+						[9] = { 0, RH = { 10.3333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+						[13] = { 1, LH = { 11.6666666666667, 0.666666666666667 }, RH = { 44.6666666666667, 1 }, Flags = { Linear = true } },
+						[108] = { 1, LH = { 76.3333333333333, 1 }, RH = { 109.333333333333, 0.666666666666667 }, Flags = { Linear = true } },
+						[112] = { 0, LH = { 110.666666666667, 0.333333333333333 }, Flags = { Linear = true } }
+					}
+				},
+				BoxPosition = BezierSpline {
+					SplineColor = { Red = 237, Green = 132, Blue = 6 },
+					NameSet = true,
+					KeyFrames = {
+						[10] = { 0, RH = { 20.6666666666667, 0 } },
+						[42] = { 0.25, LH = { 26.8080808080808, 0.25 }, RH = { 54.6653997898102, 0.25 } },
+						[80] = { 0.25, LH = { 67.3346002101898, 0.25 }, RH = { 90.665599822998, 0.25 } },
+						[112] = { 0, LH = { 101.334400177002, 0 } }
+					}
+				},
+				BoxLength = BezierSpline {
+					SplineColor = { Red = 141, Green = 167, Blue = 243 },
+					NameSet = true,
+					KeyFrames = {
+						[10] = { 0, RH = { 20.6666666666667, 0 } },
+						[42] = { 1, LH = { 26.8080808080808, 1 }, RH = { 54.6653997898102, 1 } },
+						[80] = { 1, LH = { 67.3346002101898, 1 }, RH = { 90.665599822998, 1 } },
+						[112] = { 0, LH = { 101.334400177002, 0 } }
+					}
+				},
+				BoxColor = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					ExtentSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Box",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 500, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -144.191, 59.9532 } },
+					UserControls = ordered() { BoxColorandShape = { INP_Integer = false, LBLC_DropDownButton = true, LINKID_DataType = "Number", LBLC_NumInputs = 6, INPID_InputControl = "LabelControl", LINKS_Name = "Box Color and Shape", } }
+				},
+				Merge6 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input {
+							SourceOp = "Merge6Blend",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "BoxColor",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Text1",
+							Source = "Output",
+						},
+						Center = Input {
+							SourceOp = "Path5",
+							Source = "Position",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -9.12299, 59.9532 } },
+				},
+				Merge6Blend = BezierSpline {
+					SplineColor = { Red = 205, Green = 205, Blue = 205 },
+					NameSet = true,
+					KeyFrames = {
+						[3] = { 0, RH = { 9, 0 } },
+						[21] = { 1, LH = { 15, 1 }, RH = { 46, 1 } },
+						[96] = { 1, LH = { 71, 1 }, RH = { 103, 1 } },
+						[117] = { 0, LH = { 110, 0 } }
+					}
+				},
+				Path5 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path5Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0, Y = -0.25, RX = 0, RY = 0.0833333333333333 },
+									{ Linear = true, LockY = true, X = 0, Y = 0, LX = 0, LY = -0.0833333333333333, RX = 0, RY = 0 },
+									{ Linear = true, LockY = true, X = 0, Y = 0, LX = 0, LY = 0, RX = 0, RY = -0.0833333333333333 },
+									{ Linear = true, LockY = true, X = 0, Y = -0.25, LX = 0, LY = 0.0833333333333333 }
+								}
+							},
+						},
+					},
+				},
+				Path5Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					NameSet = true,
+					KeyFrames = {
+						[3] = { 0, RH = { 9, 0 }, Flags = { LockedY = true } },
+						[21] = { 0.5, LH = { 15, 0.5 }, RH = { 46, 0.5 }, Flags = { LockedY = true } },
+						[96] = { 0.5, LH = { 71, 0.5 }, RH = { 103, 0.5 }, Flags = { LockedY = true } },
+						[117] = { 1, LH = { 110, 1 }, Flags = { LockedY = true } }
+					}
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					CtrlWShown = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "Merge6",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 119, },
+						StretchStart = Input { Value = 42, },
+						StretchEnd = Input { Value = 80, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 143, 59.9532 } },
+				}
+			},
+		}
+	}
+}

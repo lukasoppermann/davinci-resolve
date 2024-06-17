@@ -1,0 +1,237 @@
+{
+	Tools = ordered() {
+		CHROME = GroupOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "reflect_base_2_2_1_2_1_1",
+					Source = "Reflection.GlancingStrength",
+					Default = 0.8,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "reflect_base_2_2_1_2_1_1",
+					Source = "Reflection.FaceOnStrength",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Diffuse.Color.Red",
+					Name = "Diffuse Color",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Diffuse.Color.Green",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Diffuse.Color.Blue",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Diffuse.Color.Alpha",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Diffuse.Opacity",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Specular.Color.Red",
+					Name = "Specular Color",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Specular.Color.Green",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Specular.Color.Blue",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Specular.Intensity",
+					Default = 3,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Specular.SpreadU",
+					Default = 0.6249171,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "Specular.SpreadV",
+					Default = 0.2,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Dissolve1_1_1_1",
+					Source = "Foreground",
+					Name = "AltReflection",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Ward2_2_1_2_1_1",
+					Source = "MaterialOutput",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 1481.79, 168.768 },
+				Flags = {
+					AllowPan = false,
+					GridSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 841, 104.713 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 16.2007, 0 }
+			},
+			Tools = ordered() {
+				Transform1_2_1_1_1_1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						FlipHoriz = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "FastNoise2_4_2_1_1_1_1",
+							Source = "Output",
+						},
+						EffectMask = Input {
+							SourceOp = "Rectangle1_2_1_1_1_1",
+							Source = "Mask",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -247.5, 18.1813 } },
+				},
+				Blur3_2_1_1_1_1 = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						XBlurSize = Input { Value = 10, },
+						YBlurSize = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Transform1_2_1_1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -137.5, 18.1813 } },
+				},
+				Rectangle1_2_1_1_1_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.75, 0.5 }, },
+						Height = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -247.5, 51.1813 } },
+				},
+				spheremap_clearcoat_2_2_1_2_1_1 = SphereMap {
+					NameSet = true,
+					Inputs = {
+						MapMode = Input { Value = 1, },
+						Rotation = Input { Value = 1, },
+						Image = Input {
+							SourceOp = "Dissolve1_1_1_1",
+							Source = "Output",
+						},
+						MaterialID = Input { Value = 12, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 16.5 } },
+				},
+				reflect_base_2_2_1_2_1_1 = MtlReflect {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["Reflection.FaceOnStrength"] = Input { Value = 1, },
+						["Reflection.Falloff"] = Input { Value = 4, },
+						["Reflection.Color.Material"] = Input {
+							SourceOp = "spheremap_clearcoat_2_2_1_2_1_1",
+							Source = "MaterialOutput",
+						},
+						["Refraction.Nest"] = Input { Value = 0, },
+						MaterialID = Input { Value = 3, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 247.5, 42.5313 } },
+				},
+				Ward2_2_1_2_1_1 = MtlWard {
+					CtrlWShown = false,
+					Inputs = {
+						["Diffuse.Color.Material"] = Input {
+							SourceOp = "reflect_base_2_2_1_2_1_1",
+							Source = "MaterialOutput",
+						},
+						["Specular.Nest"] = Input { Value = 1, },
+						["Specular.Color.Material"] = Input {
+							SourceOp = "spheremap_clearcoat_2_2_1_2_1_1",
+							Source = "MaterialOutput",
+						},
+						["Specular.Intensity"] = Input { Value = 3, },
+						["Specular.SpreadU"] = Input { Value = 0.6249171, },
+						["Specular.SpreadV"] = Input { Value = 0.2, },
+						MaterialID = Input { Value = 15, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 357.5, 9.53125 } },
+				},
+				Dissolve1_1_1_1 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					Inputs = {
+						Background = Input {
+							SourceOp = "Blur3_2_1_1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 16.5 } },
+				},
+				FastNoise2_4_2_1_1_1_1 = FastNoise {
+					CurrentSettings = 4,
+					Inputs = {
+						Width = Input { Value = 1024, },
+						Height = Input { Value = 512, },
+						Depth = Input { Value = 3, },
+						Detail = Input { Value = 0.1346389228886, },
+						Contrast = Input { Value = 0.7916666666667, },
+						XScale = Input { Value = 3.011016, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 1, },
+						Start = Input { Value = { 0.5, 0 }, },
+						End = Input { Value = { 0.5, 1 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0.00352112676056338] = { 0, 0, 0, 1 },
+									[0.193661971830986] = { 0.0504723350046136, 0.0442645082091473, 0.0323886656439073, 1 },
+									[0.345070422535211] = { 0.191794873017532, 0.16820513119476, 0.123076929446848, 1 },
+									[0.457746478873239] = { 0.733333349227905, 0.643137276172638, 0.470588266849518, 1 },
+									[0.507042253521127] = { 1, 1, 1, 1 },
+									[0.563380281690141] = { 0.66184241496431, 0.731142419547732, 0.955285806097881, 1 },
+									[1] = { 0.317879549498858, 0.457669258315195, 0.909803986549377, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -385, 16.5 } },
+				}
+			},
+		}
+	}
+}

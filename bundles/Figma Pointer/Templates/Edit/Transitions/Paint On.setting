@@ -1,0 +1,193 @@
+{
+	Tools = ordered() {
+		PaintOn = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Merge",
+					Source = "Foreground",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Multiply",
+					Source = "BlendClone",
+					Name = "Shadow Blend",
+					Default = 1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Multiply",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 412.253, 148.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 459.889, 198.105, 135.638, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -1.43051e-06, -2.44952 }
+			},
+			Tools = ordered() {
+				White = Background {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 47, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 163.612, 8.68943 } },
+				},
+				Shadow = Shadow {
+					NameSet = true,
+					Inputs = {
+						Softness = Input { Value = 0.05, },
+						Input = Input {
+							SourceOp = "White",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 163.612, 53.8068 } },
+				},
+				Multiply = Merge {
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Shadow",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 163.612, 99.6053 } },
+				},
+				Merge = Merge {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -40.0443, 99.6053 } },
+				},
+				Polygon1 = PolylineMask {
+					DrawMode = "ClickAppend",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						SoftEdge = Input { Value = 0.0013, },
+						BorderWidth = Input { Value = 0.149, },
+						Solid = Input { Value = 0, },
+						WriteLength = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							Value = Polyline {
+								Points = {
+									{ X = -0.417861789464951, Y = -0.687935054302216, RX = -0.0730642923564623, RY = 0.160982003996528 },
+									{ X = -0.566492855548859, Y = -0.12645012140274, LX = 0.00521509751502653, LY = -0.0510440889201419, RX = -0.0278867280904683, RY = 0.27294842028173 },
+									{ X = -0.236169818253584, Y = -0.716136877536774, LX = 0.0232114203163241, LY = -0.275331801580566, RX = -0.0291091607926413, RY = 0.345290274111302 },
+									{ X = -0.545632362365723, Y = 0.17517401278019, LX = -0.00518336992814778, LY = -0.110690198833871, RX = 0.0174058010664617, RY = 0.371698645401901 },
+									{ X = -0.115384615957737, Y = -0.641531348228455, LX = -0.0834419823201881, LY = 0.10208814133071, RX = 0.194390860294509, RY = -0.237829939645895 },
+									{ X = -0.459582775831223, Y = 0.458236664533615, LX = -0.00782267152874536, LY = -0.0788863053039719, RX = 0.0452541482737655, RY = 0.456357210433461 },
+									{ X = 0.0254237279295921, Y = -0.632250607013702, LX = -0.0677966110534589, LY = 0.102088140086065, RX = 0.176612443371542, RY = -0.265943025465378 },
+									{ X = -0.211864411830902, Y = 0.527842223644257, LX = -5.05124108789215e-09, LY = -0.0835266858685044, RX = 2.53267033101913e-08, RY = 0.418799172899646 },
+									{ X = 0.161016955971718, Y = -0.539443135261536, LX = -0.0677966033503162, LY = 0.106728558473963, RX = 0.159655617575383, RY = -0.251337280542559 },
+									{ X = -0.0293350722640753, Y = 0.546403706073761, LX = -0.0365058675704639, LY = -0.106728544506285, RX = 0.124011729671918, RY = 0.362560659160978 },
+									{ X = 0.335723608732224, Y = -0.548723876476288, LX = -0.0625814760135392, LY = 0.0881670747998143, RX = 0.167039809475187, RY = -0.235331799674384 },
+									{ X = 0.174054756760597, Y = 0.551044106483459, LX = -0.0469361167726492, LY = -0.12064962901538, RX = 0.123604470220243, RY = 0.317726188319972 },
+									{ X = 0.4824705797182, Y = -0.469872387647629, LX = -0.0483473597191982, LY = 0.114717496789147, RX = 0.123363729372451, RY = -0.292714603452516 },
+									{ X = 0.377444595098495, Y = 0.611368894577026, LX = -0.0439200504040949, LY = -0.102584173209262, RX = 0.0607115349283067, RY = 0.141804086233583 },
+									{ X = 0.565189063549042, Y = 0.193735495209694, LX = -0.0417209755643873, LY = 0.125290019571643 }
+								}
+							},
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -72.3778, 8.68943 } },
+				}
+			},
+		},
+		AnimCurves1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				EaseIn = Input { Value = FuID { "Sine" }, },
+				EaseOut = Input { Value = FuID { "Sine" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonPolygon1Lookup",
+					Source = "Value",
+				},
+			},
+		},
+		AnimCurvesonPolygon1Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+		}
+	},
+	ActiveTool = "PaintOn"
+}

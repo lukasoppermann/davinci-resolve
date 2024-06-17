@@ -1,0 +1,222 @@
+{
+	Tools = ordered() {
+		Lens_Flare_V08 = HotSpot {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = {
+				PrimaryCenter = Input {
+					SourceOp = "Publish1_1_1_1_2",
+					Source = "Value",
+				},
+				PrimaryStrength = Input { Value = 1.7696335, },
+				HotSpotSize = Input { Value = 0.2789474, },
+				Aspect = Input { Value = 0.2757895, },
+				AspectAngle = Input { Value = 90, },
+				SecondaryStrength = Input { Value = 0.1675393, },
+				LensAberration = Input { Value = 3, },
+				Aberration = Input { Value = 3.0104712, },
+				AmbientLight = Input { Disabled = true, },
+				ShowRed = Input { Value = 0, },
+				ShowGreen = Input { Value = 0, },
+				ShowBlue = Input { Value = 0, },
+				ShowAlpha = Input { Value = 0, },
+				Red = Input {
+					SourceOp = "Lens_Flare_V08Red",
+					Source = "Value",
+				},
+				Green = Input {
+					SourceOp = "Lens_Flare_V08Green",
+					Source = "Value",
+				},
+				Blue = Input {
+					SourceOp = "Lens_Flare_V08Blue",
+					Source = "Value",
+				},
+				Alpha = Input {
+					SourceOp = "Lens_Flare_V08Alpha",
+					Source = "Value",
+				},
+				Mix = Input {
+					SourceOp = "Lens_Flare_V08Mix",
+					Source = "Value",
+				},
+				RadialOn = Input { Value = 1, },
+				RadialLength = Input { Value = 0, },
+				Radial = Input {
+					SourceOp = "Lens_Flare_V08Radial",
+					Source = "Value",
+				},
+				Length = Input {
+					SourceOp = "Lens_Flare_V08Length",
+					Source = "Value",
+				},
+				RadialRepeat = Input { Value = 4, },
+				RadialAngle = Input { Value = 180, },
+				Element3Reflection1 = Input { Value = 1, },
+				Element3Reflection2 = Input { Value = 1, },
+				Element3Reflection3 = Input { Value = 1, },
+				ElementStrength3 = Input { Value = 0.9060773, },
+				ElementSize3 = Input { Value = 0.0942408, },
+				ElementPosition3 = Input { Value = 2, },
+				Input = Input {
+					SourceOp = "FastNoise1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 295, 91, }, },
+		},
+		Publish1_1_1_1_2 = PublishPoint {
+			CtrlWZoom = false,
+			Inputs = {
+				Value = Input { Value = { 0.606744123908341, 0.548824786402397, }, },
+			},
+		},
+		Lens_Flare_V08Red = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.0677246999847839, 0.00130239807904462, }, },
+					[0.360008981755356] = { 0.754926712267411, LH = { 0.191070969298406, 0.675176387394626, }, RH = { 0.438932978581203, 0.792184250080127, }, },
+					[0.622838393234742] = { 0.267584013358491, LH = { 0.522893670033079, 0.275456414797017, }, RH = { 0.661862117710744, 0.264510210011398, }, },
+					[0.737620331979633] = { 0.309121283642467, LH = { 0.698498197091433, 0.296477127344426, }, RH = { 0.866812786180113, 0.350875896168115, }, },
+					[0.983775717431265] = { 0.991935483179986, LH = { 0.787840351951271, 0.987837684953287, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 52, Blue = 52, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V08ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V08ColorChange = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 180, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		Lens_Flare_V08Green = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.0378564801397435, 0.000728009234806065, }, },
+					[0.184231107961647] = { 0.673656775467368, LH = { 0.100248457229997, 0.603820662472454, }, RH = { 0.25159666256715, 0.729674874948742, }, },
+					[0.40398996719038] = { 0.296487213941996, LH = { 0.339122070603267, 0.358556112962346, }, RH = { 0.456410727385574, 0.246328367388944, }, },
+					[0.579058933990755] = { 0.107319299702443, LH = { 0.51979040858491, 0.0748072853619053, }, RH = { 0.734721904629083, 0.192708917531199, }, },
+					[0.980314960629921] = { 0.568548387682606, LH = { 0.843953747637849, 0.568548387682606, }, },
+				},
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 0, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V08ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V08Blue = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.0156059679890836, 0.00030011476957714, }, },
+					[0.065761751695761] = { 0.496700902096916, LH = { 0.0384427287050472, 0.4532004924711, }, RH = { 0.130618140497014, 0.599972511797771, }, },
+					[0.279057509847149] = { 0.371265773421771, LH = { 0.202727097367714, 0.281760896992727, }, RH = { 0.353081369042234, 0.458065990462944, }, },
+					[0.501551358253281] = { 0.647164191198401, LH = { 0.425897765130579, 0.736101633736019, }, RH = { 0.514074088496556, 0.632442622063951, }, },
+					[0.540716624646095] = { 0.152243580977231, LH = { 0.526980343966755, 0.140577045741582, }, RH = { 0.67327529597341, 0.264828671944183, }, },
+					[0.976377952755906] = { 0.233870967741936, LH = { 0.816124951900174, 0.233870967741936, }, },
+				},
+			},
+			SplineColor = { Red = 68, Green = 68, Blue = 255, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V08ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V08Alpha = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.138200348152401, 0.00265769900785716, }, },
+					[0.995967741815313] = { 0.608870967621765, LH = { 0.495306538607479, 0.608870967621765, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V08ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V08Mix = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0.466290859159741] = { 0.0086043438877571, RH = { 0.545969792911487, 0.00842440130151549, }, Flags = { Linear = true, }, },
+					[0.70532766041498] = { 0.00806451612903229, LH = { 0.625648726663234, 0.00824445871527389, }, RH = { 0.782046397265901, 0.334677419434953, }, Flags = { Linear = true, }, },
+					[0.935483870967742] = { 0.987903226046793, LH = { 0.858765134116821, 0.661290322740873, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 255, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V08ColorChange1",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V08ColorChange1 = BezierSpline {
+			SplineColor = { Red = 255, Green = 255, Blue = 64, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		Lens_Flare_V08Radial = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.163333333333333, 0, }, },
+					[0.49] = { 0, LH = { 0.326666666666667, 0, }, RH = { 0.493333333333333, 0.333333333333333, }, Flags = { Linear = true, }, },
+					[0.5] = { 1, LH = { 0.496666666666667, 0.666666666666667, }, RH = { 0.503333333333333, 0.666666666666667, }, Flags = { Linear = true, }, },
+					[0.51] = { 0, LH = { 0.506666666666667, 0.333333333333333, }, RH = { 0.673333333333333, 0, }, Flags = { Linear = true, }, },
+					[1] = { 0, LH = { 0.836666666666667, 0, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 170, Blue = 48, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V08ColorChange2",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V08ColorChange2 = BezierSpline {
+			SplineColor = { Red = 0, Green = 127, Blue = 255, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		Lens_Flare_V08Length = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 1, RH = { 0.333333333333333, 1, }, },
+					[1] = { 1, LH = { 0.666666666666667, 1, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 170, Green = 128, Blue = 255, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V08ColorChange3",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V08ColorChange3 = BezierSpline {
+			SplineColor = { Red = 255, Green = 127, Blue = 0, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+	},
+}

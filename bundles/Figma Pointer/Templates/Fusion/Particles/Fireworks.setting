@@ -1,0 +1,566 @@
+{
+	Tools = ordered() {
+		Canon_1 = pEmitter {
+			ID = 13,
+			NameSet = true,
+			Inputs = {
+				Number = Input {
+					SourceOp = "Canon_1Number",
+					Source = "Value",
+				},
+				Lifespan = Input { Value = 65, },
+				VelocityControls = Input { Value = 1, },
+				Velocity = Input { Value = 3, },
+				Angle = Input { Value = 90, },
+				AngleVariance = Input { Value = 65.4545455, },
+				AngleZVariance = Input { Value = 38.1818182, },
+				Set1 = Input { Value = 1, },
+				Style = Input { Value = FuID { "ParticleStyleBlob", }, },
+				["ParticleStyle.ColorControls"] = Input { Value = 1, },
+				["ParticleStyle.ColorOverLife"] = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				["ParticleStyle.SizeControls"] = Input { Value = 1, },
+				["ParticleStyle.Size"] = Input { Value = 0.0378007, },
+				["ParticleStyle.SizeOverLife"] = Input {
+					SourceOp = "CanonSizeoverLife_1",
+					Source = "Value",
+				},
+				["ParticleStyle.FadeControls"] = Input { Value = 1, },
+				["ParticleStyle.FadeOut"] = Input { Value = 0.9601594, },
+				["ParticleStyle.BlurOverLife"] = Input {
+					SourceOp = "CanonBluroverLife2D_1",
+					Source = "Value",
+				},
+				["SphereRgn.Size"] = Input { Value = 0.05, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 476, 0, }, },
+		},
+		Canon_1Number = BezierSpline {
+			SplineColor = { Red = 207, Green = 233, Blue = 78, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 1, RH = { 0.333333333333333, 0.666666666666667, }, Flags = { Linear = true, }, },
+				[1] = { 0, LH = { 0.666666666666667, 0.333333333333333, }, RH = { 4.33333333333333, 0, }, Flags = { Linear = true, }, },
+				[11] = { 0, LH = { 7.66666666666667, 0, }, RH = { 11.3333333333333, 0.333333333333333, }, Flags = { Linear = true, }, },
+				[12] = { 1, LH = { 11.6666666666667, 0.666666666666667, }, RH = { 12.3333333333333, 0.666666666666667, }, Flags = { Linear = true, }, },
+				[13] = { 0, LH = { 12.6666666666667, 0.333333333333333, }, RH = { 15, 0, }, Flags = { Linear = true, }, },
+				[19] = { 0, LH = { 17, 0, }, RH = { 19.3333333333333, 0.333333333333333, }, Flags = { Linear = true, }, },
+				[20] = { 1, LH = { 19.6666666666667, 0.666666666666667, }, RH = { 20.3333333333333, 0.666666666666667, }, Flags = { Linear = true, }, },
+				[21] = { 0, LH = { 20.6666666666667, 0.333333333333333, }, Flags = { Linear = true, }, },
+			},
+		},
+		CanonSizeoverLife_1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+		},
+		CanonBluroverLife2D_1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+		},
+		CanonFriction_1 = pFriction {
+			ID = 12,
+			NameSet = true,
+			Inputs = {
+				VelocityFriction = Input { Value = 0.03, },
+				SpinFriction = Input { Value = 0.0199336, },
+				Input = Input {
+					SourceOp = "Canon_1",
+					Source = "Output",
+				},
+				SetMode = Input { Value = FuID { "Affect", }, },
+				Set2 = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 476, 33, }, },
+		},
+		Spawn_FireworksSphere_1 = pSpawn {
+			ID = 8,
+			CtrlWZoom = false,
+			NameSet = true,
+			CurrentSettings = 4,
+			CustomData = {
+				Settings = {
+					[1] = {
+						Tools = ordered() {
+							Spawn_FireworksSphere_1 = pSpawn {
+								Inputs = {
+									Number = Input {
+										SourceOp = "Spawn_FireworksSphere_1Number",
+										Source = "Value",
+									},
+									AlwaysFaceCamera = Input { Value = 0, },
+									VelocityControls = Input { Value = 1, },
+									Velocity = Input { Value = 2.185567, },
+									["ParticleStyle.BlurOverLife"] = Input {
+										SourceOp = "Spawn_FireworksSphere_1_1BluroverLife2D",
+										Source = "Value",
+									},
+									["ParticleStyle.FadeOut"] = Input { Value = 0.8406375, },
+									NewSet2 = Input { Value = 1, },
+									["ParticleStyle.Green"] = Input { Value = 0.5, },
+									["ParticleStyle.SizeToVelocity"] = Input { Value = 0.3630137, },
+									["ParticleStyle.Size"] = Input { Value = 0.5, },
+									AngleZVariance = Input { Value = 360, },
+									RotationControls = Input { Value = 1, },
+									["ParticleStyle.Blue"] = Input { Value = 0.5, },
+									StartAge = Input { Value = 1, },
+									["ParticleStyle.SizeControls"] = Input { Value = 1, },
+									AngleVariance = Input { Value = 360, },
+									["ParticleStyle.ColorOverLife"] = Input {
+										Value = Gradient {
+											Colors = {
+												[0] = { 0, 1, 0.940855300434926, 1, },
+												[0.420289855072464] = { 1.50226080985922, 1.07292505031512, 0, 1, },
+												[1] = { 0, 3, 0.54732228840843, 1, },
+											},
+										},
+									},
+									["ParticleStyle.ColorOverLifeControls"] = Input { Value = 1, },
+									["ParticleStyle.FadeControls"] = Input { Value = 1, },
+									["ParticleStyle.SizeOverLife"] = Input {
+										SourceOp = "Spawn_FireworksSphere_1_1SizeoverLife",
+										Source = "Value",
+									},
+									RotationMode = Input { Value = 1, },
+									Lifespan = Input { Value = 75, },
+									["ParticleStyle.ColorControls"] = Input { Value = 1, },
+									Style = Input { Value = FuID { "ParticleStyleLine", }, },
+									["ParticleStyle.Red"] = Input { Value = 0.5, },
+									Input = Input {
+										SourceOp = "CanonFriction_1",
+										Source = "Output",
+									},
+									["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+									Rotation = Input { Value = 1, },
+									VelocityTransfer = Input { Value = 0, },
+								},
+								NameSet = true,
+								CtrlWZoom = false,
+								ID = 5,
+								ViewInfo = OperatorInfo { Pos = { 605, 214.5, }, },
+								CustomData = {
+								},
+							},
+							Spawn_FireworksSphere_1Number = BezierSpline {
+								SplineColor = { Green = 206, Blue = 78, Red = 233, },
+								NameSet = true,
+								KeyFrames = {
+									[65] = { 1000, RH = { 65.3333333333333, 666.666666666667, }, Flags = { Linear = true, }, },
+									[66] = { 0, LH = { 65.6666666666667, 333.333333333333, }, Flags = { Linear = true, }, },
+								},
+							},
+							Spawn_FireworksSphere_1_1SizeoverLife = LUTBezier {
+								SplineColor = { Green = 128, Blue = 64, Red = 192, },
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+								NameSet = true,
+							},
+							Spawn_FireworksSphere_1_1BluroverLife2D = LUTBezier {
+								SplineColor = { Green = 128, Blue = 64, Red = 192, },
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+								NameSet = true,
+							},
+						},
+					},
+					[2] = {
+						Tools = ordered() {
+							Spawn_FireworksSphere_1 = pSpawn {
+								Inputs = {
+									Number = Input { Value = 500, },
+									AlwaysFaceCamera = Input { Value = 0, },
+									VelocityControls = Input { Value = 1, },
+									Velocity = Input {
+										SourceOp = "Shake1",
+										Source = "X",
+									},
+									["ParticleStyle.BlurOverLife"] = Input {
+										SourceOp = "Spawn_FireworksSphere_1_2BluroverLife2D",
+										Source = "Value",
+									},
+									["ParticleStyle.FadeOut"] = Input { Value = 0.8406375, },
+									NewSet2 = Input { Value = 1, },
+									["ParticleStyle.Green"] = Input { Value = 0.5, },
+									["ParticleStyle.SizeToVelocity"] = Input { Value = 0.3630137, },
+									["ParticleStyle.Size"] = Input { Value = 0.5, },
+									AngleZVariance = Input { Value = 360, },
+									RotationControls = Input { Value = 1, },
+									["ParticleStyle.Blue"] = Input { Value = 0.5, },
+									StartAge = Input { Value = 1, },
+									["ParticleStyle.SizeControls"] = Input { Value = 1, },
+									AngleVariance = Input { Value = 360, },
+									["ParticleStyle.ColorOverLife"] = Input {
+										Value = Gradient {
+											Colors = {
+												[0] = { 0, 1, 0.940855300434926, 1, },
+												[0.420289855072464] = { 1.50226080985922, 1.07292505031512, 0, 1, },
+												[1] = { 0, 3, 0.54732228840843, 1, },
+											},
+										},
+									},
+									["ParticleStyle.ColorOverLifeControls"] = Input { Value = 1, },
+									["ParticleStyle.FadeControls"] = Input { Value = 1, },
+									["ParticleStyle.SizeOverLife"] = Input {
+										SourceOp = "Spawn_FireworksSphere_1_2SizeoverLife",
+										Source = "Value",
+									},
+									RotationMode = Input { Value = 1, },
+									Lifespan = Input { Value = 75, },
+									["ParticleStyle.ColorControls"] = Input { Value = 1, },
+									Style = Input { Value = FuID { "ParticleStyleLine", }, },
+									["ParticleStyle.Red"] = Input { Value = 0.5, },
+									Input = Input {
+										SourceOp = "CanonFriction_1",
+										Source = "Output",
+									},
+									["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+									Rotation = Input { Value = 1, },
+									VelocityTransfer = Input { Value = 0, },
+								},
+								NameSet = true,
+								CtrlWZoom = false,
+								ID = 5,
+								ViewInfo = OperatorInfo { Pos = { 605, 214.5, }, },
+								CustomData = {
+								},
+							},
+							Shake1 = Shake {
+								Inputs = {
+									XMaximum = Input { Value = 2, },
+									XMinimum = Input { Value = 1, },
+								},
+								CtrlWZoom = false,
+							},
+							Spawn_FireworksSphere_1_2SizeoverLife = LUTBezier {
+								SplineColor = { Green = 128, Blue = 64, Red = 192, },
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+								NameSet = true,
+							},
+							Spawn_FireworksSphere_1_2BluroverLife2D = LUTBezier {
+								SplineColor = { Green = 128, Blue = 64, Red = 192, },
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+								NameSet = true,
+							},
+						},
+					},
+					[4] = {
+						Tools = ordered() {
+							Spawn_FireworksSphere_1 = pSpawn {
+								NameSet = true,
+								Inputs = {
+									Number = Input { Value = 500, },
+									AlwaysFaceCamera = Input { Value = 0, },
+									VelocityControls = Input { Value = 1, },
+									Velocity = Input {
+										SourceOp = "Shake1",
+										Source = "X",
+									},
+									["ParticleStyle.BlurOverLife"] = Input {
+										SourceOp = "Spawn_FireworksSphere_1BluroverLife2D",
+										Source = "Value",
+									},
+									["ParticleStyle.FadeOut"] = Input { Value = 0.8406375, },
+									NewSet2 = Input { Value = 1, },
+									["ParticleStyle.Green"] = Input { Value = 0.5, },
+									["ParticleStyle.SizeToVelocity"] = Input { Value = 0.3630137, },
+									["ParticleStyle.Size"] = Input { Value = 0.5, },
+									AngleZVariance = Input { Value = 360, },
+									RotationControls = Input { Value = 1, },
+									["ParticleStyle.Blue"] = Input { Value = 0.5, },
+									StartAge = Input { Value = 1, },
+									["ParticleStyle.SizeControls"] = Input { Value = 1, },
+									AngleVariance = Input { Value = 360, },
+									["ParticleStyle.ColorOverLife"] = Input {
+										Value = Gradient {
+											Colors = {
+												[0] = { 0, 1, 0.940855300434926, 1, },
+												[0.420289855072464] = { 1.50226080985922, 1.07292505031512, 0, 1, },
+												[1] = { 0, 3, 0.54732228840843, 1, },
+											},
+										},
+									},
+									["ParticleStyle.ColorOverLifeControls"] = Input { Value = 1, },
+									["ParticleStyle.FadeControls"] = Input { Value = 1, },
+									["ParticleStyle.SizeOverLife"] = Input {
+										SourceOp = "Spawn_FireworksSphere_1SizeoverLife",
+										Source = "Value",
+									},
+									RotationMode = Input { Value = 1, },
+									Lifespan = Input { Value = 75, },
+									["ParticleStyle.ColorControls"] = Input { Value = 1, },
+									Style = Input { Value = FuID { "ParticleStyleLine", }, },
+									["ParticleStyle.Red"] = Input { Value = 0.5, },
+									Input = Input {
+										SourceOp = "CanonFriction_1",
+										Source = "Output",
+									},
+									["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+									Rotation = Input { Value = 1, },
+									VelocityTransfer = Input { Value = 0, },
+								},
+								Name = "Spawn_FireworksSphere_1",
+								CtrlWZoom = false,
+								ID = 5,
+								ViewInfo = OperatorInfo { Pos = { 605, 214.5, }, },
+								CustomData = {
+								},
+							},
+							Shake1 = Shake {
+								Inputs = {
+									XMaximum = Input { Value = 2, },
+									XMinimum = Input { Value = 1, },
+								},
+								Name = "Shake1",
+								CtrlWZoom = false,
+							},
+							Spawn_FireworksSphere_1SizeoverLife = LUTBezier {
+								Name = "Spawn_FireworksSphere_1SizeoverLife",
+								NameSet = true,
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+								SplineColor = { Green = 128, Blue = 64, Red = 192, },
+							},
+							Spawn_FireworksSphere_1BluroverLife2D = LUTBezier {
+								Name = "Spawn_FireworksSphere_1BluroverLife2D",
+								NameSet = true,
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+								SplineColor = { Green = 128, Blue = 64, Red = 192, },
+							},
+						},
+					},
+				},
+			},
+			Inputs = {
+				Number = Input { Value = 1500, },
+				Lifespan = Input { Value = 75, },
+				VelocityControls = Input { Value = 1, },
+				VelocityTransfer = Input { Value = 0, },
+				Velocity = Input {
+					SourceOp = "Shake1_1",
+					Source = "X",
+				},
+				AngleVariance = Input { Value = 360, },
+				AngleZVariance = Input { Value = 360, },
+				RotationControls = Input { Value = 1, },
+				RotationMode = Input { Value = 1, },
+				AlwaysFaceCamera = Input { Value = 0, },
+				Rotation = Input { Value = 1, },
+				NewSet2 = Input { Value = 1, },
+				Input = Input {
+					SourceOp = "CanonFriction_1",
+					Source = "Output",
+				},
+				Style = Input { Value = FuID { "ParticleStyleLine", }, },
+				StartAge = Input { Value = 1, },
+				["ParticleStyle.ColorControls"] = Input { Value = 1, },
+				["ParticleStyle.Red"] = Input { Value = 2, },
+				["ParticleStyle.Green"] = Input { Value = 2, },
+				["ParticleStyle.Blue"] = Input { Value = 2, },
+				["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+				["ParticleStyle.RedLow"] = Input { Value = -0.4266667, },
+				["ParticleStyle.RedHigh"] = Input { Value = 0.4133333, },
+				["ParticleStyle.GreenLow"] = Input { Value = -0.4666667, },
+				["ParticleStyle.GreenHigh"] = Input { Value = 0.4533333, },
+				["ParticleStyle.BlueLow"] = Input { Value = -0.5466667, },
+				["ParticleStyle.BlueHigh"] = Input { Value = 0.4533333, },
+				["ParticleStyle.ColorOverLifeControls"] = Input { Value = 1, },
+				["ParticleStyle.ColorOverLife"] = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 1, 0.940855300434926, 1, },
+							[0.420289855072464] = { 1.50226080985922, 1.07292505031512, 0, 1, },
+							[1] = { 0, 3, 0.54732228840843, 1, },
+						},
+					},
+				},
+				["ParticleStyle.SizeControls"] = Input { Value = 1, },
+				["ParticleStyle.Size"] = Input { Value = 0.5, },
+				["ParticleStyle.SizeToVelocity"] = Input { Value = 0.3630137, },
+				["ParticleStyle.SizeOverLife"] = Input {
+					SourceOp = "Spawn_FireworksSphere_1SizeoverLife",
+					Source = "Value",
+				},
+				["ParticleStyle.FadeControls"] = Input { Value = 1, },
+				["ParticleStyle.FadeIn"] = Input { Value = 0.425, },
+				["ParticleStyle.FadeOut"] = Input { Value = 0.625, },
+				["ParticleStyle.BlurOverLife"] = Input {
+					SourceOp = "Spawn_FireworksSphere_1BluroverLife2D",
+					Source = "Value",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 476, 66, }, },
+		},
+		Shake1_1 = Shake {
+			CtrlWZoom = false,
+			Inputs = {
+				XMinimum = Input { Value = 1, },
+				XMaximum = Input { Value = 2, },
+			},
+		},
+		Spawn_FireworksSphere_1SizeoverLife = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			NameSet = true,
+		},
+		Spawn_FireworksSphere_1BluroverLife2D = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			NameSet = true,
+		},
+		Turb_FireworksSphere_1 = pTurbulence {
+			ID = 6,
+			NameSet = true,
+			Inputs = {
+				StrengthOverLifeLUT = Input {
+					SourceOp = "Turb_FireworksSphere_1StrengthoverLifeLUT",
+					Source = "Value",
+				},
+				Input = Input {
+					SourceOp = "Spawn_FireworksSphere_1",
+					Source = "Output",
+				},
+				StartAge = Input { Value = 0.8275862, },
+				SetMode = Input { Value = FuID { "Affect", }, },
+				Set1 = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 476, 132, }, },
+		},
+		Turb_FireworksSphere_1StrengthoverLifeLUT = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			NameSet = true,
+		},
+		FireworksSphere_Friction_1 = pFriction {
+			ID = 4,
+			NameSet = true,
+			Inputs = {
+				Input = Input {
+					SourceOp = "Turb_FireworksSphere_1",
+					Source = "Output",
+				},
+				StartAge = Input { Value = 0.1340996, },
+				SetMode = Input { Value = FuID { "Affect", }, },
+				Set1 = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 476, 165, }, },
+		},
+		pRender1_1 = pRender {
+			Inputs = {
+				["_MotionBlurWarning"] = Input { Disabled = true, },
+				Width = Input { Value = 2048, },
+				Height = Input { Value = 1556, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				OutputMode = Input { Disabled = true, },
+				IntegrationMethod = Input { Value = FuID { "RK4", }, },
+				["MaterialID.MaterialID"] = Input { Value = 2, },
+				["ObjectID.ObjectID"] = Input { Value = 2, },
+				Input = Input {
+					SourceOp = "FireworksSphere_Friction_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 476, 198, }, },
+		},
+		Camera3D1 = Camera3D {
+			Inputs = {
+				["Transform3DOp.Translate.X"] = Input { Value = -2.76227205476594, },
+				["Transform3DOp.Translate.Y"] = Input { Value = 1.85991239799241, },
+				["Transform3DOp.Translate.Z"] = Input { Value = 14.2058659751547, },
+				["Transform3DOp.Rotate.X"] = Input { Value = 14.6000003814697, },
+				["Transform3DOp.Rotate.Y"] = Input { Value = -8.59999465942383, },
+				FLength = Input { Value = 18.2123442718302, },
+				["Stereo.Mode"] = Input { Value = FuID { "OffAxis", }, },
+				["SurfacePlaneInputs.ObjectID.ObjectID"] = Input { Value = 1, },
+				["MtlStdInputs.MaterialID"] = Input { Value = 1, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 476, 231, }, },
+		},
+		Renderer3D1 = Renderer3D {
+			Inputs = {
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				SceneInput = Input {
+					SourceOp = "Merge3D1",
+					Source = "Output",
+				},
+				RendererType = Input { Value = FuID { "RendererOpenGL", }, },
+				["RendererOpenGL.Channels.Nest"] = Input { Value = 1, },
+				["RendererOpenGL.Channels.RGBASS"] = Input { Value = 1, },
+				["RendererOpenGL.Supersampling"] = Input { Value = 1, },
+				["RendererOpenGL.SSRateX"] = Input { Value = 3, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 696, 231, }, },
+		},
+		Merge3D1 = Merge3D {
+			Inputs = {
+				SceneInput1 = Input {
+					SourceOp = "pRender1_1",
+					Source = "Output",
+				},
+				SceneInput2 = Input {
+					SourceOp = "Camera3D1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 586, 231, }, },
+		},
+	},
+	ActiveTool = "Renderer3D1",
+}

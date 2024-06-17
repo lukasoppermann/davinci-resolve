@@ -1,0 +1,263 @@
+{
+	Tools = ordered() {
+		Concrete = GroupOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Diffuse.Color.Red",
+					Name = "Diffuse Color",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Diffuse.Color.Green",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Diffuse.Color.Blue",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Diffuse.Color.Alpha",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Diffuse.Opacity",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Specular.Color.Red",
+					Name = "Specular Color",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Specular.Color.Green",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Specular.Color.Blue",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Specular.Intensity",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Specular.SpreadU",
+					Default = 0.4,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Ward3_3",
+					Source = "Specular.SpreadV",
+					Default = 0.4,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Ward3_3",
+					Source = "MaterialOutput",
+				},
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0, }, },
+			Tools = ordered() {
+				Background6 = Background {
+					Inputs = {
+						Width = Input { Value = 1024, },
+						Height = Input { Value = 512, },
+						TopLeftRed = Input { Value = 0.5, },
+						TopLeftGreen = Input { Value = 0.5, },
+						TopLeftBlue = Input { Value = 0.5, },
+						TopLeftAlpha = Input { Value = 0.25, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3685, -247.5, }, },
+				},
+				LumaKeyer1_4 = LumaKeyer {
+					Inputs = {
+						Channel = Input { Value = 2, },
+						High = Input { Value = 0.8609272, },
+						Low = Input { Value = 0.2119205, },
+						Input = Input {
+							SourceOp = "FastNoise2_4_2_2_3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3575, -82.5, }, },
+				},
+				BrightnessContrast10 = BrightnessContrast {
+					Inputs = {
+						Alpha = Input { Value = 1, },
+						Gamma = Input { Value = 0.1263158, },
+						Brightness = Input { Value = 0.375, },
+						Input = Input {
+							SourceOp = "Blur6",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3465, -115.5, }, },
+				},
+				Blur6 = Blur {
+					Inputs = {
+						Filter = Input { Value = FuID { "Multi-box", }, },
+						XBlurSize = Input { Value = 2.617801, },
+						Input = Input {
+							SourceOp = "LumaKeyer2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3465, -148.5, }, },
+				},
+				MatteControl2 = MatteControl {
+					Inputs = {
+						Blend = Input { Value = 0.6020942, },
+						MatteCombine = Input { Value = 4, },
+						CombineOp = Input { Value = 3, },
+						Background = Input {
+							SourceOp = "LumaKeyer1_4",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BrightnessContrast10",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3465, -82.5, }, },
+				},
+				LumaKeyer2 = LumaKeyer {
+					Inputs = {
+						High = Input { Value = 0.6688742, },
+						Low = Input { Value = 0.2847682, },
+						Input = Input {
+							SourceOp = "RankFilter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3465, -181.5, }, },
+				},
+				Filter1 = Filter {
+					Inputs = {
+						FilterType = Input { Value = 6, },
+						Power = Input { Value = 10, },
+						Animated = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Background6",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3465, -247.5, }, },
+				},
+				RankFilter1 = RankFilter {
+					Inputs = {
+						Size = Input { Value = 2, },
+						Rank = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Filter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3465, -214.5, }, },
+				},
+				BumpMap4_3 = BumpMap {
+					Inputs = {
+						Input = Input {
+							SourceOp = "MatteControl2",
+							Source = "Output",
+						},
+						SourceChannel = Input { Value = FuID { "Alpha", }, },
+						HeightScale = Input { Value = 6.02103, },
+						MaterialID = Input { Value = 19, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -3465, -49.5, }, },
+				},
+				FastNoise2_4_2_2_3 = FastNoise {
+					CtrlWZoom = false,
+					Inputs = {
+						Width = Input { Value = 1024, },
+						Height = Input { Value = 512, },
+						Detail = Input { Value = 3.664922, },
+						XScale = Input { Value = 16.64921, },
+						YScale = Input { Value = 20, },
+						Type = Input { Value = 1, },
+						Start = Input { Value = { 0.5, 0.495081967213115, }, },
+						End = Input { Value = { 0.89386054477784, 0.49109054378973, }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.3933333333333, 0.3933333333333, 0.3933333333333, 1, },
+									[0.125490196078431] = { 0.6066666666667, 0.6066666666667, 0.6066666666667, 1, },
+									[0.231372549019608] = { 0.546666666666667, 0.546666666666667, 0.546666666666667, 1, },
+									[0.384313725490196] = { 0.58, 0.58, 0.58, 1, },
+									[0.498039215686275] = { 0.58, 0.58, 0.58, 1, },
+									[0.725490196078431] = { 0.6533333333333, 0.6533333333333, 0.6533333333333, 1, },
+									[1] = { 0.726666666666667, 0.726666666666667, 0.726666666666667, 1, },
+								},
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3685, -49.5, }, },
+				},
+				LumaKeyer1_1_3 = LumaKeyer {
+					Inputs = {
+						Channel = Input { Value = 2, },
+						High = Input { Value = 0.6622517, },
+						Low = Input { Value = 0.3642384, },
+						Invert = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "FastNoise2_4_2_2_3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -3575, -49.5, }, },
+				},
+				Ward3_3 = MtlWard {
+					CtrlWZoom = false,
+					Inputs = {
+						["Diffuse.Color.Material"] = Input {
+							SourceOp = "FastNoise2_4_2_2_3",
+							Source = "Output",
+						},
+						["Specular.Nest"] = Input { Value = 1, },
+						["Specular.Color.Material"] = Input {
+							SourceOp = "LumaKeyer1_1_3",
+							Source = "Output",
+						},
+						["Specular.Intensity.Material"] = Input {
+							SourceOp = "LumaKeyer1_1_3",
+							Source = "Output",
+						},
+						["Specular.SpreadU"] = Input { Value = 0.4, },
+						["Specular.SpreadV"] = Input { Value = 0.4, },
+						["Bumpmap.Material"] = Input {
+							SourceOp = "BumpMap4_3",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 18, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -3465, 16.5, }, },
+				},
+			},
+		},
+	},
+	ActiveTool = "Concrete",
+}

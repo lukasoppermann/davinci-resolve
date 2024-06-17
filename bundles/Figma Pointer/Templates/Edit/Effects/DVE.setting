@@ -1,0 +1,2349 @@
+{
+	Tools = ordered() {
+		DVE = GroupOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Settings = {
+					[2] = {
+						Tools = ordered() {
+							DVE = GroupOperator {
+								CtrlWZoom = false,
+								CustomData = {
+								},
+								Inputs = ordered() {
+									PositionNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PositionNest",
+										Page = "Controls",
+									},
+									Input8 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Center",
+										Name = "Position",
+									},
+									Input9 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZMove",
+										Name = "Z Position",
+										Default = 1,
+									},
+									PivotNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PivotNest",
+										Page = "Controls",
+									},
+									Input10 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Pivot",
+									},
+									Input11 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZPivot",
+									},
+									RotationNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Rotation",
+									},
+									Input12 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "RotationOrder",
+										Name = "Order",
+										Default = 5,
+									},
+									Input13 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "XRotation",
+										Name = "X",
+										Default = 0,
+									},
+									Input14 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "YRotation",
+										Name = "Y",
+										Default = 0,
+									},
+									Input15 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZRotation",
+										Name = "Z",
+										Default = 0,
+									},
+									Input16 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Perspective",
+										Default = 1,
+									},
+									Border = InstanceInput {
+										SourceOp = "Border",
+										Source = "Border",
+										Page = "Controls",
+									},
+									Input1 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Width",
+										Name = "Crop Width",
+										Default = 1,
+									},
+									Input2 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Height",
+										Name = "Crop Height",
+										Default = 1,
+									},
+									Input3 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "CornerRadius",
+										Default = 0,
+									},
+									Input4 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftRed",
+										Name = "Color",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input5 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftGreen",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input6 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftBlue",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									MainInput1 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "Background",
+									},
+									Input7 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "BlendClone",
+										Name = "Border Blend",
+										Default = 1,
+									},
+									DropShadow = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "DropShadow",
+										Page = "Controls",
+									},
+									Input20 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowStrength",
+										Default = 0.5,
+									},
+									Input21 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowAngle",
+										Default = 37.5,
+									},
+									Input22 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "ShadowDistance",
+										MaxScale = 0.2000000029802,
+										Default = 0.0500000007450581,
+									},
+									Input23 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowBlur",
+										Default = 0.550000011920929,
+									},
+									Input24 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorRed",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input25 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorGreen",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input26 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorBlue",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input17 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "MotionBlur",
+										Default = 0,
+									},
+									Input18 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Quality",
+										Default = 2,
+									},
+									Input19 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ShutterAngle",
+										Default = 180,
+									}
+								},
+								Outputs = {
+									MainOutput1 = InstanceOutput {
+										SourceOp = "DropShadow",
+										Source = "Output",
+									}
+								},
+								ViewInfo = GroupInfo {
+									Pos = { 480, 81.3031 },
+									Flags = {
+										AllowPan = false,
+										ConnectedSnap = true,
+										AutoSnap = true,
+										RemoveRouters = true
+									},
+									Size = { 516.602, 143.298, 258.301, 24.2424 },
+									Direction = "Horizontal",
+									PipeStyle = "Direct",
+									Scale = 1,
+									Offset = { 0, 0 }
+								},
+								Tools = ordered() {
+									Rectangle1_1 = RectangleMask {
+										CtrlWShown = false,
+										Inputs = {
+											Filter = Input { Value = FuID { "Fast Gaussian" }, },
+											BorderWidth = Input { Value = -0.025, },
+											Invert = Input { Value = 1, },
+											MaskWidth = Input { Value = 3840, },
+											MaskHeight = Input { Value = 2160, },
+											PixelAspect = Input { Value = { 1, 1 }, },
+											ClippingMode = Input { Value = FuID { "None" }, },
+											Width = Input { Value = 1, },
+											Height = Input { Value = 1, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 7.55197 } },
+									},
+									Border = Background {
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Rectangle1_1",
+												Source = "Mask",
+											},
+											GlobalOut = Input { Value = 119, },
+											Width = Input { Value = 1920, },
+											Height = Input { Value = 1080, },
+											UseFrameFormatSettings = Input { Value = 1, },
+											["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+											TopLeftRed = Input { Value = 0.543, },
+											TopLeftGreen = Input { Value = 0.543, },
+											TopLeftBlue = Input { Value = 0.543, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 49.2393 } },
+										UserControls = ordered() {
+											Border = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 8,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Border",
+											}
+										}
+									},
+									Instance_Rectangle1 = RectangleMask {
+										CtrlWShown = false,
+										SourceOp = "Rectangle1_1",
+										Inputs = {
+											EffectMask = Input { },
+											SettingsNest = Input { },
+											BorderWidth = Input { },
+											["ShapeRasterizer.Nest"] = Input { },
+											CommentsNest = Input { },
+											FrameRenderScriptNest = Input { },
+											StartRenderScripts = Input { },
+											EndRenderScripts = Input { },
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 47.4969 } },
+									},
+									ChannelBooleans1 = ChannelBoolean {
+										CtrlWShown = false,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Instance_Rectangle1",
+												Source = "Mask",
+											},
+											ApplyMaskInverted = Input { Value = 1, },
+											MultiplyByMask = Input { Value = 1, },
+											Background = Input {
+												SourceOp = "Merge1_1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 85.9632 } },
+									},
+									Merge1_1 = Merge {
+										CtrlWShown = false,
+										Inputs = {
+											Background = Input {
+												SourceOp = "MediaIn1",
+												Source = "Output",
+											},
+											Foreground = Input {
+												SourceOp = "Border",
+												Source = "Output",
+											},
+											PerformDepthMerge = Input { Value = 0, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 85.9632 } },
+									},
+									DVE1 = DVE {
+										CtrlWShown = false,
+										Inputs = {
+											Center = Input { Value = { 0.263743526510481, 0.736 }, },
+											ZMove = Input { Value = 2.13, },
+											AlphaMode = Input { Value = 2, },
+											Input = Input {
+												SourceOp = "ChannelBooleans1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { 77, 85.9632 } },
+										UserControls = ordered() {
+											PositionNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 1,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Position"
+											},
+											PivotNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Pivot"
+											},
+											MotionBlurNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 5,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Motion Blur"
+											}
+										}
+									},
+									DropShadow = ofx.com.blackmagicdesign.resolvefx.dropshadow {
+										CtrlWZoom = false,
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											Source = Input {
+												SourceOp = "DVE1",
+												Source = "Output",
+											},
+											shadowStrength = Input { Value = 0.5, },
+											shadowAngle = Input { Value = 37.5, },
+											ShadowDistance = Input { Value = 0.0500000007450581, },
+											shadowBlur = Input { Value = 0.550000011920929, },
+											shadowColorRed = Input { Value = 0, },
+											shadowColorGreen = Input { Value = 0, },
+											shadowColorBlue = Input { Value = 0, },
+											blendGroup = Input { Value = 0, },
+											blendIn = Input { Value = 1, },
+											blend = Input { Value = 0, },
+											ignoreContentShape = Input { Value = 0, },
+											legacyIsProcessRGBOnly = Input { Value = 0, },
+											refreshTrigger = Input { Value = 1, },
+											resolvefxVersion = Input { Value = "1.0", },
+										},
+										ViewInfo = OperatorInfo { Pos = { 195, 85.9632 } },
+										UserControls = ordered() {
+											DropShadow = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 7,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Drop Shadow",
+											}
+										}
+									}
+								},
+							}
+						}
+					},
+					[3] = {
+						Tools = ordered() {
+							DVE = GroupOperator {
+								CtrlWZoom = false,
+								CustomData = {
+								},
+								Inputs = ordered() {
+									PositionNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PositionNest",
+										Page = "Controls",
+									},
+									Input8 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Center",
+										Name = "Position",
+									},
+									Input9 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZMove",
+										Name = "Z Position",
+										Default = 1,
+									},
+									PivotNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PivotNest",
+										Page = "Controls",
+									},
+									Input10 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Pivot",
+									},
+									Input11 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZPivot",
+									},
+									RotationNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Rotation",
+									},
+									Input12 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "RotationOrder",
+										Name = "Order",
+										Default = 5,
+									},
+									Input13 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "XRotation",
+										Name = "X",
+										Default = 0,
+									},
+									Input14 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "YRotation",
+										Name = "Y",
+										Default = 0,
+									},
+									Input15 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZRotation",
+										Name = "Z",
+										Default = 0,
+									},
+									Input16 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Perspective",
+										Default = 1,
+									},
+									Border = InstanceInput {
+										SourceOp = "Border",
+										Source = "Border",
+										Page = "Controls",
+									},
+									Input1 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Width",
+										Name = "Crop Width",
+										Default = 1,
+									},
+									Input2 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Height",
+										Name = "Crop Height",
+										Default = 1,
+									},
+									Input3 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "CornerRadius",
+										Default = 0,
+									},
+									Input4 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftRed",
+										Name = "Color",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input5 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftGreen",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input6 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftBlue",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									MainInput1 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "Background",
+									},
+									Input7 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "BlendClone",
+										Name = "Border Blend",
+										Default = 1,
+									},
+									DropShadow = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "DropShadow",
+										Page = "Controls",
+									},
+									Input20 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowStrength",
+										Default = 0.5,
+									},
+									Input21 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowAngle",
+										Default = 37.5,
+									},
+									Input22 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "ShadowDistance",
+										MaxScale = 0.2000000029802,
+										Default = 0.0500000007450581,
+									},
+									Input23 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowBlur",
+										Default = 0.550000011920929,
+									},
+									Input24 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorRed",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input25 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorGreen",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input26 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorBlue",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input17 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "MotionBlur",
+										Default = 0,
+									},
+									Input18 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Quality",
+										Default = 2,
+									},
+									Input19 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ShutterAngle",
+										Default = 180,
+									}
+								},
+								Outputs = {
+									MainOutput1 = InstanceOutput {
+										SourceOp = "DropShadow",
+										Source = "Output",
+									}
+								},
+								ViewInfo = GroupInfo {
+									Pos = { 480, 81.3031 },
+									Flags = {
+										AllowPan = false,
+										ConnectedSnap = true,
+										AutoSnap = true,
+										RemoveRouters = true
+									},
+									Size = { 516.602, 143.298, 258.301, 24.2424 },
+									Direction = "Horizontal",
+									PipeStyle = "Direct",
+									Scale = 1,
+									Offset = { 0, 0 }
+								},
+								Tools = ordered() {
+									Rectangle1_1 = RectangleMask {
+										CtrlWShown = false,
+										Inputs = {
+											Filter = Input { Value = FuID { "Fast Gaussian" }, },
+											BorderWidth = Input { Value = -0.025, },
+											Invert = Input { Value = 1, },
+											MaskWidth = Input { Value = 3840, },
+											MaskHeight = Input { Value = 2160, },
+											PixelAspect = Input { Value = { 1, 1 }, },
+											ClippingMode = Input { Value = FuID { "None" }, },
+											Width = Input { Value = 1, },
+											Height = Input { Value = 1, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 7.55197 } },
+									},
+									Border = Background {
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Rectangle1_1",
+												Source = "Mask",
+											},
+											GlobalOut = Input { Value = 119, },
+											Width = Input { Value = 1920, },
+											Height = Input { Value = 1080, },
+											UseFrameFormatSettings = Input { Value = 1, },
+											["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+											TopLeftRed = Input { Value = 0.543, },
+											TopLeftGreen = Input { Value = 0.543, },
+											TopLeftBlue = Input { Value = 0.543, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 49.2393 } },
+										UserControls = ordered() {
+											Border = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 8,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Border",
+											}
+										}
+									},
+									Instance_Rectangle1 = RectangleMask {
+										CtrlWShown = false,
+										SourceOp = "Rectangle1_1",
+										Inputs = {
+											EffectMask = Input { },
+											SettingsNest = Input { },
+											BorderWidth = Input { },
+											["ShapeRasterizer.Nest"] = Input { },
+											CommentsNest = Input { },
+											FrameRenderScriptNest = Input { },
+											StartRenderScripts = Input { },
+											EndRenderScripts = Input { },
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 47.4969 } },
+									},
+									ChannelBooleans1 = ChannelBoolean {
+										CtrlWShown = false,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Instance_Rectangle1",
+												Source = "Mask",
+											},
+											ApplyMaskInverted = Input { Value = 1, },
+											MultiplyByMask = Input { Value = 1, },
+											Background = Input {
+												SourceOp = "Merge1_1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 85.9632 } },
+									},
+									Merge1_1 = Merge {
+										CtrlWShown = false,
+										Inputs = {
+											Background = Input {
+												SourceOp = "MediaIn1",
+												Source = "Output",
+											},
+											Foreground = Input {
+												SourceOp = "Border",
+												Source = "Output",
+											},
+											PerformDepthMerge = Input { Value = 0, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 85.9632 } },
+									},
+									DVE1 = DVE {
+										CtrlWShown = false,
+										Inputs = {
+											Center = Input { Value = { 0.263743526510481, 0.262315789473684 }, },
+											ZMove = Input { Value = 2.13, },
+											AlphaMode = Input { Value = 2, },
+											Input = Input {
+												SourceOp = "ChannelBooleans1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { 77, 85.9632 } },
+										UserControls = ordered() {
+											PositionNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 1,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Position"
+											},
+											PivotNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Pivot"
+											},
+											MotionBlurNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 5,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Motion Blur"
+											}
+										}
+									},
+									DropShadow = ofx.com.blackmagicdesign.resolvefx.dropshadow {
+										CtrlWZoom = false,
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											Source = Input {
+												SourceOp = "DVE1",
+												Source = "Output",
+											},
+											shadowStrength = Input { Value = 0.5, },
+											shadowAngle = Input { Value = 37.5, },
+											ShadowDistance = Input { Value = 0.0500000007450581, },
+											shadowBlur = Input { Value = 0.550000011920929, },
+											shadowColorRed = Input { Value = 0, },
+											shadowColorGreen = Input { Value = 0, },
+											shadowColorBlue = Input { Value = 0, },
+											blendGroup = Input { Value = 0, },
+											blendIn = Input { Value = 1, },
+											blend = Input { Value = 0, },
+											ignoreContentShape = Input { Value = 0, },
+											legacyIsProcessRGBOnly = Input { Value = 0, },
+											refreshTrigger = Input { Value = 1, },
+											resolvefxVersion = Input { Value = "1.0", },
+										},
+										ViewInfo = OperatorInfo { Pos = { 195, 85.9632 } },
+										UserControls = ordered() {
+											DropShadow = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 7,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Drop Shadow",
+											}
+										}
+									}
+								},
+							}
+						}
+					},
+					[4] = {
+						Tools = ordered() {
+							DVE = GroupOperator {
+								CtrlWZoom = false,
+								CustomData = {
+								},
+								Inputs = ordered() {
+									PositionNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PositionNest",
+										Page = "Controls",
+									},
+									Input8 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Center",
+										Name = "Position",
+									},
+									Input9 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZMove",
+										Name = "Z Position",
+										Default = 1,
+									},
+									PivotNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PivotNest",
+										Page = "Controls",
+									},
+									Input10 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Pivot",
+									},
+									Input11 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZPivot",
+									},
+									RotationNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Rotation",
+									},
+									Input12 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "RotationOrder",
+										Name = "Order",
+										Default = 5,
+									},
+									Input13 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "XRotation",
+										Name = "X",
+										Default = 0,
+									},
+									Input14 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "YRotation",
+										Name = "Y",
+										Default = 0,
+									},
+									Input15 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZRotation",
+										Name = "Z",
+										Default = 0,
+									},
+									Input16 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Perspective",
+										Default = 1,
+									},
+									Border = InstanceInput {
+										SourceOp = "Border",
+										Source = "Border",
+										Page = "Controls",
+									},
+									Input1 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Width",
+										Name = "Crop Width",
+										Default = 1,
+									},
+									Input2 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Height",
+										Name = "Crop Height",
+										Default = 1,
+									},
+									Input3 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "CornerRadius",
+										Default = 0,
+									},
+									Input4 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftRed",
+										Name = "Color",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input5 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftGreen",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input6 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftBlue",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									MainInput1 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "Background",
+									},
+									Input7 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "BlendClone",
+										Name = "Border Blend",
+										Default = 1,
+									},
+									DropShadow = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "DropShadow",
+										Page = "Controls",
+									},
+									Input20 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowStrength",
+										Default = 0.5,
+									},
+									Input21 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowAngle",
+										Default = 37.5,
+									},
+									Input22 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "ShadowDistance",
+										MaxScale = 0.2000000029802,
+										Default = 0.0500000007450581,
+									},
+									Input23 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowBlur",
+										Default = 0.550000011920929,
+									},
+									Input24 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorRed",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input25 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorGreen",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input26 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorBlue",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input17 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "MotionBlur",
+										Default = 0,
+									},
+									Input18 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Quality",
+										Default = 2,
+									},
+									Input19 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ShutterAngle",
+										Default = 180,
+									}
+								},
+								Outputs = {
+									MainOutput1 = InstanceOutput {
+										SourceOp = "DropShadow",
+										Source = "Output",
+									}
+								},
+								ViewInfo = GroupInfo {
+									Pos = { 480, 81.3031 },
+									Flags = {
+										AllowPan = false,
+										ConnectedSnap = true,
+										AutoSnap = true,
+										RemoveRouters = true
+									},
+									Size = { 516.602, 143.298, 258.301, 24.2424 },
+									Direction = "Horizontal",
+									PipeStyle = "Direct",
+									Scale = 1,
+									Offset = { 0, 0 }
+								},
+								Tools = ordered() {
+									Rectangle1_1 = RectangleMask {
+										CtrlWShown = false,
+										Inputs = {
+											Filter = Input { Value = FuID { "Fast Gaussian" }, },
+											BorderWidth = Input { Value = -0.025, },
+											Invert = Input { Value = 1, },
+											MaskWidth = Input { Value = 3840, },
+											MaskHeight = Input { Value = 2160, },
+											PixelAspect = Input { Value = { 1, 1 }, },
+											ClippingMode = Input { Value = FuID { "None" }, },
+											Width = Input { Value = 1, },
+											Height = Input { Value = 1, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 7.55197 } },
+									},
+									Border = Background {
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Rectangle1_1",
+												Source = "Mask",
+											},
+											GlobalOut = Input { Value = 119, },
+											Width = Input { Value = 1920, },
+											Height = Input { Value = 1080, },
+											UseFrameFormatSettings = Input { Value = 1, },
+											["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+											TopLeftRed = Input { Value = 0.543, },
+											TopLeftGreen = Input { Value = 0.543, },
+											TopLeftBlue = Input { Value = 0.543, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 49.2393 } },
+										UserControls = ordered() {
+											Border = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 8,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Border",
+											}
+										}
+									},
+									Instance_Rectangle1 = RectangleMask {
+										CtrlWShown = false,
+										SourceOp = "Rectangle1_1",
+										Inputs = {
+											EffectMask = Input { },
+											SettingsNest = Input { },
+											BorderWidth = Input { },
+											["ShapeRasterizer.Nest"] = Input { },
+											CommentsNest = Input { },
+											FrameRenderScriptNest = Input { },
+											StartRenderScripts = Input { },
+											EndRenderScripts = Input { },
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 47.4969 } },
+									},
+									ChannelBooleans1 = ChannelBoolean {
+										CtrlWShown = false,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Instance_Rectangle1",
+												Source = "Mask",
+											},
+											ApplyMaskInverted = Input { Value = 1, },
+											MultiplyByMask = Input { Value = 1, },
+											Background = Input {
+												SourceOp = "Merge1_1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 85.9632 } },
+									},
+									Merge1_1 = Merge {
+										CtrlWShown = false,
+										Inputs = {
+											Background = Input {
+												SourceOp = "MediaIn1",
+												Source = "Output",
+											},
+											Foreground = Input {
+												SourceOp = "Border",
+												Source = "Output",
+											},
+											PerformDepthMerge = Input { Value = 0, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 85.9632 } },
+									},
+									DVE1 = DVE {
+										CtrlWShown = false,
+										Inputs = {
+											Center = Input { Value = { 0.734766954377312, 0.262315789473684 }, },
+											ZMove = Input { Value = 2.13, },
+											AlphaMode = Input { Value = 2, },
+											Input = Input {
+												SourceOp = "ChannelBooleans1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { 77, 85.9632 } },
+										UserControls = ordered() {
+											PositionNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 1,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Position"
+											},
+											PivotNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Pivot"
+											},
+											MotionBlurNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 5,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Motion Blur"
+											}
+										}
+									},
+									DropShadow = ofx.com.blackmagicdesign.resolvefx.dropshadow {
+										CtrlWZoom = false,
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											Source = Input {
+												SourceOp = "DVE1",
+												Source = "Output",
+											},
+											shadowStrength = Input { Value = 0.5, },
+											shadowAngle = Input { Value = 37.5, },
+											ShadowDistance = Input { Value = 0.0500000007450581, },
+											shadowBlur = Input { Value = 0.550000011920929, },
+											shadowColorRed = Input { Value = 0, },
+											shadowColorGreen = Input { Value = 0, },
+											shadowColorBlue = Input { Value = 0, },
+											blendGroup = Input { Value = 0, },
+											blendIn = Input { Value = 1, },
+											blend = Input { Value = 0, },
+											ignoreContentShape = Input { Value = 0, },
+											legacyIsProcessRGBOnly = Input { Value = 0, },
+											refreshTrigger = Input { Value = 1, },
+											resolvefxVersion = Input { Value = "1.0", },
+										},
+										ViewInfo = OperatorInfo { Pos = { 195, 85.9632 } },
+										UserControls = ordered() {
+											DropShadow = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 7,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Drop Shadow",
+											}
+										}
+									}
+								},
+							}
+						}
+					},
+					[5] = {
+						Tools = ordered() {
+							DVE = GroupOperator {
+								CtrlWZoom = false,
+								CustomData = {
+								},
+								Inputs = ordered() {
+									PositionNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PositionNest",
+										Page = "Controls",
+									},
+									Input8 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Center",
+										Name = "Position",
+									},
+									Input9 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZMove",
+										Name = "Z Position",
+										Default = 1,
+									},
+									PivotNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PivotNest",
+										Page = "Controls",
+									},
+									Input10 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Pivot",
+									},
+									Input11 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZPivot",
+									},
+									RotationNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Rotation",
+									},
+									Input12 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "RotationOrder",
+										Name = "Order",
+										Default = 5,
+									},
+									Input13 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "XRotation",
+										Name = "X",
+										Default = 0,
+									},
+									Input14 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "YRotation",
+										Name = "Y",
+										Default = 0,
+									},
+									Input15 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZRotation",
+										Name = "Z",
+										Default = 0,
+									},
+									Input16 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Perspective",
+										Default = 1,
+									},
+									Border = InstanceInput {
+										SourceOp = "Border",
+										Source = "Border",
+										Page = "Controls",
+									},
+									Input1 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Width",
+										Name = "Crop Width",
+										Default = 1,
+									},
+									Input2 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Height",
+										Name = "Crop Height",
+										Default = 1,
+									},
+									Input3 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "CornerRadius",
+										Default = 0,
+									},
+									Input4 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftRed",
+										Name = "Color",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input5 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftGreen",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input6 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftBlue",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									MainInput1 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "Background",
+									},
+									Input7 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "BlendClone",
+										Name = "Border Blend",
+										Default = 1,
+									},
+									DropShadow = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "DropShadow",
+										Page = "Controls",
+									},
+									Input20 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowStrength",
+										Default = 0.5,
+									},
+									Input21 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowAngle",
+										Default = 37.5,
+									},
+									Input22 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "ShadowDistance",
+										MaxScale = 0.2000000029802,
+										Default = 0.0500000007450581,
+									},
+									Input23 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowBlur",
+										Default = 0.550000011920929,
+									},
+									Input24 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorRed",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input25 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorGreen",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input26 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorBlue",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input17 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "MotionBlur",
+										Default = 0,
+									},
+									Input18 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Quality",
+										Default = 2,
+									},
+									Input19 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ShutterAngle",
+										Default = 180,
+									}
+								},
+								Outputs = {
+									MainOutput1 = InstanceOutput {
+										SourceOp = "DropShadow",
+										Source = "Output",
+									}
+								},
+								ViewInfo = GroupInfo {
+									Pos = { 480, 81.3031 },
+									Flags = {
+										AllowPan = false,
+										ConnectedSnap = true,
+										AutoSnap = true,
+										RemoveRouters = true
+									},
+									Size = { 516.602, 143.298, 258.301, 24.2424 },
+									Direction = "Horizontal",
+									PipeStyle = "Direct",
+									Scale = 1,
+									Offset = { 0, 0 }
+								},
+								Tools = ordered() {
+									Rectangle1_1 = RectangleMask {
+										CtrlWShown = false,
+										Inputs = {
+											Filter = Input { Value = FuID { "Fast Gaussian" }, },
+											BorderWidth = Input { Value = -0.025, },
+											Invert = Input { Value = 1, },
+											MaskWidth = Input { Value = 3840, },
+											MaskHeight = Input { Value = 2160, },
+											PixelAspect = Input { Value = { 1, 1 }, },
+											ClippingMode = Input { Value = FuID { "None" }, },
+											Width = Input { Value = 1, },
+											Height = Input { Value = 1, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 7.55197 } },
+									},
+									Border = Background {
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Rectangle1_1",
+												Source = "Mask",
+											},
+											GlobalOut = Input { Value = 119, },
+											Width = Input { Value = 1920, },
+											Height = Input { Value = 1080, },
+											UseFrameFormatSettings = Input { Value = 1, },
+											["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+											TopLeftRed = Input { Value = 0.543, },
+											TopLeftGreen = Input { Value = 0.543, },
+											TopLeftBlue = Input { Value = 0.543, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 49.2393 } },
+										UserControls = ordered() {
+											Border = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 8,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Border",
+											}
+										}
+									},
+									Instance_Rectangle1 = RectangleMask {
+										CtrlWShown = false,
+										SourceOp = "Rectangle1_1",
+										Inputs = {
+											EffectMask = Input { },
+											SettingsNest = Input { },
+											BorderWidth = Input { },
+											["ShapeRasterizer.Nest"] = Input { },
+											CommentsNest = Input { },
+											FrameRenderScriptNest = Input { },
+											StartRenderScripts = Input { },
+											EndRenderScripts = Input { },
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 47.4969 } },
+									},
+									ChannelBooleans1 = ChannelBoolean {
+										CtrlWShown = false,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Instance_Rectangle1",
+												Source = "Mask",
+											},
+											ApplyMaskInverted = Input { Value = 1, },
+											MultiplyByMask = Input { Value = 1, },
+											Background = Input {
+												SourceOp = "Merge1_1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 85.9632 } },
+									},
+									Merge1_1 = Merge {
+										CtrlWShown = false,
+										Inputs = {
+											Background = Input {
+												SourceOp = "MediaIn1",
+												Source = "Output",
+											},
+											Foreground = Input {
+												SourceOp = "Border",
+												Source = "Output",
+											},
+											PerformDepthMerge = Input { Value = 0, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 85.9632 } },
+									},
+									DVE1 = DVE {
+										CtrlWShown = false,
+										Inputs = {
+											Center = Input { Value = { 0.464241676942047, 0.5 }, },
+											ZMove = Input { Value = 1.18, },
+											XRotation = Input { Value = -20.9, },
+											YRotation = Input { Value = -10.4, },
+											AlphaMode = Input { Value = 2, },
+											Input = Input {
+												SourceOp = "ChannelBooleans1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { 77, 85.9632 } },
+										UserControls = ordered() {
+											PositionNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 1,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Position"
+											},
+											PivotNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Pivot"
+											},
+											MotionBlurNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 5,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Motion Blur"
+											}
+										}
+									},
+									DropShadow = ofx.com.blackmagicdesign.resolvefx.dropshadow {
+										CtrlWZoom = false,
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											Source = Input {
+												SourceOp = "DVE1",
+												Source = "Output",
+											},
+											shadowStrength = Input { Value = 0.5, },
+											shadowAngle = Input { Value = 37.5, },
+											ShadowDistance = Input { Value = 0.0500000007450581, },
+											shadowBlur = Input { Value = 0.550000011920929, },
+											shadowColorRed = Input { Value = 0, },
+											shadowColorGreen = Input { Value = 0, },
+											shadowColorBlue = Input { Value = 0, },
+											blendGroup = Input { Value = 0, },
+											blendIn = Input { Value = 1, },
+											blend = Input { Value = 0, },
+											ignoreContentShape = Input { Value = 0, },
+											legacyIsProcessRGBOnly = Input { Value = 0, },
+											refreshTrigger = Input { Value = 1, },
+											resolvefxVersion = Input { Value = "1.0", },
+										},
+										ViewInfo = OperatorInfo { Pos = { 195, 85.9632 } },
+										UserControls = ordered() {
+											DropShadow = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 7,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Drop Shadow",
+											}
+										}
+									}
+								},
+							}
+						}
+					},
+					[6] = {
+						Tools = ordered() {
+							DVE = GroupOperator {
+								CtrlWZoom = false,
+								CustomData = {
+								},
+								Inputs = ordered() {
+									PositionNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PositionNest",
+										Page = "Controls",
+									},
+									Input8 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Center",
+										Name = "Position",
+									},
+									Input9 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZMove",
+										Name = "Z Position",
+										Default = 1,
+									},
+									PivotNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "PivotNest",
+										Page = "Controls",
+									},
+									Input10 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Pivot",
+									},
+									Input11 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZPivot",
+									},
+									RotationNest = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Rotation",
+									},
+									Input12 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "RotationOrder",
+										Name = "Order",
+										Default = 5,
+									},
+									Input13 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "XRotation",
+										Name = "X",
+										Default = 0,
+									},
+									Input14 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "YRotation",
+										Name = "Y",
+										Default = 0,
+									},
+									Input15 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ZRotation",
+										Name = "Z",
+										Default = 0,
+									},
+									Input16 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Perspective",
+										Default = 1,
+									},
+									Border = InstanceInput {
+										SourceOp = "Border",
+										Source = "Border",
+										Page = "Controls",
+									},
+									Input1 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Width",
+										Name = "Crop Width",
+										Default = 1,
+									},
+									Input2 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "Height",
+										Name = "Crop Height",
+										Default = 1,
+									},
+									Input3 = InstanceInput {
+										SourceOp = "Rectangle1_1",
+										Source = "CornerRadius",
+										Default = 0,
+									},
+									Input4 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftRed",
+										Name = "Color",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input5 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftGreen",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									Input6 = InstanceInput {
+										SourceOp = "Border",
+										Source = "TopLeftBlue",
+										ControlGroup = 4,
+										Default = 0.543,
+									},
+									MainInput1 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "Background",
+									},
+									Input7 = InstanceInput {
+										SourceOp = "Merge1_1",
+										Source = "BlendClone",
+										Name = "Border Blend",
+										Default = 1,
+									},
+									DropShadow = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "DropShadow",
+										Page = "Controls",
+									},
+									Input20 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowStrength",
+										Default = 0.5,
+									},
+									Input21 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowAngle",
+										Default = 37.5,
+									},
+									Input22 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "ShadowDistance",
+										MaxScale = 0.2000000029802,
+										Default = 0.0500000007450581,
+									},
+									Input23 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowBlur",
+										Default = 0.550000011920929,
+									},
+									Input24 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorRed",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input25 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorGreen",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input26 = InstanceInput {
+										SourceOp = "DropShadow",
+										Source = "shadowColorBlue",
+										Name = "Color",
+										ControlGroup = 23,
+										Default = 0,
+									},
+									Input17 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "MotionBlur",
+										Default = 0,
+									},
+									Input18 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "Quality",
+										Default = 2,
+									},
+									Input19 = InstanceInput {
+										SourceOp = "DVE1",
+										Source = "ShutterAngle",
+										Default = 180,
+									}
+								},
+								Outputs = {
+									MainOutput1 = InstanceOutput {
+										SourceOp = "DropShadow",
+										Source = "Output",
+									}
+								},
+								ViewInfo = GroupInfo {
+									Pos = { 480, 81.3031 },
+									Flags = {
+										AllowPan = false,
+										ConnectedSnap = true,
+										AutoSnap = true,
+										RemoveRouters = true
+									},
+									Size = { 516.602, 143.298, 258.301, 24.2424 },
+									Direction = "Horizontal",
+									PipeStyle = "Direct",
+									Scale = 1,
+									Offset = { 0, 0 }
+								},
+								Tools = ordered() {
+									Rectangle1_1 = RectangleMask {
+										CtrlWShown = false,
+										Inputs = {
+											Filter = Input { Value = FuID { "Fast Gaussian" }, },
+											BorderWidth = Input { Value = -0.025, },
+											Invert = Input { Value = 1, },
+											MaskWidth = Input { Value = 3840, },
+											MaskHeight = Input { Value = 2160, },
+											PixelAspect = Input { Value = { 1, 1 }, },
+											ClippingMode = Input { Value = FuID { "None" }, },
+											Width = Input { Value = 1, },
+											Height = Input { Value = 1, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 7.55197 } },
+									},
+									Border = Background {
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Rectangle1_1",
+												Source = "Mask",
+											},
+											GlobalOut = Input { Value = 119, },
+											Width = Input { Value = 1920, },
+											Height = Input { Value = 1080, },
+											UseFrameFormatSettings = Input { Value = 1, },
+											["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+											TopLeftRed = Input { Value = 0.543, },
+											TopLeftGreen = Input { Value = 0.543, },
+											TopLeftBlue = Input { Value = 0.543, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 49.2393 } },
+										UserControls = ordered() {
+											Border = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 8,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Border",
+											}
+										}
+									},
+									Instance_Rectangle1 = RectangleMask {
+										CtrlWShown = false,
+										SourceOp = "Rectangle1_1",
+										Inputs = {
+											EffectMask = Input { },
+											SettingsNest = Input { },
+											BorderWidth = Input { },
+											["ShapeRasterizer.Nest"] = Input { },
+											CommentsNest = Input { },
+											FrameRenderScriptNest = Input { },
+											StartRenderScripts = Input { },
+											EndRenderScripts = Input { },
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 47.4969 } },
+									},
+									ChannelBooleans1 = ChannelBoolean {
+										CtrlWShown = false,
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Instance_Rectangle1",
+												Source = "Mask",
+											},
+											ApplyMaskInverted = Input { Value = 1, },
+											MultiplyByMask = Input { Value = 1, },
+											Background = Input {
+												SourceOp = "Merge1_1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { -54.591, 85.9632 } },
+									},
+									Merge1_1 = Merge {
+										CtrlWShown = false,
+										Inputs = {
+											Background = Input {
+												SourceOp = "MediaIn1",
+												Source = "Output",
+											},
+											Foreground = Input {
+												SourceOp = "Border",
+												Source = "Output",
+											},
+											PerformDepthMerge = Input { Value = 0, },
+										},
+										ViewInfo = OperatorInfo { Pos = { -195.602, 85.9632 } },
+									},
+									DVE1 = DVE {
+										CtrlWShown = false,
+										Inputs = {
+											Center = Input { Value = { 0.524660912453761, 0.5 }, },
+											ZMove = Input { Value = 1.18, },
+											XRotation = Input { Value = -20.9, },
+											YRotation = Input { Value = 7.9, },
+											AlphaMode = Input { Value = 2, },
+											Input = Input {
+												SourceOp = "ChannelBooleans1",
+												Source = "Output",
+											},
+										},
+										ViewInfo = OperatorInfo { Pos = { 77, 85.9632 } },
+										UserControls = ordered() {
+											PositionNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 1,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Position"
+											},
+											PivotNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 2,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Pivot"
+											},
+											MotionBlurNest = {
+												INP_MaxAllowed = 1,
+												INP_Integer = true,
+												LBLC_DropDownButton = true,
+												INPID_InputControl = "LabelControl",
+												LBLC_NumInputs = 5,
+												INP_Default = 0,
+												INP_MinAllowed = 0,
+												LINKID_DataType = "Number",
+												INP_External = false,
+												INP_Passive = true,
+												ICS_ControlPage = "Controls",
+												LINKS_Name = "Motion Blur"
+											}
+										}
+									},
+									DropShadow = ofx.com.blackmagicdesign.resolvefx.dropshadow {
+										CtrlWZoom = false,
+										CtrlWShown = false,
+										NameSet = true,
+										Inputs = {
+											Source = Input {
+												SourceOp = "DVE1",
+												Source = "Output",
+											},
+											shadowStrength = Input { Value = 0.5, },
+											shadowAngle = Input { Value = 37.5, },
+											ShadowDistance = Input { Value = 0.0500000007450581, },
+											shadowBlur = Input { Value = 0.550000011920929, },
+											shadowColorRed = Input { Value = 0, },
+											shadowColorGreen = Input { Value = 0, },
+											shadowColorBlue = Input { Value = 0, },
+											blendGroup = Input { Value = 0, },
+											blendIn = Input { Value = 1, },
+											blend = Input { Value = 0, },
+											ignoreContentShape = Input { Value = 0, },
+											legacyIsProcessRGBOnly = Input { Value = 0, },
+											refreshTrigger = Input { Value = 1, },
+											resolvefxVersion = Input { Value = "1.0", },
+										},
+										ViewInfo = OperatorInfo { Pos = { 195, 85.9632 } },
+										UserControls = ordered() {
+											DropShadow = {
+												INP_Integer = false,
+												LBLC_DropDownButton = true,
+												LINKID_DataType = "Number",
+												LBLC_NumInputs = 7,
+												INPID_InputControl = "LabelControl",
+												LINKS_Name = "Drop Shadow",
+											}
+										}
+									}
+								},
+							}
+						}
+					}
+				}
+			},
+			Inputs = ordered() {
+				PositionNest = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "PositionNest",
+					Page = "Controls",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "Center",
+					Name = "Position",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "ZMove",
+					Name = "Z Position",
+					Default = 1,
+				},
+				PivotNest = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "PivotNest",
+					Page = "Controls",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "Pivot",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "ZPivot",
+				},
+				RotationNest = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "Rotation",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "RotationOrder",
+					Name = "Order",
+					Default = 5,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "XRotation",
+					Name = "X",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "YRotation",
+					Name = "Y",
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "ZRotation",
+					Name = "Z",
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "Perspective",
+					Default = 1,
+				},
+				Border = InstanceInput {
+					SourceOp = "Border",
+					Source = "Border",
+					Page = "Controls",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Rectangle1_1",
+					Source = "Width",
+					Name = "Crop Width",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Rectangle1_1",
+					Source = "Height",
+					Name = "Crop Height",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Rectangle1_1",
+					Source = "CornerRadius",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Border",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 4,
+					Default = 0.543,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Border",
+					Source = "TopLeftGreen",
+					ControlGroup = 4,
+					Default = 0.543,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Border",
+					Source = "TopLeftBlue",
+					ControlGroup = 4,
+					Default = 0.543,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1_1",
+					Source = "Background",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Merge1_1",
+					Source = "BlendClone",
+					Name = "Border Blend",
+					Default = 1,
+				},
+				DropShadow = InstanceInput {
+					SourceOp = "DropShadow",
+					Source = "DropShadow",
+					Page = "Controls",
+				},
+				Input20 = InstanceInput {
+					SourceOp = "DropShadow",
+					Source = "shadowStrength",
+					Default = 0.5,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "DropShadow",
+					Source = "shadowAngle",
+					Default = 37.5,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "DropShadow",
+					Source = "ShadowDistance",
+					MaxScale = 0.2000000029802,
+					Default = 0.0500000007450581,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "DropShadow",
+					Source = "shadowBlur",
+					Default = 0.550000011920929,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "DropShadow",
+					Source = "shadowColorRed",
+					Name = "Color",
+					ControlGroup = 23,
+					Default = 0,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "DropShadow",
+					Source = "shadowColorGreen",
+					Name = "Color",
+					ControlGroup = 23,
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "DropShadow",
+					Source = "shadowColorBlue",
+					Name = "Color",
+					ControlGroup = 23,
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "DVE1",
+					Source = "ShutterAngle",
+					Default = 180,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "DropShadow",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 473.334, 81.3031 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 516.602, 143.298, 258.301, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				Rectangle1_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input { Value = -0.025, },
+						Invert = Input { Value = 1, },
+						MaskWidth = Input { Value = 3840, },
+						MaskHeight = Input { Value = 2160, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 1, },
+						Height = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -195.602, 7.55197 } },
+				},
+				Border = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle1_1",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.543, },
+						TopLeftGreen = Input { Value = 0.543, },
+						TopLeftBlue = Input { Value = 0.543, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -195.602, 49.2393 } },
+					UserControls = ordered() {
+						Border = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 8,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Border",
+						}
+					}
+				},
+				Instance_Rectangle1 = RectangleMask {
+					CtrlWShown = false,
+					SourceOp = "Rectangle1_1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						BorderWidth = Input { },
+						["ShapeRasterizer.Nest"] = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -54.591, 47.4969 } },
+				},
+				ChannelBooleans1 = ChannelBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Instance_Rectangle1",
+							Source = "Mask",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						MultiplyByMask = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "Merge1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -54.591, 85.9632 } },
+				},
+				Merge1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Border",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -195.602, 85.9632 } },
+				},
+				DVE1 = DVE {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input { Value = { 0.736, 0.736 }, },
+						ZMove = Input { Value = 2.13, },
+						AlphaMode = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "ChannelBooleans1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 77, 85.9632 } },
+					UserControls = ordered() {
+						PositionNest = {
+							INP_MaxAllowed = 1,
+							INP_Integer = true,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 2,
+							INP_Default = 1,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							INP_External = false,
+							INP_Passive = true,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "Position"
+						},
+						PivotNest = {
+							INP_MaxAllowed = 1,
+							INP_Integer = true,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 2,
+							INP_Default = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							INP_External = false,
+							INP_Passive = true,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "Pivot"
+						},
+						MotionBlurNest = {
+							INP_MaxAllowed = 1,
+							INP_Integer = true,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 5,
+							INP_Default = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							INP_External = false,
+							INP_Passive = true,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "Motion Blur"
+						}
+					}
+				},
+				DropShadow = ofx.com.blackmagicdesign.resolvefx.dropshadow {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input {
+							SourceOp = "DVE1",
+							Source = "Output",
+						},
+						shadowStrength = Input { Value = 0.5, },
+						shadowAngle = Input { Value = 37.5, },
+						ShadowDistance = Input { Value = 0.0500000007450581, },
+						shadowBlur = Input { Value = 0.550000011920929, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 195, 85.9632 } },
+					UserControls = ordered() {
+						DropShadow = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 7,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Drop Shadow",
+						}
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "DVE"
+}

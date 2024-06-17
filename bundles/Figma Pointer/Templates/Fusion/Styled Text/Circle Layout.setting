@@ -1,0 +1,99 @@
+{
+	Tools = ordered() {
+		CircleLayout = TextPlus {
+			NameSet = true,
+			Inputs = {
+				UseFrameFormatSettings = Input { Value = 1, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				LayoutType = Input { Value = 2, },
+				LayoutRotation = Input { Value = 1, },
+				AngleY = Input {
+					SourceOp = "Text_LayoutCircleAngleY",
+					Source = "Value",
+				},
+				LayoutWidth = Input {
+					SourceOp = "Text_LayoutCircleLayoutWidth",
+					Source = "Value",
+				},
+				Perspective = Input { Value = 2.88095238095238, },
+				PositionOnPath = Input {
+					SourceOp = "Text_LayoutCirclePositiononpath",
+					Source = "Value",
+				},
+				Path = Input {
+					Value = Polyline {
+						Points = {
+							{ X = -0.56108097477657, Y = -0.26655482314799, RX = 0.0391419525049266, RY = 0.00848614357981503, },
+							{ X = -0.459569094021146, Y = -0.212526371705271, LX = -0.0195453338650323, LY = -0.0405714205253426, RX = 0.0291725706216681, RY = 0.0605552526587652, },
+							{ X = -0.401253757316892, Y = -0.0115785095867885, LX = -0.0237893069615023, LY = -0.0645046572971667, RX = 0.0496283174005725, RY = 0.134567081392471, },
+							{ X = -0.0420024965594454, Y = 0.154298270118498, LX = -0.126525417165486, LY = 0.0488748546254864, RX = 0.103647350343332, RY = -0.0400374035022667, },
+							{ X = 0.2044277177946, Y = -0.108081082880062, LX = -0.106016234070138, LY = 0.034727175966672, RX = 0.0540642716242106, RY = -0.0177095469450632, },
+							{ X = 0.371245239433851, Y = -0.121745595183686, LX = -0.0543985428333059, LY = -0.0158372738684175, RX = 0.0556544513089658, RY = 0.0162029117227924, },
+							{ X = 0.522038539272719, Y = -0.0156137243565851, LX = -0.0475694242649509, LY = -0.0449644795521541, },
+						},
+					},
+				},
+				Size = Input {
+					SourceOp = "Text_LayoutCircleSize",
+					Source = "Value",
+				},
+				Font = Input { Value = "Open Sans", },
+				StyledText = Input { Value = "Text around animated circle", },
+				Style = Input { Value = "Bold", },
+				ManualFontKerningPlacement = Input {
+					Value = StyledText {
+						Array = {
+						},
+						Value = "",
+					},
+				},
+				SelectTransform = Input { Value = 2, },
+				CharacterSpacing = Input { Value = 1.14285714285714, },
+				ShadingGradient1 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 244.554, 186.312, }, },
+		},
+		Text_LayoutCircleAngleY = BezierSpline {
+			SplineColor = { Red = 14, Green = 221, Blue = 165, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 50, 120, }, Flags = { Linear = true, }, },
+				[150] = { 360, LH = { 100, 240, }, Flags = { Linear = true, }, },
+			},
+		},
+		Text_LayoutCircleLayoutWidth = BezierSpline {
+			SplineColor = { Red = 123, Green = 164, Blue = 248, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.6, RH = { 50, 0.414285714285714, }, Flags = { Linear = true, }, },
+				[150] = { 0.0428571428571429, LH = { 100, 0.228571428571429, }, Flags = { Linear = true, }, },
+			},
+		},
+		Text_LayoutCirclePositiononpath = BezierSpline {
+			SplineColor = { Red = 237, Green = 132, Blue = 220, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { -0.1778846, RH = { 50, 0.275641033333333, }, Flags = { Linear = true, }, },
+				[150] = { 1.1826923, LH = { 100, 0.729166666666667, }, Flags = { Linear = true, }, },
+			},
+		},
+		Text_LayoutCircleSize = BezierSpline {
+			SplineColor = { Red = 225, Green = 0, Blue = 225, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.0571428571428571, RH = { 41, 0.0647619047619047, }, Flags = { Linear = true, }, },
+				[123] = { 0.08, LH = { 82, 0.0723809523809524, }, RH = { 132, 0.0533333333333333, }, Flags = { Linear = true, }, },
+				[150] = { 0, LH = { 141, 0.0266666666666667, }, Flags = { Linear = true, }, },
+			},
+		},
+	},
+}

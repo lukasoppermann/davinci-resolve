@@ -1,0 +1,337 @@
+{
+	Tools = ordered() {
+		FilmStrip = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Dissolve",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "FG_Flip_1",
+					Source = "Input",
+				},
+				FilmColor = InstanceInput {
+					SourceOp = "FilmColor_1",
+					Source = "FilmColor",
+					Page = "Controls",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "FilmColor_1",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 2,
+					Default = 0.047,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FilmColor_1",
+					Source = "TopLeftGreen",
+					ControlGroup = 2,
+					Default = 0.047,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FilmColor_1",
+					Source = "TopLeftBlue",
+					ControlGroup = 2,
+					Default = 0.047,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FilmColor_1",
+					Source = "TopLeftAlpha",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				MotionBlur = InstanceInput {
+					SourceOp = "VertMovement_1",
+					Source = "MotionBlur",
+					Page = "Controls",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "VertMovement_1",
+					Source = "Quality",
+					Default = 4,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "VertMovement_1",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "VertMovement_1",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "VertMovement_1",
+					Source = "SampleSpread",
+					Default = 1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Scale_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 379.022, 148.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 280.846, 338.292, 140.423, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -6.28709, -6.53204 }
+			},
+			Tools = ordered() {
+				FG_Flip_1 = Transform {
+					NameSet = true,
+					Inputs = {
+						FlipVert = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -77.846, 125.303 } },
+				},
+				Duplicate_2 = Fuse.Duplicate {
+					NameSet = true,
+					Inputs = {
+						Copies = Input { Value = 8, },
+						Center = Input { Value = { 0.5, 0.377299 }, },
+						RandomSeed = Input { Value = 26024, },
+						Background = Input {
+							SourceOp = "Duplicate_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 77, 76.4787 } },
+				},
+				FilmColor_1 = Background {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Duplicate_2",
+							Source = "Output",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						GlobalOut = Input { Value = 47, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.047, },
+						TopLeftGreen = Input { Value = 0.047, },
+						TopLeftBlue = Input { Value = 0.047, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 77, 118.918 } },
+					UserControls = ordered() {
+						FilmColor = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 4,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Film Color",
+						}
+					}
+				},
+				Duplicate_1 = Fuse.Duplicate {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input { Value = { 1.37053881435744, 0.5 }, },
+						RandomSeed = Input { Value = 26024, },
+						Background = Input {
+							SourceOp = "Rectangle",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 77, 42.6787 } },
+				},
+				Merge = Merge {
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "FilmColor_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Dissolve",
+							Source = "Output",
+						},
+						Size = Input { Value = 0.75, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 77, 177.108 } },
+				},
+				Rectangle = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.0659312033181, 0.9329 }, },
+						Width = Input { Value = 0.0516728122354, },
+						Height = Input { Value = 0.07323393349, },
+						CornerRadius = Input { Value = 0.299, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 77, 8.05473 } },
+				},
+				Dissolve = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					NameSet = true,
+					Inputs = {
+						["DFTLumaRamp.Softness"] = Input { Value = 0.402, },
+						["DFTWipe.Red"] = Input { Value = 0.189, },
+						["DFTWipe.BorderWidth"] = Input { Value = 0.087, },
+						["DFTWipe.Border"] = Input { Value = 1, },
+						["DFTWipe.Green"] = Input { Value = 0.189, },
+						["DFTWipe.Blue"] = Input { Value = 0.189, },
+						ProcessAlpha = Input { Value = 0, },
+						Mix = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						Foreground = Input {
+							SourceOp = "FG_Flip_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -77.846, 177.108 } },
+				},
+				VertMovement_1 = Transform {
+					NameSet = true,
+					Inputs = {
+						Quality = Input { Value = 4, },
+						Center = Input {
+							SourceOp = "Vector1",
+							Source = "Position",
+						},
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "Merge",
+							Source = "Output",
+						},
+						MotionBlur = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 77, 225.443 } },
+					UserControls = ordered() {
+						MotionBlur = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = true,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 5,
+							INP_MaxScale = 1,
+							INP_Default = 0,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							LINKS_Name = "Motion Blur",
+						}
+					}
+				},
+				Scale_1 = Transform {
+					NameSet = true,
+					Inputs = {
+						Size = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "VertMovement_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 77, 281.46 } },
+				}
+			},
+		},
+		AnimCurves3 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurves3Lookup",
+					Source = "Value",
+				},
+			},
+		},
+		AnimCurves3Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+		},
+		Vector1 = Vector {
+			Inputs = {
+				Distance = Input {
+					SourceOp = "AnimCurves2",
+					Source = "Value",
+				},
+				Angle = Input { Value = -90, },
+			},
+		},
+		AnimCurves2 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Curve = Input { Value = FuID { "Easing" }, },
+				EaseIn = Input { Value = FuID { "Sine" }, },
+				EaseOut = Input { Value = FuID { "Sine" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurves2Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 2.815, },
+			},
+		},
+		AnimCurves2Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+			NameSet = true,
+		},
+		AnimCurves1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Curve = Input { Value = FuID { "Easing" }, },
+				EaseIn = Input { Value = FuID { "Sine" }, },
+				EaseOut = Input { Value = FuID { "Sine" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurves1Lookup",
+					Source = "Value",
+				},
+				Mirror = Input { Value = 1, },
+				Scale = Input { Value = -0.33, },
+				Offset = Input { Value = 1.33, },
+			},
+		},
+		AnimCurves1Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+			NameSet = true,
+		}
+	},
+	ActiveTool = "FilmStrip"
+}

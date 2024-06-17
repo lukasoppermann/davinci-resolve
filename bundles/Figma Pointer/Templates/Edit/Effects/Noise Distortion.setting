@@ -1,0 +1,642 @@
+{
+	Tools = ordered() {
+		NoiseDistortion1 = GroupOperator {
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/New Templates 2023 v1.drfx/Edit/Effects/EXAMPLE/"
+					}
+				},
+			},
+			Inputs = ordered() {
+				Noise = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "NoiseControls",
+					Page = "Controls",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "Detail",
+					Default = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "Contrast",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "Brightness",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "LockXY",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "XScale",
+					Default = 2,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "YScale",
+					Default = 2,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "Seethe",
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "SeetheRate",
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "Discontinuous",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "FastNoise2",
+					Source = "Inverted",
+					Default = 0,
+				},
+				CustomSourceClip = InstanceInput {
+					SourceOp = "BrightnessContrast1",
+					Source = "CustomSourceClip",
+					Page = "Controls",
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Dissolve1_1",
+					Source = "Switch",
+					Name = "Use Custom Clip",
+					Page = "Controls",
+					Default = 0,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "Merge5",
+					Source = "Blank6",
+				},
+				Input14 = InstanceInput {
+					SourceOp = "MediaIn2",
+					Source = "ClipName",
+					DefaultText = "",
+				},
+				Input15 = InstanceInput {
+					SourceOp = "MediaIn2",
+					Source = "Reverse",
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "MediaIn2",
+					Source = "Loop",
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Size",
+					Name = "Clip Size",
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "FlipHoriz",
+					ControlGroup = 18,
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "FlipVert",
+					ControlGroup = 18,
+					Default = 0,
+				},
+				DisplacementControls = InstanceInput {
+					SourceOp = "Merge4",
+					Source = "DisplacementControls",
+					Page = "Controls",
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Type",
+					Default = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Center",
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Channel",
+					Default = 4,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XChannel",
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XOffset",
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "XRefraction",
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "YChannel",
+					Default = 1,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "YOffset",
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "YRefraction",
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Offset",
+					Default = -0.5,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "RefractionStrength",
+					Default = 1,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "LightPower",
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "LightAngle",
+					Default = 135,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "Spread",
+					Default = 0,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "Displace1",
+					Source = "LightChannel",
+					Default = 5,
+				},
+				Shading = InstanceInput {
+					SourceOp = "Merge5",
+					Source = "Shading",
+					Page = "Controls",
+				},
+				Input35 = InstanceInput {
+					SourceOp = "Dissolve1",
+					Source = "Switch",
+					Name = "Enable Shading",
+					Page = "Controls",
+					Default = 0,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "BrightnessContrast1",
+					Source = "Contrast",
+					Default = 0,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "BrightnessContrast1",
+					Source = "Brightness",
+					Default = 0,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "BrightnessContrast1",
+					Source = "Saturation",
+					Default = 1,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "BrightnessContrast1",
+					Source = "Low",
+					ControlGroup = 38,
+					Default = 0.25,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "BrightnessContrast1",
+					Source = "High",
+					ControlGroup = 38,
+					Default = 0.75,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "Merge4",
+					Source = "BlendClone",
+					Default = 0.5,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter2",
+					Source = "Input",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Dissolve1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 224.311, 12.9231 } },
+			Tools = ordered() {
+				FastNoise2 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 201, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -354.152, 55.0828 } },
+				},
+				Dissolve1_1 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWShown = false,
+					Inputs = {
+						Mix = Input {
+							Value = 0,
+							Expression = "Switch",
+						},
+						Background = Input {
+							SourceOp = "FastNoise2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -98.0149, 55.0828 } },
+					UserControls = ordered() {
+						Switch = {
+							CBC_TriState = false,
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "CheckboxControl",
+							LINKS_Name = "Switch",
+						}
+					}
+				},
+				MediaIn2 = MediaIn {
+					ExtentSet = true,
+					CtrlWShown = false,
+					CustomData = {
+						MEDIA_ID = "78df50f1-e64f-4461-8944-be15fa0ada2f",
+						MediaProps = {
+							MEDIA_NUM_LAYERS = 0,
+							MEDIA_FORMAT_TYPE = "PNG",
+							MEDIA_HEIGHT = 640,
+							MEDIA_LAYER_DESC = {
+							},
+							MEDIA_PAR = 1,
+							MEDIA_PATH = "/Users/qa/Pictures/Logos/Add Clip Here.png",
+							MEDIA_START_FRAME = 0,
+							MEDIA_IS_SOURCE_RES = true,
+							MEDIA_SRC_FRAME_RATE = 25,
+							MEDIA_MARK_OUT = 0,
+							MEDIA_WIDTH = 646,
+							MEDIA_NUM_FRAMES = 1,
+							MEDIA_MARK_IN = 0,
+							MEDIA_NAME = "Add Clip Here.png"
+						}
+					},
+					Inputs = {
+						GlobalOut = Input { Value = 124, },
+						MediaSource = Input { Value = FuID { "MediaPool" }, },
+						MediaID = Input { Value = "78df50f1-e64f-4461-8944-be15fa0ada2f", },
+						AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+						Layer = Input {
+							Value = Text {
+							},
+						},
+						ClipTimeEnd = Input { Value = 0, },
+						HoldLastFrame = Input { Value = 124, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LeftAudio = Input {
+							SourceOp = "Left",
+							Source = "Data",
+						},
+						RightAudio = Input {
+							SourceOp = "Right",
+							Source = "Data",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -356.036, 7.72698 } },
+				},
+				Left = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Right = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Transform1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Letterbox1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -98.0149, 7.72698 } },
+				},
+				Displace1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						Offset = Input { Value = -0.5, },
+						RefractionStrength = Input { Value = 1, },
+						LightChannel = Input { Value = 5, },
+						Input = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Dissolve1_1",
+							Source = "Output",
+						},
+						NoiseControls = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -82.9359, 118.507 } },
+					UserControls = ordered() {
+						NoiseControls = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 12,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Noise Controls",
+						}
+					}
+				},
+				Dissolve1 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWShown = false,
+					Inputs = {
+						Mix = Input {
+							Value = 0,
+							Expression = "Switch",
+						},
+						Background = Input {
+							SourceOp = "Merge5",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 378.416, 118.507 } },
+					UserControls = ordered() {
+						Switch = {
+							CBC_TriState = false,
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "CheckboxControl",
+							LINKS_Name = "Switch",
+						}
+					}
+				},
+				BrightnessContrast1 = BrightnessContrast {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Low = Input { Value = 0.25, },
+						High = Input { Value = 0.75, },
+						ClipBlack = Input { Value = 1, },
+						ClipWhite = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Dissolve1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 209.036, 55.0828 } },
+					UserControls = ordered() {
+						CustomSourceClip = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 7,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Custom Source Clip",
+						}
+					}
+				},
+				Merge4 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Bitmap1",
+							Source = "Mask",
+						},
+						Blend = Input { Value = 0.5, },
+						Background = Input {
+							SourceOp = "Merge5",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BrightnessContrast1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+						DisplacementControls = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 209.036, 118.507 } },
+					UserControls = ordered() {
+						DisplacementControls = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 15,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Displacement Controls",
+						}
+					}
+				},
+				PipeRouter2 = PipeRouter {
+					CtrlWShown = false,
+					ViewInfo = PipeRouterInfo { Pos = { -382.428, 118.507 } },
+				},
+				Instance_Displace1 = Displace {
+					CtrlWShown = false,
+					SourceOp = "Displace1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						LightPower = Input { },
+						Input = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Dissolve1_1",
+							Source = "Output",
+						},
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -83.8649, 152.791 } },
+				},
+				Merge5 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Displace1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Instance_Displace1",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "Mask" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 35.2341, 118.507 } },
+					UserControls = ordered() {
+						Shading = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 7,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Shading",
+						}
+					}
+				},
+				Letterbox1 = Letterbox {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Mode = Input { Value = 1, },
+						HiQOnly = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -232.196, 7.72698 } },
+				},
+				Bitmap1 = BitmapMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Image = Input {
+							SourceOp = "Merge5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 209.036, 173.788 } },
+				},
+				NULL = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						TransformNest = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 382.196, 75.6529 } },
+					UserControls = ordered() {
+						Button01 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "1",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Button01",
+						},
+						Button02 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "1",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Button02",
+						},
+						Button03 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "1",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Button03",
+						},
+						Button04 = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "ButtonControl",
+							BTNCS_Execute = "1",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_External = false,
+							ICD_Width = 0.5,
+							ICS_ControlPage = "Controls",
+							LINKS_Name = "Button04"
+						},
+						Button05 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "1",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Button05",
+						},
+						Button06 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "1",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Button06",
+						}
+					}
+				}
+			},
+		}
+	}
+}

@@ -1,0 +1,828 @@
+{
+	Tools = ordered() {
+		Brick = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "_3_TILE_3_1",
+					Source = "Size",
+					Name = "Brick Size",
+					MaxScale = 1,
+					Default = 0.15,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "_3_TILE_3_1",
+					Source = "Aspect",
+					Name = "Brick Aspect",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "_2_MortarSize_3_1",
+					Source = "XAmount",
+					Name = "Mortar Space",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "_7_BrickHeight_3_1",
+					Source = "HeightScale",
+					Name = "Brick Height",
+					MaxScale = 10,
+					Default = 5,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "_8_BumpRoughness_3_1",
+					Source = "XScale",
+					Name = "Bump Noise  scale",
+					MaxScale = 500,
+					Default = 250,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "_9_RoughnessAmount_3_1",
+					Source = "HeightScale",
+					Name = "Bump Noise Level",
+					Default = 2,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "_5_MortarCreep_3_1",
+					Source = "XAmount",
+					Name = "Mortar Creep",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "_4_Mortar_Roughness_3_1",
+					Source = "XScale",
+					Name = "Mortar Creep Scale",
+					MaxScale = 200,
+					Default = 100,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "_6_MortarLevel_3_1",
+					Source = "Gain",
+					Name = "Mortar Creep Level",
+					Default = 0.5,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Blinn1_1_3_1",
+					Source = "Diffuse.Color.Red",
+					Name = "Brick Color",
+					ControlGroup = 10,
+					Default = 0.6133333333333,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Blinn1_1_3_1",
+					Source = "Diffuse.Color.Green",
+					Name = "Brick Col G",
+					ControlGroup = 10,
+					Default = 0.3993004063638,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Blinn1_1_3_1",
+					Source = "Diffuse.Color.Blue",
+					Name = "Brick Col B",
+					ControlGroup = 10,
+					Default = 0.4227796210254,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Blinn1_1_3_1",
+					Source = "Specular.Color.Red",
+					Name = "Brick Spec R",
+					ControlGroup = 11,
+					Default = 0.5127782986063,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Blinn1_1_3_1",
+					Source = "Specular.Color.Green",
+					Name = "Brick Spec G",
+					ControlGroup = 11,
+					Default = 0.5074147987391,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Blinn1_1_3_1",
+					Source = "Specular.Color.Blue",
+					Name = "Brick Spec B",
+					ControlGroup = 11,
+					Default = 0.5466666666667,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Blinn1_1_3_1",
+					Source = "Specular.Intensity",
+					Name = "Brick Spec Intensity",
+					Default = 1.02,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Blinn1_1_3_1",
+					Source = "Specular.Exponent",
+					Name = "Brick Spec Exponent",
+					Default = 31,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "MortarCol_3_1",
+					Source = "Diffuse.Color.Red",
+					Name = "Mortar Color",
+					ControlGroup = 14,
+					Default = 0.4533333333333,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "MortarCol_3_1",
+					Source = "Diffuse.Color.Green",
+					Name = "Mortar Col G",
+					ControlGroup = 14,
+					Default = 0.4130264841008,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "MortarCol_3_1",
+					Source = "Diffuse.Color.Blue",
+					Name = "Mortar Col B",
+					ControlGroup = 14,
+					Default = 0.3577622751594,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "MortarCol_3_1",
+					Source = "Specular.Color.Red",
+					Name = "Mortar Spec R",
+					ControlGroup = 15,
+					Default = 0.888,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "MortarCol_3_1",
+					Source = "Specular.Color.Green",
+					Name = "Mortar Spec G",
+					ControlGroup = 15,
+					Default = 0.9,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "MortarCol_3_1",
+					Source = "Specular.Color.Blue",
+					Name = "Mortar Spec B",
+					ControlGroup = 15,
+					Default = 0.9,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "MortarCol_3_1",
+					Source = "Specular.Intensity",
+					Name = "Mortar Specular Intensity",
+					Default = 0.68,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "MortarCol_3_1",
+					Source = "Specular.Exponent",
+					Name = "Mortar Specular Exponent",
+					Default = 22.36,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Pattern_1",
+					Source = "Level",
+					Name = "Pattern 1  Brightness",
+					MinScale = 0.75,
+					Default = 1,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Patter_2",
+					Source = "Level",
+					Name = "Pattern 2  Brightness",
+					MinScale = 0.75,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "MtlMerge1_3_1",
+					Source = "MaterialOutput",
+				},
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0, }, },
+			Tools = ordered() {
+				["_3_TILE_3_1"] = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Size = Input { Value = 0.15, },
+						XSize = Input { Value = 0.0952381, },
+						YSize = Input { Value = 0.0952381, },
+						Edges = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Crop1_2_1_1_1_1_3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 346.5, }, },
+				},
+				["_2_MortarSize_3_1"] = ErodeDilate {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Background4_2_1_1_1_1_3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 280.5, }, },
+					UserControls = ordered() {
+						MortarSize = {
+							INP_MaxAllowed = 0.1,
+							INP_MinScale = -0.1,
+							INP_MinAllowed = -0.1,
+							LINKID_DataType = "Number",
+							IC_ControlPage = 0,
+							INP_MaxScale = 0.1,
+							INPID_InputControl = "SliderControl",
+						},
+					},
+				},
+				["_7_BrickHeight_3_1"] = BumpMap {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "_6_MortarLevel_3_1",
+							Source = "Output",
+						},
+						HeightScale = Input { Value = 5, },
+						MaterialID = Input { Value = 19, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 137.5, 570.428, }, },
+				},
+				["_8_BumpRoughness_3_1"] = Fuse.RealFastNoiseFuse {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1068, },
+						Height = Input { Value = 925, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+						Detail = Input { Value = 10, },
+						Brightness = Input { Value = -0.1047619, },
+						Contrast = Input { Value = 0.247619, },
+						XScale = Input { Value = 250, },
+						YScale = Input { Value = 300, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 247.5, 570.428, }, },
+				},
+				["_9_RoughnessAmount_3_1"] = BumpMap {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "_8_BumpRoughness_3_1",
+							Source = "Output",
+						},
+						ClampNormalZ = Input { Value = 0.0428571, },
+						HeightScale = Input { Value = 2, },
+						BumpmapTextureDepth = Input { Value = 1, },
+						WrapMode = Input { Value = FuID { "Wrap", }, },
+						["FilterMode.Nest"] = Input { Value = 1, },
+						["FilterMode.SW.LowQ"] = Input { Value = FuID { "Bilinear", }, },
+						MaterialID = Input { Value = 11, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 247.5, 636.428, }, },
+				},
+				["_5_MortarCreep_3_1"] = ErodeDilate {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Filter1_3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -247.5, 372.428, }, },
+				},
+				["_4_Mortar_Roughness_3_1"] = Fuse.RealFastNoiseFuse {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+						Discontinuous = Input { Value = 1, },
+						Invert = Input { Value = 1, },
+						Detail = Input { Value = 2.238095, },
+						Contrast = Input { Value = 3.895238, },
+						XScale = Input { Value = 100, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -357.5, 438.428, }, },
+				},
+				["_6_MortarLevel_3_1"] = BrightnessContrast {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Alpha = Input { Value = 1, },
+						Gain = Input { Value = 0.5, },
+						Input = Input {
+							SourceOp = "_3_TILE_3_1",
+							Source = "Output",
+						},
+						EffectMask = Input {
+							SourceOp = "Bitmap4_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -82.5, 438.428, }, },
+				},
+				Blinn1_1_3_1 = MtlBlinn {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["Diffuse.Color.Red"] = Input { Value = 0.6133333333333, },
+						["Diffuse.Color.Green"] = Input { Value = 0.3993004063638, },
+						["Diffuse.Color.Blue"] = Input { Value = 0.4227796210254, },
+						["Diffuse.Color.Material"] = Input {
+							SourceOp = "RealFastNoiseFuse1_1_4_1",
+							Source = "Output",
+						},
+						["Specular.Nest"] = Input { Value = 1, },
+						["Specular.Color.Red"] = Input { Value = 0.5127782986063, },
+						["Specular.Color.Green"] = Input { Value = 0.5074147987391, },
+						["Specular.Color.Blue"] = Input { Value = 0.5466666666667, },
+						["Specular.Intensity"] = Input { Value = 1.02, },
+						["Specular.Intensity.Material"] = Input {
+							SourceOp = "_6_MortarLevel_3_1",
+							Source = "Output",
+						},
+						["Specular.Exponent"] = Input { Value = 31, },
+						["Bumpmap.Material"] = Input {
+							SourceOp = "ChannelBoolean1_1_3_1",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 13, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 137.5, 768.428, }, },
+				},
+				MortarCol_3_1 = MtlBlinn {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["Diffuse.Color.Red"] = Input { Value = 0.4533333333333, },
+						["Diffuse.Color.Green"] = Input { Value = 0.4130264841008, },
+						["Diffuse.Color.Blue"] = Input { Value = 0.3577622751594, },
+						["Diffuse.Color.Material"] = Input {
+							SourceOp = "ChannelBooleans1_3_1",
+							Source = "Output",
+						},
+						["Specular.Nest"] = Input { Value = 1, },
+						["Specular.Color.Red"] = Input { Value = 0.888, },
+						["Specular.Color.Green"] = Input { Value = 0.9, },
+						["Specular.Color.Blue"] = Input { Value = 0.9, },
+						["Specular.Intensity"] = Input { Value = 0.68, },
+						["Specular.Intensity.Material"] = Input {
+							SourceOp = "ChannelBooleans1_3_1",
+							Source = "Output",
+						},
+						["Specular.Exponent"] = Input { Value = 22.36, },
+						["Bumpmap.Material"] = Input {
+							SourceOp = "_9_RoughnessAmount_3_1",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 13, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 137.5, 834.428, }, },
+				},
+				MtlMerge1_3_1 = MtlMerge3D {
+					CtrlWShown = false,
+					Inputs = {
+						BackgroundMaterial = Input {
+							SourceOp = "Blinn1_1_3_1",
+							Source = "MaterialOutput",
+						},
+						ForegroundMaterial = Input {
+							SourceOp = "MortarCol_3_1",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 2, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 357.5, 834.428, }, },
+				},
+				Background1_3_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1068, },
+						Height = Input { Value = 925, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						EffectMask = Input {
+							SourceOp = "Bitmap1_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -137.5, 834.428, }, },
+				},
+				RealFastNoiseFuse1_1_4_1 = Fuse.RealFastNoiseFuse {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1068, },
+						Height = Input { Value = 925, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 0.1714286, },
+						XScale = Input { Value = 200, },
+						Color1Alpha = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -27.5, 768.428, }, },
+				},
+				ChannelBooleans1_3_1 = ChannelBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						ToRed = Input { Value = 3, },
+						ToGreen = Input { Value = 3, },
+						ToBlue = Input { Value = 3, },
+						Background = Input {
+							SourceOp = "Background1_3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 27.5, 834.428, }, },
+				},
+				Bitmap1_1_3_1 = BitmapMask {
+					CtrlWShown = false,
+					Inputs = {
+						Invert = Input { Value = 1, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 1556, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Image = Input {
+							SourceOp = "_6_MortarLevel_3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -137.5, 636.428, }, },
+				},
+				ChannelBoolean1_1_3_1 = MtlChanBool {
+					CtrlWShown = false,
+					Inputs = {
+						OperationR = Input { Value = 4, },
+						OperationG = Input { Value = 4, },
+						OperationB = Input { Value = 4, },
+						BackgroundMaterial = Input {
+							SourceOp = "_7_BrickHeight_3_1",
+							Source = "MaterialOutput",
+						},
+						ForegroundMaterial = Input {
+							SourceOp = "_9_RoughnessAmount_3_1",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 12, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 137.5, 636.428, }, },
+				},
+				Bitmap4_3_1 = BitmapMask {
+					CtrlWShown = false,
+					Inputs = {
+						PaintMode = Input { Value = FuID { "Multiply", }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 1556, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Image = Input {
+							SourceOp = "_4_Mortar_Roughness_3_1",
+							Source = "Output",
+						},
+						High = Input { Value = 0.4941177, },
+						Low = Input { Value = 0.2941176, },
+						EffectMask = Input {
+							SourceOp = "Bitmap3_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -247.5, 438.428, }, },
+				},
+				Bitmap3_3_1 = BitmapMask {
+					CtrlWShown = false,
+					Inputs = {
+						SoftEdge = Input { Value = 0.0009524, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 1556, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Image = Input {
+							SourceOp = "_5_MortarCreep_3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -247.5, 405.428, }, },
+				},
+				Filter1_3_1 = Filter {
+					CtrlWShown = false,
+					Inputs = {
+						FilterType = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "_3_TILE_3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -247.5, 339.428, }, },
+				},
+				Crop1_2_1_1_1_1_3_1 = Crop {
+					CtrlWShown = false,
+					Inputs = {
+						XOffset = Input { Value = 499, },
+						YOffset = Input { Value = 222, },
+						XSize = Input { Value = 1068, },
+						YSize = Input { Value = 925, },
+						Input = Input {
+							SourceOp = "_2_MortarSize_3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 313.5, }, },
+				},
+				["_1_BrickShape_3_1"] = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.375, 0.615, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -214.5, }, },
+				},
+				Rectangle6_6_1_3_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "_1_BrickShape_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -181.5, }, },
+				},
+				Rectangle6_1_2_1_3_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.24, 0.5, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "Rectangle6_6_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -148.5, }, },
+				},
+				Rectangle6_2_2_1_3_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.76, 0.5, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "Rectangle6_1_2_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -115.5, }, },
+				},
+				Pattern_1 = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.375, 0.387, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "Rectangle6_2_2_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 55, -82.5, }, },
+				},
+				Rectangle6_4_4_1_3_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.635, 0.387, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "Pattern_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -49.5, }, },
+				},
+				Rectangle6_5_1_1_3_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.5, 0.273, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "Rectangle6_4_4_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -16.5, }, },
+				},
+				Rectangle6_1_1_1_1_3_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.24, 0.273, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "Rectangle6_5_1_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 16.5, }, },
+				},
+				Rectangle6_2_1_1_1_3_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.76, 0.273, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "Rectangle6_1_1_1_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 49.5, }, },
+				},
+				Rectangle6_3_1_1_1_3_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.375, 0.16, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "Rectangle6_2_1_1_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 82.5, }, },
+				},
+				Patter_2 = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.635, 0.16, }, },
+						Width = Input { Value = 0.25, },
+						Height = Input { Value = 0.1, },
+						EffectMask = Input {
+							SourceOp = "Rectangle6_3_1_1_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 55, 115.5, }, },
+				},
+				Bitmap6_1_3_1 = BitmapMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 1556, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Image = Input {
+							SourceOp = "Patter_2",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 148.5, }, },
+				},
+				Background4_2_1_1_1_1_3_1 = Background {
+					CtrlWShown = false,
+					CustomData = {
+						Settings = {
+							[1] = {
+								Tools = ordered() {
+									Background4_2_1_1_1 = Background {
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Bitmap6",
+												Source = "Mask",
+											},
+											Width = Input { Value = 2048, },
+											Height = Input { Value = 2048, },
+											TopLeftRed = Input { Value = 1, },
+											Gradient = Input {
+												Value = Gradient {
+													Colors = {
+														[0] = { 0, 0, 0, 1, },
+														[1] = { 1, 1, 1, 1, },
+													},
+												},
+											},
+											TopLeftBlue = Input { Value = 1, },
+											TopLeftGreen = Input { Value = 1, },
+											GlobalOut = Input { Value = 100, },
+											GlobalIn = Input { Value = -100, },
+										},
+										Name = "Background4_2_1_1_1",
+										CtrlWZoom = false,
+										ViewInfo = OperatorInfo { Pos = { 0, 181.5, }, },
+										CustomData = {
+										},
+									},
+								},
+							},
+							[2] = {
+								Tools = ordered() {
+									Background4_2_1_1_1 = Background {
+										Inputs = {
+											EffectMask = Input {
+												SourceOp = "Bitmap6",
+												Source = "Mask",
+											},
+											Width = Input { Value = 4096, },
+											Height = Input { Value = 4096, },
+											TopLeftRed = Input { Value = 1, },
+											Gradient = Input {
+												Value = Gradient {
+													Colors = {
+														[0] = { 0, 0, 0, 1, },
+														[1] = { 1, 1, 1, 1, },
+													},
+												},
+											},
+											TopLeftBlue = Input { Value = 1, },
+											TopLeftGreen = Input { Value = 1, },
+											GlobalOut = Input { Value = 100, },
+											GlobalIn = Input { Value = -100, },
+										},
+										CtrlWZoom = false,
+										ViewInfo = OperatorInfo { Pos = { 0, 181.5, }, },
+										CustomData = {
+										},
+									},
+								},
+							},
+						},
+					},
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						EffectMask = Input {
+							SourceOp = "Bitmap6_1_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 214.5, }, },
+				},
+			},
+		},
+	},
+	ActiveTool = "Brick",
+}

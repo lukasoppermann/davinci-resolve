@@ -1,0 +1,483 @@
+{
+	Tools = ordered() {
+		RGBSplitter = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter1",
+					Source = "Input",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "PipeRouter2",
+					Source = "Input",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "AnimCurves1",
+					Source = "Scale",
+					Name = "Red Scale",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "AnimCurves1_1",
+					Source = "Scale",
+					Name = "Green Scale",
+					Default = 0.75,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "AnimCurves1_1_1",
+					Source = "Scale",
+					Name = "Blue Scale",
+					Default = 0.5,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "AnimCurves3",
+					Source = "Curve",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "AnimCurves3",
+					Source = "EaseIn",
+					Width = 0.5,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "AnimCurves3",
+					Source = "EaseOut",
+					Width = 0.5,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Transform1Red",
+					Source = "Blank5",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Transform1Red",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Transform1Red",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Transform1Red",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Transform1Red",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Transform1Red",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Dissolve",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				PipeRouter1 = PipeRouter {
+					ViewInfo = PipeRouterInfo { Pos = { 220, 181.5 } },
+				},
+				PipeRouter2 = PipeRouter {
+					ViewInfo = PipeRouterInfo { Pos = { 220, 49.5 } },
+				},
+				Transform1Red = Transform {
+					NameSet = true,
+					Inputs = {
+						ProcessGreen = Input { Value = 0, },
+						ProcessBlue = Input { Value = 0, },
+						ProcessAlpha = Input { Value = 0, },
+						MotionBlur = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						Size = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 148.5 } },
+				},
+				Publish1 = PublishNumber {
+					CtrlWZoom = false,
+				},
+				AnimCurves1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup",
+							Source = "Value",
+						},
+						Offset = Input { Value = 1, },
+					},
+				},
+				AnimCurves1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Transform1Green = Transform {
+					NameSet = true,
+					Inputs = {
+						ProcessRed = Input { Value = 0, },
+						ProcessBlue = Input { Value = 0, },
+						ProcessAlpha = Input { Value = 0, },
+						MotionBlur = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						Size = Input {
+							SourceOp = "AnimCurves1_1",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 181.5 } },
+				},
+				AnimCurves1_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurvesonTransform1GreenLookup",
+							Source = "Value",
+						},
+						Scale = Input { Value = 0.75, },
+						Offset = Input { Value = 1, },
+					},
+				},
+				AnimCurvesonTransform1GreenLookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Transform1Blue = Transform {
+					NameSet = true,
+					Inputs = {
+						ProcessRed = Input { Value = 0, },
+						ProcessGreen = Input { Value = 0, },
+						ProcessAlpha = Input { Value = 0, },
+						MotionBlur = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						Size = Input {
+							SourceOp = "AnimCurves1_1_1",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 214.5 } },
+				},
+				AnimCurves1_1_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurvesonTransform1BlueLookup",
+							Source = "Value",
+						},
+						Scale = Input { Value = 0.5, },
+						Offset = Input { Value = 1, },
+					},
+				},
+				AnimCurvesonTransform1BlueLookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Transform2Red = Transform {
+					NameSet = true,
+					Inputs = {
+						ProcessGreen = Input { Value = 0, },
+						ProcessBlue = Input { Value = 0, },
+						ProcessAlpha = Input { Value = 0, },
+						MotionBlur = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						Size = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 82.5 } },
+				},
+				AnimCurves2 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = -1,
+							Expression = "-AnimCurves1.Scale",
+						},
+						Offset = Input {
+							Value = 2,
+							Expression = "AnimCurves1.Scale+1",
+						},
+					},
+				},
+				AnimCurves2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Transform2Green = Transform {
+					NameSet = true,
+					Inputs = {
+						ProcessRed = Input { Value = 0, },
+						ProcessBlue = Input { Value = 0, },
+						ProcessAlpha = Input { Value = 0, },
+						MotionBlur = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						Size = Input {
+							SourceOp = "AnimCurves2_1",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 49.5 } },
+				},
+				AnimCurves2_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurvesonTransform2GreenLookup",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = -0.75,
+							Expression = "-AnimCurves1_1.Scale",
+						},
+						Offset = Input {
+							Value = 1.75,
+							Expression = "AnimCurves1_1.Scale+1",
+						},
+					},
+				},
+				AnimCurvesonTransform2GreenLookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Transform2Blue = Transform {
+					NameSet = true,
+					Inputs = {
+						ProcessRed = Input { Value = 0, },
+						ProcessGreen = Input { Value = 0, },
+						ProcessAlpha = Input { Value = 0, },
+						MotionBlur = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						Size = Input {
+							SourceOp = "AnimCurves1_1_1_1",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 16.5 } },
+				},
+				AnimCurves1_1_1_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurvesonTransform2BlueLookup",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = -0.5,
+							Expression = "-AnimCurves1_1_1.Scale",
+						},
+						Offset = Input {
+							Value = 1.5,
+							Expression = "AnimCurves1_1_1.Scale+1",
+						},
+					},
+				},
+				AnimCurvesonTransform2BlueLookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Instance_Merge1 = Merge {
+					SourceOp = "Merge1",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						Background = Input {
+							SourceOp = "Transform2Red",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform2Green",
+							Source = "Output",
+						},
+						Merge = Input { },
+						Channels = Input { },
+						ReferenceSize = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 49.5 } },
+				},
+				Instance_Merge2 = Merge {
+					SourceOp = "Merge2",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						Background = Input {
+							SourceOp = "Instance_Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform2Blue",
+							Source = "Output",
+						},
+						Merge = Input { },
+						Channels = Input { },
+						ReferenceSize = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, 49.5 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						ProcessBlue = Input { Value = 0, },
+						ProcessAlpha = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Transform1Red",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1Green",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "LighterColor" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 181.5 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						ProcessRed = Input { Value = 0, },
+						ProcessGreen = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1Blue",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, 181.5 } },
+				},
+				Dissolve = Merge {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Blend = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Instance_Merge2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 605, 115.5 } },
+				},
+				AnimCurves3 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurves3Lookup",
+							Source = "Value",
+						},
+					},
+				},
+				AnimCurves3Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "RGBSplitter"
+}

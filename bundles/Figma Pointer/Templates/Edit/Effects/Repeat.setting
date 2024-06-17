@@ -1,0 +1,386 @@
+{
+	Tools = ordered() {
+		Repeat = GroupOperator {
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "/Volumes/Resolve Cloud Store/Other/Fusion Setting Files/Effects/WIP/"
+					}
+				},
+			},
+			Inputs = ordered() {
+				SourceShape = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "SourceShape",
+					Page = "Controls",
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "Center",
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "BorderWidth",
+					Name = "Border",
+					Default = -0.2,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "Invert",
+					Width = 0.5,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "Solid",
+					Width = 0.5,
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "JoinStyle",
+					Name = "Border Style",
+					ControlGroup = 14,
+					Default = 2,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "CapStyle",
+					ControlGroup = 14,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "WritePosition",
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "WriteLength",
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "Width",
+					Default = 0.283,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "Height",
+					Default = 0.5,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Rectangle1_2",
+					Source = "CornerRadius",
+					Default = 1,
+				},
+				Buttons01 = InstanceInput {
+					SourceOp = "Merge3_1",
+					Source = "Square",
+					Width = 0.400000005960464,
+				},
+				Buttons02 = InstanceInput {
+					SourceOp = "Merge3_1",
+					Source = "Circle",
+					Width = 0.400000005960464,
+				},
+				Duplicates = InstanceInput {
+					SourceOp = "Merge1_2",
+					Source = "Duplicates",
+					Page = "Controls",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "Copies",
+					Default = 6,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "TimeOffset",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "XYPath1",
+					Source = "X",
+					Name = "X Position",
+					Default = 0.5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "XYPath1",
+					Source = "Y",
+					Name = "Y Position",
+					Default = 0.409,
+				},
+				Button03 = InstanceInput {
+					SourceOp = "Merge3_1",
+					Source = "Up",
+					Width = 0.400000005960464,
+				},
+				Button04 = InstanceInput {
+					SourceOp = "Merge3_1",
+					Source = "Down",
+					Width = 0.400000005960464,
+				},
+				Button05 = InstanceInput {
+					SourceOp = "Merge3_1",
+					Source = "Left",
+					Width = 0.400000005960464,
+				},
+				Button06 = InstanceInput {
+					SourceOp = "Merge3_1",
+					Source = "Right",
+					Width = 0.400000005960464,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "Pivot",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "XSize",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Merge3_1",
+					Source = "Blank6",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "RandomSeed",
+					Width = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "JitterCenter",
+					Name = "Random Center",
+					DefaultX = 0,
+					DefaultY = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "JitterXSize",
+					Name = "Random Size",
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Duplicate1_1",
+					Source = "JitterAngle",
+					Name = "Random Angle",
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Merge3_1",
+					Source = "Blend",
+					Default = 0,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter1_1",
+					Source = "Input",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "PipeRouter2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 744.667, 56.4545 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 574, 179.75, 215, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				Duplicate1_1 = Fuse.Duplicate {
+					CtrlWShown = false,
+					Inputs = {
+						Copies = Input { Value = 6, },
+						Center = Input {
+							SourceOp = "XYPath1",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "Merge1_2",
+							Source = "Output",
+						},
+						SourceShape = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 170, 57.5986 } },
+					UserControls = ordered() {
+						SourceShape = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 14,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Source Shape",
+						}
+					}
+				},
+				Rectangle1_2 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.283, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -76.667, 7.29548 } },
+				},
+				Merge1_2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PipeRouter1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Rectangle1_2",
+							Source = "Mask",
+						},
+						Operator = Input { Value = FuID { "Mask" }, },
+						PerformDepthMerge = Input { Value = 0, },
+						Duplicates = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -76.667, 57.5986 } },
+					UserControls = ordered() {
+						Duplicates = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 16,
+							INP_External = false,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Duplicates",
+						}
+					}
+				},
+				PipeRouter1_1 = PipeRouter {
+					CtrlWShown = false,
+					ViewInfo = PipeRouterInfo { Pos = { -170, 108.22 } },
+				},
+				PipeRouter2 = PipeRouter {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Merge3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = PipeRouterInfo { Pos = { 292.667, 108.22 } },
+				},
+				Merge3_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PipeRouter1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Duplicate1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 170, 108.22 } },
+					UserControls = ordered() {
+						Square = {
+							ICD_Width = 0.400000005960464,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input20',0)\n tool:SetInput('Input18',0.283)\n tool:SetInput('Input19',0.5)",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Square",
+						},
+						Circle = {
+							ICD_Width = 0.400000005960464,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input20',1)\n tool:SetInput('Input18',0.283)\n tool:SetInput('Input19',0.5)",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Circle",
+						},
+						Up = {
+							ICD_Width = 0.400000005960464,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input3',0.6)\n tool:SetInput('Input2',0.5)",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Up",
+						},
+						Down = {
+							ICD_Width = 0.400000005960464,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input3',0.4)\n tool:SetInput('Input2',0.5)",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Down",
+						},
+						Left = {
+							ICD_Width = 0.400000005960464,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input3',0.5)\n tool:SetInput('Input2',0.4)",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Left",
+						},
+						Right = {
+							ICD_Width = 0.400000005960464,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input3',0.5)\n tool:SetInput('Input2',0.6)",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Right",
+						}
+					}
+				}
+			},
+		},
+		XYPath1 = XYPath {
+			ShowKeyPoints = false,
+			DrawMode = "ModifyOnly",
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "/Volumes/Resolve Cloud Store/Other/Fusion Setting Files/Effects/WIP/"
+					}
+				}
+			},
+			Inputs = {
+				X = Input { Value = 0.5, },
+				Y = Input { Value = 0.4, },
+			},
+		}
+	},
+	ActiveTool = "Repeat_"
+}

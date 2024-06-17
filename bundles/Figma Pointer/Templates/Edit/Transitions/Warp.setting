@@ -1,0 +1,261 @@
+{
+	Tools = ordered() {
+		Warp = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "BG_Vortex",
+					Source = "Input",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "FG_Vortex",
+					Source = "Input",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "Quality",
+					Default = 6,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "SampleSpread",
+					Default = 1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Zoom",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 487.699, 159.931 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 395.139, 154.934, 197.57, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -8.0834, -2.44955 }
+			},
+			Tools = ordered() {
+				BG_Vortex = Vortex {
+					NameSet = true,
+					Inputs = {
+						Size = Input { Value = 1.2, },
+						Angle = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -133.343, 8.47228 } },
+				},
+				FG_Vortex = Vortex {
+					NameSet = true,
+					Inputs = {
+						Size = Input { Value = 1.2, },
+						Angle = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -132.242, 55.8479 } },
+				},
+				Dissolve = Dissolve {
+					Transitions = {
+						[0] = "DFTLumaRamp"
+					},
+					NameSet = true,
+					Inputs = {
+						Operation = Input { Value = FuID { "DFTLumaRamp" }, },
+						Mix = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "BG_Vortex",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FG_Vortex",
+							Source = "Output",
+						},
+						Map = Input {
+							SourceOp = "FG_Vortex_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 4.85101, 55.8479 } },
+				},
+				FastNoise = FastNoise {
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 47, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						XScale = Input { Value = 4.88, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 5, },
+						Start = Input { Value = { 0.5, 0.5 }, },
+						End = Input { Value = { 1, 1 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1 },
+									[0.129353233830846] = { 0.213, 0.210444, 0.210444, 1 },
+									[0.303482587064677] = { 0.102, 0.097104, 0.097104, 1 },
+									[1] = { 1, 1, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -98.4369, 103.378 } },
+				},
+				Zoom = Transform {
+					NameSet = true,
+					Inputs = {
+						Quality = Input { Value = 6, },
+						Size = Input {
+							SourceOp = "AnimCurves4",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "Dissolve",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 136.694, 55.8479 } },
+				},
+				FG_Vortex_1 = Vortex {
+					NameSet = true,
+					Inputs = {
+						Size = Input { Value = 1.2, },
+						Angle = Input { Value = -300, },
+						Input = Input {
+							SourceOp = "FastNoise",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 26.9447, 103.378 } },
+				}
+			},
+		},
+		AnimCurves1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Curve = Input { Value = FuID { "Easing" }, },
+				EaseIn = Input { Value = FuID { "Quad" }, },
+				EaseOut = Input { Value = FuID { "Quad" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurves1Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 300, },
+			},
+		},
+		AnimCurves1Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+		},
+		AnimCurves2 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Curve = Input { Value = FuID { "Easing" }, },
+				EaseIn = Input { Value = FuID { "Quad" }, },
+				EaseOut = Input { Value = FuID { "Quad" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurves1_1Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 300, },
+				Offset = Input { Value = -300, },
+			},
+		},
+		AnimCurves1_1Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+		},
+		AnimCurves3 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Curve = Input { Value = FuID { "Easing" }, },
+				EaseIn = Input { Value = FuID { "Cubic" }, },
+				EaseOut = Input { Value = FuID { "Cubic" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurves3Lookup",
+					Source = "Value",
+				},
+			},
+		},
+		AnimCurves3Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+		},
+		AnimCurves4 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Curve = Input { Value = FuID { "Easing" }, },
+				EaseIn = Input { Value = FuID { "Quad" }, },
+				EaseOut = Input { Value = FuID { "Quad" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurves4Lookup",
+					Source = "Value",
+				},
+				Mirror = Input { Value = 1, },
+				Scale = Input { Value = 0.15, },
+				Offset = Input { Value = 1, },
+			},
+		},
+		AnimCurves4Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+		}
+	},
+	ActiveTool = "Warp"
+}

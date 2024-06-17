@@ -1,0 +1,710 @@
+{
+	Tools = ordered() {
+		SlideFromCenterLine = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				LeftText = InstanceInput {
+					SourceOp = "leftText",
+					Source = "LeftText",
+					Page = "Controls",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "StyledText",
+					Name = "Left Text",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "Size",
+					Name = "Left Text Size",
+					Default = 0.0983,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "LineSpacing",
+					Default = 0.65,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "CharacterSpacingClone",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "Opacity1",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "Red1",
+					Name = "Left Text Color",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "Green1",
+					Name = "Color",
+					ControlGroup = 7,
+					Default = 0.6438853717045,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "leftText",
+					Source = "Blue1",
+					Name = "Color",
+					ControlGroup = 7,
+					Default = 0.3,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "leftTextPath",
+					Source = "Center",
+					Name = "Left Text Offset",
+				},
+				Input57 = InstanceInput {
+					SourceOp = "leftMerge",
+					Source = "MotionBlur",
+					Default = 1,
+				},
+				Input302 = InstanceInput {
+					SourceOp = "leftMerge",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input303 = InstanceInput {
+					SourceOp = "leftMerge",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input304 = InstanceInput {
+					SourceOp = "leftMerge",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input305 = InstanceInput {
+					SourceOp = "leftMerge",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				CenterLine = InstanceInput {
+					SourceOp = "line",
+					Source = "CenterLine",
+					Page = "Controls",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "lineMask",
+					Source = "Width",
+					Default = 0.0083,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "lineMask",
+					Source = "Height",
+					Default = 0.3333,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "line",
+					Source = "Type",
+				},
+				Input15 = InstanceInput {
+					SourceOp = "line",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "line",
+					Source = "TopLeftGreen",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "line",
+					Source = "TopLeftBlue",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "line",
+					Source = "TopLeftAlpha",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "line",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 13,
+					Default = 0,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "line",
+					Source = "TopRightGreen",
+					ControlGroup = 13,
+					Default = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "line",
+					Source = "TopRightBlue",
+					ControlGroup = 13,
+					Default = 0,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "line",
+					Source = "TopRightAlpha",
+					ControlGroup = 13,
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "line",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 14,
+					Default = 0,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "line",
+					Source = "BottomLeftGreen",
+					ControlGroup = 14,
+					Default = 0,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "line",
+					Source = "BottomLeftBlue",
+					ControlGroup = 14,
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "line",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 14,
+					Default = 1,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "line",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "line",
+					Source = "BottomRightGreen",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "line",
+					Source = "BottomRightBlue",
+					ControlGroup = 15,
+					Default = 0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "line",
+					Source = "BottomRightAlpha",
+					ControlGroup = 15,
+					Default = 1,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "line",
+					Source = "GradientType",
+				},
+				Input32 = InstanceInput {
+					SourceOp = "line",
+					Source = "Start",
+					DefaultX = 0,
+					DefaultY = 0.5,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "line",
+					Source = "End",
+					DefaultX = 1,
+					DefaultY = 0.5,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "line",
+					Source = "Gradient",
+				},
+				Input35 = InstanceInput {
+					SourceOp = "line",
+					Source = "GradientInterpolationMethod",
+				},
+				Input36 = InstanceInput {
+					SourceOp = "line",
+					Source = "Offset",
+					Default = 0,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "line",
+					Source = "Repeat",
+				},
+				Input38 = InstanceInput {
+					SourceOp = "line",
+					Source = "SubPixel",
+				},
+				Input39 = InstanceInput {
+					SourceOp = "lineTransform",
+					Source = "Center",
+				},
+				Input55 = InstanceInput {
+					SourceOp = "lineTransform",
+					Source = "MotionBlur",
+					Default = 1,
+				},
+				Input202 = InstanceInput {
+					SourceOp = "lineTransform",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input203 = InstanceInput {
+					SourceOp = "lineTransform",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input204 = InstanceInput {
+					SourceOp = "lineTransform",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input205 = InstanceInput {
+					SourceOp = "lineTransform",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				RightText = InstanceInput {
+					SourceOp = "rightText",
+					Source = "RightText",
+					Page = "Controls",
+				},
+				Input43 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "StyledText",
+				},
+				Input41 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "Font",
+					ControlGroup = 26,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "Style",
+					ControlGroup = 26,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "Size",
+					Default = 0.1688,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "LineSpacing",
+					Default = 0.632,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "CharacterSpacingClone",
+					Default = 1,
+				},
+				Input46 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "Opacity1",
+					Default = 1,
+				},
+				Input47 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "Red1",
+					Name = "Right Text Color",
+					ControlGroup = 31,
+					Default = 0.52,
+				},
+				Input48 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "Green1",
+					Name = "Color",
+					ControlGroup = 31,
+					Default = 0.7127222153666,
+				},
+				Input49 = InstanceInput {
+					SourceOp = "rightText",
+					Source = "Blue1",
+					Name = "Color",
+					ControlGroup = 31,
+					Default = 1,
+				},
+				Input50 = InstanceInput {
+					SourceOp = "rightTextPath",
+					Source = "Center",
+					Name = "Right Text Offset",
+				},
+				Input56 = InstanceInput {
+					SourceOp = "rightMerge",
+					Source = "MotionBlur",
+					Default = 1,
+				},
+				Input102 = InstanceInput {
+					SourceOp = "rightMerge",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input103 = InstanceInput {
+					SourceOp = "rightMerge",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input104 = InstanceInput {
+					SourceOp = "rightMerge",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input105 = InstanceInput {
+					SourceOp = "rightMerge",
+					Source = "SampleSpread",
+					Default = 1,
+				}
+			},
+			Outputs = {
+				Output2 = InstanceOutput {
+					SourceOp = "rightTextPath",
+					Source = "Heading",
+				},
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
+					Name = "Output",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "leftTextPath",
+					Source = "Heading",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 187.365, 49.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 464, 181.47, 232, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				leftText = TextPlus {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						HorizontalJustification = Input { Value = 2, },
+						Alignment = Input { Value = 1, },
+						GlobalOut = Input { Value = 20000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Depth = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						SelectTransform = Input { Value = 2, },
+						LineSpacing = Input { Value = 0.756, },
+						CharacterSpacing = Input { Value = 1.071, },
+						StyledText = Input { Value = "SAMPLE\nLEFT", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Light", },
+						Size = Input { Value = 0.063, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = 1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+						LeftText = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -54.667, 7.40916 } },
+					UserControls = ordered() { LeftText = { LBLC_NumInputs = 16, LINKS_Name = "Left Text Controls", LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", } }
+				},
+				leftTextPath = PolyPath {
+					DrawMode = "InsertAndModify",
+					NameSet = true,
+					Inputs = {
+						Center = Input { Value = { 0.485, 0.5 }, },
+						Displacement = Input {
+							SourceOp = "leftTextPathDisplacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0.5, Y = 0, RX = -0.171875, RY = 0 },
+									{ Linear = true, LockY = true, X = -0.015625, Y = 0, LX = 0.171875, LY = 0, RX = 0, RY = 0 },
+									{ Linear = true, LockY = true, X = -0.015625, Y = 0, LX = 0, LY = 0, RX = 0.171875, RY = 0 },
+									{ Linear = true, LockY = true, X = 0.5, Y = 0, LX = -0.171875, LY = 0 }
+								}
+							},
+						},
+					},
+				},
+				leftTextPathDisplacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					NameSet = true,
+					KeyFrames = {
+						[9] = { 0, RH = { 12.15, 0.285 }, Flags = { Linear = true, LockedY = true } },
+						[24] = { 0.5, LH = { 19, 0.5 }, RH = { 59.3333333333333, 0.5 }, Flags = { LockedY = true } },
+						[130] = { 0.5, LH = { 94.6666666666667, 0.5 }, RH = { 135, 0.5 }, Flags = { LockedY = true } },
+						[145] = { 1, LH = { 144.4, 0.811999999999999 }, Flags = { LockedY = true } }
+					}
+				},
+				rightTextMask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "lineMask",
+							Source = "Mask",
+						},
+						PaintMode = Input { Value = FuID { "Add" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.25, 0.5 }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 62.333, 76.046 } },
+				},
+				line = Background {
+					ExtentSet = true,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "lineTransform",
+							Source = "Output",
+						},
+						GlobalOut = Input { Value = 20000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Depth = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.250980392156863, },
+						TopLeftGreen = Input { Value = 0.874509803921569, },
+						TopLeftBlue = Input { Value = 1, },
+						CenterLine = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -169, 45.1971 } },
+					UserControls = ordered() { CenterLine = { LBLC_NumInputs = 33, LINKS_Name = "Center Line Controls", LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", } }
+				},
+				lineTransform = Transform {
+					NameSet = true,
+					Inputs = {
+						Size = Input {
+							SourceOp = "lineTransformSize",
+							Source = "Value",
+						},
+						Angle = Input {
+							SourceOp = "lineTransformAngle",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "lineMask",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -169, 96.5716 } },
+				},
+				lineTransformSize = BezierSpline {
+					SplineColor = { Red = 225, Green = 0, Blue = 225 },
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, RH = { 3.7, 0.3 }, Flags = { Linear = true } },
+						[15] = { 1, LH = { 8.5, 1 }, RH = { 56.3333333333333, 1 } },
+						[139] = { 1, LH = { 97.6666666666667, 1 }, RH = { 142.666666666667, 1 } },
+						[150] = { 0, LH = { 150, 0.359999999999999 } }
+					}
+				},
+				lineTransformAngle = BezierSpline {
+					SplineColor = { Red = 14, Green = 221, Blue = 144 },
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 320, RH = { 1.5, 260.067796610169 }, Flags = { Linear = true } },
+						[15] = { 0, LH = { 5.8, 0 }, RH = { 56.3333333333333, 0 } },
+						[139] = { 0, LH = { 97.6666666666667, 0 }, RH = { 142.666666666667, 0 } },
+						[150] = { -240, LH = { 146.333333333333, -160 } }
+					}
+				},
+				rightText = TextPlus {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Alignment = Input { Value = 1, },
+						GlobalOut = Input { Value = 20000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Depth = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						SelectTransform = Input { Value = 2, },
+						LineSpacing = Input { Value = 0.756, },
+						CharacterSpacing = Input { Value = 1.039, },
+						StyledText = Input { Value = "SAMPLE\nRIGHT", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.063, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+						RightText = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 62.333, 7.40916 } },
+					UserControls = ordered() { RightText = { LBLC_NumInputs = 16, LINKS_Name = "Right Text Controls", LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", } }
+				},
+				rightTextPath = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input { Value = { 0.513, 0.5 }, },
+						Displacement = Input {
+							SourceOp = "rightTextPathDisplacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = -0.5, Y = 0, RX = 0.169791666666667, RY = 0 },
+									{ Linear = true, LockY = true, X = 0.00937500000000002, Y = 0, LX = -0.169791666666667, LY = 0, RX = 0, RY = 0 },
+									{ Linear = true, LockY = true, X = 0.00937500037252903, Y = 0, LX = 0, LY = 0, RX = -0.169791666790843, RY = 0 },
+									{ Linear = true, LockY = true, X = -0.5, Y = 0, LX = 0.169791666790843, LY = 0 }
+								}
+							},
+						},
+					},
+				},
+				rightTextPathDisplacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					NameSet = true,
+					KeyFrames = {
+						[14] = { 0, RH = { 18.0727272727273, 0.305454545342849 }, Flags = { Linear = true, LockedY = true } },
+						[30] = { 0.499999999817164, LH = { 24.6666666666667, 0.499999999817164 }, RH = { 61.6666666666667, 0.499999999817164 }, Flags = { LockedY = true } },
+						[125] = { 0.499999999817164, LH = { 93.3333333333333, 0.499999999817164 }, RH = { 130, 0.499999999817164 }, Flags = { LockedY = true } },
+						[140] = { 1, LH = { 138.4, 0.836 }, Flags = { LockedY = true } }
+					}
+				},
+				leftMerge = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "leftTextMask",
+							Source = "Mask",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "line",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "leftText",
+							Source = "Output",
+						},
+						Center = Input {
+							SourceOp = "leftTextPath",
+							Source = "Position",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -54.667, 45.1971 } },
+				},
+				rightMerge = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "rightTextMask",
+							Source = "Mask",
+						},
+						ApplyMaskInverted = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "leftMerge",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "rightText",
+							Source = "Output",
+						},
+						Center = Input {
+							SourceOp = "rightTextPath",
+							Source = "Position",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 62.333, 45.1971 } },
+				},
+				lineMask = RectangleMask {
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.00833333333333326, },
+						Height = Input { Value = 0.333333333333333, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -54.667, 124.908 } },
+				},
+				leftTextMask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "lineMask",
+							Source = "Mask",
+						},
+						PaintMode = Input { Value = FuID { "Add" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.75, 0.5 }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -54.667, 75.137 } },
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					CtrlWShown = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "rightMerge",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 150, },
+						StretchStart = Input { Value = 30, },
+						StretchEnd = Input { Value = 125, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 169, 45.1971 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "TitleSlideFromCenterLine"
+}

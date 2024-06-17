@@ -1,0 +1,478 @@
+{
+	Tools = ordered() {
+		Visualizer = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopLeftRed",
+					Name = "Line Red",
+					ControlGroup = 1,
+					Default = 0.1199976296296,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopLeftGreen",
+					Name = "Line  Green",
+					ControlGroup = 1,
+					Default = 0.3219007421474,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopLeftBlue",
+					Name = "Line  Blue",
+					ControlGroup = 1,
+					Default = 0.7533333333333,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopLeftAlpha",
+					Name = "Line  Alpha",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Perturb1",
+					Source = "Speed",
+					Name = "Wobble Speed",
+					Default = 50,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelHue1",
+					ControlGroup = 3,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelSaturation1",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintAngle1",
+					ControlGroup = 3,
+					Default = -1.5,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelTintLength1",
+					ControlGroup = 3,
+					Default = 0.0007111111111,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ColorCorrector2",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 3,
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Final",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 220, 115.5, },
+				Flags = {
+					AllowPan = false,
+					GridSnap = true,
+					PipesAlways = true,
+					AutoSnap = true,
+					FullIndicator = true,
+				},
+				Size = { 1501, 394.3, },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0, },
+			},
+			Tools = ordered() {
+				Background4 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalIn = Input { Value = 1, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						Type = Input { Value = FuID { "Corner", }, },
+						TopLeftRed = Input { Value = 1, },
+						TopRightGreen = Input { Value = 1, },
+						BottomLeftBlue = Input { Value = 1, },
+						BottomRightRed = Input { Value = 1, },
+						BottomRightGreen = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						Comments = Input { Value = "Here we generate the color for the blockpatterns in the background. This tool might be replaced with a loader as well.", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -687.5, 10.15, }, },
+				},
+				DownSz = BetterResize {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 24, },
+						Height = Input { Value = 16, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						FilterMethod = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Background4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 27.5, 10.15, }, },
+				},
+				UpSz = BetterResize {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						FilterMethod = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "DownSz",
+							Source = "Output",
+						},
+						Comments = Input { Value = "downsizing to 24x16 px and upsizing again with nearest neighbor to create that blocky effect.\r\n", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 357.5, 10.15, }, },
+				},
+				Background1_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalIn = Input { Value = 1, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						TopLeftRed = Input { Value = 0.1199976296296, },
+						TopLeftGreen = Input { Value = 0.3219007421474, },
+						TopLeftBlue = Input { Value = 0.7533333333333, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						Comments = Input { Value = "Here we generate the oscillating line.\r\nThis could be replaced with e.g. \"Audio\" from the Krokodove collection. (www.komkomdoorn.com)\r\n", },
+						EffectMask = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -522.5, 208.15, }, },
+				},
+				Inst_DownSz = BetterResize {
+					CtrlWShown = false,
+					NameSet = true,
+					SourceOp = "DownSz",
+					Inputs = {
+						ResetSize = Input { },
+						Input = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						StartEndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 27.5, 208.15, }, },
+				},
+				Inst_UpSz = BetterResize {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					SourceOp = "UpSz",
+					Inputs = {
+						ResetSize = Input { },
+						Input = Input {
+							SourceOp = "Inst_DownSz",
+							Source = "Output",
+						},
+						StartEndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 357.5, 208.15, }, },
+				},
+				Merge3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0.3, },
+						Background = Input {
+							SourceOp = "Background1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BrightnessContrast3",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+						Comments = Input { Value = "Using the blend-slider we determine how much of the trails are used to generate blocky patterns further downstream.\r\nHigher blend=More blocks", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -192.5, 208.15, }, },
+				},
+				Polygon1 = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
+					CtrlWShown = false,
+					Inputs = {
+						BorderWidth = Input { Value = 0.003, },
+						MaskWidth = Input { Value = 320, },
+						MaskHeight = Input { Value = 240, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ZRotation = Input {
+							SourceOp = "Polygon1ZRotation",
+							Source = "Value",
+						},
+						Polyline = Input {
+							SourceOp = "Perturb1",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+						Comments = Input { Value = "The mask for the oscillating line.\r\nPlay around with the Perturb modifier to get different results.", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -687.5, 208.15, }, },
+				},
+				Polygon1ZRotation = BezierSpline {
+					SplineColor = { Red = 0, Green = 255, Blue = 255, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, RH = { 33.3333333333333, 30, }, Flags = { Loop = true, LoopRel = true, }, },
+						[100] = { 90, LH = { 66.6666666666667, 60, }, Flags = { Linear = true, Loop = true, LoopRel = true, }, },
+					},
+				},
+				Perturb1 = PerturbPolyLine {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, X = -0.0563221407357515, Y = 1.00508997949854, RX = -0.00402854007653176, RY = -0.00544549194984234, },
+									{ X = -0.0631986939400251, Y = 0.985598056553672, LX = 0.00409500374817587, LY = 0.00528648910075617, RX = -0.0070455686457251, RY = -0.00909555256716104, },
+									{ X = -0.0773766367385795, Y = 0.958254690097883, LX = 0.00275725933443468, LY = 0.0146829329721183, RX = -0.00181271122419783, RY = -0.00965303374633801, },
+									{ X = -0.0650872760228705, Y = 0.942205087910475, LX = -0.00512163743322318, LY = 0.00454562930667209, RX = 0.0055112283879801, RY = -0.00489140467336822, },
+									{ X = -0.0554750067864851, Y = 0.942167845838835, LX = -0.0034204939952972, LY = 0.00910738471367922, RX = 0.00302435944284335, RY = -0.00805263947146024, },
+									{ X = -0.0692085464845311, Y = 0.91312033094205, LX = 0.00343766408830071, LY = 0.00751025998371057, RX = -0.00993602427174164, RY = -0.0217072184973503, },
+									{ X = -0.103470462837856, Y = 0.845945766241066, LX = 0.00967394864303763, LY = 0.0220781803623863, RX = -0.00473348603964396, RY = -0.0108029060709673, },
+									{ X = -0.110482176648933, Y = 0.805711930377408, LX = -0.00344895877273855, LY = 0.0122442387331589, RX = 0.00320630998292813, RY = -0.0113828049189206, },
+									{ X = -0.0875337358825921, Y = 0.80836474902578, LX = -0.00714495833164467, LY = 0.000845515219464623, RX = 0.0080838417890068, RY = -0.000956620171467964, },
+									{ X = -0.06003342739805, Y = 0.820905716665927, LX = -0.00533963337739636, LY = 0.0108322501688184, RX = 0.00537311688170284, RY = -0.0109001764981263, },
+									{ X = -0.0549081709877185, Y = 0.786266188634312, LX = 0.00303175759161472, LY = 0.0134539463121682, RX = -0.00522605863723898, RY = -0.0231915350106235, },
+									{ X = -0.0668281901027889, Y = 0.721015518753733, LX = 0.00370287390793922, LY = 0.0241004423133731, RX = -0.00267768215796172, RY = -0.0174279022148556, },
+									{ X = -0.0599776456963587, Y = 0.65987051652631, LX = -0.00595590611490503, LY = 0.0146383345167511, RX = 0.00855601121088647, RY = -0.0210288328623236, },
+									{ X = -0.0258857596313548, Y = 0.607672448199437, LX = -0.010013567875141, LY = 0.0188856879692655, RX = 0.00683271625295894, RY = -0.0128865703758057, },
+									{ X = -0.0192535257163149, Y = 0.550359321152127, LX = 0.000828501734466727, LY = 0.0176478082523586, RX = -0.00135896960031777, RY = -0.0289472356296626, },
+									{ X = -0.0436746905794212, Y = 0.459216999876987, LX = 0.00552798232805341, LY = 0.0273349412796911, RX = -0.00865588812358652, RY = -0.0428019084614423, },
+									{ X = -0.0732119089514021, Y = 0.321458507939288, LX = 0.00142135885872233, LY = 0.0454138354106546, RX = -0.00075390425493531, RY = -0.0240879940621053, },
+									{ X = -0.0584809001414094, Y = 0.255664584471076, LX = -0.00830554980908858, LY = 0.0190790489692885, RX = 0.00920786020653467, RY = -0.0211517864344873, },
+									{ X = -0.028223274527174, Y = 0.207333924184615, LX = -0.0078936417075487, LY = 0.0227690692902882, RX = 0.00889468076344243, RY = -0.025656548665509, },
+									{ X = -0.0142942047352936, Y = 0.12727998671081, LX = -0.000499150784461051, LY = 0.0301249831523389, RX = 0.000549022648524569, RY = -0.0331348733728088, },
+									{ X = -0.0243000247438404, Y = 0.0336174910985543, LX = 0.00324527880349608, LY = 0.0326433253524197, RX = -0.002837776058805, RY = -0.0285443725405304, },
+									{ X = -0.0260832118748691, Y = -0.0495793824191652, LX = -0.00202543756826652, LY = 0.0287622491050993, RX = 0.00214681812112353, RY = -0.0304859150193126, },
+									{ X = -0.00252568298203973, Y = -0.134172216168322, LX = -0.00707836527426525, LY = 0.0280286667385938, RX = 0.00611698038293729, RY = -0.0242218079961495, },
+									{ X = 0.0253491304992956, Y = -0.207679106108771, LX = -0.0041087261890277, LY = 0.0255264433278709, RX = 0.00418202838588855, RY = -0.0259818507431846, },
+									{ X = 0.0345811174314057, Y = -0.295899158475163, LX = 0.00193597680852797, LY = 0.0268045898379729, RX = -0.00318608790653931, RY = -0.0441130178555432, },
+									{ X = 0.0176903124931262, Y = -0.432048236384583, LX = 0.00249308078456087, LY = 0.0442537807834167, RX = -0.00162486977194534, RY = -0.0288424792066797, },
+									{ X = 0.018958851420638, Y = -0.520148232165327, LX = -0.00803230135313124, LY = 0.0252254758932619, RX = 0.00650188897854286, RY = -0.0204192094492272, },
+									{ X = 0.042143048820761, Y = -0.554983112436011, LX = -0.00898823500056806, LY = 0.0171820098258818, RX = 0.00501378691886432, RY = -0.0095844107435286, },
+									{ X = 0.0358817733308686, Y = -0.592701042061767, LX = 0.00249712723055399, LY = 0.0123126721222925, RX = -0.00723790800464148, RY = -0.0356882048387643, },
+									{ X = -0.00489526446984265, Y = -0.697050055471693, LX = 0.0111398830892434, LY = 0.0323575331920725, RX = -0.0111398826531513, RY = -0.032357531925375, },
+									{ X = -0.0379170583675994, Y = -0.80258071844873, LX = 0.00816984955861962, LY = 0.035046624826063, RX = -0.00427601095798225, RY = -0.0183430246446127, },
+									{ X = -0.0345336580677416, Y = -0.861588830804242, LX = 0.000465674891618649, LY = 0.0198385612324964, RX = -0.000548076644215561, RY = -0.0233490193739621, },
+									{ X = -0.0315485204701684, Y = -0.920458750749444, LX = 0.00192930070877985, LY = 0.0231162731895898, RX = -0.00216109811895596, RY = -0.025893596721316, },
+									{ X = -0.0507266949128259, Y = -0.981260805080063, LX = 0.00313250433844956, LY = 0.0255778485921144, RX = -0.00194799881283974, RY = -0.0159060014956259, },
+									{ X = -0.0630748828112133, Y = -1.01875849422907, LX = 0.000544658809167493, LY = 0.0162498134408782, },
+								},
+							},
+						},
+						Jaggedness = Input { Value = 4.475138, },
+						Strength = Input { Value = 0.1933702, },
+						Wobble = Input { Value = 1.127072, },
+						Speed = Input { Value = 50, },
+					},
+				},
+				BrightnessContrast1 = BrightnessContrast {
+					CtrlWShown = false,
+					Inputs = {
+						ApplyMaskInverted = Input { Value = 1, },
+						Alpha = Input { Value = 1, },
+						Gain = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "ColorCorrector2",
+							Source = "Output",
+						},
+						Comments = Input { Value = "Using the upstream tools as a mask\r\nwe cut away the blocks we don't want to see.\r\nNote that \"Apply Mask inverted\" is checked.\r\n", },
+						EffectMask = Input {
+							SourceOp = "Inst_UpSz",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 687.5, 208.15, }, },
+				},
+				ColorCorrector2 = ColorCorrector {
+					CtrlWShown = false,
+					Inputs = {
+						WheelTintAngle1 = Input { Value = 1, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1, },
+											{ 0.4, 0.2, },
+											{ 0.6, 0, },
+											{ 1, 0, },
+										},
+									},
+									{
+										Points = {
+											{ 0, 0, },
+											{ 0.4, 0, },
+											{ 0.6, 0.2, },
+											{ 1, 1, },
+										},
+									},
+								},
+							},
+						},
+						Input = Input {
+							SourceOp = "UpSz",
+							Source = "Output",
+						},
+						Comments = Input { Value = "not really needed, but useful in some scenarios. Try yourself...;-)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 687.5, 10.15, }, },
+				},
+				Trails2 = Trails {
+					CtrlWShown = false,
+					Inputs = {
+						GainRed = Input { Value = 0.9, },
+						XScale = Input { Value = 0.995, },
+						Input = Input {
+							SourceOp = "BrightnessContrast1",
+							Source = "Output",
+						},
+						Comments = Input { Value = "Another Trails to make our blocks fade out over a longer period of time and make them slowly travel backwards.\r\nPlay around with Scale and Gain for different results.", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 687.5, 274.15, }, },
+				},
+				Final = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Trails2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BrightnessContrast3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen", }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 687.5, 340.15, }, },
+				},
+				BrightnessContrast3 = BrightnessContrast {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Trails1",
+							Source = "Output",
+						},
+						Comments = Input { Value = "my hovercraft is full of eels", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -247.5, 340.15, }, },
+				},
+				Trails1 = Trails {
+					CtrlWShown = false,
+					Inputs = {
+						GainRed = Input { Value = 0.9, },
+						Rotate = Input { Value = 1, },
+						XScale = Input { Value = 1.08, },
+						XBlurSize = Input { Value = 2, },
+						ApplyMode = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Background1_1",
+							Source = "Output",
+						},
+						Comments = Input { Value = "This generates the...well...trails for the line.\r\nPlay around with Gain, Scale and Blursize for different results.", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -357.5, 340.15, }, },
+				},
+			},
+		},
+		Polygon1ZRotation = BezierSpline {
+			SplineColor = { Red = 0, Green = 255, Blue = 255, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 33.3333333333333, 30, }, Flags = { Loop = true, LoopRel = true, }, },
+				[100] = { 90, LH = { 66.6666666666667, 60, }, Flags = { Linear = true, Loop = true, LoopRel = true, }, },
+			},
+		},
+		Perturb1 = PerturbPolyLine {
+			CtrlWZoom = false,
+			Inputs = {
+				Value = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, X = -0.0563221407357515, Y = 1.00508997949854, RX = -0.00402854007653176, RY = -0.00544549194984234, },
+							{ X = -0.0631986939400251, Y = 0.985598056553672, LX = 0.00409500374817587, LY = 0.00528648910075617, RX = -0.0070455686457251, RY = -0.00909555256716104, },
+							{ X = -0.0773766367385795, Y = 0.958254690097883, LX = 0.00275725933443468, LY = 0.0146829329721183, RX = -0.00181271122419783, RY = -0.00965303374633801, },
+							{ X = -0.0650872760228705, Y = 0.942205087910475, LX = -0.00512163743322318, LY = 0.00454562930667209, RX = 0.0055112283879801, RY = -0.00489140467336822, },
+							{ X = -0.0554750067864851, Y = 0.942167845838835, LX = -0.0034204939952972, LY = 0.00910738471367922, RX = 0.00302435944284335, RY = -0.00805263947146024, },
+							{ X = -0.0692085464845311, Y = 0.91312033094205, LX = 0.00343766408830071, LY = 0.00751025998371057, RX = -0.00993602427174164, RY = -0.0217072184973503, },
+							{ X = -0.103470462837856, Y = 0.845945766241066, LX = 0.00967394864303763, LY = 0.0220781803623863, RX = -0.00473348603964396, RY = -0.0108029060709673, },
+							{ X = -0.110482176648933, Y = 0.805711930377408, LX = -0.00344895877273855, LY = 0.0122442387331589, RX = 0.00320630998292813, RY = -0.0113828049189206, },
+							{ X = -0.0875337358825921, Y = 0.80836474902578, LX = -0.00714495833164467, LY = 0.000845515219464623, RX = 0.0080838417890068, RY = -0.000956620171467964, },
+							{ X = -0.06003342739805, Y = 0.820905716665927, LX = -0.00533963337739636, LY = 0.0108322501688184, RX = 0.00537311688170284, RY = -0.0109001764981263, },
+							{ X = -0.0549081709877185, Y = 0.786266188634312, LX = 0.00303175759161472, LY = 0.0134539463121682, RX = -0.00522605863723898, RY = -0.0231915350106235, },
+							{ X = -0.0668281901027889, Y = 0.721015518753733, LX = 0.00370287390793922, LY = 0.0241004423133731, RX = -0.00267768215796172, RY = -0.0174279022148556, },
+							{ X = -0.0599776456963587, Y = 0.65987051652631, LX = -0.00595590611490503, LY = 0.0146383345167511, RX = 0.00855601121088647, RY = -0.0210288328623236, },
+							{ X = -0.0258857596313548, Y = 0.607672448199437, LX = -0.010013567875141, LY = 0.0188856879692655, RX = 0.00683271625295894, RY = -0.0128865703758057, },
+							{ X = -0.0192535257163149, Y = 0.550359321152127, LX = 0.000828501734466727, LY = 0.0176478082523586, RX = -0.00135896960031777, RY = -0.0289472356296626, },
+							{ X = -0.0436746905794212, Y = 0.459216999876987, LX = 0.00552798232805341, LY = 0.0273349412796911, RX = -0.00865588812358652, RY = -0.0428019084614423, },
+							{ X = -0.0732119089514021, Y = 0.321458507939288, LX = 0.00142135885872233, LY = 0.0454138354106546, RX = -0.00075390425493531, RY = -0.0240879940621053, },
+							{ X = -0.0584809001414094, Y = 0.255664584471076, LX = -0.00830554980908858, LY = 0.0190790489692885, RX = 0.00920786020653467, RY = -0.0211517864344873, },
+							{ X = -0.028223274527174, Y = 0.207333924184615, LX = -0.0078936417075487, LY = 0.0227690692902882, RX = 0.00889468076344243, RY = -0.025656548665509, },
+							{ X = -0.0142942047352936, Y = 0.12727998671081, LX = -0.000499150784461051, LY = 0.0301249831523389, RX = 0.000549022648524569, RY = -0.0331348733728088, },
+							{ X = -0.0243000247438404, Y = 0.0336174910985543, LX = 0.00324527880349608, LY = 0.0326433253524197, RX = -0.002837776058805, RY = -0.0285443725405304, },
+							{ X = -0.0260832118748691, Y = -0.0495793824191652, LX = -0.00202543756826652, LY = 0.0287622491050993, RX = 0.00214681812112353, RY = -0.0304859150193126, },
+							{ X = -0.00252568298203973, Y = -0.134172216168322, LX = -0.00707836527426525, LY = 0.0280286667385938, RX = 0.00611698038293729, RY = -0.0242218079961495, },
+							{ X = 0.0253491304992956, Y = -0.207679106108771, LX = -0.0041087261890277, LY = 0.0255264433278709, RX = 0.00418202838588855, RY = -0.0259818507431846, },
+							{ X = 0.0345811174314057, Y = -0.295899158475163, LX = 0.00193597680852797, LY = 0.0268045898379729, RX = -0.00318608790653931, RY = -0.0441130178555432, },
+							{ X = 0.0176903124931262, Y = -0.432048236384583, LX = 0.00249308078456087, LY = 0.0442537807834167, RX = -0.00162486977194534, RY = -0.0288424792066797, },
+							{ X = 0.018958851420638, Y = -0.520148232165327, LX = -0.00803230135313124, LY = 0.0252254758932619, RX = 0.00650188897854286, RY = -0.0204192094492272, },
+							{ X = 0.042143048820761, Y = -0.554983112436011, LX = -0.00898823500056806, LY = 0.0171820098258818, RX = 0.00501378691886432, RY = -0.0095844107435286, },
+							{ X = 0.0358817733308686, Y = -0.592701042061767, LX = 0.00249712723055399, LY = 0.0123126721222925, RX = -0.00723790800464148, RY = -0.0356882048387643, },
+							{ X = -0.00489526446984265, Y = -0.697050055471693, LX = 0.0111398830892434, LY = 0.0323575331920725, RX = -0.0111398826531513, RY = -0.032357531925375, },
+							{ X = -0.0379170583675994, Y = -0.80258071844873, LX = 0.00816984955861962, LY = 0.035046624826063, RX = -0.00427601095798225, RY = -0.0183430246446127, },
+							{ X = -0.0345336580677416, Y = -0.861588830804242, LX = 0.000465674891618649, LY = 0.0198385612324964, RX = -0.000548076644215561, RY = -0.0233490193739621, },
+							{ X = -0.0315485204701684, Y = -0.920458750749444, LX = 0.00192930070877985, LY = 0.0231162731895898, RX = -0.00216109811895596, RY = -0.025893596721316, },
+							{ X = -0.0507266949128259, Y = -0.981260805080063, LX = 0.00313250433844956, LY = 0.0255778485921144, RX = -0.00194799881283974, RY = -0.0159060014956259, },
+							{ X = -0.0630748828112133, Y = -1.01875849422907, LX = 0.000544658809167493, LY = 0.0162498134408782, },
+						},
+					},
+				},
+				Jaggedness = Input { Value = 4.475138, },
+				Strength = Input { Value = 0.1933702, },
+				Wobble = Input { Value = 1.127072, },
+				Speed = Input { Value = 50, },
+			},
+		},
+	},
+}

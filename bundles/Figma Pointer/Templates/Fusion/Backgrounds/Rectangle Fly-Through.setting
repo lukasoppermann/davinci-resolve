@@ -1,0 +1,341 @@
+{
+	Tools = ordered() {
+		BobbyRects = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "Start",
+					DefaultX = 0.5,
+					DefaultY = 0.5,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "End",
+					DefaultX = 0.953367875647668,
+					DefaultY = 0.5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "Gradient",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "GradientInterpolationMethod",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Lifespan",
+					Default = 40,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "LifespanVariance",
+					Default = 10,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "Velocity",
+					Default = 0.05,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "VelocityVariance",
+					Default = 0.02,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.Size",
+					Default = 0.1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "pEmitter1",
+					Source = "ParticleStyle.SizeVariance",
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Renderer3D1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 330, -82.5, },
+				Flags = {
+					AllowPan = false,
+					GridSnap = true,
+					PipesAlways = true,
+					AutoSnap = true,
+					FullIndicator = true,
+				},
+				Size = { 566, 194.856, },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0, },
+			},
+			Tools = ordered() {
+				Rectangle1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Level = Input { Value = 0.6858639, },
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Width = Input { Value = 0.9, },
+						Height = Input { Value = 0.9, },
+						CornerRadius = Input { Value = 0.4554974, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 9.42812, }, },
+				},
+				Rectangle1_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						SoftEdge = Input { Value = 0.0125654, },
+						BorderWidth = Input { Value = 0.0416667, },
+						PaintMode = Input { Value = FuID { "Add", }, },
+						Solid = Input { Value = 0, },
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Width = Input { Value = 0.9, },
+						Height = Input { Value = 0.9, },
+						CornerRadius = Input { Value = 0.4554974, },
+						EffectMask = Input {
+							SourceOp = "Rectangle1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 42.4281, }, },
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					CustomData = {
+						Settings = {
+							{
+								Tools = ordered() {
+									Background1 = Background {
+										ViewInfo = OperatorInfo { Pos = { 259, 256, }, },
+										Name = "Background1",
+										CtrlWZoom = false,
+										Inputs = {
+											Height = Input { Value = 720, },
+											Gradient = Input {
+												Value = Gradient {
+													Colors = {
+														[0] = { 0, 0, 0, 1, },
+														{ 1, 1, 1, 1, },
+													},
+												},
+											},
+											TopLeftAlpha = Input { Value = 0, },
+											Width = Input { Value = 1280, },
+										},
+										CustomData = {
+										},
+									},
+								},
+							},
+							{
+								Tools = ordered() {
+									Background1 = Background {
+										Inputs = {
+											TopLeftRed = Input { Value = 1, },
+											TopLeftGreen = Input { Value = 0.760784387588501, },
+											TopLeftBlue = Input { Value = 0.0588235333561897, },
+											Gradient = Input {
+												Value = Gradient {
+													Colors = {
+														[0] = { 0, 0, 0, 1, },
+														{ 1, 1, 1, 1, },
+													},
+												},
+											},
+											Height = Input { Value = 720, },
+											Width = Input { Value = 1280, },
+										},
+										CtrlWZoom = false,
+										ViewInfo = OperatorInfo { Pos = { 259, 256, }, },
+										CustomData = {
+										},
+									},
+								},
+							},
+						},
+					},
+					Inputs = {
+						GlobalIn = Input { Value = 1, },
+						Width = Input { Value = 128, },
+						Height = Input { Value = 128, },
+						Type = Input { Value = FuID { "Gradient", }, },
+						TopLeftRed = Input { Value = 0.14592, },
+						TopLeftGreen = Input { Value = 0.4935274827869, },
+						TopLeftBlue = Input { Value = 0.96, },
+						GradientType = Input { Value = FuID { "Radial", }, },
+						Start = Input { Value = { 0.5, 0.5, }, },
+						End = Input { Value = { 0.953367875647668, 0.5, }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.501925925925926, 0.586914406644334, 0.933333333333333, 0.710743801652893, },
+									[1] = { 0.321167407407408, 0.423214310816951, 0.953333333333333, 0.297520661157025, },
+								},
+							},
+						},
+						EffectMask = Input {
+							SourceOp = "Rectangle1_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 75.4281, }, },
+				},
+				Renderer3D1 = Renderer3D {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						GlobalIn = Input { Value = 1, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						Depth = Input { Value = 4, },
+						SceneInput = Input {
+							SourceOp = "Merge3D1",
+							Source = "Output",
+						},
+						RendererType = Input { Value = FuID { "RendererOpenGL", }, },
+						["RendererOpenGL.TransparencySorting"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, 108.428, }, },
+				},
+				pRender1 = pRender {
+					CtrlWShown = false,
+					Inputs = {
+						["_MotionBlurWarning"] = Input { Disabled = true, },
+						GlobalIn = Input { Value = 1, },
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						OutputMode = Input { Disabled = true, },
+						IntegrationMethod = Input { Value = FuID { "RK4", }, },
+						["MaterialID.MaterialID"] = Input { Value = 1, },
+						["ObjectID.ObjectID"] = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "pEmitter1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -82.5, 108.428, }, },
+				},
+				pEmitter1 = pEmitter {
+					ID = 62,
+					CtrlWShown = false,
+					Inputs = {
+						Number = Input { Value = 5, },
+						Lifespan = Input { Value = 40, },
+						LifespanVariance = Input { Value = 10, },
+						VelocityControls = Input { Value = 1, },
+						Velocity = Input { Value = 0.05, },
+						VelocityVariance = Input { Value = 0.02, },
+						AngleZ = Input { Value = 90, },
+						Style = Input { Value = FuID { "ParticleStyleBitmap", }, },
+						Region = Input { Value = FuID { "CubeRgn", }, },
+						["ParticleStyle.ColorOverLife"] = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter1SizeoverLife_2",
+							Source = "Value",
+						},
+						["ParticleStyle.FadeControls"] = Input { Value = 1, },
+						["ParticleStyle.FadeIn"] = Input { Value = 0.4255319, },
+						["ParticleStyle.FadeOut"] = Input { Value = 0.6879433, },
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter1BluroverLife2D_2",
+							Source = "Value",
+						},
+						["ParticleStyleBitmap.DropToolsHere"] = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						["CubeRgn.Width"] = Input { Value = 1.403141, },
+						["CubeRgn.Height"] = Input { Value = 0.9015707, },
+						["CubeRgn.Depth"] = Input { Value = 0.8115183, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 108.428, }, },
+				},
+				pEmitter1SizeoverLife_2 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64, },
+					CtrlWShown = false,
+				},
+				pEmitter1BluroverLife2D_2 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64, },
+					CtrlWShown = false,
+				},
+				Merge3D1 = Merge3D {
+					CtrlWShown = false,
+					Inputs = {
+						SceneInput1 = Input {
+							SourceOp = "pRender1",
+							Source = "Output",
+						},
+						SceneInput2 = Input {
+							SourceOp = "Camera3D1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 55, 108.428, }, },
+				},
+				Camera3D1 = Camera3D {
+					CtrlWShown = false,
+					Inputs = {
+						["Transform3DOp.Translate.Z"] = Input { Value = 1.5, },
+						AoV = Input { Value = 24.32659, },
+						FLength = Input { Value = 34.9999945837878, },
+						["Stereo.Mode"] = Input { Value = FuID { "OffAxis", }, },
+						["SurfacePlaneInputs.ObjectID.ObjectID"] = Input { Value = 2, },
+						["MtlStdInputs.MaterialID"] = Input { Value = 2, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -55, 141.428, }, },
+				},
+			},
+		},
+		pEmitter1SizeoverLife_2 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			CtrlWShown = false,
+		},
+		pEmitter1BluroverLife2D_2 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			CtrlWShown = false,
+		},
+	},
+}

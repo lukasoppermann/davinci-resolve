@@ -1,0 +1,374 @@
+{
+	Tools = ordered() {
+		ParticlesFlashBulbs = GroupOperator {
+			Inputs = ordered() {
+				FlashBulbControls= InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "FlashBulbControls",
+					Page = "Controls",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "Number",
+					Default = 0.25,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "NumberVariance",
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "Lifespan",
+					Default = 10,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "LifespanVariance",
+					Default = 1.7,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "ParticleStyle.Red",
+					Name = "Base Color",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "ParticleStyle.Green",
+					ControlGroup = 5,
+					Default = 0.7010192798649,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "ParticleStyle.Blue",
+					ControlGroup = 5,
+					Default = 0.65,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "ParticleStyle.Alpha",
+					ControlGroup = 5,
+					Default = 1,
+				},
+
+
+				Input17 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "ParticleStyle.Size",
+					Default = 0.0327,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "ParticleStyle.SizeVariance",
+					Default = 0.1051,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "ParticleStyle.FadeIn",
+					ControlGroup = 12,
+					Default = 0.057,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "pEmitter7",
+					Source = "ParticleStyle.FadeOut",
+					ControlGroup = 12,
+					Default = 0.644,
+				},
+				
+				ParticleDrift= InstanceInput {
+					SourceOp = "pTurbulence3_1",
+					Source = "ParticleDrift",
+					Page = "Controls",
+				},
+				Input21 = InstanceInput {
+					SourceOp = "pTurbulence3_1",
+					Source = "XStrength",
+					Name = "X Drift",
+					Default = 0.05,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "pTurbulence3_1",
+					Source = "YStrength",
+					Name = "Y Drift",
+					Default = 0.05,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "pTurbulence3_1",
+					Source = "ZStrength",
+					Name = "Z Drift",
+					Default = 0.05,
+				},
+				
+				
+				ParticleColor= InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "ParticleColor",
+					Page = "Controls",
+				},
+
+				Input26 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "Curve",
+					Name = "Point Stretch",
+					Default = 0.282,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "Length",
+					Name = "Point Length",
+					Default = 0.897,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "NumberOfPoints",
+					Default = 11,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Highlight1",
+					Source = "Angle",
+					Default = -0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Name = "Point Hue",
+					Source = "Hue1",
+				},
+				Input31 = InstanceInput {
+					SourceOp = "ColorCorrector1",
+					Source = "Saturation1",
+					Name = "Point Saturation",
+					Default = 1.513,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ColorCorrector1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				pEmitter7 = pEmitter {
+					ID = 1,
+					Inputs = {
+						["SphereRgn.Size"] = Input { Value = 5, },
+						Number = Input { Value = 0.25, },
+						Lifespan = Input { Value = 10, },
+						LifespanVariance = Input { Value = 1.7, },
+						VelocityVariance = Input { Value = 0.01, },
+						AngleVariance = Input { Value = 360, },
+						AngleZVariance = Input { Value = 360, },
+						Style = Input { Value = FuID { "ParticleStyleBlob" }, },
+						Region = Input { Value = FuID { "RectRgn" }, },
+						["ParticleStyle.ColorControls"] = Input { Value = 1, },
+						["ParticleStyle.Green"] = Input { Value = 0.7010192798649, },
+						["ParticleStyle.Blue"] = Input { Value = 0.65, },
+						["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+						["ParticleStyle.RedLow"] = Input { Value = -0.013, },
+						["ParticleStyle.RedHigh"] = Input { Value = 0.416, },
+						["ParticleStyle.GreenHigh"] = Input { Value = 0.481, },
+						["ParticleStyle.BlueLow"] = Input { Value = -0.26, },
+						["ParticleStyle.BlueHigh"] = Input { Value = 0.182, },
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 0.0327, },
+						["ParticleStyle.SizeVariance"] = Input { Value = 0.1051, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter7SizeoverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.FadeControls"] = Input { Value = 1, },
+						["ParticleStyle.FadeIn"] = Input { Value = 0.057, },
+						["ParticleStyle.FadeOut"] = Input { Value = 0.644, },
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter7BluroverLife2D",
+							Source = "Value",
+						},
+						["RectRgn.Width"] = Input { Value = 2, },
+						["RectRgn.Height"] = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 1595, 280.5 } },
+					UserControls = ordered() {
+						FlashBulbControls = {
+							LBLC_NumInputs = 12,
+							LINKS_Name = "Flash Bulb Controls",
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+						}
+					}
+				},
+				pEmitter7SizeoverLife = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+				},
+				pEmitter7BluroverLife2D = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+				},
+				pTurbulence3_1 = pTurbulence {
+					ID = 4,
+					Inputs = {
+						XStrength = Input { Value = 0.05, },
+						YStrength = Input { Value = 0.05, },
+						ZStrength = Input { Value = 0.05, },
+						StrengthOverLifeLUT = Input {
+							SourceOp = "pTurbulence3_1StrengthoverLifeLUT",
+							Source = "Value",
+						},
+						Density = Input { Value = 2.1, },
+						Input = Input {
+							SourceOp = "pEmitter7",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1760, 280.5 } },
+					UserControls = ordered() {
+						ParticleDrift = {
+							LBLC_NumInputs = 3,
+							LINKS_Name = "Flash Bulb Drift",
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+						}
+					}
+				},
+				pTurbulence3_1StrengthoverLifeLUT = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+				},
+				Highlight1 = Highlight {
+					Inputs = {
+						Low = Input { Value = 0.758, },
+						High = Input { Value = 0.855, },
+						Curve = Input { Value = 0.282, },
+						Length = Input { Value = 0.897, },
+						NumberOfPoints = Input { Value = 11, },
+						Angle = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Renderer3D6",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1980, 313.5 } },
+					UserControls = ordered() {
+						ParticleColor = {
+							LBLC_NumInputs = 6,
+							LINKS_Name = "Flash Color & Shape",
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+						}
+					}
+				},
+				ColorCorrector1 = ColorCorrector {
+					Inputs = {
+						WheelSaturation1 = Input { Value = 1.513, },
+						WheelTintAngle1 = Input { Value = -0.3877780435174, },
+						WheelTintLength1 = Input { Value = 0.6772, },
+						TintMode = Input { Value = 0, },
+						MasterRGBGain = Input { Value = 5, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Highlight1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2090, 313.5 } },
+				},
+				Renderer3D6 = Renderer3D {
+					CustomData = {
+						ToolVersion = 2,
+					},
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						SceneInput = Input {
+							SourceOp = "pRender6",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1870, 313.5 } },
+				},
+				pRender6 = pRender {
+					Inputs = {
+						_MotionBlurWarning = Input { Disabled = true, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input { Disabled = true, },
+						IntegrationMethod = Input { Value = FuID { "RK4" }, },
+						PreGenerateFrames = Input { Value = 60, },
+						KillParticlesThatLeaveTheView = Input { Value = 1, },
+						["MaterialID.MaterialID"] = Input { Value = 12, },
+						["ObjectID.ObjectID"] = Input { Value = 15, },
+						Input = Input {
+							SourceOp = "pTurbulence3_1",
+							Source = "Output",
+						},
+						Camera = Input {
+							SourceOp = "Camera3D1_4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1760, 313.5 } },
+				},
+				Camera3D1_4 = Camera3D {
+					CtrlWZoom = false,
+					Inputs = {
+						["Transform3DOp.Translate.Z"] = Input { Value = 3.383209, },
+						AoV = Input { Value = 19.26427, },
+						FLength = Input { Value = 34.9999968656308, },
+						["Stereo.Mode"] = Input { Value = FuID { "Mono" }, },
+						FilmBack = Input { Value = 1, },
+						FilmGate = Input { Value = FuID { "BMD_URSA_4K_16x9" }, },
+						ApertureW = Input { Value = 0.831496062992126, },
+						ApertureH = Input { Value = 0.467716535433071, },
+						ControlVis = Input { Value = 1, },
+						PlaneOfFocusVis = Input { Value = 1, },
+						["SurfacePlaneInputs.ObjectID.ObjectID"] = Input { Value = 5, },
+						["MtlStdInputs.MaterialID"] = Input { Value = 5, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1760, 346.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ParticlesFlashBulbs"
+}

@@ -1,0 +1,289 @@
+{
+	Tools = ordered() {
+		DropIn = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "StyledText",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Red1Clone",
+					Name = "Color",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Green1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Blue1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Alpha1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Size",
+					Default = 0.08,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1.228,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "LineSpacingClone",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "VerticalJustificationTop",
+					Name = "V Anchor",
+					ControlGroup = 7,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "VerticalJustificationCenter",
+					ControlGroup = 7,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "VerticalJustificationBottom",
+					ControlGroup = 7,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "VerticalTopCenterBottom",
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "CenterOnBaseOfFirstLine",
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "HorizontalJustificationLeft",
+					Name = "H Anchor",
+					ControlGroup = 10,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "HorizontalJustificationCenter",
+					ControlGroup = 10,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "HorizontalJustificationRight",
+					ControlGroup = 10,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "HorizontalLeftCenterRight",
+					Default = 0,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Follower1",
+					Source = "Delay",
+					Name = "Animation Delay",
+					Default = 3,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
+					Name = "Output",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "Path1",
+					Source = "Heading",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 297.624, 49.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 326.166, 75.731, 120.493, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				Text1 = TextPlus {
+					ExtentSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle1",
+							Source = "Mask",
+						},
+						Quality = Input { Value = 6, },
+						GlobalOut = Input { Value = 500, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						CharacterSpacing = Input { Value = 1.134, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input {
+							SourceOp = "Follower1",
+							Source = "StyledText",
+						},
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 37.6753, 8.75758 } },
+				},
+				Follower1 = StyledTextFollower {
+					CtrlWZoom = false,
+					Inputs = {
+						Delay = Input { Value = 3, },
+						Text = Input {
+							Value = StyledText {
+								Value = "SAMPLE"
+							},
+						},
+						Opacity1 = Input {
+							SourceOp = "Follower1Opacity",
+							Source = "Value",
+						},
+						Softness1 = Input { Value = 1, },
+						SoftnessX1 = Input {
+							SourceOp = "Follower1SoftnessX",
+							Source = "Value",
+						},
+						SoftnessY1 = Input {
+							SourceOp = "Follower1SoftnessY",
+							Source = "Value",
+						},
+						OffsetZ1 = Input {
+							SourceOp = "Follower1OffsetZ",
+							Source = "Value",
+						},
+					},
+				},
+				Follower1Opacity = BezierSpline {
+					SplineColor = { Red = 179, Green = 28, Blue = 244 },
+					KeyFrames = {
+						[2] = { 0, RH = { 6.33333333333333, 0 } },
+						[15] = { 1, LH = { 10.6666666666667, 1 } }
+					}
+				},
+				Follower1SoftnessX = BezierSpline {
+					SplineColor = { Red = 231, Green = 190, Blue = 243 },
+					KeyFrames = {
+						[2] = { 5, RH = { 6.33333333333333, 5 } },
+						[15] = { 0, LH = { 10.6666666666667, 0 } }
+					}
+				},
+				Follower1SoftnessY = BezierSpline {
+					SplineColor = { Red = 243, Green = 190, Blue = 192 },
+					KeyFrames = {
+						[2] = { 5, RH = { 6.33333333333333, 5 } },
+						[15] = { 0, LH = { 10.6666666666667, 0 } }
+					}
+				},
+				Follower1OffsetZ = BezierSpline {
+					SplineColor = { Red = 175, Green = 224, Blue = 244 },
+					KeyFrames = {
+						[2] = { -10, RH = { 10.36, -10 } },
+						[15] = { 0, LH = { 4.76, 0 } }
+					}
+				},
+				Rectangle1 = RectangleMask {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							SourceOp = "KeyframeStretcher2",
+							Source = "Result",
+						},
+						Width = Input { Value = 1, },
+						Height = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -62.0168, 8.75758 } },
+				},
+				KeyframeStretcher2 = KeyStretcherMod {
+					CtrlWZoom = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "Path1",
+							Source = "Position",
+						},
+						SourceEnd = Input { Value = 119, },
+						StretchStart = Input { Value = 0, },
+						StretchEnd = Input { Value = 91, },
+					},
+				},
+				Path1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path1Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0, Y = 0, RX = 0.333333333333333, RY = 0 },
+									{ Linear = true, LockY = true, X = 1, Y = 0, LX = -0.333333333333333, LY = 0 }
+								}
+							},
+						},
+					},
+				},
+				Path1Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					KeyFrames = {
+						[93] = { 0, RH = { 109.969696969697, 0 }, Flags = { LockedY = true } },
+						[117] = { 1, LH = { 103.666666666667, 1 }, Flags = { LockedY = true } }
+					}
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "Text1",
+							Source = "Output",
+						},
+						StretchStart = Input { Value = 70, },
+						StretchEnd = Input { Value = 92, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 147.675, 8.75758 } },
+				}
+			},
+		}
+	}
+}

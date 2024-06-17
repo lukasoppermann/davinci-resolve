@@ -1,0 +1,190 @@
+{
+	Tools = ordered() {
+		Radial = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "RadialBlur1",
+					Source = "CenterXPos",
+					Default = 0.5,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "RadialBlur1",
+					Source = "CenterYPos",
+					Default = 0.5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "RadialBlur1",
+					Source = "xyPosition",
+					Name = "Raidal Blur Position",
+					DefaultX = 0.5,
+					DefaultY = 0.5,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "AnimCurves3",
+					Source = "Scale",
+					Name = "Blur Strength",
+					MinScale = 0,
+					MaxScale = 1.5,
+					Default = 0.75,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Dissolve",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Flip",
+					Source = "Input",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "RadialBlur1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				RadialBlur1 = ofx.com.blackmagicdesign.resolvefx.RadialBlur {
+					CtrlWZoom = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "rotate",
+							Source = "Output",
+						},
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						SmoothStrength = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						blurTypeChoice = Input { Value = FuID { "BlurTypeRealistic" }, },
+						blurSymmetry = Input { Value = FuID { "BlurSymmetryBothSides" }, },
+						advancedControlsGroup = Input { Value = 0, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_REPLICATE" }, },
+						isFollowSizing = Input { Value = 1, },
+						isBlurAlpha = Input { Value = 1, },
+						BlendAmount = Input { Value = 0, },
+						isUseLegacyPosition = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "3.1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 495, 148.5 } },
+				},
+				AnimCurves3 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Custom" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves3Lookup",
+							Source = "Value",
+						},
+						Scale = Input { Value = 0.75, },
+					},
+				},
+				AnimCurves3Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.166666666666667, 0.188697903403786 }, Flags = { Linear = true } },
+							[0.5] = { 1, LH = { 0.259420260902725, 0.992565562681943 }, RH = { 0.749037023247055, 1.00769578579707 } },
+							[1] = { 0.0113665657796018, LH = { 0.833333333333333, 0.0113665657796018 } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				rotate = Transform {
+					NameSet = true,
+					Inputs = {
+						Angle = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "Dissolve",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 148.5 } },
+				},
+				AnimCurves1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Quint" }, },
+						EaseOut = Input { Value = FuID { "Quint" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurvesonrotate_1Lookup",
+							Source = "Value",
+						},
+						Scale = Input { Value = 180, },
+					},
+				},
+				AnimCurvesonrotate_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Dissolve = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					NameSet = true,
+					Inputs = {
+						Mix = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+						Foreground = Input {
+							SourceOp = "Flip",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, 148.5 } },
+				},
+				AnimCurves2 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Quint" }, },
+						EaseOut = Input { Value = FuID { "Quint" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurvesonDissolve1_2Lookup",
+							Source = "Value",
+						},
+					},
+				},
+				AnimCurvesonDissolve1_2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Flip = Transform {
+					NameSet = true,
+					Inputs = {
+						FlipHoriz = Input { Value = 1, },
+						FlipVert = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, 115.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "Rotate_1"
+}

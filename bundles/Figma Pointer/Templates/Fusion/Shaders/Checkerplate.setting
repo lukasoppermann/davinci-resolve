@@ -1,0 +1,397 @@
+{
+	Tools = ordered() {
+		CheckerPlate = GroupOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Diffuse.Color.Red",
+					Name = "Diffuse Color",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Diffuse.Color.Green",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Diffuse.Color.Blue",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Diffuse.Color.Alpha",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Diffuse.Opacity",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Specular.Color.Red",
+					Name = "Specular Color",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Specular.Color.Green",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Specular.Color.Blue",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Specular.Intensity",
+					Default = 3,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Specular.SpreadU",
+					Default = 0.1517127,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Ward3_2",
+					Source = "Specular.SpreadV",
+					Default = 0.8269613,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Transform3",
+					Source = "Size",
+					Name = "Texture Scale",
+					MaxScale = 1,
+					Default = 0.1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Ward3_2",
+					Source = "MaterialOutput",
+				},
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0, }, },
+			Tools = ordered() {
+				Ellipse2 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.1, 0.3, }, },
+						Width = Input { Value = 0.1, },
+						Height = Input { Value = 0.4, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -2695, -214.5, }, },
+				},
+				Ellipse2_1 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.4, 0.3, }, },
+						Width = Input { Value = 0.1, },
+						Height = Input { Value = 0.4, },
+						Angle = Input { Value = -90, },
+						EffectMask = Input {
+							SourceOp = "Ellipse2",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2695, -181.5, }, },
+				},
+				Ellipse2_1_2 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.7, 0.6, }, },
+						Width = Input { Value = 0.1, },
+						Height = Input { Value = 0.4, },
+						Angle = Input { Value = -90, },
+						EffectMask = Input {
+							SourceOp = "Ellipse2_1_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2585, -214.5, }, },
+				},
+				Ellipse2_1_3 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.1, 0.6, }, },
+						Width = Input { Value = 0.1, },
+						Height = Input { Value = 0.4, },
+						Angle = Input { Value = -90, },
+						EffectMask = Input {
+							SourceOp = "Ellipse2_1_2",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2585, -181.5, }, },
+				},
+				Ellipse2_2_1 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.7, 0.9, }, },
+						Width = Input { Value = 0.1, },
+						Height = Input { Value = 0.4, },
+						EffectMask = Input {
+							SourceOp = "Ellipse2_1_3",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2585, -148.5, }, },
+				},
+				Ellipse2_2 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.7, 0.3, }, },
+						Width = Input { Value = 0.1, },
+						Height = Input { Value = 0.4, },
+						EffectMask = Input {
+							SourceOp = "Ellipse2_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2695, -148.5, }, },
+				},
+				Ellipse2_4 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.1, 0.9, }, },
+						Width = Input { Value = 0.1, },
+						Height = Input { Value = 0.4, },
+						EffectMask = Input {
+							SourceOp = "Ellipse2_2_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2585, -115.5, }, },
+				},
+				Ellipse2_3 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.4, 0.6, }, },
+						Width = Input { Value = 0.1, },
+						Height = Input { Value = 0.4, },
+						EffectMask = Input {
+							SourceOp = "Ellipse2_2",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2695, -115.5, }, },
+				},
+				Ellipse2_1_1 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.4, 0.9, }, },
+						Width = Input { Value = 0.1, },
+						Height = Input { Value = 0.4, },
+						Angle = Input { Value = -90, },
+						EffectMask = Input {
+							SourceOp = "Ellipse2_3",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2695, -82.5, }, },
+				},
+				Background4 = Background {
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						EffectMask = Input {
+							SourceOp = "Ellipse2_4",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2585, -49.5, }, },
+				},
+				LumaKeyer1_3 = LumaKeyer {
+					Inputs = {
+						Channel = Input { Value = 2, },
+						High = Input { Value = 0.8609272, },
+						Low = Input { Value = 0.2119205, },
+						Invert = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "FastNoise2_4_2_2_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2530, 49.5, }, },
+				},
+				LumaKeyer1_1_2 = LumaKeyer {
+					Inputs = {
+						Channel = Input { Value = 2, },
+						High = Input { Value = 0.6622517, },
+						Low = Input { Value = 0.3642384, },
+						Invert = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "FastNoise2_4_2_2_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2530, 82.5, }, },
+				},
+				FastNoise2_4_2_2_2 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 1200, },
+						Height = Input { Value = 1200, },
+						Detail = Input { Value = 10, },
+						XScale = Input { Value = 16.64921, },
+						YScale = Input { Value = 20, },
+						Type = Input { Value = 1, },
+						Start = Input { Value = { 0.5, 0.495081967213115, }, },
+						End = Input { Value = { 0.89386054477784, 0.49109054378973, }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.393333333333333, 0.16654653720614, 0.0779579540155786, 1, },
+									[0.196078431372549] = { 0.606666666666667, 0.259279898904173, 0.173857185185185, 1, },
+									[0.372549019607843] = { 0.693333333333333, 0.362322579109954, 0.241548397404594, 1, },
+									[0.568627450980392] = { 0.486666666666667, 0.323473068744969, 0.227305390680309, 1, },
+									[0.737254901960784] = { 0.66, 0.407324331900033, 0.292394666666667, 1, },
+									[0.827450980392157] = { 0.58, 0.338386676491187, 0.146417777777778, 1, },
+									[0.905882352941176] = { 0.7, 0.493456258201528, 0.412284444444444, 1, },
+									[1] = { 0.38, 0.191745599265901, 0.0928888888888889, 1, },
+								},
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2695, 82.5, }, },
+				},
+				Crop1 = Crop {
+					Inputs = {
+						XOffset = Input { Value = 80, },
+						YOffset = Input { Value = 480, },
+						XSize = Input { Value = 1200, },
+						YSize = Input { Value = 1200, },
+						Input = Input {
+							SourceOp = "Background4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2475, -49.5, }, },
+				},
+				Ward3_2 = MtlWard {
+					CtrlWZoom = false,
+					Inputs = {
+						["Diffuse.Color.Material"] = Input {
+							SourceOp = "FastNoise2_4_2_2_2",
+							Source = "Output",
+						},
+						["Specular.Nest"] = Input { Value = 1, },
+						["Specular.Color.Material"] = Input {
+							SourceOp = "LumaKeyer1_1_2",
+							Source = "Output",
+						},
+						["Specular.Intensity"] = Input { Value = 3, },
+						["Specular.Intensity.Material"] = Input {
+							SourceOp = "LumaKeyer1_1_2",
+							Source = "Output",
+						},
+						["Specular.SpreadU"] = Input { Value = 0.1517127, },
+						["Specular.SpreadV"] = Input { Value = 0.8269613, },
+						["Bumpmap.Material"] = Input {
+							SourceOp = "BumpMap4_2",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 18, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -2420, 181.5, }, },
+				},
+				Blur5 = Blur {
+					Inputs = {
+						XBlurSize = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "Transform3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2420, 16.5, }, },
+				},
+				MatteControl1 = MatteControl {
+					Inputs = {
+						Blend = Input { Value = 0.7015707, },
+						MatteCombine = Input { Value = 4, },
+						Background = Input {
+							SourceOp = "LumaKeyer1_3",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Blur5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2420, 49.5, }, },
+				},
+				Transform3 = Transform {
+					Inputs = {
+						Edges = Input { Value = 1, },
+						Size = Input { Value = 0.1, },
+						XSize = Input { Value = 0.0736842, },
+						YSize = Input { Value = 0.0736842, },
+						Input = Input {
+							SourceOp = "Crop1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -2365, -49.5, }, },
+				},
+				BumpMap4_2 = BumpMap {
+					Inputs = {
+						Input = Input {
+							SourceOp = "MatteControl1",
+							Source = "Output",
+						},
+						SourceChannel = Input { Value = FuID { "Alpha", }, },
+						HeightScale = Input { Value = 12, },
+						MaterialID = Input { Value = 19, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -2365, 82.5, }, },
+				},
+			},
+		},
+	},
+	ActiveTool = "CheckerPlate",
+}

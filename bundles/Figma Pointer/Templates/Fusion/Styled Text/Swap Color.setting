@@ -1,0 +1,175 @@
+{
+	Tools = ordered() {
+		SwapColour = TextPlus {
+			ExtentSet = true,
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = {
+				PriorityBack3 = Input { Value = 25, },
+				ElementShape3 = Input { Value = 1, },
+				ShadingGradient3 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				Softness3 = Input { Value = 1, },
+				Transform3 = Input { Value = 1, },
+				Offset3 = Input {
+					Value = Point {
+						X = 0,
+						Y = 0,
+					},
+				},
+				GlobalIn = Input { Value = -1, },
+				GlobalOut = Input { Value = 201, },
+				Width = Input { Value = 1280, },
+				Height = Input { Value = 720, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				Size = Input { Value = 0.1642857142857, },
+				Font = Input { Value = "Open Sans", },
+				StyledText = Input {
+					SourceOp = "Follower1_8_3_2_2_1",
+					Source = "StyledText",
+				},
+				Style = Input { Value = "Bold", },
+				ManualFontKerningPlacement = Input {
+					Value = StyledText {
+						Array = {
+						},
+						Value = "",
+					},
+				},
+				Alignment = Input { Value = 1, },
+				HorizontalJustification = Input { Value = 1, },
+				CharacterRotation = Input { Value = 1, },
+				SelectElement = Input { Value = 2, },
+				Select = Input { Value = 2, },
+				ShadingGradient1 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				Enabled2 = Input { Value = 1, },
+				Green2 = Input { Value = 0.588235294117647, },
+				ShadingGradient2 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1367, 121, }, },
+		},
+		Follower1_8_3_2_2_1 = StyledTextFollower {
+			CtrlWZoom = false,
+			Inputs = {
+				Order = Input { Value = 4, },
+				Delay = Input { Value = 1, },
+				Strikeout = Input { Value = 1, },
+				Text = Input { Value = "Color Swap", },
+				CharacterRotation = Input { Value = 1, },
+				CharacterAngleY = Input {
+					SourceOp = "Follower1_8_3_2_2_1CharacterAngleY",
+					Source = "Value",
+				},
+				Red1 = Input {
+					SourceOp = "Follower1_8_3_2_2_1Red",
+					Source = "Value",
+				},
+				Green1 = Input {
+					SourceOp = "Follower1_8_3_2_2_1Green",
+					Source = "Value",
+				},
+				Blue1 = Input {
+					SourceOp = "Follower1_8_3_2_2_1Blue",
+					Source = "Value",
+				},
+				Alpha1 = Input {
+					SourceOp = "Follower1_8_3_2_2_1Alpha",
+					Source = "Value",
+				},
+				Enabled2 = Input { Value = 1, },
+				Opacity2 = Input {
+					SourceOp = "Follower1_8_3_2_2_1Opacity",
+					Source = "Value",
+				},
+				PriorityBack3 = Input { Value = 25, },
+				ElementShape3 = Input { Value = 3, },
+			},
+		},
+		Follower1_8_3_2_2_1CharacterAngleY = BezierSpline {
+			SplineColor = { Red = 28, Green = 216, Blue = 243, },
+			NameSet = true,
+			KeyFrames = {
+				[10] = { 0, RH = { 13.3333333333333, 120, }, Flags = { Linear = true, }, },
+				[20] = { 360, LH = { 16.6666666666667, 240, }, RH = { 26.6666666666667, 360, }, Flags = { Linear = true, }, },
+				[40] = { 360, LH = { 33.3333333333333, 360, }, RH = { 43.3333333333333, 240, }, Flags = { Linear = true, }, },
+				[50] = { 0, LH = { 46.6666666666667, 120, }, RH = { 56.6666666666667, 0, }, Flags = { Linear = true, }, },
+				[70] = { 0, LH = { 63.3333333333333, 0, }, Flags = { Linear = true, }, },
+			},
+		},
+		Follower1_8_3_2_2_1Red = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 0, },
+			NameSet = true,
+			KeyFrames = {
+				[17] = { 1, RH = { 17.3333333333333, 0.666666666666667, }, Flags = { Linear = true, }, },
+				[18] = { 0, LH = { 17.6666666666667, 0.333333333333333, }, RH = { 27.6666666666667, 0, }, Flags = { Linear = true, }, },
+				[47] = { 0, LH = { 37.3333333333333, 0, }, RH = { 47.3333333333333, 0.00845859949451406, }, Flags = { Linear = true, }, },
+				[48] = { 0.0253757984835422, LH = { 47.6666666666667, 0.0169171989890281, }, RH = { 58.3333333333333, 0.0253757984835422, }, Flags = { Linear = true, }, },
+				[79] = { 0.0253757984835422, LH = { 68.6666666666667, 0.0253757984835422, }, RH = { 79.3333333333333, 0.350250532322361, }, Flags = { Linear = true, }, },
+				[80] = { 1, LH = { 79.6666666666667, 0.675125266161181, }, Flags = { Linear = true, }, },
+			},
+		},
+		Follower1_8_3_2_2_1Green = BezierSpline {
+			SplineColor = { Red = 0, Green = 255, Blue = 0, },
+			NameSet = true,
+			KeyFrames = {
+				[17] = { 0.118750272481697, RH = { 17.3333333333333, 0.412500181654464, }, Flags = { Linear = true, }, },
+				[18] = { 1, LH = { 17.6666666666667, 0.706250090827232, }, RH = { 27.6666666666667, 1, }, Flags = { Linear = true, }, },
+				[47] = { 1, LH = { 37.3333333333333, 1, }, RH = { 47.3333333333333, 0.681338975153238, }, Flags = { Linear = true, }, },
+				[48] = { 0.0440169254597133, LH = { 47.6666666666667, 0.362677950306476, }, RH = { 58.3333333333333, 0.0440169254597133, }, Flags = { Linear = true, }, },
+				[79] = { 0.0440169254597133, LH = { 68.6666666666667, 0.0440169254597133, }, RH = { 79.3333333333333, 0.362677950306475, }, Flags = { Linear = true, }, },
+				[80] = { 1, LH = { 79.6666666666667, 0.681338975153238, }, Flags = { Linear = true, }, },
+			},
+		},
+		Follower1_8_3_2_2_1Blue = BezierSpline {
+			SplineColor = { Red = 0, Green = 0, Blue = 255, },
+			NameSet = true,
+			KeyFrames = {
+				[17] = { 0, RH = { 17.3333333333333, 0.0717635262237173, }, Flags = { Linear = true, }, },
+				[18] = { 0.215290578671152, LH = { 17.6666666666667, 0.143527052447435, }, RH = { 27.6666666666667, 0.215290578671152, }, Flags = { Linear = true, }, },
+				[47] = { 0.215290578671152, LH = { 37.3333333333333, 0.215290578671152, }, RH = { 47.3333333333333, 0.34607548222596, }, Flags = { Linear = true, }, },
+				[48] = { 0.607645289335576, LH = { 47.6666666666667, 0.476860385780768, }, RH = { 58.3333333333333, 0.607645289335576, }, Flags = { Linear = true, }, },
+				[79] = { 0.607645289335576, LH = { 68.6666666666667, 0.607645289335576, }, RH = { 79.3333333333333, 0.738430192890384, }, Flags = { Linear = true, }, },
+				[80] = { 1, LH = { 79.6666666666667, 0.869215096445192, }, Flags = { Linear = true, }, },
+			},
+		},
+		Follower1_8_3_2_2_1Alpha = BezierSpline {
+			SplineColor = { Red = 180, Green = 180, Blue = 180, },
+			NameSet = true,
+			KeyFrames = {
+				[17] = { 1, RH = { 27, 1, }, Flags = { Linear = true, }, },
+				[47] = { 1, LH = { 37, 1, }, RH = { 57.6666666666667, 1, }, Flags = { Linear = true, }, },
+				[79] = { 1, LH = { 68.3333333333333, 1, }, Flags = { Linear = true, }, },
+			},
+		},
+		Follower1_8_3_2_2_1Opacity = BezierSpline {
+			SplineColor = { Red = 179, Green = 28, Blue = 244, },
+			NameSet = true,
+			KeyFrames = {
+				[47] = { 0, RH = { 47.3333333333333, 0.333333333333333, }, Flags = { Linear = true, }, },
+				[48] = { 1, LH = { 47.6666666666667, 0.666666666666667, }, RH = { 55.3333333333333, 1, }, Flags = { Linear = true, }, },
+				[70] = { 1, LH = { 62.6666666666667, 1, }, RH = { 70.3333333333333, 0.666666666666667, }, Flags = { Linear = true, }, },
+				[71] = { 0, LH = { 70.6666666666667, 0.333333333333333, }, Flags = { Linear = true, }, },
+			},
+		},
+	},
+}

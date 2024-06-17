@@ -1,0 +1,161 @@
+{
+	Tools = ordered() {
+		Paper1 = GroupOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "FastNoise3",
+					Source = "Seethe",
+					Name = "Texture Seethe",
+					Default = -1.543,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "BrightnessContrast3",
+					Source = "Gain",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "BrightnessContrast3",
+					Source = "Lift",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "BrightnessContrast3",
+					Source = "Gamma",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "BrightnessContrast3",
+					Source = "Contrast",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "BrightnessContrast3",
+					Source = "Brightness",
+					Default = 0.19,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "BrightnessContrast3",
+					Source = "Saturation",
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "BrightnessContrast3",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						Color1Red = Input { Value = 0.89, },
+						Color1Green = Input { Value = 0.86010312, },
+						Color1Blue = Input { Value = 0.67017, },
+						Color1Alpha = Input { Value = 1, },
+						Color2Red = Input { Value = 0.913, },
+						Color2Green = Input { Value = 0.733380032, },
+						Color2Blue = Input { Value = 0.489368, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 65.8917, -264.98 } },
+				},
+				FastNoise1_1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 10, },
+						XScale = Input { Value = 1000, },
+						Color1Red = Input { Value = 0.992, },
+						Color1Green = Input { Value = 0.992, },
+						Color1Blue = Input { Value = 0.992, },
+						Color1Alpha = Input { Value = 1, },
+						Color2Red = Input { Value = 0.929, },
+						Color2Green = Input { Value = 0.81280068, },
+						Color2Blue = Input { Value = 0.654945, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 65.8917, -231.98 } },
+				},
+				ChannelBooleans1 = ChannelBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						Operation = Input { Value = 6, },
+						Background = Input {
+							SourceOp = "FastNoise1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 183.71, -231.98 } },
+				},
+				FastNoise3 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.960365853658537, 0.947154471544715 }, },
+						Detail = Input { Value = 10, },
+						Contrast = Input { Value = 1.32, },
+						Brightness = Input { Value = 1, },
+						XScale = Input { Value = 0.41, },
+						Seethe = Input { Value = -1.543, },
+						Discontinuous = Input { Value = 1, },
+						Inverted = Input { Value = 1, },
+						Color1Red = Input { Value = 1, },
+						Color1Green = Input { Value = 1, },
+						Color1Blue = Input { Value = 1, },
+						Color1Alpha = Input { Value = 1, },
+						Color2Red = Input { Value = 0, },
+						Color2Green = Input { Value = 0, },
+						Color2Blue = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 65.0231, -176.526 } },
+				},
+				Merge6 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0.543, },
+						Background = Input {
+							SourceOp = "ChannelBooleans1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FastNoise3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Overlay" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 183.71, -176.526 } },
+				},
+				BrightnessContrast3 = BrightnessContrast {
+					CtrlWShown = false,
+					Inputs = {
+						Brightness = Input { Value = 0.19, },
+						Saturation = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Merge6",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 183.71, -135.458 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "Paper1"
+}

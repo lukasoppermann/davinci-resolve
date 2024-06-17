@@ -1,0 +1,393 @@
+{
+	Tools = ordered() {
+		ShapeCircle = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "ShowViewControls",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Level",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "SoftEdge",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "BorderWidth",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Invert",
+					Width = 0.5,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Solid",
+					Width = 0.5,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "JoinStyle",
+					Name = "Border Style",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "MaskSeparator",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Center",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Size",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "XRotation",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "YRotation",
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "ZRotation",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Polyline",
+					Name = "Right-click here for shape animation",
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Polygon1",
+					Source = "Blank6",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Dissolve1",
+					Source = "Switch",
+					Name = "Apply As Mask",
+					Page = "Controls",
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Dissolve1",
+					Source = "Blank5",
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "Type",
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftGreen",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftBlue",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftAlpha",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightSep",
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 21,
+					Default = 0,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightGreen",
+					ControlGroup = 21,
+					Default = 0,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightBlue",
+					ControlGroup = 21,
+					Default = 0,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopRightAlpha",
+					ControlGroup = 21,
+					Default = 1,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftSep",
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 23,
+					Default = 0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftGreen",
+					ControlGroup = 23,
+					Default = 0,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftBlue",
+					ControlGroup = 23,
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 23,
+					Default = 1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightSep",
+				},
+				Input34 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 25,
+					Default = 0,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightGreen",
+					ControlGroup = 25,
+					Default = 0,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightBlue",
+					ControlGroup = 25,
+					Default = 0,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "BottomRightAlpha",
+					ControlGroup = 25,
+					Default = 1,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "GradientType",
+				},
+				Input39 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "Start",
+					DefaultX = 0,
+					DefaultY = 0.5,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "End",
+					DefaultX = 1,
+					DefaultY = 0.5,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "Gradient",
+				},
+				Input42 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "GradientInterpolationMethod",
+				},
+				Input43 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "Offset",
+					Default = 0,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "Repeat",
+				},
+				Input45 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "SubPixel",
+				},
+				Input46 = InstanceInput {
+					SourceOp = "Merge2",
+					Source = "BlendClone",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter1",
+					Source = "Input",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Dissolve1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 320.667, 49.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 324.22, 188.974, 162.11, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				Polygon1 = PolylineMask {
+					DrawMode = "InsertAndModify",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 3840, },
+						MaskHeight = Input { Value = 2160, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							Value = Polyline {
+								Closed = true,
+								Points = {
+									{ X = -0.125, Y = 2.72143733143856e-17, LX = 8.45442188872723e-18, LY = 0.122729944406843, RX = -8.45442188872723e-18, RY = -0.122729944406843 },
+									{ X = -2.29621274840129e-17, Y = -0.222222222222222, LX = -0.0690355937288492, LY = 2.25451250366059e-17, RX = 0.0690355937288492, RY = -2.25451250366059e-17 },
+									{ X = 0.125, Y = -5.44287466287713e-17, LX = -1.69088437774545e-17, LY = -0.122729944406843, RX = 1.69088437774545e-17, RY = 0.122729944406843 },
+									{ X = 3.82702124733548e-17, Y = 0.222222222222222, LX = 0.0690355937288492, LY = -3.75752083943432e-17, RX = -0.0690355937288492, RY = 3.75752083943432e-17 }
+								}
+							},
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -8.97702, 7.71383 } },
+				},
+				Dissolve1 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWShown = false,
+					Inputs = {
+						Mix = Input {
+							Value = 0,
+							Expression = "Switch",
+						},
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 117, 131.801 } },
+					UserControls = ordered() {
+						Switch = {
+							CBC_TriState = false,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "CheckboxControl",
+							LINKS_Name = "Switch",
+						}
+					}
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 408, },
+						Width = Input { Value = 3840, },
+						Height = Input { Value = 2160, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 117, 62.7524 } },
+				},
+				Merge2 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 117, 92.2176 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						Operator = Input { Value = FuID { "Mask" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -8.97702, 131.801 } },
+				},
+				PipeRouter1 = PipeRouter {
+					CtrlWShown = false,
+					ViewInfo = PipeRouterInfo { Pos = { -117.22, 92.2176 } },
+				}
+			},
+		}
+	}
+}

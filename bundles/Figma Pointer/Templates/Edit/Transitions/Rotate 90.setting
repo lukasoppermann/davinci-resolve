@@ -1,0 +1,200 @@
+{
+	Tools = ordered() {
+		Rotate90 = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "BG_Rotate",
+					Source = "Input",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "FG_Rotate",
+					Source = "Input",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "BG_Rotate",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "BG_Rotate",
+					Source = "Quality",
+					Default = 7,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "BG_Rotate",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "BG_Rotate",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "BG_Rotate",
+					Source = "SampleSpread",
+					Default = 1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Dissolve1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 405.966, 148.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 394.298, 127.764, 197.149, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -9.52099, -8.98733 }
+			},
+			Tools = ordered() {
+				Dissolve1 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					Inputs = {
+						Mix = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "BG_Rotate",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FG_Rotate",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 10.7058, 69.4578 } },
+				},
+				BG_Rotate = Transform {
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input { Value = 1, },
+						Quality = Input { Value = 7, },
+						Angle = Input {
+							SourceOp = "AnimCurves4_1",
+							Source = "Value",
+						},
+						Edges = Input { Value = 3, },
+						CommentsNest = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -117.625, 69.4578 } },
+				},
+				FG_Rotate = Transform {
+					NameSet = true,
+					SourceOp = "BG_Rotate",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						TransformNest = Input { },
+						Angle = Input {
+							SourceOp = "Calculation2",
+							Source = "Result",
+						},
+						ReferenceSize = Input { },
+						Input = Input { },
+						CommentsNest = Input { Value = 0, },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -111.8, 19.0715 } },
+				},
+				AnimCurves4_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Source = Input { Value = FuID { "Transition" }, },
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Quint" }, },
+						EaseOut = Input { Value = FuID { "Quint" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves4_1Lookup",
+							Source = "Value",
+						},
+						Scale = Input { Value = 90, },
+					},
+				},
+				AnimCurves4_1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWShown = false,
+					NameSet = true,
+				}
+			},
+		},
+		AnimCurves1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Curve = Input { Value = FuID { "Easing" }, },
+				EaseIn = Input { Value = FuID { "Quart" }, },
+				EaseOut = Input { Value = FuID { "Quart" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurves1Lookup",
+					Source = "Value",
+				},
+			},
+		},
+		AnimCurves1Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+			NameSet = true,
+		},
+		Calculation2 = Calculation {
+			Inputs = {
+				FirstOperand = Input {
+					SourceOp = "AnimCurves2",
+					Source = "Value",
+				},
+				Operator = Input { Value = 1, },
+				SecondOperand = Input { Value = 90, },
+			},
+		},
+		AnimCurves2 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Curve = Input { Value = FuID { "Easing" }, },
+				EaseIn = Input { Value = FuID { "Quart" }, },
+				EaseOut = Input { Value = FuID { "Quart" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurves2Lookup",
+					Source = "Value",
+				},
+				Scale = Input { Value = 90, },
+			},
+		},
+		AnimCurves2Lookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+			NameSet = true,
+		}
+	}
+}

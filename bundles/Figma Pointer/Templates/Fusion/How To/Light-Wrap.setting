@@ -1,0 +1,404 @@
+{
+	Tools = ordered() {
+		Background_2_1 = GroupOperator {
+			NameSet = true,
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "Merge14_2_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { -2090, 412.5, },
+				Flags = {
+					GridSnap = true,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 401, 97.3, },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -687.5, -5.8, },
+			},
+			Tools = ordered() {
+				Merge14_2_1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "BrightnessContrast5_3_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "SoftGlow2_2_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 825, 49.5, }, },
+				},
+				FastNoise3_2_1 = FastNoise {
+					Inputs = {
+						GlobalOut = Input { Value = 300, },
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						Depth = Input { Value = 3, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+						Detail = Input { Value = 4.09523809523809, },
+						Contrast = Input { Value = 5, },
+						XScale = Input { Value = 1.80952380952381, },
+						SeetheRate = Input { Value = 0.0857142857142857, },
+						Color1Red = Input { Value = 0.589928057553957, },
+						Color2Red = Input { Value = 1.26618705035971, },
+						Color2Green = Input { Value = 1.26618705035971, },
+						Color2Blue = Input { Value = 0.949640287769784, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, 49.5, }, },
+				},
+				BrightnessContrast5_3_1 = BrightnessContrast {
+					Inputs = {
+						Gain = Input {
+							SourceOp = "Shake5_2_1",
+							Source = "X",
+						},
+						Input = Input {
+							SourceOp = "FastNoise3_2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 660, 49.5, }, },
+				},
+				SoftGlow2_2_1 = SoftGlow {
+					CtrlWShown = false,
+					Inputs = {
+						Alpha = Input { Value = 0, },
+						Gain = Input {
+							SourceOp = "SoftGlow2_2_1Gain",
+							Source = "Value",
+						},
+						XGlowSize = Input { Value = 51.4285714285714, },
+						Input = Input {
+							SourceOp = "Text5_2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 660, 16.5, }, },
+				},
+				Text5_2_1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 300, },
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						Depth = Input { Value = 3, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+						Center = Input {
+							SourceOp = "Path1_2_1",
+							Source = "Position",
+						},
+						Size = Input { Value = 0.176190476190476, },
+						Font = Input { Value = "Open Sans", },
+						StyledText = Input { Value = "LIGHT WRAPING", },
+						Style = Input { Value = "Extrabold", },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = "",
+							},
+						},
+						Red1 = Input { Value = 2, },
+						Green1 = Input { Value = 2, },
+						Blue1 = Input { Value = 2, },
+						ShadingGradient1 = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, 16.5, }, },
+				},
+			},
+		},
+		Shake5_2_1 = Shake {
+			CtrlWZoom = false,
+			Inputs = {
+				XMinimum = Input { Value = 0.338095238095238, },
+			},
+		},
+		SoftGlow2_2_1Gain = BezierSpline {
+			SplineColor = { Red = 104, Green = 144, Blue = 233, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.714285714285714, RH = { 8.33333333333333, 0.714285714285714, }, },
+				[25] = { 1.21, LH = { 16.6675001382828, 1.17788804040003, }, RH = { 30.9993999004364, 1.23312061091198, }, },
+				[43] = { 0.88, LH = { 37.0059303262722, 0.604272795008521, }, RH = { 46.6662999391556, 1.04864979720116, }, },
+				[54] = { 0, LH = { 50.3337000608444, -0.00414017544149527, }, RH = { 60.6659998893738, 0.00752759171180969, }, },
+				[74] = { 2.61, LH = { 67.3340001106262, 2.75528461297353, }, RH = { 78.9994999170303, 2.50103654026985, }, },
+				[89] = { 1.51, LH = { 84, 1.51, }, },
+			},
+		},
+		Path1_2_1 = PolyPath {
+			DrawMode = "InsertAndModify",
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path1_2_1Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = 0, Y = -0.579322638146168, RX = 0, RY = 0.390374331550802, },
+							{ Linear = true, LockY = true, X = 0, Y = 0.591800356506239, LX = 0, LY = -0.390374331550802, },
+						},
+					},
+				},
+			},
+		},
+		Path1_2_1Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 30, 0.333333333333333, }, Flags = { Linear = true, LockedY = true, }, },
+				[90] = { 1, LH = { 60, 0.666666666666667, }, Flags = { Linear = true, LockedY = true, }, },
+			},
+		},
+		PipeRouter12 = PipeRouter {
+			Inputs = {
+				Input = Input {
+					SourceOp = "Merge14_2_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = PipeRouterInfo { Pos = { -1980, 577.5, }, },
+		},
+		Bitmap2_4_1 = BitmapMask {
+			Inputs = {
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				PixelAspect = Input { Value = { 1, 1, }, },
+				ClippingMode = Input { Value = FuID { "None", }, },
+				Image = Input {
+					SourceOp = "PipeRouter4_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { -1925, 643.5, }, },
+		},
+		Note1 = Note {
+			Inputs = {
+				Comments = Input { Value = "read notes in the tools (i) info tab", },
+			},
+			ViewInfo = StickyNoteInfo {
+				Pos = { -1870, 478.5, },
+				Flags = {
+					Expanded = true,
+				},
+				Size = { 165.905, 78.8118, },
+			},
+		},
+		PipeRouter4_1 = PipeRouter {
+			Inputs = {
+				Input = Input {
+					SourceOp = "ForeGround_2_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = PipeRouterInfo { Pos = { -2035, 808.5, }, },
+		},
+		Bitmap2_2_2_1 = BitmapMask {
+			Inputs = {
+				Invert = Input { Value = 1, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				PixelAspect = Input { Value = { 1, 1, }, },
+				ClippingMode = Input { Value = FuID { "None", }, },
+				Image = Input {
+					SourceOp = "PipeRouter4_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { -1925, 808.5, }, },
+		},
+		Outside_Matte_2_1 = MatteControl {
+			NameSet = true,
+			Inputs = {
+				Background = Input {
+					SourceOp = "BlurLarge",
+					Source = "Output",
+				},
+				Comments = Input { Value = "Cutting the inverse of the matte out to remove all RGB that is not part of the wrap.", },
+				GarbageMatte = Input {
+					SourceOp = "Bitmap2_2_2_1",
+					Source = "Mask",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { -1815, 808.5, }, },
+		},
+		BlurSmall = Blur {
+			NameSet = true,
+			Inputs = {
+				XBlurSize = Input { Value = 10.4761904761905, },
+				Input = Input {
+					SourceOp = "Inside_matte_2_1",
+					Source = "Output",
+				},
+				Comments = Input { Value = "This first blur is for the edge bleed, generally small and blend at 100%", },
+			},
+			ViewInfo = OperatorInfo { Pos = { -1815, 709.5, }, },
+		},
+		Inside_matte_2_1 = MatteControl {
+			NameSet = true,
+			Inputs = {
+				Background = Input {
+					SourceOp = "LumaKeyer1",
+					Source = "Output",
+				},
+				Comments = Input { Value = "We're using the alpha of the foreground to cut a whole into the image.  This creates the opening for the bleed-in to create the wrap image.", },
+				GarbageMatte = Input {
+					SourceOp = "Bitmap2_4_1",
+					Source = "Mask",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { -1815, 643.5, }, },
+		},
+		BlurLarge = Blur {
+			NameSet = true,
+			Inputs = {
+				Blend = Input { Value = 0.423809523809524, },
+				XBlurSize = Input { Value = 68.0952380952381, },
+				Input = Input {
+					SourceOp = "BlurSmall",
+					Source = "Output",
+				},
+				Comments = Input { Value = "This blur is good for the secondary, larger light wrap and is generally large and blended down.\nThe combination of the two can create unique results.\n\nAdjust as desired", },
+			},
+			ViewInfo = OperatorInfo { Pos = { -1815, 742.5, }, },
+		},
+		LumaKeyer1 = LumaKeyer {
+			Inputs = {
+				Low = Input { Value = 0.9, },
+				Input = Input {
+					SourceOp = "PipeRouter12",
+					Source = "Output",
+				},
+				Comments = Input { Value = "Use Luma Keyer to strip the darks from the wrap.\nThis can be adjusted to your liking depending on the contrast/brightness of your background.\n\nAdjust as desired.", },
+			},
+			ViewInfo = OperatorInfo { Pos = { -1815, 577.5, }, },
+		},
+		BaseMerge = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input {
+					SourceOp = "Merge14_2_1",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "ForeGround_2_1",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+				Comments = Input { Value = "Here we lay down our base Merge.  The wrap wil go over this.", },
+			},
+			ViewInfo = OperatorInfo { Pos = { -2090, 874.5, }, },
+		},
+		Basic_Merge_2_1_1 = Merge {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = {
+				Background = Input {
+					SourceOp = "BaseMerge",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "Outside_Matte_2_1",
+					Source = "Output",
+				},
+				Gain = Input { Value = 0, },
+				PerformDepthMerge = Input { Value = 0, },
+				Comments = Input { Value = "Depending on the  image you have, you may either want to be fully additive, or blended down from 100%.\n\nAdjust to get your desired results.", },
+			},
+			ViewInfo = OperatorInfo { Pos = { -1815, 874.5, }, },
+		},
+		Foreground_Circle_2_1 = GroupOperator {
+			NameSet = true,
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "ForeGround_2_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { -2310, 874.5, },
+				Flags = {
+					AllowPan = false,
+					GridSnap = true,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 126, 95.8563, },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -440, -172.244, },
+			},
+			Tools = ordered() {
+				ForeGround_2_1 = Background {
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 300, },
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+						TopRightBlue = Input { Value = 0.316546762589928, },
+						BottomLeftRed = Input { Value = 0.215827338129496, },
+						BottomLeftBlue = Input { Value = 0.273381294964029, },
+						BottomRightGreen = Input { Value = 0.23021582733813, },
+						Start = Input { Value = { 0.454909819639279, 0.473262032085562, }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[0.408759124087591] = { 0.267518248175182, 0.317518248175182, 0.317518248175182, 1, },
+									[0.58029197080292] = { 0.466463909164639, 0.502883662251059, 0.552883662251059, 1, },
+									[0.799270072992701] = { 0.442857142857143, 0.264285714285714, 0.786161751511376, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						EffectMask = Input {
+							SourceOp = "Ellipse2_3_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 214.5, }, },
+				},
+				Ellipse2_3_1 = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Width = Input { Value = 0.454115689393325, },
+						Height = Input { Value = 0.454115689393325, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 181.5, }, },
+				},
+			},
+		},
+	},
+	ActiveTool = "Basic_Merge_2_1_1",
+}

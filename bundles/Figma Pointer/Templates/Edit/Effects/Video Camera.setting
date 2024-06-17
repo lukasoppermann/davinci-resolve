@@ -1,0 +1,515 @@
+{
+	Tools = ordered() {
+		VideoCamera = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Timecode = InstanceInput {
+					SourceOp = "TC_1",
+					Source = "Timecode",
+					Page = "Controls",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "TimeCode1_1",
+					Source = "Hrs",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "TimeCode1_1",
+					Source = "Mins",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "TimeCode1_1",
+					Source = "Secs",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "TimeCode1_1",
+					Source = "Frms",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "TimeCode1_1",
+					Source = "Flds",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "TimeCode1_1",
+					Source = "StartOffset",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "TimeCode1_1",
+					Source = "FramesPerSecond",
+					Default = 30,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "TimeCode1_1",
+					Source = "PadDigits",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "TimeCode1_1",
+					Source = "DropFrame",
+					Default = 1,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Batt_Lev_X_1",
+					Source = "Translate.X",
+					Name = "Battery Level",
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Background2_1",
+					Source = "TopLeftRed",
+					Name = "Overlay Color",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Background2_1",
+					Source = "TopLeftGreen",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Background2_1",
+					Source = "TopLeftBlue",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Background2_1",
+					Source = "TopLeftAlpha",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Merge3_1",
+					Source = "BlendClone",
+					Name = "REC Light",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1_1",
+					Source = "Background",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 2686.13, 26.1495 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 843.144, 580.748, 421.572, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				sRectangle4_2 = sRectangle {
+					CtrlWShown = false,
+					Inputs = {
+						Solid = Input { Value = 0, },
+						BorderWidth = Input { Value = 0.0229, },
+						Width = Input { Value = 0.302, },
+						Height = Input { Value = 0.147, },
+						CornerRadius = Input { Value = 0.142, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -357.048, 8.56561 } },
+				},
+				sMerge3_1 = sMerge {
+					CtrlWShown = false,
+					Inputs = {
+						Input1 = Input {
+							SourceOp = "sRectangle4_2",
+							Source = "Output",
+						},
+						Input2 = Input {
+							SourceOp = "sRectangle4_1_1",
+							Source = "Output",
+						},
+						Input3 = Input {
+							SourceOp = "sBoolean2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -211.541, 44.5918 } },
+				},
+				sRectangle4_1_1 = sRectangle {
+					CtrlWShown = false,
+					Inputs = {
+						BorderWidth = Input { Value = 0.016, },
+						["Translate.X"] = Input { Value = 0.164, },
+						Width = Input { Value = 0.022, },
+						Height = Input { Value = 0.041, },
+						CornerRadius = Input { Value = 0.142, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -359.144, 44.5918 } },
+				},
+				LevMask_1 = sRectangle {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 0.246, },
+						Height = Input { Value = 0.094, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -352.528, 81.6381 } },
+				},
+				sBoolean2_1 = sBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						Input1 = Input {
+							SourceOp = "LevMask_1",
+							Source = "Output",
+						},
+						Input2 = Input {
+							SourceOp = "Batt_Lev_X_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -211.541, 81.6381 } },
+				},
+				Batt_Lev_X_1 = sRectangle {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 0.246, },
+						Height = Input { Value = 0.094, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -348.09, 110.891 } },
+				},
+				sTransform2_1 = sTransform {
+					CtrlWShown = false,
+					Inputs = {
+						XOffset = Input { Value = 0.376, },
+						YOffset = Input { Value = 0.193, },
+						XSize = Input { Value = 0.14, },
+						YSize = Input { Value = 0.14, },
+						Input = Input {
+							SourceOp = "sMerge3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 95.1, 44.5918 } },
+				},
+				sRectangle1_1 = sRectangle {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 0.898, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -330.646, 172.585 } },
+				},
+				sOutline1_1 = sOutline {
+					CtrlWShown = false,
+					Inputs = {
+						JoinStyle = Input { Value = 2, },
+						Thickness = Input { Value = 0.002, },
+						Input = Input {
+							SourceOp = "sRectangle1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -203.726, 172.585 } },
+				},
+				PipeRouter1_1 = PipeRouter {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "sOutline1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = PipeRouterInfo { Pos = { 36.36, 172.585 } },
+				},
+				sTransform1_1 = sTransform {
+					CtrlWShown = false,
+					Inputs = {
+						XSize = Input { Value = 0.94, },
+						YSize = Input { Value = 0.9, },
+						Input = Input {
+							SourceOp = "sOutline1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -82.895, 199.088 } },
+				},
+				sRectangle2_2 = sRectangle {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 0.717, },
+						Height = Input { Value = 0.468, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -326.003, 207.511 } },
+				},
+				sMerge2_1 = sMerge {
+					CtrlWShown = false,
+					Inputs = {
+						Input1 = Input {
+							SourceOp = "sBoolean1_1",
+							Source = "Output",
+						},
+						Input2 = Input {
+							SourceOp = "PipeRouter1_1",
+							Source = "Output",
+						},
+						Input3 = Input {
+							SourceOp = "sDuplicate1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 36.36, 240.511 } },
+				},
+				sRender1_1 = sRender {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 124, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Input = Input {
+							SourceOp = "sMerge2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 182.68, 240.511 } },
+				},
+				sMerge1_1 = sMerge {
+					CtrlWShown = false,
+					Inputs = {
+						Input1 = Input {
+							SourceOp = "sRectangle2_2",
+							Source = "Output",
+						},
+						Input2 = Input {
+							SourceOp = "sRectangle2_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -216.003, 240.511 } },
+				},
+				sBoolean1_1 = sBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						Operation = Input { Value = FuID { "Subtract" }, },
+						Input1 = Input {
+							SourceOp = "sTransform1_1",
+							Source = "Output",
+						},
+						Input2 = Input {
+							SourceOp = "sMerge1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -82.895, 240.511 } },
+				},
+				sRectangle2_1_1 = sRectangle {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 0.858, },
+						Height = Input { Value = 0.323, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -326.003, 240.511 } },
+				},
+				Merge61_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Battery_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "sRender1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 358, 240.511 } },
+				},
+				Battery_1 = sRender {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 124, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Input = Input {
+							SourceOp = "sTransform2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 358, 44.5918 } },
+				},
+				sDuplicate1_1 = sDuplicate {
+					CtrlWShown = false,
+					Inputs = {
+						Copies = Input { Value = 1, },
+						ZRotation = Input { Value = 90, },
+						Input = Input {
+							SourceOp = "sRectangle3_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -170.484, 289.109 } },
+				},
+				sRectangle3_1 = sRectangle {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 0.047, },
+						Height = Input { Value = 0.002, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -323.769, 289.109 } },
+				},
+				Merge2_1 = Merge {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge61_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TC_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 358, 348.583 } },
+				},
+				TC_1 = TextPlus {
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 124, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.131378182538729, 0.853990596503587 }, },
+						StyledText = Input {
+							SourceOp = "TimeCode1_1",
+							Source = "Time",
+						},
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Regular", },
+						Size = Input { Value = 0.0413, },
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 156.98, 348.583 } },
+					UserControls = ordered() {
+						Timecode = {
+							LINKS_Name = "Timecode",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "LabelControl",
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LBLC_NumInputs = 9,
+						}
+					}
+				},
+				TimeCode1_1 = TimeCode {
+					CtrlWZoom = false,
+				},
+				Background2_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Merge2_1",
+							Source = "Output",
+						},
+						GlobalOut = Input { Value = 124, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						BackgroundNest = Input { Value = 0, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 358, 389.652 } },
+				},
+				Merge3_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background2_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 358, 455.22 } },
+				},
+				Ellipse1_1 = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.113666228646518, 0.839930467734963 }, },
+						Width = Input { Value = 0.0204571262214, },
+						Height = Input { Value = 0.0204571262214, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 135.7, 455.22 } },
+				},
+				Background1_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Ellipse1_1",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 124, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.8156863451004, },
+						TopLeftGreen = Input { Value = 0.0078431377187, },
+						TopLeftBlue = Input { Value = 0.1058823615313, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 248.87, 455.22 } },
+				},
+				Merge1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Foreground = Input {
+							SourceOp = "Merge3_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 358, 522.95 } },
+				}
+			},
+		}
+	}
+}

@@ -1,0 +1,186 @@
+{
+	Tools = ordered() {
+		ZoomInAndOut = GroupOperator {
+			Inputs = ordered() {
+				Input7 = InstanceInput {
+					SourceOp = "AnimCurves2",
+					Source = "Scale",
+					Name = "Zoom Scale",
+					Default = 0.938,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "Pivot",
+					Name = "Zoom Position",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Zoom",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Dissolve",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Dissolve",
+					Source = "Foreground",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "PrismBlur",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				PrismBlur = ofx.com.blackmagicdesign.resolvefx.prismblur {
+					NameSet = true,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Zoom",
+							Source = "Output",
+						},
+						xyPosition = Input { Value = { 0.5, 0.5 }, },
+						BlurStrength = Input { Value = 0.200000002980232, },
+						AberrationDistance = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						AberrationStrength = Input { Value = 0.583, },
+						VignetteSize = Input { Value = 0.100000001490116, },
+						VignetteSharpness = Input { Value = 5, },
+						BlendAmount = Input { Value = 0, },
+						CenterXPos = Input { Value = 0.5, },
+						CenterYPos = Input { Value = 0.5, },
+						blendGroup = Input { Value = 1, },
+						blendIn = Input { Value = 0, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.3", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 705.953, 130.682 } },
+				},
+				AnimCurves3 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Quart" }, },
+						EaseOut = Input { Value = FuID { "Quart" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves3Lookup",
+							Source = "Value",
+						},
+						Mirror = Input { Value = 1, },
+						Scale = Input { Value = 0.072, },
+					},
+				},
+				AnimCurves3Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+				},
+				Zoom = Transform {
+					NameSet = true,
+					Inputs = {
+						Size = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "Dissolve",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 578.517, 130.682 } },
+				},
+				AnimCurves2 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Quad" }, },
+						EaseOut = Input { Value = FuID { "Quad" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup",
+							Source = "Value",
+						},
+						Mirror = Input { Value = 1, },
+						Scale = Input { Value = 0.938, },
+						Offset = Input { Value = 1, },
+					},
+				},
+				AnimCurves2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+				},
+				Dissolve = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Mix = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 418.554, 130.682 } },
+				},
+				AnimCurves1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						EaseIn = Input { Value = FuID { "Expo" }, },
+						EaseOut = Input { Value = FuID { "Expo" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup",
+							Source = "Value",
+						},
+					},
+				},
+				AnimCurves1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+				}
+			},
+		}
+	},
+	ActiveTool = "ZoomInAndOut"
+}

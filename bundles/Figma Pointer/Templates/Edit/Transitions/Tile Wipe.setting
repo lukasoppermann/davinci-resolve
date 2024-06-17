@@ -1,0 +1,299 @@
+{
+	Tools = ordered() {
+		TileWipe = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "Merge1",
+					Source = "Foreground",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Buttons1",
+					Source = "Input1",
+					Width = 1,
+					Page = "Controls",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Buttons1",
+					Source = "Input2",
+					Width = 0.5,
+					Page = "Controls",
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Buttons1",
+					Source = "Input3",
+					Width = 0.5,
+					Page = "Controls",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "AnimCurves3",
+					Source = "Scale",
+					Name = "Rotation",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Blank5",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Quality",
+					Default = 10,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "AnimCurves2",
+					Source = "Curve",
+				},
+				Input12 = InstanceInput {
+					SourceOp = "AnimCurves2",
+					Source = "EaseIn",
+					Width = 0.5,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "AnimCurves2",
+					Source = "EaseOut",
+					Width = 0.5,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Transform1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge1 = Merge {
+					Inputs = {
+						Blend = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 275, 115.5 } },
+				},
+				AnimCurves1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Custom" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup",
+							Source = "Value",
+						},
+					},
+				},
+				AnimCurves1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.166666666666667, 0.00182212502868089 }, Flags = { Linear = true } },
+							[0.5] = { 0.00546637508604268, LH = { 0.333333333333333, 0.00364425005736179 }, RH = { 0.52, 0.336977583390695 }, Flags = { Linear = true } },
+							[0.56] = { 1, LH = { 0.54, 0.668488791695348 }, RH = { 0.706666666666667, 1 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.853333333333333, 1 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Buttons1 = MacroOperator {
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "C:\\Users\\qa\\Desktop\\Fu Settings\\Transitions\\Tools\\"
+							}
+						},
+					},
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "Buttons",
+							Source = "Button01",
+							Width = 1,
+							Page = "Controls",
+							Default = 0,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "Buttons",
+							Source = "Button02",
+							Width = 0.5,
+							Page = "Controls",
+							Default = 0,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "Buttons",
+							Source = "Button03",
+							Width = 0.5,
+							Page = "Controls",
+							Default = 0,
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 495, 82.5 } },
+					Tools = ordered() {
+						Buttons = Fuse.Wireless {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							CustomData = {
+								Path = {
+									Map = {
+										["Setting:"] = "C:\\Users\\qa\\Desktop\\Fu Settings\\Transitions\\Tools\\"
+									}
+								}
+							},
+							ViewInfo = OperatorInfo { Pos = { 0, 8.75758 } },
+							UserControls = ordered() {
+								Button01 = {
+									ICD_Width = 0.5,
+									INP_Integer = false,
+									INP_External = false,
+									LINKID_DataType = "Number",
+									BTNCS_Execute = "tool:SetInput('Input4',0)",
+									ICS_ControlPage = "Controls",
+									INPID_InputControl = "ButtonControl",
+									LINKS_Name = "No Spin",
+								},
+								Button02 = {
+									ICD_Width = 0.5,
+									INP_Integer = false,
+									INP_External = false,
+									LINKID_DataType = "Number",
+									BTNCS_Execute = "tool:SetInput('Input4',360)",
+									ICS_ControlPage = "Controls",
+									INPID_InputControl = "ButtonControl",
+									LINKS_Name = "Spin Left",
+								},
+								Button03 = {
+									ICD_Width = 0.5,
+									INP_Integer = false,
+									INP_External = false,
+									LINKID_DataType = "Number",
+									BTNCS_Execute = "tool:SetInput('Input4',-360)",
+									ICS_ControlPage = "Controls",
+									INPID_InputControl = "ButtonControl",
+									LINKS_Name = "Spin Right",
+								},
+								Button04 = {
+									ICD_Width = 0.5,
+									INP_Integer = false,
+									INP_External = false,
+									LINKID_DataType = "Number",
+									ICS_ControlPage = "Controls",
+									INPID_InputControl = "ButtonControl",
+									LINKS_Name = "Spin Down",
+								},
+								Button05 = {
+									ICD_Width = 0.5,
+									INP_Integer = false,
+									INP_External = false,
+									LINKID_DataType = "Number",
+									ICS_ControlPage = "Controls",
+									INPID_InputControl = "ButtonControl",
+									LINKS_Name = "Button05",
+								},
+								Button06 = {
+									ICD_Width = 0.5,
+									INP_Integer = false,
+									INP_External = false,
+									LINKID_DataType = "Number",
+									ICS_ControlPage = "Controls",
+									INPID_InputControl = "ButtonControl",
+									LINKS_Name = "Button06",
+								}
+							}
+						}
+					},
+				},
+				Transform1 = Transform {
+					CtrlWZoom = false,
+					Inputs = {
+						Quality = Input { Value = 10, },
+						Size = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+						Angle = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						Edges = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 495, 115.5 } },
+				},
+				AnimCurves2 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						EaseIn = Input { Value = FuID { "Sine" }, },
+						EaseOut = Input { Value = FuID { "Sine" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup",
+							Source = "Value",
+						},
+						Mirror = Input { Value = 1, },
+						Invert = Input { Value = 1, },
+						Scale = Input { Value = 0.99, },
+						Offset = Input { Value = 0.01, },
+					},
+				},
+				AnimCurves2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				AnimCurves3 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurves3Lookup",
+							Source = "Value",
+						},
+						Scale = Input { Value = 0, },
+					},
+				},
+				AnimCurves3Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "TileWipe"
+}

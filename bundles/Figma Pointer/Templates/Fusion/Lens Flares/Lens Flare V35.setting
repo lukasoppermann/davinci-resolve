@@ -1,0 +1,535 @@
+{
+	Tools = ordered() {
+		Lens_Flare_V35 = GroupOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "HS14_2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 3179.57, -189.104 },
+				Flags = {
+					AllowPan = false,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 236, 66.3636, 118, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -3476.46, 245.185 }
+			},
+			Tools = ordered() {
+				HS14_2 = HotSpot {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+							}
+						},
+					},
+					Inputs = {
+						PrimaryCenter = Input { Value = { 0.751889168765743, 0.708053691275168 }, },
+						HotSpotSize = Input { Value = 0.0809524, },
+						Aspect = Input { Value = 20, },
+						SecondaryStrength = Input { Value = 0.0857143, },
+						LensAberration = Input { Value = 3, },
+						Aberration = Input { Value = 2.445026, },
+						AmbientLight = Input { Disabled = true, },
+						ShowBlue = Input { Value = 0, },
+						ShowAlpha = Input { Value = 0, },
+						Red = Input {
+							SourceOp = "HS14_2Red",
+							Source = "Value",
+						},
+						Green = Input {
+							SourceOp = "HS14_2Green",
+							Source = "Value",
+						},
+						Blue = Input {
+							SourceOp = "HS14_2Blue",
+							Source = "Value",
+						},
+						Alpha = Input {
+							SourceOp = "HS14_2Alpha",
+							Source = "Value",
+						},
+						Mix = Input {
+							SourceOp = "HS14_2Mix",
+							Source = "Value",
+						},
+						RadialOn = Input { Value = 1, },
+						RadialLength = Input { Value = 0, },
+						Radial = Input {
+							SourceOp = "HS14_2Radial",
+							Source = "Value",
+						},
+						Length = Input {
+							SourceOp = "HS14_2Length",
+							Source = "Value",
+						},
+						RadialRepeat = Input { Value = 2, },
+						RadialAngle = Input { Value = 161.9048, },
+						LengthAngle = Input { Value = 156.1857, },
+						ElementStrength3 = Input { Value = 0.9060773, },
+						ElementSize3 = Input { Value = 0.0942408, },
+						ElementPosition3 = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "HS14_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 3531.46, -236.549 } },
+				},
+				HS14_1 = HotSpot {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+							}
+						}
+					},
+					Inputs = {
+						PrimaryCenter = Input {
+							Value = { 0.751889168765743, 0.708053691275168 },
+							Expression = "HS14_2.PrimaryCenter",
+						},
+						HotSpotSize = Input { Value = 0.1333333, },
+						Aspect = Input { Value = 1.9904762, },
+						SecondaryStrength = Input { Value = 0.0857143, },
+						SecondarySize = Input { Value = 0.3142857, },
+						LensAberration = Input { Value = 5, },
+						Aberration = Input { Value = 2.7142857, },
+						AmbientLight = Input { Disabled = true, },
+						ShowRed = Input { Value = 0, },
+						ShowGreen = Input { Value = 0, },
+						ShowBlue = Input { Value = 0, },
+						ShowAlpha = Input { Value = 0, },
+						Red = Input {
+							SourceOp = "HotSpot1Red1",
+							Source = "Value",
+						},
+						Green = Input {
+							SourceOp = "HotSpot1Green1",
+							Source = "Value",
+						},
+						Blue = Input {
+							SourceOp = "HotSpot1Blue1",
+							Source = "Value",
+						},
+						Alpha = Input {
+							SourceOp = "HotSpot1Alpha1",
+							Source = "Value",
+						},
+						Mix = Input {
+							SourceOp = "HotSpot1Mix1",
+							Source = "Value",
+						},
+						RadialOn = Input { Value = 1, },
+						RadialDensity = Input { Value = 0, },
+						Radial = Input {
+							SourceOp = "HotSpot1Radial1",
+							Source = "Value",
+						},
+						Length = Input {
+							SourceOp = "HotSpot1Length1",
+							Source = "Value",
+						},
+						Element1Reflection1 = Input { Value = 1, },
+						ElementStrength1 = Input { Value = 0.1904762, },
+						ElementSize1 = Input { Value = 2, },
+						ElementPosition1 = Input { Value = 0.6642857, },
+						ElementType1 = Input { Value = 3, },
+						NGonAngle1 = Input { Value = -45, },
+						NGonSides1 = Input { Value = 4, },
+						NGonStarryness1 = Input { Value = 0.75, },
+						LensGreen1 = Input { Value = 0.870503597122302, },
+						LensBlue1 = Input { Value = 0.654676258992806, },
+						Element2Reflection1 = Input { Value = 1, },
+						Element2Reflection2 = Input { Value = 1, },
+						Element2Reflection3 = Input { Value = 1, },
+						ElementStrength2 = Input { Value = 0.352381, },
+						ElementSize2 = Input { Value = 0.152381, },
+						ElementPosition2 = Input { Value = 1.3357143, },
+						LensGreen2 = Input { Value = 0.654676258992806, },
+						LensBlue2 = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 3421.46, -236.549 } },
+				}
+			},
+		},
+		HS14_2Red = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.0391603833235647, 0.000753084296079873 } },
+					[0.153644117734255] = { 0.177047227783863, LH = { 0.0906596242620896, 0.159984486724239 }, RH = { 0.181124349642762, 0.18449172809599 } },
+					[0.249877279637473] = { 0.0625138507031948, LH = { 0.213311607327061, 0.0513295089512391 }, RH = { 0.311471265899042, 0.0813536025438437 } },
+					[0.451666030082526] = { 0.886318759567755, LH = { 0.381253263045682, 0.796214023861028 }, RH = { 0.502938049526653, 0.951929755351317 } },
+					[0.61339636336203] = { 0.448728426636606, LH = { 0.55689514895757, 0.390841824301458 }, RH = { 0.685942237451539, 0.523053097508525 } },
+					[0.846028129319572] = { 0.588310017393068, LH = { 0.763635996534365, 0.580457899895148 }, RH = { 0.919354391876055, 0.595298141256446 } },
+					[0.979838709557249] = { 0.991935483179986, LH = { 0.934226488531658, 0.991935483179986 } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 52, Blue = 52 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS14_2ColorChange",
+					Source = "Value",
+				}
+			},
+		},
+		HS14_2ColorChange = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 180 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true } }
+			}
+		},
+		HS14_2Green = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.110344081950598, 0.00212200157990644 } },
+					[0.694821405730752] = { 0.706315022640538, LH = { 0.489323270424526, 0.376730535695348 }, RH = { 0.724725480098796, 0.754276134275326 } },
+					[0.858586493045873] = { 0.490383815831475, LH = { 0.800686561404056, 0.483743835943775 }, RH = { 0.919859938548402, 0.497410671205023 } },
+					[1] = { 0.903225807037445, LH = { 0.951942610050644, 0.903225807037445 } }
+				}
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 0 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS14_2ColorChange",
+					Source = "Value",
+				}
+			},
+		},
+		HS14_2Blue = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.0471568576790863, 0.00090686264935572 } },
+					[0.224974630362092] = { 0.561682371115037, LH = { 0.123430811703581, 0.400352603681785 }, RH = { 0.416386022238321, 0.865791038126241 } },
+					[1] = { 1, LH = { 0.68033329067457, 1 } }
+				}
+			},
+			SplineColor = { Red = 68, Green = 68, Blue = 255 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS14_2ColorChange",
+					Source = "Value",
+				}
+			},
+		},
+		HS14_2Alpha = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.138200348152401, 0.00265769900785716 } },
+					[0.995967741815313] = { 0.608870967621765, LH = { 0.495306538607479, 0.608870967621765 } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS14_2ColorChange",
+					Source = "Value",
+				}
+			},
+		},
+		HS14_2Mix = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0.00546101188338756] = { 0, RH = { 0.130130747401566, 0 }, Flags = { Linear = true } },
+					[0.379470218437924] = { 0, LH = { 0.254800482919745, 0 }, RH = { 0.548578389755604, 0.329301075348931 }, Flags = { Linear = true } },
+					[0.886794732390963] = { 0.987903226046793, LH = { 0.717686561073283, 0.658602150697862 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 255 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS14_2ColorChange1",
+					Source = "Value",
+				}
+			},
+		},
+		HS14_2ColorChange1 = BezierSpline {
+			SplineColor = { Red = 255, Green = 255, Blue = 64 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true } }
+			}
+		},
+		HS14_2Radial = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.139784946156445, 0 } },
+					[0.419354838469336] = { 0, LH = { 0.279569892312891, 0 }, RH = { 0.43750251677468, 0.330845771144279 }, Flags = { Linear = true } },
+					[0.473797873385368] = { 0.992537313432836, LH = { 0.455650195080024, 0.661691542288557 }, RH = { 0.482619068466965, 0.661691542288557 }, Flags = { Linear = true } },
+					[0.50026145863016] = { 0, LH = { 0.491440263548563, 0.330845771144279 }, RH = { 0.666840972420107, 0 }, Flags = { Linear = true } },
+					[1] = { 0, LH = { 0.833420486210053, 0 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 170, Blue = 48 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS14_2ColorChange2",
+					Source = "Value",
+				}
+			},
+		},
+		HS14_2ColorChange2 = BezierSpline {
+			SplineColor = { Red = 0, Green = 127, Blue = 255 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true } }
+			}
+		},
+		HS14_2Length = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 1, RH = { 0.139107611548556, 0.995967741935484 } },
+					[0.417322834645669] = { 0.987903225806452, LH = { 0.278215223097113, 0.991935483870968 }, RH = { 0.429182102517506, 0.658818478065153 }, Flags = { Linear = true } },
+					[0.452900638261179] = { 0.000648982582553827, LH = { 0.441041370389342, 0.329733730323853 }, RH = { 0.475608443320094, 0.332033099352024 }, Flags = { Linear = true } },
+					[0.521024053437923] = { 0.994801332890963, LH = { 0.498316248379008, 0.663417216121493 }, RH = { 0.680682702291949, 0.996534221927309 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.840341351145974, 0.998267110963654 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 170, Green = 128, Blue = 255 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "HS14_2ColorChange3",
+					Source = "Value",
+				}
+			},
+		},
+		HS14_2ColorChange3 = BezierSpline {
+			SplineColor = { Red = 255, Green = 127, Blue = 0 },
+			CtrlWZoom = false,
+			CtrlWShown = false,
+			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true } }
+			}
+		},
+		HotSpot1Red1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.228464419475655, 0.99502487562189 } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 52, Blue = 52 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+		},
+		HotSpot1Green1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.449438202247191, 0.980099502487562 } }
+				}
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 0 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+		},
+		HotSpot1Blue1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 68, Green = 68, Blue = 255 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+		},
+		HotSpot1Alpha1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+		},
+		HotSpot1Mix1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.992537313432836, RH = { 0.333333333333333, 0.671641791044776 }, Flags = { Linear = true } },
+					[1] = { 0.0298507462686565, LH = { 0.666666666666667, 0.350746268656716 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 255 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+		},
+		HotSpot1Radial1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0.0112359550561798] = { 1, RH = { 0.17852684144819, 0.666666666666667 }, Flags = { Linear = true } },
+					[0.51310861423221] = { 0, LH = { 0.3458177278402, 0.333333333333333 }, RH = { 0.675405742821473, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.837702871410737, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 170, Blue = 48 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+		},
+		HotSpot1Length1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 1, RH = { 0.17103620474407, 0.695273631840796 }, Flags = { Linear = true } },
+					[0.513108614232209] = { 0.0858208955223878, LH = { 0.342072409488139, 0.390547263681592 }, RH = { 0.675405742821473, 0.390547263681592 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.837702871410736, 0.695273631840796 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 170, Green = 128, Blue = 255 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:\\Templates.drfx\\Fusion\\Lens Flares\\"
+					}
+				}
+			},
+		}
+	}
+}

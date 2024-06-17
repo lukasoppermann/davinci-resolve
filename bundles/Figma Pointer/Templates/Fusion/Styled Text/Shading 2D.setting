@@ -1,0 +1,274 @@
+{
+	Tools = ordered() {
+		Background5 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 150, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				TopLeftRed = Input { Value = 0.28, },
+				TopLeftGreen = Input { Value = 0.28, },
+				TopLeftBlue = Input { Value = 0.28, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1045, 82.5, }, },
+		},
+		Text4 = TextPlus {
+			CtrlWZoom = false,
+			Inputs = {
+				GlobalOut = Input { Value = 150, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Depth = Input { Value = 3, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				Size = Input { Value = 0.142857142857143, },
+				Font = Input { Value = "Open Sans", },
+				StyledText = Input { Value = "TEXT+  SHADING", },
+				Style = Input { Value = "Bold", },
+				ManualFontKerningPlacement = Input {
+					Value = StyledText {
+						Array = {
+						},
+						Value = "",
+					},
+				},
+				SelectElement = Input { Value = 3, },
+				Select = Input { Value = 3, },
+				Type1 = Input { Value = 2, },
+				ShadingGradient1 = Input {
+					SourceOp = "Text4Shadinggradient",
+					Source = "Value",
+				},
+				Softness1 = Input { Value = 1, },
+				Enabled2 = Input { Value = 1, },
+				Enabled3 = Input { Value = 1, },
+				Name4 = Input { Value = "Dots", },
+				Enabled4 = Input { Value = 1, },
+				Enabled5 = Input { Value = 1, },
+				Thickness2 = Input {
+					SourceOp = "Text4Thickness",
+					Source = "Value",
+				},
+				Type2 = Input { Value = 2, },
+				Red2 = Input { Value = 0.773109243697479, },
+				Green2 = Input { Value = 0.961044902347936, },
+				Blue2 = Input { Value = 1, },
+				ShadingGradient2 = Input {
+					SourceOp = "Text4Shadinggradient1",
+					Source = "Value",
+				},
+				Softness2 = Input { Value = 1, },
+				Opacity3 = Input { Value = 0.504761904761905, },
+				PriorityBack3 = Input { Value = 0, },
+				Color3 = Input { Value = 0, },
+				ShadingGradient3 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				Softness3 = Input { Value = 1, },
+				SoftnessX3 = Input { Value = 5.47368421052632, },
+				SoftnessY3 = Input { Value = 1.15789473684211, },
+				Transform3 = Input { Value = 1, },
+				Offset3 = Input { Value = { 0, -0.02, }, },
+				AngleX3 = Input {
+					SourceOp = "Text4AngleX",
+					Source = "Value",
+				},
+				ShearX3 = Input {
+					SourceOp = "Text4ShearX",
+					Source = "Value",
+				},
+				SizeY3 = Input {
+					SourceOp = "Text4SizeY",
+					Source = "Value",
+				},
+				ShadingGradient6 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				PriorityBack4 = Input { Value = 25, },
+				ElementShape4 = Input { Value = 1, },
+				Thickness4 = Input {
+					SourceOp = "Text4Thickness1",
+					Source = "Value",
+				},
+				LineStyle4 = Input { Value = 2, },
+				ExtendVertical4 = Input { Value = -0.478947368421053, },
+				Round4 = Input { Value = 1, },
+				Blue4 = Input { Value = 0, },
+				ShadingGradient4 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				Softness4 = Input { Value = 1, },
+				SoftnessX4 = Input { Value = 1.89473684210526, },
+				SoftnessY4 = Input { Value = 3.47368421052632, },
+				SoftnessGlow4 = Input { Value = 0.863157894736842, },
+				SoftnessBlend4 = Input { Value = 0.273684210526316, },
+				Opacity5 = Input {
+					SourceOp = "Text4Opacity1",
+					Source = "Value",
+				},
+				PriorityBack5 = Input { Value = 24.4736842105263, },
+				ElementShape5 = Input { Value = 1, },
+				Red5 = Input { Value = 0.206918807575304, },
+				Green5 = Input { Value = 0.643168471598556, },
+				ShadingGradient5 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				Softness5 = Input { Value = 1, },
+				SoftnessX5 = Input {
+					SourceOp = "Text4SoftnessX",
+					Source = "Value",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 935, 115.5, }, },
+		},
+		Text4Shadinggradient = BezierSpline {
+			SplineColor = { Red = 241, Green = 43, Blue = 82, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 3.33333333333333, 0, }, Flags = { LockedY = true, }, Value = Gradient {
+						Colors = {
+							[0] = { 1, 1, 1, 1, },
+							[0.503937007874016] = { 1, 1, 1, 1, },
+							[0.966666666666667] = { 1, 1, 1, 1, },
+						},
+					}, },
+				[10] = { 2, LH = { 6.66700005531311, 1.83335000276566, }, RH = { 15.3333333333333, 1, }, Flags = { LockedY = true, }, Value = Gradient {
+						Colors = {
+							[0] = { 0.151262375315224, 0.38145458940934, 1, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					}, },
+				[26] = { -1, LH = { 20.6666666666667, 0, }, Flags = { Linear = true, LockedY = true, }, Value = Gradient {
+						Colors = {
+							[0] = { 1, 1, 1, 1, },
+							[0.318897637795276] = { 0.455341521787687, 0.603062251231477, 1, 1, },
+							[0.421259842519685] = { 0.253333333333333, 0.215888762007068, 0.212659502756079, 1, },
+							[0.586614173228346] = { 0.707498316252221, 0.7868297942613, 1, 1, },
+							[1] = { 0.151268273876624, 0.381458888179628, 1, 1, },
+						},
+					}, },
+			},
+		},
+		Text4Thickness = BezierSpline {
+			SplineColor = { Red = 243, Green = 29, Blue = 58, },
+			NameSet = true,
+			KeyFrames = {
+				[13.4682292147224] = { 0, RH = { 18.9788194764816, 0, }, },
+				[30] = { 0.0357894736842105, LH = { 24.4899608887093, 0.0345159439716597, }, RH = { 53.3309998582536, 0.0411819438541809, }, },
+				[100.000000825363] = { 0.02, LH = { 76.6666672169089, 0.02, }, },
+			},
+		},
+		Text4Shadinggradient1 = BezierSpline {
+			SplineColor = { Red = 241, Green = 113, Blue = 5, },
+			NameSet = true,
+			KeyFrames = {
+				[50] = { 0, RH = { 66.6666666666667, 0.333333333333333, }, Flags = { Linear = true, LockedY = true, }, Value = Gradient {
+						Colors = {
+							[0] = { 0, 0.477094987021637, 0.493333333333333, 1, },
+							[1] = { 2, 2, 2, 1, },
+						},
+					}, },
+				[100] = { 1, LH = { 83.3333333333333, 0.666666666666667, }, Flags = { Linear = true, LockedY = true, }, Value = Gradient {
+						Colors = {
+							[0] = { 1, 0.242493879502039, 0, 1, },
+							[1] = { 1.4393654388899, 2, 1.97452559720803, 1, },
+						},
+					}, },
+			},
+		},
+		Text4AngleX = BezierSpline {
+			SplineColor = { Red = 14, Green = 221, Blue = 165, },
+			NameSet = true,
+			KeyFrames = {
+				[30] = { 0, RH = { 44, 0, }, },
+				[72] = { 90, LH = { 58, 90, }, },
+			},
+		},
+		Text4ShearX = BezierSpline {
+			SplineColor = { Red = 241, Green = 54, Blue = 149, },
+			NameSet = true,
+			KeyFrames = {
+				[30] = { 1, RH = { 36.6666666666667, 1, }, },
+				[50] = { -0.778947368421053, LH = { 43.3340001106262, -0.461518802260396, }, RH = { 57.3246701036488, -1.12774118288052, }, },
+				[72] = { -1, LH = { 64.6666666666667, -1, }, },
+			},
+		},
+		Text4SizeY = BezierSpline {
+			SplineColor = { Red = 185, Green = 182, Blue = 253, },
+			NameSet = true,
+			KeyFrames = {
+				[30] = { 0, RH = { 36.6666666666667, 0, }, },
+				[50] = { 3.14736842105263, LH = { 43.3333333333333, 3.14736842105263, }, },
+			},
+		},
+		Text4Thickness1 = BezierSpline {
+			SplineColor = { Red = 243, Green = 18, Blue = 58, },
+			NameSet = true,
+			KeyFrames = {
+				[30] = { 0, RH = { 33, 0, }, },
+				[39] = { 0.0142105263157895, LH = { 36.0003000497818, 0.0142105263157895, }, RH = { 49.9988998174667, 0.0142105263157895, }, },
+				[72] = { 0, LH = { 61, 0, }, },
+			},
+		},
+		Text4Opacity1 = BezierSpline {
+			SplineColor = { Red = 179, Green = 28, Blue = 244, },
+			NameSet = true,
+			KeyFrames = {
+				[30] = { 0, RH = { 44, 0, }, },
+				[72] = { 1, LH = { 58.0014002323151, 0.800020003318787, }, RH = { 75.5114977578887, 1.05016425368412, }, },
+				[80] = { 0, LH = { 77.3333333333333, 0, }, },
+			},
+		},
+		Text4SoftnessX = BezierSpline {
+			SplineColor = { Red = 231, Green = 243, Blue = 234, },
+			NameSet = true,
+			KeyFrames = {
+				[30] = { 0, RH = { 44, 0, }, },
+				[72] = { 50, LH = { 58, 33.3333333333333, }, RH = { 74.6666666666667, 33.3333333333333, }, },
+				[80] = { 0, LH = { 77.3333333333333, 16.6666666666667, }, Flags = { Linear = true, }, },
+			},
+		},
+		Merge11 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "Background5",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "Text4",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1045, 115.5, }, },
+		},
+	},
+	ActiveTool = "Merge11",
+}

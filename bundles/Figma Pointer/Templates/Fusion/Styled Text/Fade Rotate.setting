@@ -1,0 +1,340 @@
+{
+	Tools = ordered() {
+		Renderer3D1 = Renderer3D {
+			CtrlWZoom = false,
+			CustomData = {
+				ToolVersion = 2,
+			},
+			Inputs = {
+				GlobalOut = Input { Value = 200, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				SceneInput = Input {
+					SourceOp = "Merge3D1",
+					Source = "Output",
+				},
+				RendererType = Input { Value = FuID { "RendererOpenGL" }, },
+				["RendererSoftware.LightingEnabled"] = Input { Value = 1, },
+				["RendererOpenGL.AntiAliasing.Nest"] = Input { Value = 1, },
+				["RendererOpenGL.AntiAliasing.Channels.RGBA.HighQuality.Enable"] = Input { Value = 1, },
+				["RendererOpenGL.AntiAliasing.Presets.Color.Supersampling.HighQuality.RateX"] = Input { Value = 3, },
+				["RendererOpenGL.AntiAliasing.Presets.Color.Supersampling.HighQuality.RateY"] = Input { Value = 3, },
+				["RendererOpenGL.AntiAliasing.Presets.Color.Multisampling.LowQuality.SampleCount"] = Input { Value = 2, },
+				["RendererOpenGL.AntiAliasing.Presets.Color.Multisampling.HighQuality.SampleCount"] = Input { Value = 3, },
+				["RendererOpenGL.AntiAliasing.Presets.Aux.Supersampling.HighQuality.RateX"] = Input { Value = 3, },
+				["RendererOpenGL.AntiAliasing.Presets.Aux.Supersampling.HighQuality.RateY"] = Input { Value = 3, },
+				["RendererOpenGL.AntiAliasing.Presets.Aux.Multisampling.LowQuality.SampleCount"] = Input { Value = 2, },
+				["RendererOpenGL.AntiAliasing.Presets.Aux.Multisampling.HighQuality.SampleCount"] = Input { Value = 3, },
+				["RendererOpenGL.AccumQuality"] = Input { Value = 32, },
+				["RendererOpenGL.LightingEnabled"] = Input { Value = 1, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1375, -49.5 } },
+			SubInputsData = {
+				RendererOpenGL = {
+					Version = 1
+				}
+			}
+		},
+		Merge3D1 = Merge3D {
+			Inputs = {
+				SceneInput1 = Input {
+					SourceOp = "Text3D2",
+					Source = "Output",
+				},
+				SceneInput2 = Input {
+					SourceOp = "PointLight1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1265, -49.5 } },
+		},
+		Text3D2 = Text3D {
+			Inputs = {
+				["Transform3DOp.Translate.X"] = Input { Value = -1.37772817293344, },
+				["Transform3DOp.Translate.Z"] = Input { Value = 0.0332169585740849, },
+				Center = Input { Value = { 1.85, 0.247 }, },
+				LayoutRotation = Input { Value = 1, },
+				StyledText = Input {
+					SourceOp = "Follower1",
+					Source = "StyledText",
+				},
+				Font = Input { Value = "Open Sans", },
+				Style = Input { Value = "Italic", },
+				Size = Input { Value = 0.79, },
+				VerticalTopCenterBottom = Input { Value = 1, },
+				VerticalJustification = Input { Value = 3, },
+				VerticalJustificationNew = Input { Value = 3, },
+				HorizontalJustificationNew = Input { Value = 3, },
+				Extrusion = Input { Value = 1, },
+				ExtrusionProfile = Input {
+					SourceOp = "Text3D2ExtrusionProfile",
+					Source = "Value",
+				},
+				ExtrusionDepth = Input { Value = 0.112631578947368, },
+				BevelDepth = Input { Value = 0.0231578947368421, },
+				BevelWidth = Input { Value = 0.0168421052631579, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1155, -49.5 } },
+		},
+		Follower1 = StyledTextFollower {
+			CtrlWZoom = false,
+			CustomData = {
+				Settings = {
+					[2] = {
+						Tools = ordered() {
+							Follower1 = StyledTextFollower {
+								CtrlWZoom = false,
+								Inputs = {
+									CharacterRotation = Input { Value = 1, },
+									Order = Input { Value = 1, },
+									Delay = Input { Value = 1, },
+									Text = Input { Value = "Right To Left", },
+									CharacterAngleY = Input {
+										SourceOp = "Follower1CharacterAngleY",
+										Source = "Value",
+									},
+									Opacity1 = Input {
+										SourceOp = "Follower1Opacity1",
+										Source = "Value",
+									},
+								},
+							},
+							Follower1CharacterAngleY = BezierSpline {
+								SplineColor = { Red = 28, Green = 216, Blue = 243 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { -90, RH = { 3.33333333333333, -60 }, Flags = { Linear = true } },
+									[10] = { 0, LH = { 6.66666666666667, -30 }, Flags = { Linear = true } }
+								}
+							},
+							Follower1Opacity1 = BezierSpline {
+								SplineColor = { Red = 179, Green = 28, Blue = 244 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { 0, RH = { 3.33333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+									[10] = { 1, LH = { 6.66666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+								}
+							}
+						}
+					},
+					[3] = {
+						Tools = ordered() {
+							Follower1 = StyledTextFollower {
+								CtrlWZoom = false,
+								Inputs = {
+									CharacterRotation = Input { Value = 1, },
+									Order = Input { Value = 3, },
+									Delay = Input { Value = 1, },
+									Text = Input { Value = "Inside Out", },
+									HorizontalLeftCenterRight = Input { Value = -1, },
+									CharacterAngleY = Input {
+										SourceOp = "Follower1_4CharacterAngleY",
+										Source = "Value",
+									},
+									Opacity1 = Input {
+										SourceOp = "Follower1Opacity1",
+										Source = "Value",
+									},
+								},
+							},
+							Follower1_4CharacterAngleY = BezierSpline {
+								SplineColor = { Red = 28, Green = 216, Blue = 243 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { -90, RH = { 3.33333333333333, -60 }, Flags = { Linear = true } },
+									[10] = { 0, LH = { 6.66666666666667, -30 }, Flags = { Linear = true } }
+								}
+							},
+							Follower1Opacity1 = BezierSpline {
+								SplineColor = { Red = 179, Green = 28, Blue = 244 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { 0, RH = { 3.33333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+									[10] = { 1, LH = { 6.66666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+								}
+							}
+						}
+					},
+					[4] = {
+						Tools = ordered() {
+							Follower1 = StyledTextFollower {
+								CtrlWZoom = false,
+								Inputs = {
+									CharacterRotation = Input { Value = 1, },
+									Order = Input { Value = 3, },
+									Delay = Input { Value = 1, },
+									Text = Input { Value = "Outside In", },
+									HorizontalLeftCenterRight = Input { Value = -1, },
+									CharacterAngleY = Input {
+										SourceOp = "Follower1CharacterAngleY",
+										Source = "Value",
+									},
+									Opacity1 = Input {
+										SourceOp = "Follower1_5Opacity1",
+										Source = "Value",
+									},
+								},
+							},
+							Follower1CharacterAngleY = BezierSpline {
+								SplineColor = { Red = 28, Green = 216, Blue = 243 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { -90, RH = { 3.33333333333333, -60 }, Flags = { Linear = true } },
+									[10] = { 0, LH = { 6.66666666666667, -30 }, Flags = { Linear = true } }
+								}
+							},
+							Follower1_5Opacity1 = BezierSpline {
+								SplineColor = { Red = 179, Green = 28, Blue = 244 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { 0, RH = { 3.33333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+									[10] = { 1, LH = { 6.66666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+								}
+							}
+						}
+					},
+					[5] = {
+						Tools = ordered() {
+							Follower1 = StyledTextFollower {
+								CtrlWZoom = false,
+								Inputs = {
+									CharacterRotation = Input { Value = 1, },
+									Order = Input { Value = 4, },
+									Delay = Input { Value = 1, },
+									Text = Input { Value = "One by One", },
+									HorizontalLeftCenterRight = Input { Value = -1, },
+									CharacterAngleY = Input {
+										SourceOp = "Follower1_6CharacterAngleY",
+										Source = "Value",
+									},
+									Opacity1 = Input {
+										SourceOp = "Follower1Opacity1",
+										Source = "Value",
+									},
+								},
+							},
+							Follower1_6CharacterAngleY = BezierSpline {
+								SplineColor = { Red = 28, Green = 216, Blue = 243 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { -90, RH = { 3.33333333333333, -60 }, Flags = { Linear = true } },
+									[10] = { 0, LH = { 6.66666666666667, -30 }, Flags = { Linear = true } }
+								}
+							},
+							Follower1Opacity1 = BezierSpline {
+								SplineColor = { Red = 179, Green = 28, Blue = 244 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { 0, RH = { 3.33333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+									[10] = { 1, LH = { 6.66666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+								}
+							}
+						}
+					},
+					[6] = {
+						Tools = ordered() {
+							Follower1 = StyledTextFollower {
+								CtrlWZoom = false,
+								Inputs = {
+									CharacterRotation = Input { Value = 1, },
+									Order = Input { Value = 5, },
+									Delay = Input { Value = 1, },
+									Text = Input { Value = "Random", },
+									HorizontalLeftCenterRight = Input { Value = -1, },
+									CharacterAngleY = Input {
+										SourceOp = "Follower1_7CharacterAngleY",
+										Source = "Value",
+									},
+									Opacity1 = Input {
+										SourceOp = "Follower1_7Opacity1",
+										Source = "Value",
+									},
+								},
+							},
+							Follower1_7CharacterAngleY = BezierSpline {
+								SplineColor = { Red = 28, Green = 216, Blue = 243 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { -90, RH = { 3.33333333333333, -60 }, Flags = { Linear = true } },
+									[10] = { 0, LH = { 6.66666666666667, -30 }, Flags = { Linear = true } }
+								}
+							},
+							Follower1_7Opacity1 = BezierSpline {
+								SplineColor = { Red = 179, Green = 28, Blue = 244 },
+								CtrlWZoom = false,
+								NameSet = true,
+								KeyFrames = {
+									[0] = { 0, RH = { 3.33333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+									[10] = { 1, LH = { 6.66666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+								}
+							}
+						}
+					}
+				}
+			},
+			Inputs = {
+				CharacterRotation = Input { Value = 1, },
+				Delay = Input { Value = 1, },
+				Text = Input { Value = "Left To Right", },
+				CharacterAngleY = Input {
+					SourceOp = "Follower1CharacterAngleY1",
+					Source = "Value",
+				},
+				Opacity1 = Input {
+					SourceOp = "Follower1Opacity11",
+					Source = "Value",
+				},
+			},
+		},
+		Follower1CharacterAngleY1 = BezierSpline {
+			SplineColor = { Red = 28, Green = 216, Blue = 243 },
+			CtrlWZoom = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { -90, RH = { 3.33333333333333, -60 }, Flags = { Linear = true } },
+				[10] = { 0, LH = { 6.66666666666667, -30 }, Flags = { Linear = true } }
+			}
+		},
+		Follower1Opacity11 = BezierSpline {
+			SplineColor = { Red = 179, Green = 28, Blue = 244 },
+			CtrlWZoom = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 3.33333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+				[10] = { 1, LH = { 6.66666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+			}
+		},
+		Text3D2ExtrusionProfile = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.0666666666666667, 0.333333333333333 }, Flags = { Linear = true } },
+					[0.2] = { 1, LH = { 0.133333333333333, 0.666666666666667 }, RH = { 0.4, 1 }, Flags = { Linear = true } },
+					[0.8] = { 1, LH = { 0.6, 1 }, RH = { 0.866666666666667, 0.666666666666667 }, Flags = { Linear = true } },
+					[1] = { 0, LH = { 0.933333333333333, 0.333333333333333 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64 },
+			CtrlWZoom = false,
+		},
+		PointLight1 = LightPoint {
+			Inputs = {
+				["Transform3DOp.Translate.X"] = Input { Value = -0.472038347212011, },
+				["Transform3DOp.Translate.Y"] = Input { Value = 0.502202562420363, },
+				["Transform3DOp.Translate.Z"] = Input { Value = 1.49355803721045, },
+				["ShadowLightInputs3D.ShadowsEnabled"] = Input { Value = 1, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1155, -82.5 } },
+		}
+	}
+}

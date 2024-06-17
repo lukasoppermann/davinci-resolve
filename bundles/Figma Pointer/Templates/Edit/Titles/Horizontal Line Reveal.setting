@@ -1,0 +1,781 @@
+{
+	Tools = ordered() {
+		HorizontalLineReveal = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				UpperText = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "UpperText",
+					Page = "Controls",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "Font",
+					Name = "Upper Text Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "StyledText",
+					Name = "Upper Text",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "CharacterSpacing",
+					Name = "Upper Text Spacing",
+					Default = 1,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "Size",
+					Name = "Upper Text Size",
+					Default = 0.15,
+				},
+				Input370 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "LineSpacingClone",
+					Default = 1,
+				},
+				Input86 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "Center",
+					Name = "Upper Text Offset",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "Type1",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "Red1",
+					Name = "Color",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "Green1",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "Blue1",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "Alpha1",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "ImageSource1",
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "ShadingGradient1",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "ImageShadingSampling1",
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "ImageShadingEdges1",
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "ShadingMappingSize1",
+					Name = "Mapping Size",
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "ShadingMappingAspect1",
+					Name = "Mapping Aspect",
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "upperText_1_1_1",
+					Source = "ShadingMappingLevel1",
+					Name = "Mapping Level",
+					Default = 4,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "textMerge_1_1_1",
+					Source = "MotionBlur",
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "textMerge_1_1_1",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "textMerge_1_1_1",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "textMerge_1_1_1",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "textMerge_1_1_1",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				LowerText = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "LowerText",
+					Page = "Controls",
+				},
+				Input32 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "Font",
+					Name = "Lower Text Font",
+					ControlGroup = 19,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "Style",
+					ControlGroup = 19,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "StyledText",
+					Name = "Lower Text",
+				},
+				Input35 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "CharacterSpacing",
+					Name = "Lower Text Spacing",
+					Default = 1.043,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "Size",
+					Name = "Lower Text Size",
+					Default = 0.1004,
+				},
+				Input400 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "LineSpacingClone",
+					Default = 1,
+				},
+				Input87 = InstanceInput {
+					SourceOp = "lowerTextPath_1_1_1",
+					Source = "Center",
+					Name = "Lower Text Offset",
+				},
+				Input106 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "Type1",
+					Default = 0,
+				},
+				Input107 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "Red1",
+					Name = "Color",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input108 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "Green1",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input109 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "Blue1",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input110 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "Alpha1",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input111 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ImageSource1",
+					Default = 0,
+				},
+				Input112 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ColorImage1",
+				},
+				Input113 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ColorFile1",
+					DefaultText = "",
+				},
+				Input114 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ColorBrush1",
+					Default = 0,
+				},
+				Input115 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ShadingGradient1",
+				},
+				Input116 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ImageShadingSampling1",
+					Default = 1,
+				},
+				Input117 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ImageShadingEdges1",
+					Default = 1,
+				},
+				Input118 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ShadingMapping1",
+					Default = 1,
+				},
+				Input119 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ShadingMappingAngle1",
+					Name = "Mapping Angle",
+					Default = 0,
+				},
+				Input120 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ShadingMappingSize1",
+					Name = "Mapping Size",
+					Default = 1,
+				},
+				Input121 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ShadingMappingAspect1",
+					Name = "Mapping Aspect",
+					Default = 1,
+				},
+				Input122 = InstanceInput {
+					SourceOp = "lowerText_1_1_1",
+					Source = "ShadingMappingLevel1",
+					Name = "Mapping Level",
+					Default = 4,
+				},
+				Input201 = InstanceInput {
+					SourceOp = "lowerTextOffset_1_1_1",
+					Source = "MotionBlur",
+					Default = 1,
+				},
+				Input202 = InstanceInput {
+					SourceOp = "lowerTextOffset_1_1_1",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input203 = InstanceInput {
+					SourceOp = "lowerTextOffset_1_1_1",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input204 = InstanceInput {
+					SourceOp = "lowerTextOffset_1_1_1",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input205 = InstanceInput {
+					SourceOp = "lowerTextOffset_1_1_1",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				LineColor = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "LineColor",
+					Page = "Controls",
+				},
+				Input61 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "Type",
+				},
+				Input62 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "TopLeftRed",
+					Name = "Line Color",
+					ControlGroup = 36,
+					Default = 0,
+				},
+				Input63 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "TopLeftGreen",
+					ControlGroup = 36,
+					Default = 0.6045776607784,
+				},
+				Input64 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "TopLeftBlue",
+					ControlGroup = 36,
+					Default = 0.673,
+				},
+				Input65 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "TopLeftAlpha",
+					ControlGroup = 36,
+					Default = 1,
+				},
+				Input66 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 37,
+					Default = 0.0702,
+				},
+				Input67 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "TopRightGreen",
+					ControlGroup = 37,
+					Default = 0.3814465011677,
+				},
+				Input68 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "TopRightBlue",
+					ControlGroup = 37,
+					Default = 0.78,
+				},
+				Input69 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "TopRightAlpha",
+					ControlGroup = 37,
+					Default = 1,
+				},
+				Input70 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 38,
+					Default = 0,
+				},
+				Input71 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "BottomLeftGreen",
+					ControlGroup = 38,
+					Default = 0.5689405339251,
+				},
+				Input72 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "BottomLeftBlue",
+					ControlGroup = 38,
+					Default = 0.74,
+				},
+				Input73 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 38,
+					Default = 1,
+				},
+				Input74 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 39,
+					Default = 0,
+				},
+				Input75 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "BottomRightGreen",
+					ControlGroup = 39,
+					Default = 0.2849368460334,
+				},
+				Input76 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "BottomRightBlue",
+					ControlGroup = 39,
+					Default = 0.853,
+				},
+				Input77 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "BottomRightAlpha",
+					ControlGroup = 39,
+					Default = 1,
+				},
+				Input78 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "GradientType",
+				},
+				Input79 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "Start",
+					DefaultX = 0,
+					DefaultY = 0.5,
+				},
+				Input80 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "End",
+					DefaultX = 1,
+					DefaultY = 0.5,
+				},
+				Input81 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "Gradient",
+				},
+				Input82 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "GradientInterpolationMethod",
+				},
+				Input83 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "Offset",
+					Default = 0,
+				},
+				Input84 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "Repeat",
+				},
+				Input85 = InstanceInput {
+					SourceOp = "line_1_1_1",
+					Source = "SubPixel",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1_1_1_1",
+					Source = "Result",
+					Name = "Output",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "lowerTextPath_1_1_1",
+					Source = "Heading",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "upperTextPath_1_1_1",
+					Source = "Heading",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 247.246, 49.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 449, 186.651, 224.5, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				upperText_1_1_1 = TextPlus {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						HorizontalJustification = Input { Value = 1, },
+						Alignment = Input { Value = 1, },
+						GlobalOut = Input { Value = 20000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Depth = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.5, 0.481 }, },
+						CharacterSpacing = Input { Value = 1.071, },
+						StyledText = Input { Value = "SAMPLE UPPER", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0945, },
+						VerticalTopCenterBottom = Input { Value = 1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+						UpperText = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -56.667, 10.9952 } },
+					UserControls = ordered() { UpperText = { LBLC_NumInputs = 23, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Upper Text Controls", } }
+				},
+				upperTextPath_1_1_1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					NameSet = true,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "upperTextPath_1_1_1Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0, Y = -0.189795918367347, RX = 0, RY = 0.083265306122449 },
+									{ Linear = true, LockY = true, X = 0, Y = 0.0600000000000001, LX = 0, LY = -0.083265306122449 }
+								}
+							},
+						},
+					},
+				},
+				upperTextPath_1_1_1Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					NameSet = true,
+					KeyFrames = {
+						[5] = { 0, RH = { 10, 0.333333333333333 }, Flags = { Linear = true, LockedY = true } },
+						[20] = { 1, LH = { 3.2, 1 }, RH = { 58.9999999999999, 1 }, Flags = { LockedY = true } },
+						[137] = { 1, LH = { 98.0000000000001, 1 }, RH = { 144.2, 1 } },
+						[149] = { 0, LH = { 139.2, 0 } }
+					}
+				},
+				lowerText_1_1_1 = TextPlus {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						HorizontalJustification = Input { Value = 1, },
+						Transform1 = Input { Value = 1, },
+						Alignment = Input { Value = 1, },
+						GlobalOut = Input { Value = 20000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Depth = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						CharacterSpacing = Input { Value = 1.417, },
+						Red1 = Input { Value = 0.996078431372549, },
+						Green1 = Input { Value = 0.988235294117647, },
+						StyledText = Input { Value = "SAMPLE", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Regular", },
+						Size = Input { Value = 0.0551, },
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+						LowerText = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -162, 7.81822 } },
+					UserControls = ordered() { LowerText = { LBLC_NumInputs = 28, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Lower Text Controls", } }
+				},
+				lowerTextPath_1_1_1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input { Value = { 0.5, 0.518 }, },
+						Displacement = Input {
+							SourceOp = "lowerTextPath_1_1_1Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0, Y = 0.193877551020408, RX = 0, RY = -0.0812925170068027 },
+									{ Linear = true, LockY = true, X = 0, Y = -0.05, LX = 0, LY = 0.0812925170068027, RX = 0, RY = 0 },
+									{ Linear = true, LockY = true, X = 0, Y = -0.05, LX = 0, LY = 0 }
+								}
+							},
+						},
+					},
+				},
+				lowerTextPath_1_1_1Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					NameSet = true,
+					KeyFrames = {
+						[8] = { 0, RH = { 13, 0.333333333333333 }, Flags = { Linear = true, LockedY = true } },
+						[23] = { 1, LH = { 6.2, 1 }, RH = { 60, 1 }, Flags = { LockedY = true } },
+						[134] = { 1, LH = { 97.0000000000001, 1 }, RH = { 142.84, 1 }, Flags = { LockedY = true } },
+						[147] = { -0.00166747962616727, LH = { 138.81, -0.00166747962616727 } }
+					}
+				},
+				textMerge_1_1_1 = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "textMask_1_1_1",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "clear_1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "upperText_1_1_1",
+							Source = "Output",
+						},
+						Center = Input {
+							SourceOp = "upperTextPath_1_1_1",
+							Source = "Position",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -56.667, 83.5759 } },
+				},
+				textMask_1_1_1 = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Invert = Input { Value = 1, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0 }, },
+						Width = Input { Value = 1, },
+						Height = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -107.334, 129.697 } },
+				},
+				lowerTextOffset_1_1_1 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input {
+							SourceOp = "lowerTextPath_1_1_1",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "lowerText_1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -162, 46.2134 } },
+				},
+				textLineMerge_1_1_1 = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "textMerge_1_1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "line_1_1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 51, 83.5759 } },
+				},
+				lineMask_1_1_1 = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input {
+							SourceOp = "lineMask_1_1_1Width",
+							Source = "Value",
+						},
+						Height = Input { Value = 0.00925925925925927, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 51, 13.182 } },
+				},
+				clear_1_1_1 = ColorGain {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "textMask_1_1_1",
+							Source = "Mask",
+						},
+						LockRGB = Input { Value = 1, },
+						GainRed = Input { Value = 0, },
+						GainAlpha = Input { Value = 0, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.125, 0.75 },
+											{ 0.375, 0.25 },
+											{ 0.5, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0.5, 0 },
+											{ 0.625, 0.25 },
+											{ 0.875, 0.75 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						Input = Input {
+							SourceOp = "lowerTextOffset_1_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -162, 83.5759 } },
+				},
+				KeyframeStretcher1_1_1_1 = KeyStretcher {
+					CtrlWShown = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "textLineMerge_1_1_1",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 150, },
+						StretchStart = Input { Value = 23, },
+						StretchEnd = Input { Value = 134, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 161, 83.5759 } },
+				},
+				line_1_1_1 = Background {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "lineMask_1_1_1",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 20000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Depth = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.16078431372549, },
+						TopLeftGreen = Input { Value = 0.156862745098039, },
+						TopLeftBlue = Input { Value = 0.164705882352941, },
+						LineColor = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 51, 44.6971 } },
+					UserControls = ordered() { LineColor = { LBLC_NumInputs = 31, LINKS_Name = "Line Color", LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", } }
+				}
+			},
+		},
+		lineMask_1_1_1Width = BezierSpline {
+			SplineColor = { Red = 225, Green = 255, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 5, 0.166666666666667 }, Flags = { Linear = true } },
+				[15] = { 0.5, LH = { 10, 0.333333333333333 }, Flags = { Linear = true } }
+			}
+		}
+	}
+}

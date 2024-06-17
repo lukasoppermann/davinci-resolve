@@ -1,0 +1,365 @@
+{
+	Tools = ordered() {
+		Glass_Dot = GroupOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Color.Red",
+					Name = "Diffuse Color",
+					ControlGroup = 1,
+					Default = 0.92,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Color.Green",
+					ControlGroup = 1,
+					Default = 0.92,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Color.Blue",
+					ControlGroup = 1,
+					Default = 0.92,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Color.Alpha",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Opacity",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.Color.Red",
+					Name = "Specular Color",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.Color.Green",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.Color.Blue",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.Intensity",
+					Default = 0.508,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.SpreadU",
+					Default = 0.5,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.SpreadV",
+					Default = 0.16,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Ellipse1",
+					Source = "Width",
+					Name = "Dot Width",
+					Default = 0.7636294145805,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Ellipse1",
+					Source = "Height",
+					Name = "Dot Height",
+					Default = 0.7636294145805,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "TextureTransform1",
+					Source = "Scale.U",
+					Default = 0.1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "TextureTransform1",
+					Source = "Scale.V",
+					Default = 0.1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "BumpMap4_2_2_1_1_2_5",
+					Source = "HeightScale",
+					Name = "Bump Height Scale",
+					Default = 14.2858,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Blur5_2_1_1_1_4",
+					Source = "XBlurSize",
+					Name = "Dot Bump Softness",
+					Default = 100,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "reflect_base_2_2_3_1_5",
+					Source = "Reflection.StrengthVariability",
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "reflect_base_2_2_3_1_5",
+					Source = "Reflection.ConstantStrength",
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "reflect_base_2_2_3_1_5",
+					Source = "Reflection.GlancingStrength",
+					Default = 0.75,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "reflect_base_2_2_3_1_5",
+					Source = "Reflection.FaceOnStrength",
+					Default = 0.196,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "reflect_base_2_2_3_1_5",
+					Source = "Reflection.Falloff",
+					Default = 4,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "reflect_base_2_2_3_1_5",
+					Source = "Refraction.RefractiveIndex.RGB",
+					Default = 1.333,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "reflect_base_2_2_3_1_5",
+					Source = "MaterialOutput",
+				},
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0, }, },
+			Tools = ordered() {
+				FastNoise2_4_2_4_1_5 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 512, },
+						Height = Input { Value = 512, },
+						Detail = Input { Value = 4, },
+						Contrast = Input { Value = 0.5789474, },
+						XScale = Input { Value = 7.120419, },
+						Type = Input { Value = 1, },
+						GradientType = Input { Value = 1, },
+						Start = Input { Value = { 0.5, 0, }, },
+						End = Input { Value = { 0.5, 1, }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.1263814718521, 0.1258334814815, 0.1266666666667, 1, },
+									[0.349019607843137] = { 0.4710743801653, 0.467724517906347, 0.468753760228141, 1, },
+									[0.4274509803922] = { 0.206611570247934, 0.206427915518825, 0.206509228806786, 1, },
+									[0.4901960784314] = { 0.975206611570248, 0.971739210284665, 0.973274405161381, 1, },
+									[0.564705882352941] = { 0.428758861340679, 0.545454545454545, 0.59504132231405, 1, },
+									[1] = { 0.824888888888889, 0.910545457962379, 1, 1, },
+								},
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 3960, -379.5, }, },
+				},
+				Texture2D1 = Texture2DOperator {
+					Inputs = {
+						Input = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						UScale = Input {
+							Value = 0.1,
+							Expression = "TextureTransform1.Scale.U",
+						},
+						VScale = Input {
+							Value = 0.1,
+							Expression = "TextureTransform1.Scale.V",
+						},
+						WrapMode = Input { Value = FuID { "Wrap", }, },
+						MaterialID = Input { Value = 8, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4180, -346.5, }, },
+				},
+				Background1 = Background {
+					Inputs = {
+						Width = Input { Value = 256, },
+						Height = Input { Value = 256, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						EffectMask = Input {
+							SourceOp = "Ellipse1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 4235, -445.5, }, },
+				},
+				Ward3_2_2_1_1_2_4 = MtlWard {
+					Inputs = {
+						["Diffuse.Color.Red"] = Input { Value = 0.92, },
+						["Diffuse.Color.Green"] = Input { Value = 0.92, },
+						["Diffuse.Color.Blue"] = Input { Value = 0.92, },
+						["Diffuse.Color.Material"] = Input {
+							SourceOp = "Texture2D1",
+							Source = "MaterialOutput",
+						},
+						["Specular.Nest"] = Input { Value = 1, },
+						["Specular.Intensity"] = Input { Value = 0.508, },
+						["Specular.Intensity.Material"] = Input {
+							SourceOp = "Texture2D1",
+							Source = "MaterialOutput",
+						},
+						["Specular.SpreadU"] = Input { Value = 0.5, },
+						["Bumpmap.Material"] = Input {
+							SourceOp = "TextureTransform1",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 18, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4180, -313.5, }, },
+				},
+				Transform1_2_3_1_5 = Transform {
+					Inputs = {
+						FlipHoriz = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "FastNoise2_4_2_4_1_5",
+							Source = "Output",
+						},
+						EffectMask = Input {
+							SourceOp = "Rectangle1_2_3_1_5",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 3960, -313.5, }, },
+				},
+				Rectangle1_2_3_1_5 = RectangleMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1280, },
+						MaskHeight = Input { Value = 720, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Center = Input { Value = { 0.75, 0.5, }, },
+						Height = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 3850, -313.5, }, },
+				},
+				Ellipse1 = EllipseMask {
+					Inputs = {
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1, }, },
+						ClippingMode = Input { Value = FuID { "None", }, },
+						Width = Input { Value = 0.7636294145805, },
+						Height = Input { Value = 0.7636294145805, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4235, -478.5, }, },
+				},
+				TextureTransform1 = TextureTransformOperator {
+					Inputs = {
+						["Rotation.Nest"] = Input { Value = 1, },
+						["Scale.Nest"] = Input { Value = 1, },
+						["Scale.U"] = Input { Value = 0.1, },
+						["Scale.V"] = Input { Value = 0.1, },
+						["Scale.W"] = Input { Value = 0.5, },
+						MaterialInput = Input {
+							SourceOp = "BumpMap4_2_2_1_1_2_5",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 7, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4290, -346.5, }, },
+				},
+				BumpMap4_2_2_1_1_2_5 = BumpMap {
+					Inputs = {
+						FilterSize = Input { Value = FuID { "5", }, },
+						Input = Input {
+							SourceOp = "Blur5_2_1_1_1_4",
+							Source = "Output",
+						},
+						HeightScale = Input { Value = 14.2858, },
+						WrapMode = Input { Value = FuID { "Wrap", }, },
+						MaterialID = Input { Value = 19, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4290, -379.5, }, },
+				},
+				Blur5_2_1_1_1_4 = Blur {
+					Inputs = {
+						Filter = Input { Value = FuID { "Multi-box", }, },
+						XBlurSize = Input { Value = 100, },
+						Input = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 4290, -412.5, }, },
+				},
+				Blur3_2_3_1_5 = Blur {
+					Inputs = {
+						YBlurSize = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Transform1_2_3_1_5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 3960, -280.5, }, },
+				},
+				reflect_base_2_2_3_1_5 = MtlReflect {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						BackgroundMaterial = Input {
+							SourceOp = "Ward3_2_2_1_1_2_4",
+							Source = "MaterialOutput",
+						},
+						["Reflection.GlancingStrength"] = Input { Value = 0.75, },
+						["Reflection.FaceOnStrength"] = Input { Value = 0.196, },
+						["Reflection.Falloff"] = Input { Value = 4, },
+						["Reflection.Color.Material"] = Input {
+							SourceOp = "spheremap_clearcoat_2_2_3_1_5",
+							Source = "MaterialOutput",
+						},
+						["Refraction.Nest"] = Input { Value = 0, },
+						["Refraction.Tint.Material"] = Input {
+							SourceOp = "spheremap_clearcoat_2_2_3_1_5",
+							Source = "MaterialOutput",
+						},
+						["Bumpmap.Material"] = Input {
+							SourceOp = "TextureTransform1",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 3, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4290, -247.5, }, },
+				},
+				spheremap_clearcoat_2_2_3_1_5 = SphereMap {
+					NameSet = true,
+					Inputs = {
+						MapMode = Input { Value = 1, },
+						Rotation = Input { Value = 1, },
+						["Rotate.Z"] = Input { Value = -10.90909, },
+						["FilterMode.Nest"] = Input { Value = 1, },
+						Image = Input {
+							SourceOp = "Blur3_2_3_1_5",
+							Source = "Output",
+						},
+						MaterialID = Input { Value = 12, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 3960, -247.5, }, },
+				},
+			},
+		},
+	},
+	ActiveTool = "Glass_Dot",
+}

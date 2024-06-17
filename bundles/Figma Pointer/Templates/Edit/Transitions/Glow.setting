@@ -1,0 +1,301 @@
+{
+	Tools = ordered() {
+		Glow = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "SoftGlow1",
+					Source = "Input",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "AnimCurves2_2",
+					Source = "Scale",
+					Name = "Gain",
+					Default = 5,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "AnimCurves1_2",
+					Source = "Scale",
+					Name = "Glow Scale",
+					Default = 100,
+				},
+				ColorScale = InstanceInput {
+					 SourceOp = "SoftGlow1",
+					 Source = "ColorScale",
+					 Page = "Controls",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "SoftGlow1",
+					Source = "RedScale",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "SoftGlow1",
+					Source = "GreenScale",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "SoftGlow1",
+					Source = "BlueScale",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "SoftGlow1",
+					Source = "AlphaScale",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "AnimCurves1_2",
+					Source = "Curve",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "AnimCurves1_2",
+					Source = "EaseIn",
+					Width = 0.5,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "AnimCurves1_2",
+					Source = "EaseOut",
+					Width = 0.5,
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "SoftGlow2",
+					Source = "Input",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				SoftGlow1 = SoftGlow {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Gain = Input {
+							SourceOp = "AnimCurves2_2",
+							Source = "Value",
+						},
+						XGlowSize = Input {
+							SourceOp = "AnimCurves1_2",
+							Source = "Value",
+						},
+						ColorScale = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, 148.5 } },
+					-- Creates a LableControl in a node -- Place under ViewInfo 
+					UserControls = ordered() {
+						 ColorScale = {
+							 LINKS_Name = "Glow Color",
+							 LINKID_DataType = "Number",
+							 INPID_InputControl = "LabelControl",
+							 INP_Integer = false,
+							 LBLC_DropDownButton = true,
+							 LBLC_NumInputs = 4,
+							 INP_External = false,
+						 }
+					}
+					-- End of Blank Line
+				},
+				AnimCurves2_2 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						EaseIn = Input {
+							SourceOp = "Publish2",
+							Source = "Value",
+						},
+						EaseOut = Input {
+							SourceOp = "Publish3",
+							Source = "Value",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurvesonSoftGlow1Lookup",
+							Source = "Value",
+						},
+						Scale = Input { Value = 5, },
+					},
+				},
+				Publish1 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "Linear" }, }
+					},
+				},
+				Publish2 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "None" }, }
+					},
+				},
+				Publish3 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "None" }, }
+					},
+				},
+				AnimCurvesonSoftGlow1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				AnimCurves1_2 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						EaseIn = Input {
+							SourceOp = "Publish2",
+							Source = "Value",
+						},
+						EaseOut = Input {
+							SourceOp = "Publish3",
+							Source = "Value",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurvesonSoftGlow1Lookup1",
+							Source = "Value",
+						},
+						Scale = Input { Value = 100, },
+					},
+				},
+				AnimCurvesonSoftGlow1Lookup1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				SoftGlow2 = SoftGlow {
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Gain = Input {
+							SourceOp = "AnimCurves2_1_1",
+							Source = "Value",
+						},
+						XGlowSize = Input {
+							SourceOp = "AnimCurves1_1_1",
+							Source = "Value",
+						},
+						ColorScale = Input { Value = 1, },
+						RedScale = Input { Expression = "SoftGlow1.RedScale", },
+						GreenScale = Input { Expression = "SoftGlow1.GreenScale", },
+						BlueScale = Input { Expression = "SoftGlow1.BlueScale", },
+						AlphaScale = Input { Expression = "SoftGlow1.AlphaScale", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, 214.5 } },
+				},
+				AnimCurves2_1_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurvesonSoftGlow2Lookup",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = -5,
+							Expression = "-Offset",
+						},
+						Offset = Input {
+							Value = 5,
+							Expression = "AnimCurves2_2.Scale",
+						},
+					},
+				},
+				AnimCurvesonSoftGlow2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				AnimCurves1_1_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurvesonSoftGlow2Lookup1",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = -100,
+							Expression = "-Offset",
+						},
+						Offset = Input {
+							Value = 100,
+							Expression = "AnimCurves1_2.Scale",
+						},
+					},
+				},
+				AnimCurvesonSoftGlow2Lookup1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Merge = Merge {
+					NameSet = true,
+					Inputs = {
+						Blend = Input {
+							SourceOp = "AnimCurves3_1",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "SoftGlow1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "SoftGlow2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 181.5 } },
+				},
+				AnimCurves3_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Lookup = Input {
+							SourceOp = "AnimCurvesonMergeLookup",
+							Source = "Value",
+						},
+					},
+				},
+				AnimCurvesonMergeLookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "Glow"
+}

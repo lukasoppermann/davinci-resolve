@@ -1,0 +1,405 @@
+{
+	Tools = ordered() {
+		NightVision = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "BrightnessContrast1",
+					Source = "Input",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 2,
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftGreen",
+					ControlGroup = 2,
+					Default = 0.736,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftBlue",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background2",
+					Source = "TopLeftAlpha",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "MosaicBlur2",
+					Source = "PixelFrequency",
+					Default = 40,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "BrightnessContrast2",
+					Source = "Gain",
+					Default = 2.59,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "BrightnessContrast2",
+					Source = "Lift",
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "BrightnessContrast2",
+					Source = "Gamma",
+					Default = 1.32,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "BrightnessContrast2",
+					Source = "Contrast",
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "BrightnessContrast2",
+					Source = "Brightness",
+					Default = 0,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge4",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 331.541, -69.6296 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 764.651, 268.941, 382.326, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				Transform1 = Transform {
+					PassThrough = true,
+					CtrlWShown = false,
+					CurrentSettings = 2,
+					CustomData = {
+						Settings = {
+							[1] = {
+								Tools = ordered() {
+									Transform1 = Transform {
+										Inputs = {
+											Input = Input {
+												SourceOp = "Merge1",
+												Source = "Output"
+											},
+											Angle = Input {
+												SourceOp = "Transform1Angle",
+												Source = "Value"
+											},
+											Edges = Input { Value = 3 },
+											Size = Input {
+												SourceOp = "Transform1Size",
+												Source = "Value"
+											}
+										},
+										CtrlWZoom = false,
+										ViewInfo = OperatorInfo { Pos = { 385.971, 181.133 } },
+										CustomData = {
+										}
+									},
+									Transform1Size = BezierSpline {
+										SplineColor = { Red = 225, Blue = 225, Green = 0 },
+										NameSet = true,
+										KeyFrames = {
+											[4] = { 0.34, RH = { 12.3333333333333, 0.34 } },
+											[29] = { 1, LH = { 20.6666666666667, 1 } }
+										}
+									},
+									Transform1Angle = BezierSpline {
+										SplineColor = { Red = 14, Blue = 144, Green = 221 },
+										NameSet = true,
+										KeyFrames = {
+											[4] = { -15.7, RH = { 12.3333333333333, -15.7 } },
+											[29] = { 0, LH = { 20.6666666666667, 0 } }
+										}
+									}
+								}
+							}
+						}
+					},
+					Inputs = {
+						Size = Input {
+							SourceOp = "Transform1Size",
+							Source = "Value",
+						},
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "BrightnessContrast1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -188.913, 116.226 } },
+				},
+				Transform1Size = BezierSpline {
+					SplineColor = { Red = 225, Green = 0, Blue = 225 },
+					NameSet = true,
+					KeyFrames = {
+						[4] = { 0.34, RH = { 12.3333333333333, 0.34 } },
+						[29] = { 1, LH = { 20.6666666666667, 1 } }
+					}
+				},
+				BrightnessContrast1 = BrightnessContrast {
+					CtrlWShown = false,
+					Inputs = {
+						Gamma = Input { Value = 0.67, },
+						Saturation = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -319.651, 116.226 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Overlay" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -166.124, 159.88 } },
+				},
+				MosaicBlur1 = ofx.com.blackmagicdesign.resolvefx.mosaicblur {
+					Inputs = {
+						Blend = Input { Value = 0.346, },
+						Source = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						PixelFrequency = Input { Value = 20, },
+						SmoothStrength = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_CONSTANT" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 1, },
+						blendIn = Input { Value = 1, },
+						blend = Input {
+							SourceOp = "MosaicBlur11",
+							Source = "Value",
+						},
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.2", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 16.696, 159.88 } },
+				},
+				MosaicBlur11 = BezierSpline {
+					SplineColor = { Red = 205, Green = 205, Blue = 205 },
+					NameSet = true,
+					KeyFrames = {
+						[40] = { 0, RH = { 48.6666666666667, 0 } },
+						[66] = { 1, LH = { 52.3434343434343, 1 } }
+					}
+				},
+				Background2 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 359, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.368, },
+						TopLeftGreen = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -318.047, 159.88 } },
+				},
+				Merge3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "MosaicBlur1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Multiply" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 133.942, 159.88 } },
+				},
+				Background3 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 359, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						GradientType = Input { Value = FuID { "Reflect" }, },
+						Start = Input { Value = { 0.5, 0.5 }, },
+						End = Input { Value = { 0.5, 0 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1 },
+									[0.960199004975124] = { 0, 0, 0, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 133.942, 89.5673 } },
+				},
+				MosaicBlur2 = ofx.com.blackmagicdesign.resolvefx.mosaicblur {
+					Inputs = {
+						Source = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						PixelFrequency = Input { Value = 40, },
+						SmoothStrength = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_CONSTANT" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 1, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.2", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 88.253, 211.046 } },
+				},
+				BrightnessContrast2 = BrightnessContrast {
+					CtrlWShown = false,
+					Inputs = {
+						Gain = Input { Value = 2.59, },
+						Gamma = Input { Value = 1.32, },
+						Input = Input {
+							SourceOp = "MosaicBlur2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 200.163, 211.046 } },
+				},
+				Merge4 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BrightnessContrast2",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Soft Light" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 319, 211.046 } },
+				},
+				Background1_1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Grid1",
+							Source = "Output",
+						},
+						MaskChannel = Input { Value = 1, },
+						GlobalOut = Input { Value = 359, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.496, },
+						TopLeftGreen = Input { Value = 0.496, },
+						TopLeftBlue = Input { Value = 0.496, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 319, 82.6953 } },
+				},
+				Merge2 = Merge {
+					PassThrough = true,
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0.102, },
+						Background = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background1_1",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Screen" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 319, 159.88 } },
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 359, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 319, 8.46883 } },
+				},
+				Grid1 = ofx.com.blackmagicdesign.resolvefx.grid {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						vernum = Input { Value = 39, },
+						hornum = Input { Value = 55, },
+						majorspace = Input { Value = 4, },
+						lineprop = Input { Value = 1, },
+						linecolorRed = Input { Value = 1, },
+						linecolorGreen = Input { Value = 1, },
+						linecolorBlue = Input { Value = 1, },
+						horwidth = Input { Value = 0.0500000007450581, },
+						verwidth = Input { Value = 0.0500000007450581, },
+						majorwidth = Input { Value = 1, },
+						tranform = Input { Value = 1, },
+						pan = Input { Value = 0, },
+						tilt = Input { Value = 0, },
+						zoom = Input { Value = 1, },
+						rotate = Input { Value = 0, },
+						gridwidth = Input { Value = 1, },
+						gridheight = Input { Value = 1, },
+						ShearX = Input { Value = 0, },
+						ShearY = Input { Value = 0, },
+						pitch = Input { Value = 0, },
+						yaw = Input { Value = 0, },
+						blendGroup = Input { Value = 1, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.0", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 319, 38.2038 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "NightVision"
+}

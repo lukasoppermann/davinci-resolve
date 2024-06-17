@@ -1,0 +1,252 @@
+{
+	Tools = ordered() {
+		BackgroundReveal = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Text",
+					Source = "StyledText",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Size",
+					Default = 0.08,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Text",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Text",
+					Source = "LineSpacingClone",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Text",
+					Source = "VerticalJustificationTop",
+					Name = "V Anchor",
+					ControlGroup = 6,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Text",
+					Source = "VerticalJustificationCenter",
+					ControlGroup = 6,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Text",
+					Source = "VerticalJustificationBottom",
+					ControlGroup = 6,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Text",
+					Source = "VerticalTopCenterBottom",
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Text",
+					Source = "HorizontalJustificationLeft",
+					Name = "H Anchor",
+					ControlGroup = 8,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Text",
+					Source = "HorizontalJustificationCenter",
+					ControlGroup = 8,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Text",
+					Source = "HorizontalJustificationRight",
+					ControlGroup = 8,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Text",
+					Source = "HorizontalLeftCenterRight",
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Strikeout",
+					Name = "Emphasis",
+					ControlGroup = 10,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Underline",
+					Name = "Emphasis",
+					ControlGroup = 10,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Center",
+					Name = "Position",
+				},
+				BGColor = InstanceInput {
+					SourceOp = "Text",
+					Source = "BackgroundColor",
+					Page = "Controls",
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Red",
+					Name = "Color",
+					ControlGroup = 12,
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Green",
+					Name = "Color",
+					ControlGroup = 12,
+					Default = 0,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Blue",
+					Name = "Color",
+					ControlGroup = 12,
+					Default = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Alpha",
+					Name = "Color",
+					ControlGroup = 12,
+					Default = 0,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "TextOpacity",
+					Source = "Value",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "TextAlpha",
+					Source = "Value",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 173.745, 49.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 246.246, 66.3636, 123.123, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				Text = TextPlus {
+					CtrlWShown = false,
+					NameSet = true,
+					ExtentSet = true,
+					CurrentSettings = 2,
+					CustomData = { Settings = { [1] = { Tools = ordered() { Text1_2 = TextPlus { Inputs = { Height = Input { Value = 1080 }, UseFrameFormatSettings = Input { Value = 1 }, Name2 = Input { Value = "white" }, StyledText = Input { Value = "BLACKMAGIC\nDESIGN" }, HorizontalJustificationNew = Input { Value = 3 }, Name5 = Input { Value = "BG" }, Start = Input { SourceOp = "Text1_2Start", Source = "Value" }, Green2 = Input { Value = 0.457 }, SelectElement = Input { Value = 1 }, Alpha1 = Input { Value = 0 }, End = Input { SourceOp = "Text1_2End", Source = "Value" }, Green1 = Input { Value = 0 }, LineSpacing = Input { Value = 0.598 }, ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } }, Size = Input { Value = 0.1457 }, Blue2 = Input { Value = 0.457 }, Red1 = Input { Value = 0 }, Blue1 = Input { Value = 0 }, Alpha = Input { Value = 1 }, Select = Input { Value = 1 }, ElementShape2 = Input { Value = 0 }, Red2 = Input { Value = 0.457 }, Width = Input { Value = 1920 }, Offset2 = Input { Value = { 0.019, -0.011 } }, VerticalJustificationNew = Input { Value = 3 }, Style = Input { Value = "Extrabold" }, Enabled2 = Input { Value = 1 }, GlobalOut = Input { Value = 500 }, Font = Input { Value = "Open Sans" }, ManualFontKerningPlacement = Input { Value = StyledText { Value = "", Array = {
+													} } }, Position2 = Input { Value = 1 } }, ExtentSet = true, CtrlWZoom = false, ViewInfo = OperatorInfo { Pos = { 256.146, 392.136 } }, CustomData = {
+										} }, Text1_2Start = BezierSpline { SplineColor = { Red = 232, Blue = 244, Green = 6 }, NameSet = true, KeyFrames = { [1] = { 0, RH = { 7.33333333333333, 0 }, Flags = { Linear = true } }, [20] = { 0, LH = { 13.6666666666667, 0 }, RH = { 57.3333333333333, 0 } }, [132] = { 0, LH = { 94.6666666666667, 0 }, RH = { 137.333333333333, 0 } }, [148] = { 1, LH = { 142.666666666667, 1 } } } }, Text1_2End = BezierSpline { SplineColor = { Red = 72, Blue = 54, Green = 233 }, NameSet = true, KeyFrames = { [1] = { 0, RH = { 7.33333333333333, 0 }, Flags = { Linear = true } }, [20] = { 1, LH = { 13.6666666666667, 1 }, RH = { 57.3333333333333, 1 } }, [132] = { 1, LH = { 94.6666666666667, 1 }, RH = { 137.333333333333, 1 } }, [148] = { 1, LH = { 142.666666666667, 1 } } } } } }, [3] = { Tools = ordered() { Text1_2 = TextPlus { Inputs = { Name2 = Input { Value = "white" }, StyledText = Input { Value = "BLACKMAGIC\nDESIGN" }, HorizontalJustificationNew = Input { Value = 3 }, Name5 = Input { Value = "BG" }, UseFrameFormatSettings = Input { Value = 1 }, Green2 = Input { Value = 0.457 }, SelectElement = Input { Value = 1 }, Alpha1 = Input { Value = 0 }, CharacterSpacing = Input { Value = 1.606 }, Blue2 = Input { Value = 0.457 }, Opacity2 = Input { SourceOp = "Text1_2Opacity", Source = "Value" }, Green1 = Input { Value = 0 }, VerticalJustificationNew = Input { Value = 3 }, ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" } }, Red1 = Input { Value = 0 }, Blue1 = Input { Value = 0 }, Offset2 = Input { Value = { 0.019, -0.011 } }, Select = Input { Value = 1 }, ElementShape2 = Input { Value = 0 }, Alpha = Input { Value = 1 }, Width = Input { Value = 1920 }, Red2 = Input { Value = 0.457 }, Font = Input { Value = "Open Sans" }, Style = Input { Value = "Light" }, Enabled2 = Input { Value = 1 }, GlobalOut = Input { Value = 500 }, Height = Input { Value = 1080 }, ManualFontKerningPlacement = Input { Value = StyledText { Value = "", Array = {
+													} } }, Position2 = Input { Value = 1 } }, CtrlWZoom = false, ExtentSet = true, ViewInfo = OperatorInfo { Pos = { 256.146, 392.136 } }, CustomData = {
+										} }, Text1_2Opacity = BezierSpline { SplineColor = { Red = 179, Blue = 244, Green = 28 }, NameSet = true, KeyFrames = { [2] = { 0, RH = { 8.66666666666667, 0.333333333333333 }, Flags = { Linear = true } }, [22] = { 1, LH = { 15.3333333333333, 0.666666666666667 }, RH = { 58, 1 }, Flags = { Linear = true } }, [130] = { 1, LH = { 94, 1 }, RH = { 135.666666666667, 0.666666666666667 }, Flags = { Linear = true } }, [147] = { 0, LH = { 141.333333333333, 0.333333333333333 }, Flags = { Linear = true } } } } } } } },
+					Inputs = {
+						GlobalOut = Input { Value = 500, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Alpha = Input {
+							SourceOp = "TextAlpha",
+							Source = "Value",
+						},
+						CharacterSpacing = Input { Value = 1.039, },
+						SelectElement = Input { Value = 1, },
+						Select = Input { Value = 1, },
+						Enabled2 = Input { Value = 1, },
+						Red1 = Input { Value = 0, },
+						Green1 = Input { Value = 0, },
+						Blue1 = Input { Value = 0, },
+						Alpha1 = Input { Value = 0, },
+						Name2 = Input { Value = "white", },
+						ElementShape2 = Input { Value = 0, },
+						Opacity2 = Input {
+							SourceOp = "TextOpacity",
+							Source = "Value",
+						},
+						Red2 = Input { Value = 0.457, },
+						Green2 = Input { Value = 0.457, },
+						Blue2 = Input { Value = 0.457, },
+						Position2 = Input { Value = 1, },
+						Offset2 = Input { Value = { 0.019, -0.011 }, },
+						Name5 = Input { Value = "BG", },
+						StyledText = Input { Value = "SAMPLE", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.1024, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -60.246, 8.75758 } },
+					UserControls = ordered() { BackgroundColor = { INP_Integer = false, LBLC_DropDownButton = true, LINKID_DataType = "Number", LBLC_NumInputs = 4, INPID_InputControl = "LabelControl", LINKS_Name = "Background Color", } }
+				},
+				TextAlpha = BezierSpline {
+					SplineColor = { Red = 180, Green = 180, Blue = 180 },
+					NameSet = true,
+					KeyFrames = {
+						[13] = { 0, RH = { 20, 0.333333333333333 } },
+						[34] = { 1, LH = { 27, 0.666666666666667 }, RH = { 56.3333333333333, 1 }, Flags = { Linear = true } },
+						[101] = { 1, LH = { 78.6666666666667, 1 }, RH = { 105.666666666667, 0.666666666666667 }, Flags = { Linear = true } },
+						[115] = { 0, LH = { 110.333333333333, 0.333333333333333 }, Flags = { Linear = true } }
+					}
+				},
+				TextOpacity = BezierSpline {
+					SplineColor = { Red = 179, Green = 28, Blue = 244 },
+					NameSet = true,
+					KeyFrames = {
+						[2] = { 0, RH = { 7.33333333333334, 0.332187853606428 } },
+						[18] = { 1, LH = { 12.6666666666666, 0.667812146393572 }, RH = { 46.6666666666667, 1 } },
+						[104] = { 1, LH = { 75.3333333333333, 1 }, RH = { 108.666666666667, 0.666666666666667 }, Flags = { Linear = true } },
+						[118] = { 0, LH = { 113.333333333333, 0.333333333333333 }, Flags = { Linear = true } }
+					}
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					CtrlWShown = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "Text",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 119, },
+						StretchStart = Input { Value = 34, },
+						StretchEnd = Input { Value = 99, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 60, 8.75758 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "BackgroundReveal"
+}

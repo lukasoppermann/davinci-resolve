@@ -1,0 +1,237 @@
+{
+	Tools = ordered() {
+		Background6 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 725.076, -1.06288 } },
+		},
+		Merge12 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "Background6",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "SoftGlow1_4_2_1",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 725.076, 64.9371 } },
+		},
+		SoftGlow1_4_2_1 = SoftGlow {
+			Inputs = {
+				Filter = Input { Value = FuID { "Gaussian" }, },
+				Alpha = Input { Value = 0, },
+				Gain = Input { Value = 1.14285714285714, },
+				XGlowSize = Input { Value = 90, },
+				Input = Input {
+					SourceOp = "TV1_2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 560.076, 65.6381 } },
+		},
+		TV1_2 = TV {
+			Inputs = {
+				Blend = Input {
+					SourceOp = "Shake1_1",
+					Source = "X",
+				},
+				ScanLines = Input { Value = 5, },
+				Power = Input { Value = 0, },
+				Input = Input {
+					SourceOp = "Text1_2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 450.076, 64.9371 } },
+		},
+		Shake1_1 = Shake {
+			Faster = false,
+			CtrlWZoom = false,
+			Inputs = {
+				Smoothness = Input { Value = 0.05, },
+				XMinimum = Input { Value = 0.5, },
+			},
+		},
+		Text1_2 = TextPlus {
+			CtrlWZoom = false,
+			Inputs = {
+				Transform1 = Input { Value = 1, },
+				Alignment = Input { Value = 1, },
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				Center = Input { Value = { 0.165, 0.5 }, },
+				SelectElement = Input { Value = 1, },
+				Select = Input { Value = 1, },
+				Enabled2 = Input { Value = 1, },
+				Red1 = Input {
+					SourceOp = "Publish1_2",
+					Source = "Value",
+				},
+				Green1 = Input {
+					SourceOp = "Publish2_2",
+					Source = "Value",
+				},
+				Blue1 = Input {
+					SourceOp = "Publish3_2",
+					Source = "Value",
+				},
+				Softness1 = Input { Value = 1, },
+				SoftnessGlow1 = Input { Value = 0.9, },
+				StyledText = Input {
+					SourceOp = "Follower1_2",
+					Source = "StyledText",
+				},
+				Font = Input { Value = "Open Sans", },
+				Style = Input { Value = "Regular", },
+				Size = Input { Value = 0.1, },
+				VerticalTopCenterBottom = Input { Value = -1, },
+				VerticalJustificationNew = Input { Value = 3, },
+				HorizontalLeftCenterRight = Input { Value = -1, },
+				HorizontalJustificationNew = Input { Value = 3, },
+				Opacity2 = Input {
+					SourceOp = "Text1_2Opacity2",
+					Source = "Value",
+				},
+				ElementShape2 = Input { Value = 2, },
+				Level2 = Input { Value = 1, },
+				ExtendVertical2 = Input { Value = -0.43, },
+				Red2 = Input {
+					SourceOp = "Publish1_2",
+					Source = "Value",
+				},
+				Green2 = Input {
+					SourceOp = "Publish2_2",
+					Source = "Value",
+				},
+				Blue2 = Input {
+					SourceOp = "Publish3_2",
+					Source = "Value",
+				},
+				Softness2 = Input { Value = 1, },
+				SoftnessX2 = Input {
+					SourceOp = "Text1_2SoftnessX2",
+					Source = "Value",
+				},
+				SoftnessY2 = Input {
+					Value = 2,
+					Expression = "SoftnessX2",
+				},
+				SoftnessGlow2 = Input {
+					SourceOp = "Text1_2SoftnessGlow2",
+					Source = "Value",
+				},
+				Offset2 = Input { Value = { 0, -0.04 }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 340.076, 64.9371 } },
+		},
+		Publish1_2 = PublishNumber {
+			Inputs = {
+				Value = Input { Value = 0.391926094217658, },
+			},
+		},
+		Publish2_2 = PublishNumber {
+			Inputs = {
+				Value = Input { Value = 1, },
+			},
+		},
+		Publish3_2 = PublishNumber {
+			Inputs = {
+				Value = Input { Value = 0.388088888888889, },
+			},
+		},
+		Follower1_2 = StyledTextFollower {
+			Inputs = {
+				DelayType = Input { Value = 2, },
+				Delay = Input { Value = 50, },
+				Text = Input {
+					Value = StyledText {
+						Value = "what's the story mother?"
+					},
+				},
+				Opacity1 = Input {
+					SourceOp = "Follower1_2Opacity1",
+					Source = "Value",
+				},
+				Softness1 = Input { Value = 1, },
+				SoftnessX1 = Input {
+					SourceOp = "Follower1_2SoftnessX1",
+					Source = "Value",
+				},
+				SoftnessY1 = Input {
+					SourceOp = "Follower1_2SoftnessY1",
+					Source = "Value",
+				},
+				SoftnessGlow1 = Input {
+					SourceOp = "Follower1_2SoftnessGlow1",
+					Source = "Value",
+				},
+			},
+		},
+		Follower1_2Opacity1 = BezierSpline {
+			SplineColor = { Red = 255, Green = 127, Blue = 127 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 0.666666666666667, 0.333333333333333 } },
+				[2] = { 1, LH = { 1.33333333333333, 0.666666666666667 }, Flags = { Linear = true } }
+			}
+		},
+		Follower1_2SoftnessX1 = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 6, RH = { 1.66666666666667, 4.66666666666667 } },
+				[5] = { 2, LH = { 3.33333333333333, 3.33333333333333 }, Flags = { Linear = true } }
+			}
+		},
+		Follower1_2SoftnessY1 = BezierSpline {
+			SplineColor = { Red = 0, Green = 255, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 6, RH = { 1.66666666666667, 4.66666666666667 } },
+				[5] = { 2, LH = { 3.33333333333333, 3.33333333333333 }, Flags = { Linear = true } }
+			}
+		},
+		Follower1_2SoftnessGlow1 = BezierSpline {
+			SplineColor = { Red = 127, Green = 127, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0.9, RH = { 1.66666666666667, 0.6 } },
+				[5] = { 0, LH = { 3.33333333333333, 0.3 }, Flags = { Linear = true } }
+			}
+		},
+		Text1_2Opacity2 = BezierSpline {
+			SplineColor = { Red = 255, Green = 180, Blue = 0 },
+			NameSet = true,
+			KeyFrames = {
+				[50] = { 0, RH = { 50.6666666666667, 0.333333333333333 } },
+				[52] = { 1, LH = { 51.3333333333333, 0.666666666666667 }, Flags = { Linear = true } }
+			}
+		},
+		Text1_2SoftnessX2 = BezierSpline {
+			SplineColor = { Red = 0, Green = 255, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[50] = { 6, RH = { 51.6666666666667, 4.66666666666667 } },
+				[55] = { 2, LH = { 53.3333333333333, 3.33333333333333 }, Flags = { Linear = true } }
+			}
+		},
+		Text1_2SoftnessGlow2 = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255 },
+			CtrlWZoom = false,
+			NameSet = true,
+			KeyFrames = {
+				[50] = { 0.9, RH = { 51.6666666666667, 0.6 } },
+				[55] = { 0, LH = { 53.3333333333333, 0.3 }, Flags = { Linear = true } }
+			}
+		}
+	},
+	ActiveTool = "Text1_2"
+}

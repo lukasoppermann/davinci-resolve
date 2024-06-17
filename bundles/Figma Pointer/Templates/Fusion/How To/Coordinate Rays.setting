@@ -1,0 +1,144 @@
+{
+	Tools = ordered() {
+		To_Polar = CoordSpace {
+			NameSet = true,
+			Inputs = {
+				Input = Input {
+					SourceOp = "Text6",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 110, 247.5, }, },
+		},
+		Text6 = TextPlus {
+			Inputs = {
+				GlobalOut = Input { Value = 200, },
+				Width = Input { Value = 1280, },
+				Height = Input { Value = 720, },
+				Depth = Input { Value = 3, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				Center = Input {
+					SourceOp = "Path2",
+					Source = "Position",
+				},
+				Size = Input { Value = 0.16824644549763, },
+				Font = Input { Value = "Open Sans", },
+				StyledText = Input { Value = "COORDINATE", },
+				Style = Input { Value = "Bold", },
+				ManualFontKerningPlacement = Input {
+					Value = StyledText {
+						Array = {
+						},
+						Value = "",
+					},
+				},
+				SelectElement = Input { Value = 1, },
+				Select = Input { Value = 1, },
+				Green1 = Input { Value = 0.901422527780826, },
+				Blue1 = Input { Value = 0.317000081340496, },
+				ShadingGradient1 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				Enabled2 = Input { Value = 1, },
+				Thickness2 = Input { Value = 0.0303664921465969, },
+				Red2 = Input { Value = 2, },
+				Green2 = Input { Value = 0.236819443572366, },
+				Blue2 = Input { Value = 0.185882522485872, },
+				ShadingGradient2 = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 0, 247.5, }, },
+		},
+		Path2 = PolyPath {
+			DrawMode = "InsertAndModify",
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path2Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = -0.925584532374101, Y = -0.00349164656707368, RX = 0.617708333333333, RY = 0, },
+							{ Linear = true, LockY = true, X = 0.927540467625899, Y = -0.00349164656707368, LX = -0.617708333333333, LY = 0, },
+						},
+					},
+				},
+			},
+		},
+		Path2Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 66.6666666666667, 0.333333333333333, }, Flags = { Linear = true, LockedY = true, }, },
+				[200] = { 1, LH = { 133.333333333333, 0.666666666666667, }, Flags = { Linear = true, LockedY = true, }, },
+			},
+		},
+		Gradient_For_Blur = Background {
+			NameSet = true,
+			Inputs = {
+				GlobalOut = Input { Value = 200, },
+				Width = Input { Value = 1280, },
+				Height = Input { Value = 720, },
+				Depth = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				Type = Input { Value = FuID { "Gradient", }, },
+				BottomLeftRed = Input { Value = 0.226666666666667, },
+				BottomLeftGreen = Input { Value = 0.226666666666667, },
+				BottomLeftBlue = Input { Value = 0.226666666666667, },
+				Start = Input { Value = { 0.75, 0.0417866622241, }, },
+				End = Input { Value = { 0.75, 0.777698564882, }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, 148.5, }, },
+		},
+		VariBlur1 = VariBlur {
+			Inputs = {
+				LockXY = Input { Value = 0, },
+				XBlurSize = Input { Value = 0, },
+				YBlurSize = Input { Value = 94.0284360189574, },
+				BlurLimit = Input { Value = 0.720379146919431, },
+				Input = Input {
+					SourceOp = "To_Polar",
+					Source = "Output",
+				},
+				BlurImage = Input {
+					SourceOp = "Gradient_For_Blur",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, 247.5, }, },
+		},
+		To_Rectangle = CoordSpace {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = {
+				Shape = Input { Value = 1, },
+				Input = Input {
+					SourceOp = "VariBlur1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 330, 247.5, }, },
+		},
+	},
+	ActiveTool = "To_Rectangle",
+}

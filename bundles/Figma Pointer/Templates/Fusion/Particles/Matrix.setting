@@ -1,0 +1,357 @@
+{
+	Tools = ordered() {
+		Matrix_1_1 = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "pEmitter1_2_2_1",
+					Source = "Number",
+					Name = "Density",
+					Default = 30,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "pEmitter1_2_2_1",
+					Source = "CubeRgn.Depth",
+					Default = 9.371428,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Renderer3D1_1_2_1",
+					Source = "Width",
+					Name = "Render Width",
+					Default = 1280,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Renderer3D1_1_2_1",
+					Source = "Height",
+					Name = "Render Height",
+					Default = 720,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Renderer3D1_1_2_1",
+					Source = "RendererType",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Renderer3D1_1_2_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = GroupInfo {
+				Pos = { -990, 148.5, },
+				Flags = {
+					AllowPan = false,
+					GridSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true,
+				},
+				Size = { 786, 130.3, },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0, },
+			},
+			Tools = ordered() {
+				pEmitter1_2_2_1 = pEmitter {
+					ID = 2820,
+					CtrlWShown = false,
+					Inputs = {
+						Number = Input { Value = 30, },
+						NumberVariance = Input { Value = 10, },
+						Lifespan = Input { Value = 75, },
+						LifespanVariance = Input { Value = 50, },
+						VelocityControls = Input { Value = 1, },
+						Velocity = Input { Value = 0.3, },
+						Angle = Input { Value = -90, },
+						RotationControls = Input { Value = 1, },
+						AlwaysFaceCamera = Input { Value = 0, },
+						Style = Input { Value = FuID { "ParticleStyleBitmap", }, },
+						Region = Input { Value = FuID { "CubeRgn", }, },
+						["ParticleStyle.ColorOverLife"] = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 0.05, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter1_2SizeoverLife_2_1",
+							Source = "Value",
+						},
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter1_2BluroverLife2D_2_1",
+							Source = "Value",
+						},
+						["ParticleStyleBitmap.Animate"] = Input { Value = 1, },
+						["ParticleStyleBitmap.DropToolsHere"] = Input {
+							SourceOp = "Text1_2_1",
+							Source = "Output",
+						},
+						["CubeRgn.Width"] = Input { Value = 10, },
+						["CubeRgn.Height"] = Input { Value = 5, },
+						["CubeRgn.Depth"] = Input { Value = 9.371428, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -165, 10.15, }, },
+				},
+				pEmitter1_2SizeoverLife_2_1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64, },
+					CtrlWShown = false,
+				},
+				pEmitter1_2BluroverLife2D_2_1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64, },
+					CtrlWShown = false,
+				},
+				pSpawn1_2_1 = pSpawn {
+					ID = 2823,
+					CtrlWShown = false,
+					Inputs = {
+						Number = Input { Value = 0.5, },
+						Lifespan = Input { Value = 30, },
+						VelocityControls = Input { Value = 1, },
+						VelocityTransfer = Input { Value = 0, },
+						RotationControls = Input { Value = 1, },
+						AlwaysFaceCamera = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "pEmitter1_2_2_1",
+							Source = "Output",
+						},
+						Style = Input { Value = FuID { "ParticleStyleBitmap", }, },
+						["ParticleStyle.ColorOverLife"] = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 0.05, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pSpawn1SizeoverLife_2_1",
+							Source = "Value",
+						},
+						["ParticleStyle.FadeControls"] = Input { Value = 1, },
+						["ParticleStyle.FadeOut"] = Input { Value = 0.106383, },
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pSpawn1BluroverLife2D_2_1",
+							Source = "Value",
+						},
+						["ParticleStyleBitmap.Animate"] = Input { Value = 2, },
+						["ParticleStyleBitmap.DropToolsHere"] = Input {
+							SourceOp = "Text1_2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -55, 10.15, }, },
+				},
+				pSpawn1SizeoverLife_2_1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64, },
+					CtrlWShown = false,
+				},
+				pSpawn1BluroverLife2D_2_1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+						},
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64, },
+					CtrlWShown = false,
+				},
+				pRender1_2_2_1 = pRender {
+					CtrlWShown = false,
+					Inputs = {
+						["_MotionBlurWarning"] = Input { Disabled = true, },
+						GlobalIn = Input { Value = -100, },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 1556, },
+						OutputMode = Input { Disabled = true, },
+						IntegrationMethod = Input { Value = FuID { "RK4", }, },
+						["MaterialID.MaterialID"] = Input { Value = 2, },
+						["ObjectID.ObjectID"] = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "pSpawn1_2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 10.15, }, },
+				},
+				Merge3D1_1_2_1 = Merge3D {
+					CtrlWShown = false,
+					Inputs = {
+						SceneInput1 = Input {
+							SourceOp = "pRender1_2_2_1",
+							Source = "Output",
+						},
+						SceneInput2 = Input {
+							SourceOp = "Camera3D1_1_2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 192.5, 76.15, }, },
+				},
+				Text1_2_1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalIn = Input { Value = -100, },
+						Width = Input { Value = 64, },
+						Height = Input { Value = 64, },
+						Center = Input { Value = { 0.5, 0.596153846153846, }, },
+						Size = Input { Value = 1.4, },
+						Font = Input { Value = "Open Sans", },
+						StyledText = Input {
+							SourceOp = "TextScramble1_2_1",
+							Source = "ScrambledText",
+						},
+						Style = Input { Value = "Bold", },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = "",
+							},
+						},
+						Red1 = Input { Value = 0.2901058148606, },
+						Blue1 = Input { Value = 0.1159111111111, },
+						Alpha1 = Input { Value = 0.6, },
+						ShadingGradient1 = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+						RenderToDPTFile = Input { Disabled = true, },
+						DPTType = Input { Disabled = true, },
+						DPTResolution = Input { Disabled = true, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 76.15, }, },
+				},
+				TextScramble1_2_1 = TextScramble {
+					CtrlWZoom = false,
+					Inputs = {
+						Randomness = Input { Value = 1, },
+						InputText = Input { Value = "a", },
+					},
+				},
+				Camera3D1_1_2_1 = Camera3D {
+					CtrlWShown = false,
+					Inputs = {
+						["Transform3DOp.Translate.Z"] = Input {
+							SourceOp = "Camera3D1_1_2_1ZOffset",
+							Source = "Value",
+						},
+						AoV = Input { Value = 24.32659, },
+						FLength = Input { Value = 34.9999945837878, },
+						["Stereo.Mode"] = Input { Value = FuID { "OffAxis", }, },
+						["SurfacePlaneInputs.ObjectID.ObjectID"] = Input { Value = 3, },
+						["MtlStdInputs.MaterialID"] = Input { Value = 3, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 82.5, 76.15, }, },
+				},
+				Camera3D1_1_2_1ZOffset = BezierSpline {
+					SplineColor = { Red = 254, Green = 56, Blue = 46, },
+					CtrlWShown = false,
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 5, RH = { 133.333333333333, 3.33333333333333, }, Flags = { Linear = true, }, },
+						[400] = { 0, LH = { 266.666666666667, 1.66666666666667, }, Flags = { Linear = true, }, },
+					},
+				},
+				Renderer3D1_1_2_1 = Renderer3D {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						["RendererOpenGL.Channels.RGBASS"] = Input { Value = 1, },
+						["RendererOpenGL.Channels.Nest"] = Input { Value = 1, },
+						GlobalIn = Input { Value = -100, },
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						SceneInput = Input {
+							SourceOp = "Merge3D1_1_2_1",
+							Source = "Output",
+						},
+						["RendererSoftware.Channels.Nest"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 76.15, }, },
+				},
+			},
+		},
+		pEmitter1_2SizeoverLife_2_1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			CtrlWShown = false,
+		},
+		pEmitter1_2BluroverLife2D_2_1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			CtrlWShown = false,
+		},
+		pSpawn1SizeoverLife_2_1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			CtrlWShown = false,
+		},
+		pSpawn1BluroverLife2D_2_1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			CtrlWShown = false,
+		},
+		TextScramble1_2_1 = TextScramble {
+			CtrlWZoom = false,
+			Inputs = {
+				Randomness = Input { Value = 1, },
+				InputText = Input { Value = "a", },
+			},
+		},
+		Camera3D1_1_2_1ZOffset = BezierSpline {
+			SplineColor = { Red = 254, Green = 56, Blue = 46, },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 5, RH = { 133.333333333333, 3.33333333333333, }, Flags = { Linear = true, }, },
+				[400] = { 0, LH = { 266.666666666667, 1.66666666666667, }, Flags = { Linear = true, }, },
+			},
+		},
+	},
+}

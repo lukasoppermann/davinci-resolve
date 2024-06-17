@@ -1,0 +1,227 @@
+{
+	Tools = ordered() {
+		VerticalSlide_LowerThird = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Text",
+					Source = "StyledText",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Red1Clone",
+					Name = "Color",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Green1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Blue1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Alpha1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Size",
+					Default = 0.0669,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Text",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Text",
+					Source = "HorizontalJustificationLeft",
+					Name = "H Anchor",
+					ControlGroup = 6,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Text",
+					Source = "HorizontalJustificationCenter",
+					ControlGroup = 6,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Text",
+					Source = "HorizontalJustificationRight",
+					ControlGroup = 6,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Text",
+					Source = "HorizontalLeftCenterRight",
+					Default = -1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Strikeout",
+					Name = "Emphasis",
+					ControlGroup = 8,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Underline",
+					Name = "Emphasis",
+					ControlGroup = 8,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Center",
+					Name = "Position",
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Text",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Text",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Text",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Text",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Text",
+					Source = "SampleSpread",
+					Default = 1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "TextOpacity",
+					Source = "Value",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "TextLineSpacing",
+					Source = "Value",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 220, 49.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 245.853, 66.3636, 122.926, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				KeyframeStretcher1 = KeyStretcher {
+					CtrlWShown = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "Text",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 119, },
+						StretchStart = Input { Value = 48, },
+						StretchEnd = Input { Value = 73, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 59, 8.75758 } },
+				},
+				Text = TextPlus {
+					CtrlWShown = false,
+					NameSet = true,
+					ExtentSet = true,
+					CustomData = { Settings = {
+						} },
+					Inputs = {
+						GlobalOut = Input { Value = 500, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.1, 0.1 }, },
+						SelectTransform = Input { Value = 2, },
+						LineSpacing = Input {
+							SourceOp = "TextLineSpacing",
+							Source = "Value",
+						},
+						LinePivot = Input { Value = { 0.011, 1 }, },
+						CharacterSpacing = Input { Value = 1.102, },
+						Opacity1 = Input {
+							SourceOp = "TextOpacity",
+							Source = "Value",
+						},
+						StyledText = Input { Value = "SAMPLE\nTEXT", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.0512, },
+						VerticalTopCenterBottom = Input { Value = 1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -60.8527, 8.75758 } },
+				},
+				TextLineSpacing = BezierSpline {
+					SplineColor = { Red = 229, Green = 93, Blue = 2 },
+					NameSet = true,
+					KeyFrames = {
+						[5] = { 3, RH = { 19.3333333333333, 3 } },
+						[48] = { 1, LH = { 5.11545838128116, 1 }, RH = { 60.6666666666667, 1 } },
+						[86] = { 1, LH = { 73.3333333333333, 1 }, RH = { 113.552799542745, 1 }, Flags = { Linear = true } },
+						[117] = { 3, LH = { 106.666666666667, 3 } }
+					}
+				},
+				TextOpacity = BezierSpline {
+					SplineColor = { Red = 179, Green = 28, Blue = 244 },
+					NameSet = true,
+					KeyFrames = {
+						[5] = { 0, RH = { 9.33289992809295, 0 } },
+						[18] = { 1, LH = { 13.667100071907, 1 }, RH = { 45.9178423938298, 1 } },
+						[101.761904761905] = { 1, LH = { 73.8440623680751, 1 }, RH = { 106.840761820475, 1 } },
+						[117] = { 0, LH = { 111.921142941429, 0 } }
+					}
+				}
+			},
+		}
+	}
+}

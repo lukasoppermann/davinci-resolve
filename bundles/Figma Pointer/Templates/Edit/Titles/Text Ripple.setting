@@ -1,0 +1,427 @@
+{
+	Tools = ordered() {
+		TextRipple = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainText = InstanceInput {
+					SourceOp = "mainText",
+					Source = "MainText",
+					Page = "Controls",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "StyledText",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Size",
+					Default = 0.1132,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Center",
+				},
+				Input6 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "CharacterSpacingClone",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Red1",
+					Name = "Main Text Color",
+					ControlGroup = 6,
+					Default = 0.6,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Green1",
+					Name = "Color",
+					ControlGroup = 6,
+					Default = 0.9872723171134,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Blue1",
+					Name = "Color",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				TextGlow = InstanceInput {
+					SourceOp = "textGlow",
+					Source = "TextGlow",
+					Page = "Controls",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "textGlow",
+					Source = "XGlowSize",
+					Default = 23.9,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "textGlow",
+					Source = "Glow",
+					Default = 0.8,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "textGlow",
+					Source = "BlendClone",
+					Default = 0.2,
+				},
+				GlowColor = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "GlowColor",
+					Page = "Controls",
+				},
+				Input13 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelHue1",
+					ControlGroup = 10,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelSaturation1",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelTintAngle1",
+					ControlGroup = 10,
+					Default = 0.5920749884229,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelTintLength1",
+					ControlGroup = 10,
+					Default = 0.6089,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelRangeDummy1",
+					ControlGroup = 10,
+					Default = 0,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelHue2",
+					ControlGroup = 10,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelSaturation2",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelTintAngle2",
+					ControlGroup = 10,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelTintLength2",
+					ControlGroup = 10,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelHue3",
+					ControlGroup = 10,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelSaturation3",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelTintAngle3",
+					ControlGroup = 10,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelTintLength3",
+					ControlGroup = 10,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelHue4",
+					ControlGroup = 10,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelSaturation4",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelTintAngle4",
+					ControlGroup = 10,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "WheelTintLength4",
+					ControlGroup = 10,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "Hue1",
+				},
+				Input31 = InstanceInput {
+					SourceOp = "glowColor",
+					Source = "Saturation1",
+					Default = 1,
+				},
+				RippleSize = InstanceInput {
+					SourceOp = "waveGeneration",
+					Source = "RippleSize",
+					Page = "Controls",
+				},
+				Input32 = InstanceInput {
+					SourceOp = "waveGeneration",
+					Source = "Frequency",
+					Name = "Ripple Size",
+					Default = 8,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
+					Name = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 5.72205e-06, 49.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 566, 163.887, 283, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				mainText = TextPlus {
+					ExtentSet = true,
+					NameSet = true,
+					Inputs = {
+						HorizontalJustification = Input { Value = 1, },
+						Alignment = Input { Value = 1, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						CharacterSpacing = Input { Value = 1.134, },
+						Opacity1 = Input {
+							SourceOp = "mainTextOpacity",
+							Source = "Value",
+						},
+						StyledText = Input { Value = "SAMPLE", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Regular", },
+						Size = Input { Value = 0.1132, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+						MainText = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 40.2574 } },
+					UserControls = ordered() { MainText = { LBLC_NumInputs = 9, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Main Text Controls", } }
+				},
+				mainTextOpacity = BezierSpline {
+					SplineColor = { Red = 179, Green = 28, Blue = 244 },
+					KeyFrames = {
+						[0] = { 0, RH = { 6.66666666666667, 0.333333333333333 }, Flags = { Linear = true } },
+						[20] = { 1, LH = { 13.3333333333333, 0.666666666666667 }, RH = { 53.3333333333333, 1 }, Flags = { Linear = true } },
+						[120] = { 1, LH = { 86.6666666666667, 1 }, RH = { 130, 1 } },
+						[150] = { 0, LH = { 140, 0.333333333333333 } }
+					}
+				},
+				textGlow = Glow {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Blend = Input { Value = 0.2, },
+						Filter = Input { Value = FuID { "Gaussian" }, },
+						XGlowSize = Input { Value = 23.9, },
+						Input = Input {
+							SourceOp = "mainText",
+							Source = "Output",
+						},
+						TextGlow = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -165, 106.258 } },
+					UserControls = ordered() { TextGlow = { LBLC_NumInputs = 3, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Text Glow Controls", } }
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "glowColor",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "mainText",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 40.2574 } },
+				},
+				glowColor = ColorCorrector {
+					NameSet = true,
+					Inputs = {
+						WheelTintAngle1 = Input { Value = 0.588220778013369, },
+						WheelTintLength1 = Input { Value = 0.1422, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "textGlow",
+							Source = "Output",
+						},
+						GlowColor = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 106.258 } },
+					UserControls = ordered() { GlowColor = { LBLC_NumInputs = 19, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Glow Color Controls", } }
+				},
+				mask = RectangleMask {
+					NameSet = true,
+					Inputs = {
+						SoftEdge = Input { Value = 0.075, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 1.5, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 117.333, 6.6513 } },
+				},
+				waveGeneration = TV {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "mask",
+							Source = "Mask",
+						},
+						ScanLines = Input { Value = 0, },
+						Vertical = Input {
+							SourceOp = "waveGenerationVertical",
+							Source = "Value",
+						},
+						Skew = Input {
+							SourceOp = "waveGenerationSkew",
+							Source = "Value",
+						},
+						Amplitude = Input {
+							SourceOp = "waveGenerationAmplitude",
+							Source = "Value",
+						},
+						Offset = Input {
+							SourceOp = "waveGenerationOffset",
+							Source = "Value",
+						},
+						Power = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						RippleSize = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 117.333, 40.2574 } },
+					UserControls = ordered() { RippleSize = { LBLC_NumInputs = 1, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Ripple Size Control", } }
+				},
+				waveGenerationVertical = BezierSpline {
+					SplineColor = { Red = 246, Green = 224, Blue = 0 },
+					KeyFrames = {
+						[0] = { -0.5, RH = { 10, -0.25 }, Flags = { Linear = true } },
+						[30] = { 0, LH = { 20, 0 }, RH = { 60.3333333333333, 0 } },
+						[121] = { 0, LH = { 90.6666666666667, 0 }, RH = { 130.666666666667, 0 } },
+						[150] = { 0.5, LH = { 140.333333333333, 0.5 } }
+					}
+				},
+				waveGenerationSkew = BezierSpline {
+					SplineColor = { Red = 202, Green = 46, Blue = 249 },
+					KeyFrames = {
+						[0] = { 0.427, RH = { 9.99899983406067, 0.427 }, Flags = { Linear = true } },
+						[30] = { 0, LH = { 20, 0 }, RH = { 60, 0 } },
+						[120] = { 0, LH = { 90, 0 }, RH = { 130, 0 } },
+						[150] = { -0.906, LH = { 140, -0.604 } }
+					}
+				},
+				waveGenerationAmplitude = BezierSpline {
+					SplineColor = { Red = 180, Green = 180, Blue = 255 },
+					KeyFrames = {
+						[0] = { 7.06, RH = { 10, 3.53499999999999 }, Flags = { Linear = true } },
+						[30] = { 0, LH = { 20, 0 }, RH = { 60, 0 } },
+						[120] = { 0, LH = { 90, 0 }, RH = { 130, 0 } },
+						[150] = { 7.01, LH = { 150, 4.39999999999757 } }
+					}
+				},
+				waveGenerationOffset = BezierSpline {
+					SplineColor = { Red = 234, Green = 92, Blue = 75 },
+					KeyFrames = {
+						[0] = { 0, RH = { 0.1329, 0.00442947885901993 }, Flags = { Linear = true } },
+						[0.3987] = { 0.0132884365770598, LH = { 0.2658, 0.00885895771803987 }, RH = { 50.2658, 1.67552562438471 }, Flags = { Linear = true } },
+						[150] = { 5, LH = { 100.1329, 3.33776281219235 }, Flags = { Linear = true } }
+					}
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "waveGeneration",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 150, },
+						StretchStart = Input { Value = 30, },
+						StretchEnd = Input { Value = 120, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 227.333, 40.2574 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "TextRipple"
+}

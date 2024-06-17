@@ -1,0 +1,517 @@
+{
+	Tools = ordered() {
+		TitleDramaticMood = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainText = InstanceInput {
+					SourceOp = "mainText",
+					Source = "MainText",
+					Page = "Controls",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Font",
+					Name = "Main Text Font",
+					ControlGroup = 3,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Style",
+					ControlGroup = 3,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "StyledText",
+					Name = "Main Text",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Transform3DOp.Rotate.Y",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Size",
+					Name = "Main Text Size",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "ExtrusionDepth",
+					Default = 0.0514,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "BevelDepth",
+					Default = 0.0402,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "BevelWidth",
+					Default = 0.029,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "LineSpacing",
+					Default = 0.718,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Opacity1",
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Red1",
+					Name = "Text Face Color",
+					ControlGroup = 11,
+					Default = 0.12,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Green1",
+					Name = "Color",
+					ControlGroup = 11,
+					Default = 0.12,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Blue1",
+					Name = "Color",
+					ControlGroup = 11,
+					Default = 0.12,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Alpha1",
+					Name = "Color",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularRed",
+					Name = "Face Specular Color",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularGreen",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularBlue",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularIntensity",
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "RedBevel",
+					Name = "Bevel Color",
+					ControlGroup = 14,
+					Default = 0.12628,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "GreenBevel",
+					Name = "Bevel Color",
+					ControlGroup = 14,
+					Default = 0.287,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "BlueBevel",
+					Name = "Bevel Color",
+					ControlGroup = 14,
+					Default = 0.287,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "AlphaBevel",
+					Name = "Color",
+					ControlGroup = 14,
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularRedBevel",
+					Name = "Bevel Specular Color",
+					ControlGroup = 15,
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularGreenBevel",
+					ControlGroup = 15,
+					Default = 1,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularBlueBevel",
+					ControlGroup = 15,
+					Default = 1,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularIntensityBevel",
+					Default = 1,
+				},
+				MainLight = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "MainLight",
+					Page = "Controls",
+				},
+				Input34 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "Red",
+					Name = "Spotlight Color",
+					ControlGroup = 23,
+					Default = 0.67,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "Green",
+					ControlGroup = 23,
+					Default = 0.8426424718372,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "Blue",
+					ControlGroup = 23,
+					Default = 1,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "ConeAngle",
+					Default = 17.31,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "PenumbraAngle",
+					Default = 20,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "Transform3DOp.Translate.X",
+					Name = "Spotlight X Offset",
+					Default = -3.787713,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "Transform3DOp.Translate.Y",
+					Name = "Spotlight Y Offset",
+					Default = 3.749413,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "Transform3DOp.Translate.Z",
+					Name = "Spotlight Z Offset",
+					Default = 2.38041,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "Transform3DOp.Rotate.X",
+					Name = "Spotlight Rotate X",
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "Transform3DOp.Rotate.Y",
+					Name = "Spotlight Rotate Y",
+					Default = 0,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "overheadLight",
+					Source = "Transform3DOp.Rotate.Z",
+					Name = "Spotlight Rotate Z",
+					Default = 0,
+				},
+				BackLight = InstanceInput {
+					SourceOp = "underlight",
+					Source = "BackLight",
+					Page = "Controls",
+				},
+				Input43 = InstanceInput {
+					SourceOp = "underlight",
+					Source = "Red",
+					Name = "Backlight Color",
+					ControlGroup = 30,
+					Default = 1,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "underlight",
+					Source = "Green",
+					ControlGroup = 30,
+					Default = 0.0673559309072,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "underlight",
+					Source = "Blue",
+					ControlGroup = 30,
+					Default = 0,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "underlight",
+					Source = "Transform3DOp.Translate.X",
+					Name = "Backlight X Offset",
+					Default = 2,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "underlight",
+					Source = "Transform3DOp.Translate.Y",
+					Name = "Backlight Y Offset",
+					Default = -13.442,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "underlight",
+					Source = "Transform3DOp.Translate.Z",
+					Name = "Backlight Z Offset",
+					Default = -1.64,
+				},
+				BlurControl = InstanceInput {
+					SourceOp = "output",
+					Source = "BlurControl",
+					Page = "Controls",
+				},
+				Input101 = InstanceInput {
+					SourceOp = "output",
+					Source = "MotionBlur",
+					Default = 1,
+				},
+				Input102 = InstanceInput {
+					SourceOp = "output",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input103 = InstanceInput {
+					SourceOp = "output",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input104 = InstanceInput {
+					SourceOp = "output",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input105 = InstanceInput {
+					SourceOp = "output",
+					Source = "SampleSpread",
+					Default = 1,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "output",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 220, 49.5 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 566, 165.364, 283, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				mainText = Text3D {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Alignment = Input { Value = 1, },
+						LineSpacing = Input { Value = 0.718, },
+						CharacterSpacing = Input { Value = 1.134, },
+						TransformRotation = Input { Value = 1, },
+						TransformShear = Input { Value = 1, },
+						TransformSize = Input { Value = 1, },
+						UseOneMaterial = Input { Value = 0, },
+						SpecularExponent = Input { Value = 15, },
+						StyledText = Input { Value = "SAMPLE", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Semibold", },
+						Size = Input { Value = 0.63, },
+						VerticalJustification = Input { Value = 3, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Extrusion = Input { Value = 1, },
+						ExtrusionProfile = Input {
+							SourceOp = "mainTextExtrusionProfile",
+							Source = "Value",
+						},
+						ExtrusionDepth = Input { Value = 0.0514, },
+						BevelDepth = Input { Value = 0.0047, },
+						BevelWidth = Input { Value = 0.022, },
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+						MainText = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 55.0153 } },
+					UserControls = ordered() { MainText = { LBLC_NumInputs = 27, LINKS_Name = "Main Text", LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", } }
+				},
+				mainTextExtrusionProfile = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0666666666666667, 0.333333333333333 }, Flags = { Linear = true } },
+							[0.2] = { 1, LH = { 0.133333333333333, 0.666666666666667 }, RH = { 0.4, 1 }, Flags = { Linear = true } },
+							[0.8] = { 1, LH = { 0.6, 1 }, RH = { 0.866666666666667, 0.666666666666667 }, Flags = { Linear = true } },
+							[1] = { 0, LH = { 0.933333333333333, 0.333333333333333 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+				},
+				overheadLight = LightSpot {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["Transform3DOp.Translate.X"] = Input { Value = -3.787713, },
+						["Transform3DOp.Translate.Y"] = Input { Value = 3.749413, },
+						["Transform3DOp.Translate.Z"] = Input { Value = 2.38041, },
+						["Transform3DOp.UseTarget"] = Input { Value = 1, },
+						["Transform3DOp.Target.X"] = Input { Value = -0.0314927909983, },
+						ConeAngle = Input { Value = 17.31, },
+						PenumbraAngle = Input { Value = 20, },
+						MainLight = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 8.25726 } },
+					UserControls = ordered() { MainLight = { LBLC_NumInputs = 11, LINKS_Name = "Spotlight", LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", } }
+				},
+				underlight = LightPoint {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["Transform3DOp.Translate.X"] = Input { Value = 2, },
+						["Transform3DOp.Translate.Y"] = Input { Value = -13.442, },
+						["Transform3DOp.Translate.Z"] = Input { Value = -1.64, },
+						BackLight = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 107.258 } },
+					UserControls = ordered() { BackLight = { LBLC_NumInputs = 6, LINKS_Name = "Backlight", LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", } }
+				},
+				sceneMerge = Merge3D {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["Transform3DOp.Translate.Z"] = Input { Value = -1.578054, },
+						SceneInput1 = Input {
+							SourceOp = "Transform3D1",
+							Source = "Output",
+						},
+						SceneInput2 = Input {
+							SourceOp = "overheadLight",
+							Source = "Output",
+						},
+						SceneInput3 = Input {
+							SourceOp = "underlight",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 55.0153 } },
+				},
+				output = Renderer3D {
+					CtrlWShown = false,
+					NameSet = true,
+					ExtentSet = true,
+					CustomData = { ToolVersion = 2 },
+					Inputs = {
+						["RendererSoftware.Channels.Nest"] = Input { Value = 1, },
+						["RendererSoftware.LightingEnabled"] = Input { Value = 1, },
+						["RendererOpenGL.Supersampling"] = Input { Value = 1, },
+						GlobalOut = Input { Value = 500, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Depth = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						SceneInput = Input {
+							SourceOp = "KeyframeStretcher1",
+							Source = "Result",
+						},
+						RendererType = Input { Value = FuID { "RendererOpenGL" }, },
+						["RendererOpenGL.AntiAliasing.Channels.RGBA.HighQuality.Enable"] = Input { Value = 1, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Supersampling.HighQuality.RateX"] = Input { Value = 3, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Supersampling.HighQuality.RateY"] = Input { Value = 8, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Multisampling.LowQuality.SampleCount"] = Input { Value = 2, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Multisampling.HighQuality.SampleCount"] = Input { Value = 3, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Supersampling.HighQuality.RateX"] = Input { Value = 8, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Supersampling.HighQuality.RateY"] = Input { Value = 8, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Multisampling.LowQuality.SampleCount"] = Input { Value = 0, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Multisampling.HighQuality.SampleCount"] = Input { Value = 0, },
+						["RendererOpenGL.AccumQuality"] = Input { Value = 2, },
+						["RendererOpenGL.LightingEnabled"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, 55.0153 } },
+					UserControls = ordered() { BlurControl = { LBLC_NumInputs = 5, LINKS_Name = "Motion Blur Controls", LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", } },
+					SubInputsData = {
+						RendererOpenGL = {
+							Version = 1
+						}
+					}
+				},
+				Transform3D1 = Transform3D {
+					CtrlWShown = false,
+					Inputs = {
+						SceneInput = Input {
+							SourceOp = "mainText",
+							Source = "Output",
+						},
+						["Transform3DOp.Translate.X"] = Input {
+							SourceOp = "Transform3D1XOffset",
+							Source = "Value",
+						},
+						["Transform3DOp.Translate.Z"] = Input { Value = -1.167569, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, 55.0153 } },
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					CtrlWShown = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "sceneMerge",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 100, },
+						StretchStart = Input { Value = 14, },
+						StretchEnd = Input { Value = 88, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 55.0153 } },
+				}
+			},
+		},
+		Transform3D1XOffset = BezierSpline {
+			SplineColor = { Red = 250, Green = 59, Blue = 49 },
+			CtrlWShown = false,
+			NameSet = true,
+			KeyFrames = {
+				[0] = { -6, RH = { 4.4646293046434, -4.5489954759909 }, Flags = { Linear = true } },
+				[14] = { -0.65, LH = { 2.2, -0.84 }, RH = { 38.1976719319754, -0.260376468891644 } },
+				[88] = { 0.65, LH = { 80.2020915342091, 0.486243922218552 }, RH = { 98, 0.86 } },
+				[100] = { 6, LH = { 96.2015981113846, 4.51862326343999 } }
+			}
+		}
+	}
+}

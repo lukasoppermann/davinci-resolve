@@ -1,0 +1,488 @@
+{
+	Tools = ordered() {
+		pEmitter2_1 = pEmitter {
+			ID = 32,
+			CurrentSettings = 3,
+			CustomData = {
+				Settings = {
+					[1] = {
+						Tools = ordered() {
+							pEmitter2 = pEmitter {
+								Inputs = {
+									Number = Input {
+										SourceOp = "pEmitter2Number",
+										Source = "Value",
+									},
+									AlwaysFaceCamera = Input { Value = 0, },
+									["ParticleStyle.RedLow"] = Input { Value = -0.6666667, },
+									["SphereRgn.Size"] = Input { Value = 2, },
+									["CubeRgn.Height"] = Input { Value = 1, },
+									["ParticleStyle.RedHigh"] = Input { Value = 0.2133333, },
+									RotationControls = Input { Value = 1, },
+									SpinXVariance = Input { Value = 10, },
+									RotationYVariance = Input { Value = -13.4042553, },
+									["CubeRgn.Width"] = Input { Value = 2, },
+									RotationMode = Input { Value = 1, },
+									["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+									["ParticleStyle.GreenHigh"] = Input { Value = -0.1066667, },
+									["ParticleStyle.BlurOverLife"] = Input {
+										SourceOp = "pEmitter2BluroverLife2D",
+										Source = "Value",
+									},
+									RandomSeed = Input { Value = 352, },
+									["SphereRgn.Translate.X"] = Input { Value = 1.48516160262663, },
+									Spin = Input { Value = 1, },
+									["ParticleStyleBrush.Brush"] = Input {
+										Value = 26,
+										UserString1 = "leaf_gold_a",
+									},
+									["SphereRgn.Translate.Z"] = Input { Value = 0.329154414865583, },
+									RotationVariance = Input { Value = 1, },
+									SpinYVariance = Input { Value = 10, },
+									SpinVariance = Input { Value = 1, },
+									TemporalDistribution = Input { Value = 1, },
+									["ParticleStyleBitmap.DropToolsHere"] = Input {
+										SourceOp = "ColorCorrector1",
+										Source = "Output",
+									},
+									["ParticleStyle.GreenLow"] = Input { Value = -0.32, },
+									["ParticleStyle.BlueLow"] = Input { Value = -1, },
+									RotationXVariance = Input { Value = -7.6595745, },
+									Region = Input { Value = FuID { "CubeRgn", }, },
+									Rotation = Input { Value = 1, },
+									["CubeRgn.Translate.Z"] = Input { Value = -0.030069929442802, },
+									["ParticleStyle.SizeOverLife"] = Input {
+										SourceOp = "pEmitter2SizeoverLife",
+										Source = "Value",
+									},
+									["ParticleStyle.ColorOverLife"] = Input {
+										Value = Gradient {
+											Colors = {
+												[0] = { 1, 1, 1, 1, },
+											},
+										},
+									},
+									["ParticleStyle.Size"] = Input { Value = 0.08, },
+									["ParticleStyle.SizeVariance"] = Input { Value = 0.1175, },
+									Style = Input { Value = FuID { "ParticleStyleBitmap", }, },
+									["ParticleStyle.BlueHigh"] = Input { Value = -0.1733334, },
+									["ParticleStyle.Red"] = Input { Value = 0.986666666666667, },
+									["ParticleStyle.SizeControls"] = Input { Value = 1, },
+									["CubeRgn.Depth"] = Input { Value = 2.8190476, },
+									["CubeRgn.Translate.X"] = Input { Value = 1.36476016526992, },
+								},
+								CtrlWZoom = false,
+								ID = 4252,
+								ViewInfo = OperatorInfo { Pos = { 2145, -808.5, }, },
+								CustomData = {
+								},
+							},
+							pEmitter2Number = BezierSpline {
+								SplineColor = { Red = 233, Blue = 78, Green = 206, },
+								NameSet = true,
+								KeyFrames = {
+									[18] = { 10, RH = { 18.6666666666667, 6.66666666666667, }, Flags = { Linear = true, }, },
+									[20] = { 0, LH = { 19.3333333333333, 3.33333333333333, }, Flags = { Linear = true, }, },
+								},
+							},
+							pEmitter2SizeoverLife = LUTBezier {
+								SplineColor = { Red = 192, Blue = 64, Green = 128, },
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+								NameSet = true,
+							},
+							pEmitter2BluroverLife2D = LUTBezier {
+								SplineColor = { Red = 192, Blue = 64, Green = 128, },
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+								NameSet = true,
+							},
+						},
+					},
+					[2] = {
+						Tools = ordered() {
+							pEmitter2_1 = pEmitter {
+								Inputs = {
+									Number = Input {
+										SourceOp = "pEmitter2_1Number",
+										Source = "Value",
+									},
+									["ParticleStyleBrush.Brush"] = Input {
+										Value = 26,
+										UserString1 = "leaf_gold_a",
+									},
+									["ParticleStyle.RedLow"] = Input { Value = -0.6666667, },
+									["SphereRgn.Size"] = Input { Value = 2, },
+									["CubeRgn.Height"] = Input { Value = 1, },
+									["ParticleStyle.RedHigh"] = Input { Value = 0.2133333, },
+									RotationControls = Input { Value = 1, },
+									["ParticleStyle.Red"] = Input { Value = 0.986666666666667, },
+									["CubeRgn.Width"] = Input { Value = 4, },
+									RotationMode = Input { Value = 1, },
+									["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+									NumberVariance = Input { Value = 11.9047619, },
+									["ParticleStyle.BlurOverLife"] = Input {
+										SourceOp = "pEmitter2BluroverLife2D_1",
+										Source = "Value",
+									},
+									RandomSeed = Input { Value = 1866, },
+									["SphereRgn.Translate.X"] = Input { Value = 1.48516160262663, },
+									["CubeRgn.Depth"] = Input { Value = 6, },
+									Spin = Input { Value = 1, },
+									["SphereRgn.Translate.Z"] = Input { Value = 0.329154414865583, },
+									RotationX = Input { Value = 55.5319149, },
+									["ParticleStyle.GreenLow"] = Input { Value = -0.32, },
+									["CubeRgn.Translate.X"] = Input { Value = 1.68599974208087, },
+									TemporalDistribution = Input { Value = 1, },
+									["ParticleStyleBitmap.DropToolsHere"] = Input {
+										SourceOp = "ColorCorrector1_1",
+										Source = "Output",
+									},
+									["ParticleStyle.BlueHigh"] = Input { Value = -0.1733334, },
+									["ParticleStyle.BlueLow"] = Input { Value = -1, },
+									RotationXVariance = Input {
+										SourceOp = "Shake2_1",
+										Source = "X",
+									},
+									Region = Input { Value = FuID { "CubeRgn", }, },
+									["ParticleStyle.Size"] = Input { Value = 0.04, },
+									["CubeRgn.Translate.Z"] = Input { Value = 0.478973431228167, },
+									["ParticleStyle.SizeOverLife"] = Input {
+										SourceOp = "pEmitter2SizeoverLife_1",
+										Source = "Value",
+									},
+									["ParticleStyle.ColorOverLife"] = Input {
+										Value = Gradient {
+											Colors = {
+												[0] = { 1, 1, 1, 1, },
+											},
+										},
+									},
+									Rotation = Input { Value = 1, },
+									["ParticleStyle.SizeVariance"] = Input { Value = 0.1, },
+									Style = Input { Value = FuID { "ParticleStyleBitmap", }, },
+									["ParticleStyle.GreenHigh"] = Input { Value = -0.1066667, },
+									SpinVariance = Input { Value = 1, },
+									["ParticleStyle.SizeControls"] = Input { Value = 1, },
+									RotationVariance = Input { Value = 1, },
+									AlwaysFaceCamera = Input { Value = 0, },
+								},
+								CtrlWZoom = false,
+								ID = 4766,
+								ViewInfo = OperatorInfo { Pos = { 4015, -2029.5, }, },
+								CustomData = {
+								},
+							},
+							pEmitter2_1Number = BezierSpline {
+								SplineColor = { Green = 206, Blue = 78, Red = 233, },
+								NameSet = true,
+								KeyFrames = {
+									[18] = { 3.3333333, RH = { 18.6666666666667, 2.2222222, }, Flags = { Linear = true, }, },
+									[20] = { 0, LH = { 19.3333333333333, 1.1111111, }, Flags = { Linear = true, }, },
+								},
+							},
+							Shake2_1 = Shake {
+								Inputs = {
+									Smoothness = Input { Value = 14.1671, },
+									XMaximum = Input { Value = 33.5238095, },
+								},
+								CtrlWZoom = false,
+							},
+							pEmitter2SizeoverLife_1 = LUTBezier {
+								SplineColor = { Green = 128, Blue = 64, Red = 192, },
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+							},
+							pEmitter2BluroverLife2D_1 = LUTBezier {
+								SplineColor = { Green = 128, Blue = 64, Red = 192, },
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+			Inputs = {
+				["SphereRgn.Size"] = Input { Value = 2, },
+				["SphereRgn.Translate.X"] = Input { Value = 1.48516160262663, },
+				["SphereRgn.Translate.Z"] = Input { Value = 0.329154414865583, },
+				RandomSeed = Input { Value = 21848, },
+				Number = Input { Value = 0, },
+				NumberVariance = Input { Value = 78.6324786, },
+				TemporalDistribution = Input { Value = 1, },
+				RotationControls = Input { Value = 1, },
+				RotationMode = Input { Value = 1, },
+				AlwaysFaceCamera = Input { Value = 0, },
+				Rotation = Input { Value = 1, },
+				RotationX = Input { Value = 55.5319149, },
+				RotationVariance = Input { Value = 1, },
+				RotationXVariance = Input {
+					SourceOp = "Shake2_1",
+					Source = "X",
+				},
+				Spin = Input { Value = 1, },
+				SpinVariance = Input { Value = 1, },
+				Style = Input { Value = FuID { "ParticleStyleBrush", }, },
+				Region = Input { Value = FuID { "CubeRgn", }, },
+				["ParticleStyle.Red"] = Input { Value = 0.986666666666667, },
+				["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+				["ParticleStyle.RedLow"] = Input { Value = -0.6666667, },
+				["ParticleStyle.RedHigh"] = Input { Value = 0.2133333, },
+				["ParticleStyle.GreenLow"] = Input { Value = -0.32, },
+				["ParticleStyle.GreenHigh"] = Input { Value = -0.1066667, },
+				["ParticleStyle.BlueLow"] = Input { Value = -1, },
+				["ParticleStyle.BlueHigh"] = Input { Value = -0.1733334, },
+				["ParticleStyle.ColorOverLife"] = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				["ParticleStyle.SizeControls"] = Input { Value = 1, },
+				["ParticleStyle.Size"] = Input { Value = 0.055, },
+				["ParticleStyle.SizeVariance"] = Input { Value = 0.0675, },
+				["ParticleStyle.SizeOverLife"] = Input {
+					SourceOp = "pEmitter2_1SizeoverLife",
+					Source = "Value",
+				},
+				["ParticleStyle.BlurOverLife"] = Input {
+					SourceOp = "pEmitter2_1BluroverLife2D",
+					Source = "Value",
+				},
+				["CubeRgn.Translate.X"] = Input { Value = 1.68599974208087, },
+				["CubeRgn.Translate.Z"] = Input { Value = 0.365822034825438, },
+				["CubeRgn.Width"] = Input { Value = 4, },
+				["CubeRgn.Height"] = Input { Value = 1, },
+				["CubeRgn.Depth"] = Input { Value = 6, },
+				["ParticleStyleBrush.Brush"] = Input {
+					Value = 26,
+					UserString1 = "leaf_gold_a",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { -165, 148.5, }, },
+		},
+		Shake2_1 = Shake {
+			CtrlWZoom = false,
+			Inputs = {
+				Smoothness = Input { Value = 14.1671, },
+				XMaximum = Input { Value = 33.5238095, },
+			},
+		},
+		pEmitter2_1SizeoverLife = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			NameSet = true,
+		},
+		pEmitter2_1BluroverLife2D = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+					[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+			NameSet = true,
+		},
+		pDirectionalForce2_1 = pDirectionalForce {
+			ID = 37,
+			Inputs = {
+				Strength = Input {
+					SourceOp = "Shake3_1",
+					Source = "X",
+				},
+				Direction = Input { Value = 180, },
+				Input = Input {
+					SourceOp = "pEmitter2_1",
+					Source = "Output",
+				},
+				Probability = Input { Value = 0.4904762, },
+			},
+			ViewInfo = OperatorInfo { Pos = { -55, 148.5, }, },
+		},
+		Shake3_1 = Shake {
+			CtrlWZoom = false,
+			Inputs = {
+				Smoothness = Input { Value = 2.1437714, },
+				XMinimum = Input { Value = 0.0714286, },
+				XMaximum = Input { Value = 0.1380952, },
+			},
+		},
+		pTurbulence1_2_1 = pTurbulence {
+			ID = 39,
+			CurrentSettings = 2,
+			CustomData = {
+				Settings = {
+					[1] = {
+						Tools = ordered() {
+							pTurbulence1_2 = pTurbulence {
+								Inputs = {
+									XStrength = Input { Value = 1, },
+									YStrength = Input { Value = 0.5190476, },
+									ZStrength = Input { Value = 0.452381, },
+									StrengthOverLifeLUT = Input {
+										SourceOp = "pTurbulence1_2StrengthoverLifeLUT",
+										Source = "Value",
+									},
+									Density = Input { Value = 32.3809524, },
+									Input = Input {
+										SourceOp = "pDirectionalForce2",
+										Source = "Output",
+									},
+								},
+								CtrlWZoom = false,
+								ID = 4258,
+								ViewInfo = OperatorInfo { Pos = { 2365, -808.5, }, },
+								CustomData = {
+								},
+							},
+							pTurbulence1_2StrengthoverLifeLUT = LUTBezier {
+								SplineColor = { Red = 192, Blue = 64, Green = 128, },
+								KeyColorSplines = {
+									[0] = {
+										[0] = { 0.5, RH = { 0.333333333333333, 0.5, }, Flags = { Linear = true, }, },
+										[1] = { 0.5, LH = { 0.666666666666667, 0.5, }, Flags = { Linear = true, }, },
+									},
+								},
+								NameSet = true,
+							},
+						},
+					},
+				},
+			},
+			Inputs = {
+				XStrength = Input { Value = 0.6095238, },
+				YStrength = Input { Value = 0.4, },
+				ZStrength = Input { Value = 0.5333333, },
+				StrengthOverLife = Input { Value = 1, },
+				StrengthOverLifeLUT = Input {
+					SourceOp = "pTurbulence1_2StrengthoverLifeLUT_1",
+					Source = "Value",
+				},
+				Density = Input { Value = 52.8571429, },
+				Input = Input {
+					SourceOp = "pDirectionalForce2_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 55, 148.5, }, },
+		},
+		pTurbulence1_2StrengthoverLifeLUT_1 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0.5, RH = { 0.332094175960347, 0.483870967741935, }, Flags = { Linear = true, }, },
+					[0.996282527881041] = { 0.451612903225806, LH = { 0.664188351920694, 0.467741935483871, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 192, Green = 128, Blue = 64, },
+		},
+		pVortex1_1 = pVortex {
+			ID = 41,
+			Inputs = {
+				RandomSeed = Input { Value = 29835, },
+				Strength = Input { Value = -3.3333333, },
+				Translation = Input { Value = 0, },
+				["Translate.X"] = Input { Value = -0.159112554346338, },
+				["Translate.Z"] = Input { Value = 0.299375984502817, },
+				Input = Input {
+					SourceOp = "pTurbulence1_2_1",
+					Source = "Output",
+				},
+				RegionMode = Input { Value = FuID { "Inside", }, },
+				Region = Input { Value = FuID { "SphereRgn", }, },
+				["SphereRgn.Translate.X"] = Input { Value = -0.167390962360583, },
+				["SphereRgn.Size"] = Input { Value = 10, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 165, 148.5, }, },
+		},
+		Camera3D1_1_1 = Camera3D {
+			Inputs = {
+				["Transform3DOp.Translate.X"] = Input { Value = -1.2633401402892, },
+				["Transform3DOp.Translate.Z"] = Input { Value = 2.50134688117038, },
+				AoV = Input { Value = 24.3265863475745, },
+				["Stereo.Mode"] = Input { Value = FuID { "OffAxis", }, },
+				["SurfacePlaneInputs.ObjectID.ObjectID"] = Input { Value = 2, },
+				["MtlStdInputs.MaterialID"] = Input { Value = 2, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 275, 181.5, }, },
+		},
+		pRender1_1_1 = pRender {
+			Inputs = {
+				["_MotionBlurWarning"] = Input { Disabled = true, },
+				ShutterAngle = Input { Value = 20, },
+				GlobalOut = Input { Value = 300, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				OutputMode = Input { Disabled = true, },
+				IntegrationMethod = Input { Value = FuID { "RK4", }, },
+				KillParticlesThatLeaveTheView = Input { Value = 1, },
+				["MaterialID.MaterialID"] = Input { Value = 7, },
+				["ObjectID.ObjectID"] = Input { Value = 6, },
+				Input = Input {
+					SourceOp = "pVortex1_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 275, 148.5, }, },
+		},
+		Merge3D1 = Merge3D {
+			Inputs = {
+				SceneInput1 = Input {
+					SourceOp = "pRender1_1_1",
+					Source = "Output",
+				},
+				SceneInput2 = Input {
+					SourceOp = "Camera3D1_1_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 385, 181.5, }, },
+		},
+		Renderer3D3_2 = Renderer3D {
+			CtrlWZoom = false,
+			Inputs = {
+				GlobalOut = Input { Value = 300, },
+				Width = Input { Value = 1280, },
+				Height = Input { Value = 720, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				SceneInput = Input {
+					SourceOp = "Merge3D1",
+					Source = "Output",
+				},
+				RendererType = Input { Value = FuID { "RendererOpenGL", }, },
+				["RendererOpenGL.Channels.RGBASS"] = Input { Value = 1, },
+				["RendererOpenGL.Supersampling"] = Input { Value = 1, },
+				["RendererOpenGL.SSRateX"] = Input { Value = 3, },
+				["RendererOpenGL.TweakFilterWidth"] = Input { Value = 0.9657895, },
+				["RendererOpenGL.AccumulationEffects"] = Input { Value = 1, },
+				["RendererOpenGL.AccumQuality"] = Input { Value = 5, },
+				["RendererOpenGL.DoFBlur"] = Input { Value = 0.01, },
+				["RendererOpenGL.TransparencySorting"] = Input { Value = 2, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 495, 181.5, }, },
+		},
+	},
+	ActiveTool = "Renderer3D3_2",
+}

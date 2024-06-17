@@ -1,0 +1,211 @@
+{
+	Tools = ordered() {
+		Lens_Flare_V05 = HotSpot {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = {
+				PrimaryCenter = Input {
+					SourceOp = "Publish1_5",
+					Source = "Value",
+				},
+				HotSpotSize = Input { Value = 0.3055556, },
+				Aspect = Input { Value = 5, },
+				LensAberration = Input { Value = 3, },
+				Aberration = Input { Value = 3.8729282, },
+				AmbientLight = Input { Disabled = true, },
+				ShowRed = Input { Value = 0, },
+				ShowGreen = Input { Value = 0, },
+				ShowBlue = Input { Value = 0, },
+				ShowAlpha = Input { Value = 0, },
+				Red = Input {
+					SourceOp = "HotSpot4Red4",
+					Source = "Value",
+				},
+				Green = Input {
+					SourceOp = "HotSpot4Green4",
+					Source = "Value",
+				},
+				Blue = Input {
+					SourceOp = "HotSpot4Blue4",
+					Source = "Value",
+				},
+				Alpha = Input {
+					SourceOp = "HotSpot4Alpha4",
+					Source = "Value",
+				},
+				Mix = Input {
+					SourceOp = "HotSpot4Mix4",
+					Source = "Value",
+				},
+				RadialOn = Input { Value = 1, },
+				RadialLength = Input { Value = 0, },
+				Radial = Input {
+					SourceOp = "HotSpot4Radial4",
+					Source = "Value",
+				},
+				Length = Input {
+					SourceOp = "HotSpot4Length4",
+					Source = "Value",
+				},
+				RadialRepeat = Input { Value = 2, },
+				RadialAngle = Input { Value = 161.9047619, },
+				LengthAngle = Input { Value = -1.9047619, },
+				Element3Reflection1 = Input { Value = 1, },
+				Element3Reflection2 = Input { Value = 1, },
+				Element3Reflection3 = Input { Value = 1, },
+				ElementStrength3 = Input { Value = 0.9060773, },
+				ElementSize3 = Input { Value = 0.9171271, },
+				ElementPosition3 = Input { Value = 2, },
+				Input = Input {
+					SourceOp = "FastNoise1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { -131.744, 58.2054, }, },
+		},
+		Publish1_5 = PublishPoint {
+			Inputs = {
+				Value = Input { Value = { 0.9625, 0.695833333333333, }, },
+			},
+		},
+		HotSpot4Red4 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.12745519428069, 0.00245106143301816, }, },
+					[0.887226631192231] = { 0.321218057836015, LH = { 0.443653181759568, 0.278944715392228, }, RH = { 0.93797671061071, 0.326054631100327, }, },
+					[0.979838709557249] = { 0.991935483179986, LH = { 0.948269886071682, 0.991935483179986, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 52, Blue = 52, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V05ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V05ColorChange = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 180, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HotSpot4Green4 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.123129058760574, 0.00236786651901557, }, },
+					[0.858586493045873] = { 0.490383815831475, LH = { 0.425416215739368, 0.440707730770484, }, RH = { 0.919859938548402, 0.497410671205023, }, },
+					[1] = { 0.903225807037445, LH = { 0.951942610050644, 0.903225807037445, }, },
+				},
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 0, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V05ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HotSpot4Blue4 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.139784946237811, 0.00268817204801769, }, },
+					[1] = { 1, LH = { 0.497311828297473, 1, }, },
+				},
+			},
+			SplineColor = { Red = 68, Green = 68, Blue = 255, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V05ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HotSpot4Alpha4 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.138200348152401, 0.00265769900785716, }, },
+					[0.995967741815313] = { 0.608870967621765, LH = { 0.495306538607479, 0.608870967621765, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V05ColorChange",
+					Source = "Value",
+				},
+			},
+		},
+		HotSpot4Mix4 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0.0019196117101421] = { 0.0119415715442152, RH = { 0.286257727682621, 0.0146814777636132, }, Flags = { Linear = true, }, },
+					[0.854933959627578] = { 0.0201612902024094, LH = { 0.5705958436551, 0.0174213839830113, }, RH = { 0.8817839300743, 0.342741935483871, }, Flags = { Linear = true, }, },
+					[0.935483870967742] = { 0.987903226046793, LH = { 0.908633900521021, 0.665322580765332, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 0, Green = 255, Blue = 255, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V05ColorChange1",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V05ColorChange1 = BezierSpline {
+			SplineColor = { Red = 255, Green = 255, Blue = 64, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HotSpot4Radial4 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.139784946156445, 0, }, },
+					[0.419354838469336] = { 0, LH = { 0.279569892312891, 0, }, RH = { 0.428763440619874, 0.333333333333333, }, Flags = { Linear = true, }, },
+					[0.447580644920949] = { 1, LH = { 0.438172042770411, 0.666666666666667, }, RH = { 0.456401840002546, 0.668010752688172, }, Flags = { Linear = true, }, },
+					[0.474044230165741] = { 0.00403225806451625, LH = { 0.465223035084144, 0.336021505376344, }, RH = { 0.649362820110494, 0.00268817204301083, }, Flags = { Linear = true, }, },
+					[1] = { 0, LH = { 0.824681410055247, 0.00134408602150542, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 255, Green = 170, Blue = 47, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V05ColorChange2",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V05ColorChange2 = BezierSpline {
+			SplineColor = { Red = 0, Green = 127, Blue = 255, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+		HotSpot4Length4 = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 1, RH = { 0.333333333333333, 1, }, },
+					[1] = { 1, LH = { 0.666666666666667, 1, }, Flags = { Linear = true, }, },
+				},
+			},
+			SplineColor = { Red = 170, Green = 127, Blue = 255, },
+			Inputs = {
+				TimeCurve = Input {
+					SourceOp = "Lens_Flare_V05ColorChange3",
+					Source = "Value",
+				},
+			},
+		},
+		Lens_Flare_V05ColorChange3 = BezierSpline {
+			SplineColor = { Red = 255, Green = 127, Blue = 0, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { LockedY = true, }, },
+			},
+		},
+	},
+}

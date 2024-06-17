@@ -1,0 +1,619 @@
+{
+	Tools = ordered() {
+		ParticlesBokehFullFrame = GroupOperator {
+			Inputs = ordered() {
+				ParticleControls= InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "ParticleControls",
+					Page = "Controls",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "Type",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopLeftRed",
+					Name = "Top Left",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopLeftGreen",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopLeftBlue",
+					ControlGroup = 2,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopLeftAlpha",
+					ControlGroup = 2,
+					Default = 0.306,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopRightRed",
+					Name = "Top Right",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopRightGreen",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopRightBlue",
+					ControlGroup = 3,
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "TopRightAlpha",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "BottomLeftRed",
+					Name = "Bottom Left",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "BottomLeftGreen",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "BottomLeftBlue",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "BottomLeftAlpha",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "BottomRightRed",
+					Name = "Bottom Right",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "BottomRightGreen",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "BottomRightBlue",
+					ControlGroup = 5,
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "BottomRightAlpha",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "GradientType",
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "Start",
+					DefaultX = 0.5,
+					DefaultY = 0.66,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "End",
+					DefaultX = 0.5,
+					DefaultY = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Background1_1",
+					Source = "Gradient",
+				},
+
+
+				Input26 = InstanceInput {
+					SourceOp = "Ellipse1_1",
+					Source = "SoftEdge",
+					Name = "Edge Softness",
+					Default = 0.0518,
+				},
+				
+				EmitterControls= InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "EmitterControls",
+					Page = "Controls",
+				},
+				Input27 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "Number",
+					Default = 0.05,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "NumberVariance",
+					Default = 3,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "Lifespan",
+					Default = 600,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "LifespanVariance",
+					Default = 30,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "Velocity",
+					Default = 0.005,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "VelocityVariance",
+					Default = 0.1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "Angle",
+					Default = 90,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "AngleVariance",
+					Default = 0,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "AngleZ",
+					Default = 0,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "AngleZVariance",
+					Default = 0,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "ParticleStyle.Red",
+					Name = "Color",
+					ControlGroup = 25,
+					Default = 0,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "ParticleStyle.Green",
+					ControlGroup = 25,
+					Default = 0.8083906163736,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "ParticleStyle.Blue",
+					ControlGroup = 25,
+					Default = 1,
+				},
+
+				Input49 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "ParticleStyle.Size",
+					Default = 0.0864,
+				},
+				Input50 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "ParticleStyle.SizeVariance",
+					Default = 0.4444,
+				},
+				Input51 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "ParticleStyle.FadeIn",
+					ControlGroup = 32,
+					Default = 0.2,
+				},
+				Input52 = InstanceInput {
+					SourceOp = "pEmitter1_3",
+					Source = "ParticleStyle.FadeOut",
+					ControlGroup = 32,
+					Default = 0.8,
+				},
+				
+				
+				
+				Input53 = InstanceInput {
+					SourceOp = "pTurbulence1_3",
+					Source = "XStrength",
+					Name = "Particle Turbulence",
+					Default = 0.115,
+				},
+
+				
+				LightControls= InstanceInput {
+					SourceOp = "SpotLight1",
+					Source = "LightControls",
+					Page = "Controls",
+				},
+				Input56 = InstanceInput {
+					SourceOp = "SpotLight1",
+					Source = "Enabled",
+					Default = 1,
+				},
+				Input57 = InstanceInput {
+					SourceOp = "SpotLight1",
+					Source = "Red",
+					Name = "Color",
+					ControlGroup = 37,
+					Default = 1,
+				},
+				Input58 = InstanceInput {
+					SourceOp = "SpotLight1",
+					Source = "Green",
+					ControlGroup = 37,
+					Default = 1,
+				},
+				Input59 = InstanceInput {
+					SourceOp = "SpotLight1",
+					Source = "Blue",
+					ControlGroup = 37,
+					Default = 1,
+				},
+				Input60 = InstanceInput {
+					SourceOp = "SpotLight1",
+					Source = "Intensity",
+					Default = 1.205,
+				},
+				
+				ParticleGlowControls= InstanceInput {
+					SourceOp = "ColorCorrector1_4",
+					Source = "ParticleGlowControls",
+					Page = "Controls",
+				},
+				Input61 = InstanceInput {
+					SourceOp = "ColorCorrector1_4",
+					Source = "Hue1",
+				},
+				Input62 = InstanceInput {
+					SourceOp = "ColorCorrector1_4",
+					Source = "Saturation1",
+					Default = 1.279,
+				},
+				Input63 = InstanceInput {
+					SourceOp = "Glow1_4",
+					Source = "XGlowSize",
+					Default = 13.8,
+				},
+				Input64 = InstanceInput {
+					SourceOp = "Glow1_4",
+					Source = "Glow",
+					Default = 0.778,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Glow1_4",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Background1_1 = Background {
+					Inputs = {
+						Width = Input { Value = 200, },
+						Height = Input { Value = 200, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+						TopLeftAlpha = Input { Value = 0.306, },
+						GradientType = Input { Value = FuID { "Radial" }, },
+						Start = Input { Value = { 0.5, 0.66 }, },
+						End = Input { Value = { 0.5, 0 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.990238662002968, 0.937139235415753, 0.999999842650077, 0.12780612244898 },
+									[0.00335570469798658] = { 0.994983453883567, 0.939284808853938, 0.999999960662519, 0.138 },
+									[0.98993288590604] = { 0.529993849584878, 0.729018611911749, 0.999988395443166, 0.7 },
+									[0.993288590604] = { 1, 0.688290765032396, 0.41, 0.175 },
+									[1] = { 0.329996209440351, 0.506504894190862, 0.999988513455608, 0.288 }
+								}
+							},
+						},
+						EffectMask = Input {
+							SourceOp = "Ellipse1_1",
+							Source = "Mask",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 124, 89.5 } },
+					UserControls = ordered() {
+						ParticleControls = {
+							LBLC_NumInputs = 22,
+							LINKS_Name = "Particle Controls",
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+						}
+					}
+				},
+				Ellipse1_1 = EllipseMask {
+					Inputs = {
+						SoftEdge = Input { Value = 0.0518, },
+						BorderWidth = Input { Value = -0.14, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 1, },
+						Height = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 124, 56.5 } },
+				},
+				pEmitter1_3 = pEmitter {
+					ID = 3,
+					Inputs = {
+						Number = Input { Value = 0.05, },
+						NumberVariance = Input { Value = 3, },
+						Lifespan = Input { Value = 600, },
+						LifespanVariance = Input { Value = 30, },
+						Velocity = Input { Value = 0.005, },
+						VelocityVariance = Input { Value = 0.1, },
+						Angle = Input { Value = 90, },
+						Style = Input { Value = FuID { "ParticleStyleBitmap" }, },
+						Region = Input { Value = FuID { "RectRgn" }, },
+						["ParticleStyle.ColorControls"] = Input { Value = 1, },
+						["ParticleStyle.Red"] = Input { Value = 0, },
+						["ParticleStyle.Green"] = Input { Value = 0.8083906163736, },
+						["ParticleStyle.Alpha"] = Input { Value = 0.457, },
+						["ParticleStyle.ColorVariance"] = Input { Value = 1, },
+						["ParticleStyle.GreenHigh"] = Input { Value = 0.13, },
+						["ParticleStyle.BlueLow"] = Input { Value = -0.455, },
+						["ParticleStyle.BlueHigh"] = Input { Value = 0.299, },
+						["ParticleStyle.SizeControls"] = Input { Value = 1, },
+						["ParticleStyle.Size"] = Input { Value = 0.0864, },
+						["ParticleStyle.SizeVariance"] = Input { Value = 0.4444, },
+						["ParticleStyle.SizeOverLife"] = Input {
+							SourceOp = "pEmitter1_3SizeoverLife",
+							Source = "Value",
+						},
+						["ParticleStyle.FadeIn"] = Input { Value = 0.2, },
+						["ParticleStyle.FadeOut"] = Input { Value = 0.8, },
+						["ParticleStyle.BlurOverLife"] = Input {
+							SourceOp = "pEmitter1_3BluroverLife2D",
+							Source = "Value",
+						},
+						["ParticleStyleBitmap.DropToolsHere"] = Input {
+							SourceOp = "Background1_1",
+							Source = "Output",
+						},
+						["RectRgn.Translate.Y"] = Input { Value = -0.8068728908017, },
+						["RectRgn.Rotate.X"] = Input { Value = -90, },
+						["RectRgn.Width"] = Input { Value = 2, },
+						["RectRgn.Height"] = Input { Value = 2, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 234, 89.5 } },
+					UserControls = ordered() {
+						EmitterControls = {
+							LBLC_NumInputs = 18,
+							LINKS_Name = "Particle Emitter Controls",
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+						}
+					}
+				},
+				pEmitter1_3SizeoverLife = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+				},
+				pEmitter1_3BluroverLife2D = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+				},
+				pTurbulence1_3 = pTurbulence {
+					ID = 6,
+					Inputs = {
+						XStrength = Input { Value = 0.115, },
+						YStrength = Input {
+							Value = 0.115,
+							Expression = "XStrength",
+						},
+						ZStrength = Input {
+							Value = 0.115,
+							Expression = "XStrength",
+						},
+						StrengthOverLifeLUT = Input {
+							SourceOp = "pTurbulence1_3StrengthoverLifeLUT",
+							Source = "Value",
+						},
+						Density = Input { Value = 2.1, },
+						Input = Input {
+							SourceOp = "pEmitter1_3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 234, 122.5 } },
+				},
+				pTurbulence1_3StrengthoverLifeLUT = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0.5, RH = { 0.333333333333333, 0.5 }, Flags = { Linear = true } },
+							[1] = { 0.5, LH = { 0.666666666666667, 0.5 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+				},
+				SpotLight1 = LightSpot {
+					Inputs = {
+						["Transform3DOp.Translate.X"] = Input { Value = 5.302926, },
+						["Transform3DOp.Translate.Y"] = Input { Value = 1.186443, },
+						["Transform3DOp.Translate.Z"] = Input { Value = 4.729488, },
+						["Transform3DOp.UseTarget"] = Input { Value = 1, },
+						Intensity = Input { Value = 1.205, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 344, 188.5 } },
+					UserControls = ordered() {
+						LightControls = {
+							LBLC_NumInputs = 5,
+							LINKS_Name = "Main Light Controls",
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+						}
+					}
+				},
+				ColorCorrector1_4 = ColorCorrector {
+					Inputs = {
+						WheelSaturation1 = Input { Value = 1.279, },
+						MasterRGBGain = Input { Value = 0.6, },
+						ColorRanges = Input {
+							Value = ColorCurves {
+								Curves = {
+									{
+										Points = {
+											{ 0, 1 },
+											{ 0.4, 0.2 },
+											{ 0.6, 0 },
+											{ 1, 0 }
+										}
+									},
+									{
+										Points = {
+											{ 0, 0 },
+											{ 0.4, 0 },
+											{ 0.6, 0.2 },
+											{ 1, 1 }
+										}
+									}
+								}
+							},
+						},
+						HistogramIgnoreTransparent = Input { Value = 1, },
+						Input = Input {
+							SourceOp = "Renderer3D1_3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 605, 181.5 } },
+					UserControls = ordered() {
+						ParticleGlowControls = {
+							LBLC_NumInputs = 4,
+							LINKS_Name = "Particle Glow Controls",
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+						}
+					}
+				},
+				Glow1_4 = Glow {
+					CtrlWZoom = false,
+					Inputs = {
+						Blend = Input { Value = 0.154, },
+						XGlowSize = Input { Value = 13.8, },
+						Glow = Input { Value = 0.778, },
+						Input = Input {
+							SourceOp = "ColorCorrector1_4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 729, 155.5 } },
+				},
+				pRender1_3 = pRender {
+					Inputs = {
+						_MotionBlurWarning = Input { Disabled = true, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						OutputMode = Input { Disabled = true, },
+						IntegrationMethod = Input { Value = FuID { "RK4" }, },
+						PreGenerateFrames = Input { Value = 300, },
+						["MaterialID.MaterialID"] = Input { Value = 2, },
+						["ObjectID.ObjectID"] = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "pTurbulence1_3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 234, 155.5 } },
+				},
+				Merge3D1_2 = Merge3D {
+					Inputs = {
+						PassThroughLights = Input { Value = 1, },
+						SceneInput1 = Input {
+							SourceOp = "pRender1_3",
+							Source = "Output",
+						},
+						SceneInput2 = Input {
+							SourceOp = "Camera3D1_5",
+							Source = "Output",
+						},
+						SceneInput3 = Input {
+							SourceOp = "SpotLight1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 344, 155.5 } },
+				},
+				Renderer3D1_3 = Renderer3D {
+					CustomData = {
+						ToolVersion = 2,
+					},
+					Inputs = {
+						["RendererOpenGL.LightingEnabled"] = Input { Value = 1, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						SceneInput = Input {
+							SourceOp = "Merge3D1_2",
+							Source = "Output",
+						},
+						["RendererSoftware.LightingEnabled"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 454, 155.5 } },
+				},
+				Camera3D1_5 = Camera3D {
+					Inputs = {
+						["Transform3DOp.Translate.Z"] = Input { Value = 1.676875, },
+						["Transform3DOp.UseTarget"] = Input { Value = 1, },
+						AoV = Input { Value = 19.26427, },
+						FLength = Input { Value = 34.9999968656308, },
+						["Stereo.Mode"] = Input { Value = FuID { "Mono" }, },
+						FilmGate = Input { Value = FuID { "BMD_URSA_4K_16x9" }, },
+						ApertureW = Input { Value = 0.831496062992126, },
+						ApertureH = Input { Value = 0.467716535433071, },
+						["SurfacePlaneInputs.ObjectID.ObjectID"] = Input { Value = 1, },
+						["MtlStdInputs.MaterialID"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 399, 89.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ParticlesBokehFullFrame"
+}

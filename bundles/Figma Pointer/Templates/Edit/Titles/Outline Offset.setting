@@ -1,0 +1,676 @@
+{
+	Tools = ordered() {
+		OutlineOffset = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainText = InstanceInput {
+					SourceOp = "mainText",
+					Source = "MainText",
+					Page = "Controls",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "StyledText",
+					Name = "Main Text",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Size",
+					Default = 1.07,
+				},
+				Input70 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "LineSpacing",
+					Default = 0.701,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "ExtrusionDepth",
+					Default = 0.0421,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "BevelDepth",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "BevelWidth",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Red1",
+					Name = "Text Color",
+					ControlGroup = 8,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Green1",
+					Name = "Main Text Color",
+					ControlGroup = 8,
+					Default = 0.6,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "Blue1",
+					Name = "Color",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularRed",
+					Name = "Specular Color",
+					ControlGroup = 9,
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularGreen",
+					ControlGroup = 9,
+					Default = 0.3640771198332,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularBlue",
+					ControlGroup = 9,
+					Default = 0.3,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularIntensity",
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "RedBevel",
+					Name = "Main Text Bevel Color",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "GreenBevel",
+					Name = "Color",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "BlueBevel",
+					Name = "Color",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularRedBevel",
+					Name = "Specular Color",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularGreenBevel",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularBlueBevel",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "mainText",
+					Source = "SpecularIntensityBevel",
+					Default = 1,
+				},
+				FrontOutline = InstanceInput {
+					SourceOp = "frontOutline",
+					Source = "FrontOutline",
+					Page = "Controls",
+				},
+				Input24 = InstanceInput {
+					SourceOp = "frontOutline",
+					Source = "ExtrusionDepth",
+					Name = "Front Outline Depth",
+					Default = 0.01,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "frontOutline",
+					Source = "RedBevel",
+					Name = "Front Outline Color",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input29 = InstanceInput {
+					SourceOp = "frontOutline",
+					Source = "GreenBevel",
+					Name = "Color",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "frontOutline",
+					Source = "BlueBevel",
+					Name = "Color",
+					ControlGroup = 19,
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "frontOutline",
+					Source = "Transform3DOp.Translate.Z",
+					Name = "Front Outline Offset",
+					Default = 0.0420517370815,
+				},
+				BackOutline = InstanceInput {
+					SourceOp = "backOutline",
+					Source = "BackOutline",
+					Page = "Controls",
+				},
+				Input32 = InstanceInput {
+					SourceOp = "backOutline",
+					Source = "BevelDepth",
+					Name = "Back Outline Depth",
+					Default = 0.0028,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "backOutline",
+					Source = "RedBevel",
+					Name = "Back Outline Color",
+					ControlGroup = 24,
+					Default = 0.5,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "backOutline",
+					Source = "GreenBevel",
+					Name = "Color",
+					ControlGroup = 24,
+					Default = 0.5,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "backOutline",
+					Source = "BlueBevel",
+					Name = "Color",
+					ControlGroup = 24,
+					Default = 0.5,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "backOutline",
+					Source = "Transform3DOp.Translate.Z",
+					Name = "Back Outline Offset",
+					Default = -0.0669082089515,
+				},
+				MainLight = InstanceInput {
+					SourceOp = "mainLight",
+					Source = "MainLight",
+					Page = "Controls",
+				},
+				Input41 = InstanceInput {
+					SourceOp = "mainLight",
+					Source = "Red",
+					Name = "Main Light Color",
+					ControlGroup = 28,
+					Default = 1,
+				},
+				Input42 = InstanceInput {
+					SourceOp = "mainLight",
+					Source = "Green",
+					ControlGroup = 28,
+					Default = 1,
+				},
+				Input43 = InstanceInput {
+					SourceOp = "mainLight",
+					Source = "Blue",
+					ControlGroup = 28,
+					Default = 1,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "mainLight",
+					Source = "Intensity",
+					Default = 1,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "mainLight",
+					Source = "Transform3DOp.Translate.X",
+					Default = -0.7641635540786,
+				},
+				Input39 = InstanceInput {
+					SourceOp = "mainLight",
+					Source = "Transform3DOp.Translate.Y",
+					Default = 1.051446,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "mainLight",
+					Source = "Transform3DOp.Translate.Z",
+					Default = 1.417244,
+				},
+				BlurControl = InstanceInput {
+					SourceOp = "output",
+					Source = "BlurControl",
+					Page = "Controls",
+				},
+				Input101 = InstanceInput {
+					SourceOp = "output",
+					Source = "MotionBlur",
+					Default = 1,
+				},
+				Input102 = InstanceInput {
+					SourceOp = "output",
+					Source = "Quality",
+					Default = 3,
+				},
+				Input103 = InstanceInput {
+					SourceOp = "output",
+					Source = "ShutterAngle",
+					Default = 198.4,
+				},
+				Input104 = InstanceInput {
+					SourceOp = "output",
+					Source = "CenterBias",
+					Default = -0.16,
+				},
+				Input105 = InstanceInput {
+					SourceOp = "output",
+					Source = "SampleSpread",
+					Default = 1.06,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "output",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 582.667, 35.8485 },
+				Flags = {
+					AllowPan = false,
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 588.958, 163.008, 294.479, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				mainText = Text3D {
+					NameSet = true,
+					Inputs = {
+						HorizontalJustification = Input { Value = 1, },
+						Alignment = Input { Value = 1, },
+						SelectTransform = Input { Value = 2, },
+						LineSpacing = Input {
+							SourceOp = "Publish5",
+							Source = "Value",
+						},
+						CharacterSpacing = Input {
+							SourceOp = "Publish6",
+							Source = "Value",
+						},
+						Opacity1 = Input {
+							SourceOp = "mainTextOpacity",
+							Source = "Value",
+						},
+						Color1 = Input { Value = 0, },
+						SpecularRed = Input { Value = 0.976, },
+						SpecularGreen = Input { Value = 0.976, },
+						SpecularBlue = Input { Value = 0.976, },
+						StyledText = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						Font = Input {
+							SourceOp = "Publish2",
+							Source = "Value",
+						},
+						Style = Input {
+							SourceOp = "Publish3",
+							Source = "Value",
+						},
+						Size = Input {
+							SourceOp = "Publish4",
+							Source = "Value",
+						},
+						VerticalJustification = Input { Value = 3, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ExtrusionProfile = Input {
+							SourceOp = "mainTextExtrusionProfile",
+							Source = "Value",
+						},
+						ExtrusionDepth = Input { Value = 0.0421, },
+						MainText = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -231.958, 60.7353 } },
+					UserControls = ordered() { MainText = { LBLC_NumInputs = 22, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Main Text Controls", } }
+				},
+				mainTextExtrusionProfile = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0666666666666667, 0.333333333333333 }, Flags = { Linear = true } },
+							[0.2] = { 1, LH = { 0.133333333333333, 0.666666666666667 }, RH = { 0.4, 1 }, Flags = { Linear = true } },
+							[0.8] = { 1, LH = { 0.6, 1 }, RH = { 0.866666666666667, 0.666666666666667 }, Flags = { Linear = true } },
+							[1] = { 0, LH = { 0.933333333333333, 0.333333333333333 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+					NameSet = true,
+				},
+				mainTextOpacity = BezierSpline {
+					SplineColor = { Red = 179, Green = 28, Blue = 244 },
+					KeyFrames = {
+						[135] = { 1, RH = { 140, 0.666666666666667 }, Flags = { Linear = true } },
+						[150] = { 0, LH = { 145, 0.333333333333333 }, Flags = { Linear = true } }
+					}
+				},
+				frontOutline = Text3D {
+					NameSet = true,
+					Inputs = {
+						HorizontalJustification = Input { Value = 1, },
+						Alignment = Input { Value = 1, },
+						["Transform3DOp.Translate.Z"] = Input { Value = 0.0420517370815, },
+						SelectTransform = Input { Value = 2, },
+						LineSpacing = Input {
+							SourceOp = "Publish5",
+							Source = "Value",
+						},
+						CharacterSpacing = Input {
+							SourceOp = "Publish6",
+							Source = "Value",
+						},
+						Opacity1 = Input { Expression = "mainText.Opacity1", },
+						UseOneMaterial = Input { Value = 0, },
+						Color1 = Input { Value = 0, },
+						Alpha1 = Input { Value = 0, },
+						RedBevel = Input { Value = 0.250980392156863, },
+						GreenBevel = Input { Value = 0.874509803921569, },
+						StyledText = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						Font = Input {
+							SourceOp = "Publish2",
+							Source = "Value",
+						},
+						Style = Input {
+							SourceOp = "Publish3",
+							Source = "Value",
+						},
+						Size = Input {
+							SourceOp = "Publish4",
+							Source = "Value",
+						},
+						VerticalJustification = Input { Value = 3, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Extrusion = Input { Value = 1, },
+						ExtrusionProfile = Input {
+							SourceOp = "frontOutlineExtrusionProfile",
+							Source = "Value",
+						},
+						ExtrusionDepth = Input { Value = 0.01, },
+						BevelDepth = Input { Value = 0.0028, },
+						BevelWidth = Input { Value = 0.01, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -142.384, 11.2541 } },
+					UserControls = ordered() { FrontOutline = { LBLC_NumInputs = 5, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Front Outline Controls", } }
+				},
+				frontOutlineExtrusionProfile = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0666666666666667, 0.333333333333333 }, Flags = { Linear = true } },
+							[0.2] = { 1, LH = { 0.133333333333333, 0.666666666666667 }, RH = { 0.4, 1 }, Flags = { Linear = true } },
+							[0.8] = { 1, LH = { 0.6, 1 }, RH = { 0.866666666666667, 0.666666666666667 }, Flags = { Linear = true } },
+							[1] = { 0, LH = { 0.933333333333333, 0.333333333333333 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+					NameSet = true,
+				},
+				backOutline = Text3D {
+					NameSet = true,
+					Inputs = {
+						HorizontalJustification = Input { Value = 1, },
+						Alignment = Input { Value = 1, },
+						["Transform3DOp.Translate.Z"] = Input { Value = -0.0669082089515, },
+						SelectTransform = Input { Value = 2, },
+						LineSpacing = Input {
+							SourceOp = "Publish5",
+							Source = "Value",
+						},
+						CharacterSpacing = Input {
+							SourceOp = "Publish6",
+							Source = "Value",
+						},
+						Opacity1 = Input { Expression = "mainText.Opacity1", },
+						UseOneMaterial = Input { Value = 0, },
+						Color1 = Input { Value = 0, },
+						Alpha1 = Input { Value = 0, },
+						RedBevel = Input { Value = 0.0509803921568627, },
+						GreenBevel = Input { Value = 0.215686274509804, },
+						BlueBevel = Input { Value = 0.725490196078431, },
+						StyledText = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						Font = Input {
+							SourceOp = "Publish2",
+							Source = "Value",
+						},
+						Style = Input {
+							SourceOp = "Publish3",
+							Source = "Value",
+						},
+						Size = Input {
+							SourceOp = "Publish4",
+							Source = "Value",
+						},
+						VerticalJustification = Input { Value = 3, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						ExtrusionProfile = Input {
+							SourceOp = "backOutlineExtrusionProfile",
+							Source = "Value",
+						},
+						ExtrusionDepth = Input { Value = 0.01, },
+						BevelDepth = Input { Value = 0.0028, },
+						BevelWidth = Input { Value = 0.02, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -121.663, 105.08 } },
+					UserControls = ordered() { BackOutline = { LBLC_NumInputs = 5, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Back Outline Controls", } }
+				},
+				backOutlineExtrusionProfile = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.0666666666666667, 0.333333333333333 }, Flags = { Linear = true } },
+							[0.2] = { 1, LH = { 0.133333333333333, 0.666666666666667 }, RH = { 0.4, 1 }, Flags = { Linear = true } },
+							[0.8] = { 1, LH = { 0.6, 1 }, RH = { 0.866666666666667, 0.666666666666667 }, Flags = { Linear = true } },
+							[1] = { 0, LH = { 0.933333333333333, 0.333333333333333 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 192, Green = 128, Blue = 64 },
+					CtrlWZoom = false,
+					NameSet = true,
+				},
+				textMerge = Merge3D {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["Transform3DOp.Translate.Z"] = Input {
+							SourceOp = "textMergeZOffset",
+							Source = "Value",
+						},
+						["Transform3DOp.Rotate.Y"] = Input {
+							SourceOp = "textMergeYRotation",
+							Source = "Value",
+						},
+						SceneInput1 = Input {
+							SourceOp = "backOutline",
+							Source = "Output",
+						},
+						SceneInput2 = Input {
+							SourceOp = "mainText",
+							Source = "Output",
+						},
+						SceneInput4 = Input {
+							SourceOp = "frontOutline",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -122.233, 60.7353 } },
+				},
+				textMergeZOffset = BezierSpline {
+					SplineColor = { Red = 254, Green = 56, Blue = 46 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 2.25, RH = { 6, 0.962905805774287 }, Flags = { Linear = true } },
+						[18] = { -1.61128258267714, LH = { 12.0007016395294, -1.55148689640967 }, RH = { 57, -2 } },
+						[135] = { -2.63503444018725, LH = { 95.6, -2.4 }, RH = { 139.999790534031, -2.66485989625883 } },
+						[150] = { -30, LH = { 145.157561077962, -20.8429591167272 } }
+					}
+				},
+				textMergeYRotation = BezierSpline {
+					SplineColor = { Red = 128, Green = 255, Blue = 128 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 25, RH = { 50, 10 }, Flags = { Linear = true } },
+						[150] = { -20, LH = { 100, -5 }, Flags = { Linear = true } }
+					}
+				},
+				mainLight = LightPoint {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["Transform3DOp.Translate.X"] = Input { Value = -0.7641635540786, },
+						["Transform3DOp.Translate.Y"] = Input { Value = 1.051446, },
+						["Transform3DOp.Translate.Z"] = Input { Value = 1.417244, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -9.97752, 8.43524 } },
+					UserControls = ordered() { MainLight = { LBLC_NumInputs = 7, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Main Light Controls", } }
+				},
+				Merge3D2 = Merge3D {
+					CtrlWShown = false,
+					Inputs = {
+						SceneInput1 = Input {
+							SourceOp = "textMerge",
+							Source = "Output",
+						},
+						SceneInput2 = Input {
+							SourceOp = "mainLight",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -9.97752, 60.7353 } },
+				},
+				output = Renderer3D {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					CustomData = { ToolVersion = 2 },
+					Inputs = {
+						GlobalOut = Input { Value = 500, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Depth = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						SceneInput = Input {
+							SourceOp = "KeyframeStretcher1",
+							Source = "Result",
+						},
+						RendererType = Input { Value = FuID { "RendererOpenGL" }, },
+						["RendererOpenGL.AntiAliasing.Channels.RGBA.HighQuality.Enable"] = Input { Value = 1, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Supersampling.HighQuality.RateX"] = Input { Value = 3, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Supersampling.HighQuality.RateY"] = Input { Value = 8, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Multisampling.LowQuality.SampleCount"] = Input { Value = 2, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Multisampling.HighQuality.SampleCount"] = Input { Value = 3, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Supersampling.HighQuality.RateX"] = Input { Value = 8, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Supersampling.HighQuality.RateY"] = Input { Value = 8, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Multisampling.LowQuality.SampleCount"] = Input { Value = 0, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Multisampling.HighQuality.SampleCount"] = Input { Value = 0, },
+						["RendererOpenGL.AccumulationEffects"] = Input { Value = 1, },
+						["RendererOpenGL.AccumQuality"] = Input { Value = 2, },
+						["RendererOpenGL.LightingEnabled"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 231, 60.7353 } },
+					UserControls = ordered() { BlurControl = { LBLC_NumInputs = 5, INPID_InputControl = "LabelControl", LBLC_DropDownButton = true, LINKS_Name = "Motion Blur Controls", } },
+					SubInputsData = {
+						RendererOpenGL = {
+							Version = 1
+						}
+					}
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					CtrlWShown = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "Merge3D2",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 150, },
+						StretchStart = Input { Value = 18, },
+						StretchEnd = Input { Value = 135, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 113.465, 60.7353 } },
+				}
+			},
+		},
+		Publish1 = PublishText {
+			Inputs = {
+				Value = Input { Value = "SAMPLE", },
+			},
+		},
+		Publish2 = PublishText {
+			Inputs = {
+				Value = Input { Value = "Open Sans", },
+			},
+		},
+		Publish3 = PublishText {
+			Inputs = {
+				Value = Input { Value = "Regular", },
+			},
+		},
+		Publish4 = PublishNumber {
+			Inputs = {
+				Value = Input { Value = 1.07, },
+			},
+		},
+		Publish6 = PublishNumber {
+			Inputs = {
+				Value = Input { Value = 1, },
+			},
+		},
+		Publish5 = PublishNumber {
+			CtrlWZoom = false,
+			Inputs = {
+				Value = Input { Value = 0.701, },
+			},
+		}
+	},
+	ActiveTool = "OutlineOffset"
+}

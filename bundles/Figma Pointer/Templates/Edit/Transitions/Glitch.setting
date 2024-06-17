@@ -1,0 +1,594 @@
+{
+	Tools = ordered() {
+		TransitionGlitch = GroupOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge_1",
+					Source = "Background",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "null_1",
+					Source = "Input",
+					Name = "Foreground",
+				}
+			},
+			Outputs = {
+				Output7 = InstanceOutput {
+					SourceOp = "Shake2",
+					Source = "Y",
+				},
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Displace",
+					Source = "Output",
+				},
+				Output3 = InstanceOutput {
+					SourceOp = "Perturb1",
+					Source = "Value",
+				},
+				Output4 = InstanceOutput {
+					SourceOp = "Perturb2",
+					Source = "Value",
+				},
+				Output6 = InstanceOutput {
+					SourceOp = "Shake2",
+					Source = "X",
+				},
+				Output5 = InstanceOutput {
+					SourceOp = "Shake2",
+					Source = "Position",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 405.966, 148.5 },
+				Flags = {
+					ConnectedSnap = true,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 953.975, 294.678, 249.135, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 259.456, 13.2656 }
+			},
+			Tools = ordered() {
+				Merge_1 = Merge {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle",
+							Source = "Mask",
+						},
+						Blend = Input {
+							SourceOp = "Expression2",
+							Source = "NumberResult",
+						},
+						Foreground = Input {
+							SourceOp = "null_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 24.9045, 49.5 } },
+				},
+				ColorDodge = Merge {
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+						ApplyMode = Input { Value = FuID { "Color Dodge" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 24.9045, 84.9225 } },
+				},
+				Glitch = GroupOperator {
+					NameSet = true,
+					Outputs = {
+						Output1 = InstanceOutput {
+							SourceOp = "Merge3",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo {
+						Pos = { -173.947, 132.285 },
+						Flags = {
+							AllowPan = false,
+							ConnectedSnap = true,
+							AutoSnap = true,
+							RemoveRouters = true
+						},
+						Size = { 994.67, 198.486, 497.335, 24.2424 },
+						Direction = "Horizontal",
+						PipeStyle = "Direct",
+						Scale = 1,
+						Offset = { -7.18524, -4.89903 }
+					},
+					Tools = ordered() {
+						Merge3 = Merge {
+							Inputs = {
+								Background = Input {
+									SourceOp = "ChannelBooleans2",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "ColorCorrector1",
+									Source = "Output",
+								},
+								ApplyMode = Input { Value = FuID { "Screen" }, },
+								PerformDepthMerge = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 434, 140.819 } },
+						},
+						Background2 = Background {
+							CtrlWShown = false,
+							Inputs = {
+								GlobalOut = Input { Value = 47, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Type = Input { Value = FuID { "Gradient" }, },
+								GradientType = Input { Value = FuID { "Reflect" }, },
+								Start = Input { Value = { 0.48780487804878, 0.493788819875776 }, },
+								End = Input {
+									SourceOp = "Perturb1",
+									Source = "Value",
+								},
+								Gradient = Input {
+									Value = Gradient {
+										Colors = {
+											[0] = { 0, 0, 0, 1 },
+											[1] = { 0.11, 0.165, 0.134, 1 }
+										}
+									},
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 434, 45.6666 } },
+						},
+						ColorCorrector1 = ColorCorrector {
+							CtrlWShown = false,
+							Inputs = {
+								WheelHue1 = Input {
+									SourceOp = "Perturb2",
+									Source = "Value",
+								},
+								ColorRanges = Input {
+									Value = ColorCurves {
+										Curves = {
+											{
+												Points = {
+													{ 0, 1 },
+													{ 0.4, 0.2 },
+													{ 0.6, 0 },
+													{ 1, 0 }
+												}
+											},
+											{
+												Points = {
+													{ 0, 0 },
+													{ 0.4, 0 },
+													{ 0.6, 0.2 },
+													{ 1, 1 }
+												}
+											}
+										}
+									},
+								},
+								HistogramIgnoreTransparent = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "Background2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 434, 75.3636 } },
+						},
+						Trails2 = Trails {
+							CtrlWShown = false,
+							Inputs = {
+								GainRed = Input { Value = 0.701, },
+								Input = Input {
+									SourceOp = "Rectangle1",
+									Source = "Mask",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 310, 78.3936 } },
+						},
+						Rectangle1 = RectangleMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								MaskWidth = Input { Value = 1920, },
+								MaskHeight = Input { Value = 1080, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									SourceOp = "Shake2",
+									Source = "Position",
+								},
+								Width = Input { Value = 0.5452961672474, },
+								Height = Input { Value = 0.2267080745342, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 310, 49.9086 } },
+						},
+						ChannelBooleans2 = ChannelBoolean {
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Trails2",
+									Source = "Output",
+								},
+								MultiplyByMask = Input { Value = 1, },
+								Background = Input {
+									SourceOp = "Merge4",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 310, 140.819 } },
+						},
+						FastNoise2_1 = FastNoise {
+							Inputs = {
+								MaskChannel = Input { Value = 1, },
+								GlobalOut = Input { Value = 47, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 4.17, },
+								XScale = Input { Value = 4.88, },
+								Type = Input { Value = 1, },
+								GradientType = Input { Value = 3, },
+								Start = Input { Value = { 0.493055555555556, 0.504098360655738 }, },
+								Gradient = Input {
+									Value = Gradient {
+										Colors = {
+											[0] = { 0.677, 0.314128, 0.66248512, 1 },
+											[1] = { 0.78, 0.22542, 0.22542, 1 }
+										}
+									},
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -82, 140.819 } },
+						},
+						Merge2 = Merge {
+							Inputs = {
+								Background = Input {
+									SourceOp = "TV1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "FastNoise2_1",
+									Source = "Output",
+								},
+								ApplyMode = Input { Value = FuID { "Color Burn" }, },
+								PerformDepthMerge = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 78.6599, 140.819 } },
+						},
+						Duplicate1 = Fuse.Duplicate {
+							Inputs = {
+								XSize = Input { Value = 2.9, },
+								RandomSeed = Input { Value = 26024, },
+								Background = Input {
+									SourceOp = "FastNoise2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 199.33, 75.0306 } },
+						},
+						FastNoise2 = FastNoise {
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "BrightnessContrast1",
+									Source = "Output",
+								},
+								MaskChannel = Input { Value = 1, },
+								GlobalOut = Input { Value = 47, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 4.17, },
+								XScale = Input { Value = 4.88, },
+								Type = Input { Value = 1, },
+								Gradient = Input {
+									Value = Gradient {
+										Colors = {
+											[0] = { 0.496, 0.038688, 0.280148735999999, 1 },
+											[0.472636815920398] = { 0.205065, 0.43000524, 0.945, 1 },
+											[0.925373134328358] = { 0.070912256, 0.976, 0.040992, 1 }
+										}
+									},
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 199.33, 42.0306 } },
+						},
+						Merge4 = Merge {
+							Inputs = {
+								Blend = Input { Value = 0.402, },
+								Background = Input {
+									SourceOp = "Merge2",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "Duplicate1",
+									Source = "Output",
+								},
+								PerformDepthMerge = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 199.33, 140.819 } },
+						},
+						TV1 = TV {
+							Inputs = {
+								ScanLines = Input { Value = 5, },
+								Horizontal = Input { Value = 0.159, },
+								Amplitude = Input { Value = 1.42, },
+								Frequency = Input { Value = 4.8, },
+								Power = Input { Value = 14.17, },
+								Size = Input { Value = 0.591, },
+								Input = Input {
+									SourceOp = "Merge1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 78.6599, 108.97 } },
+						},
+						Merge1 = Merge {
+							Inputs = {
+								Blend = Input { Value = 0.465, },
+								Background = Input {
+									SourceOp = "BrightnessContrast2",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "BrightnessContrast1",
+									Source = "Output",
+								},
+								Center = Input { Value = { 0.5, 0.866459627329193 }, },
+								Size = Input { Value = 1.51, },
+								ApplyMode = Input { Value = FuID { "Screen" }, },
+								Edges = Input { Value = 1, },
+								PerformDepthMerge = Input { Value = 0, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -87.3401, 108.97 } },
+						},
+						BrightnessContrast2 = BrightnessContrast {
+							Inputs = {
+								Gain = Input { Value = 4.24, },
+								Input = Input {
+									SourceOp = "DirectionalBlur1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -204, 108.97 } },
+						},
+						DirectionalBlur1 = DirectionalBlur {
+							Inputs = {
+								Type = Input { Value = 2, },
+								Length = Input { Value = 0.2, },
+								Input = Input {
+									SourceOp = "BrightnessContrast1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -204, 75.9696 } },
+						},
+						BrightnessContrast1 = BrightnessContrast {
+							Inputs = {
+								Gain = Input { Value = 1.32, },
+								Lift = Input { Value = -1, },
+								Gamma = Input { Value = 0.27, },
+								Contrast = Input { Value = 0.21, },
+								Input = Input {
+									SourceOp = "ChangeDepth1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -204, 42.0306 } },
+						},
+						ChangeDepth1 = ChangeDepth {
+							Inputs = {
+								Depth = Input { Value = 1, },
+								Input = Input {
+									SourceOp = "MosaicBlur1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -204, 8.69656 } },
+						},
+						MosaicBlur1 = ofx.com.blackmagicdesign.resolvefx.mosaicblur {
+							CtrlWShown = false,
+							Inputs = {
+								Source = Input {
+									SourceOp = "FastNoise1",
+									Source = "Output",
+								},
+								PixelFrequency = Input { Value = 41.8, },
+								SmoothStrength = Input { Value = 0, },
+								BorderType = Input { Value = FuID { "BORDER_TYPE_CONSTANT" }, },
+								BlendAmount = Input { Value = 0, },
+								blendGroup = Input { Value = 1, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								resolvefxVersion = Input { Value = "2.1", },
+							},
+							ViewInfo = OperatorInfo { Pos = { -320.67, 8.69656 } },
+						},
+						FastNoise1 = FastNoise {
+							CtrlWShown = false,
+							Inputs = {
+								GlobalOut = Input { Value = 47, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Detail = Input { Value = 10, },
+								Contrast = Input { Value = 5, },
+								XScale = Input { Value = 50.31, },
+								SeetheRate = Input { Value = 0.449, },
+								GradientType = Input { Value = 2, },
+								Gradient = Input {
+									Value = Gradient {
+										Colors = {
+											[0] = { 0.87729384, 0.08721, 0.969, 1 },
+											[1] = { 0.402, 0.303442464, 0.242004, 1 }
+										}
+									},
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -432.874, 8.69656 } },
+						}
+					},
+				},
+				Perturb1 = PerturbPoint {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						Value = Input { Value = { 1.044, 0.5 }, },
+						XScale = Input { Value = 0.52, },
+						YScale = Input { Value = 0.88, },
+					},
+				},
+				Perturb2 = PerturbNumber {
+					CtrlWShown = false,
+				},
+				Shake2 = Shake {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Faster = true,
+					Inputs = {
+						Smoothness = Input { Value = 0.001, },
+					},
+				},
+				Displace = Displace {
+					NameSet = true,
+					Inputs = {
+						Blend = Input {
+							SourceOp = "AnimCurves1_1",
+							Source = "Value",
+						},
+						Type = Input { Value = 1, },
+						XChannel = Input { Value = 4, },
+						XRefraction = Input { Value = 0.4, },
+						YChannel = Input { Value = 0, },
+						YRefraction = Input { Value = -0.4, },
+						Input = Input {
+							SourceOp = "ColorDodge",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 24.9045, 132.285 } },
+				},
+				Rectangle = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						BorderWidth = Input {
+							SourceOp = "ResolveParameter1",
+							Source = "Value",
+						},
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							SourceOp = "Perturb3_1",
+							Source = "Value",
+						},
+						Width = Input { Value = 1.220131, },
+						Height = Input { Value = 0.0860058309038, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 155.204, 49.5 } },
+				},
+				ResolveParameter1 = ResolveParameter {
+					CtrlWShown = false,
+				},
+				Perturb3_1 = PerturbPoint {
+					CtrlWShown = false,
+					Inputs = {
+						Value = Input { Value = { 0.5389222522951, 0.5 }, },
+						XScale = Input { Value = 0, },
+						RandomSeed = Input { Value = 8510, },
+						Wobble = Input { Value = 10, },
+						Speed = Input { Value = 3.31, },
+					},
+				},
+				null_1 = Transform {
+					NameSet = true,
+					ViewInfo = OperatorInfo { Pos = { 24.9045, 14.7925 } },
+				}
+			},
+		},
+		Expression2 = Expression {
+			Inputs = {
+				n1 = Input {
+					SourceOp = "Shake3",
+					Source = "X",
+				},
+				n2 = Input {
+					SourceOp = "AnimCurves2_1",
+					Source = "Value",
+				},
+				NumberExpression = Input { Value = "n2", },
+			},
+		},
+		Shake3 = Shake {
+			CtrlWZoom = false,
+			Faster = true,
+		},
+		AnimCurves2_1 = LUTLookup {
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonExpression2onMerge_1BlendLookup",
+					Source = "Value",
+				},
+			},
+		},
+		AnimCurvesonExpression2onMerge_1BlendLookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+			NameSet = true,
+		},
+		AnimCurves1_1 = LUTLookup {
+			CtrlWZoom = false,
+			Inputs = {
+				Source = Input { Value = FuID { "Transition" }, },
+				Lookup = Input {
+					SourceOp = "AnimCurvesonDisplaceLookup",
+					Source = "Value",
+				},
+				Mirror = Input { Value = 1, },
+			},
+		},
+		AnimCurvesonDisplaceLookup = LUTBezier {
+			KeyColorSplines = {
+				[0] = {
+					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+					[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+				}
+			},
+			SplineColor = { Red = 255, Green = 255, Blue = 255 },
+			NameSet = true,
+		}
+	},
+	ActiveTool = "TransitionGlitch"
+}

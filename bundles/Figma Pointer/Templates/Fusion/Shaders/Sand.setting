@@ -1,0 +1,190 @@
+{
+	Tools = ordered() {
+		Sand = GroupOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "BumpMap4_2_2_1_1_2_5",
+					Source = "HeightScale",
+					Name = "Sand Height Scale",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "TextureTransform1",
+					Source = "Scale.U",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "TextureTransform1",
+					Source = "Scale.V",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Color.Red",
+					Name = "Diffuse Color",
+					ControlGroup = 4,
+					Default = 0.92,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Color.Green",
+					ControlGroup = 4,
+					Default = 0.8682170542636,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Color.Blue",
+					ControlGroup = 4,
+					Default = 0.6201550387597,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Color.Alpha",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Diffuse.Opacity",
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.Color.Red",
+					Name = "Specular Color",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.Color.Green",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.Color.Blue",
+					ControlGroup = 7,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.Intensity",
+					Default = 0,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.SpreadU",
+					Default = 0.5,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "Specular.SpreadV",
+					Default = 0.16,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Ward3_2_2_1_1_2_4",
+					Source = "MaterialOutput",
+				},
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0, }, },
+			Tools = ordered() {
+				FastNoise2 = FastNoise {
+					Inputs = {
+						Width = Input { Value = 512, },
+						Height = Input { Value = 512, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+						XScale = Input { Value = 1000, },
+						Color1Red = Input { Value = 0.0935251798561, },
+						Color1Green = Input { Value = 0.0431654676259, },
+						Color1Alpha = Input { Value = 1, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 1, },
+									[1] = { 1, 1, 1, 1, },
+								},
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 4620, -445.5, }, },
+				},
+				Filter1 = Filter {
+					Inputs = {
+						FilterType = Input { Value = 5, },
+						Green = Input { Value = 0, },
+						Blue = Input { Value = 0, },
+						Power = Input { Value = 10, },
+						Animated = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "FastNoise2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 4565, -379.5, }, },
+				},
+				Texture2D1 = Texture2DOperator {
+					Inputs = {
+						Input = Input {
+							SourceOp = "Filter1",
+							Source = "Output",
+						},
+						UScale = Input { Expression = "TextureTransform1.Scale.U", },
+						VScale = Input { Expression = "TextureTransform1.Scale.V", },
+						WrapMode = Input { Value = FuID { "Wrap", }, },
+						MaterialID = Input { Value = 8, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4565, -346.5, }, },
+				},
+				BumpMap4_2_2_1_1_2_5 = BumpMap {
+					Inputs = {
+						Input = Input {
+							SourceOp = "FastNoise2",
+							Source = "Output",
+						},
+						SourceChannel = Input { Value = FuID { "Red", }, },
+						WrapMode = Input { Value = FuID { "Wrap", }, },
+						MaterialID = Input { Value = 19, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4730, -379.5, }, },
+				},
+				TextureTransform1 = TextureTransformOperator {
+					Inputs = {
+						["Rotation.Nest"] = Input { Value = 1, },
+						["Scale.Nest"] = Input { Value = 1, },
+						["Scale.W"] = Input { Value = 0.5, },
+						MaterialInput = Input {
+							SourceOp = "BumpMap4_2_2_1_1_2_5",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 7, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4730, -346.5, }, },
+				},
+				Ward3_2_2_1_1_2_4 = MtlWard {
+					CtrlWZoom = false,
+					Inputs = {
+						["Diffuse.Color.Red"] = Input { Value = 0.92, },
+						["Diffuse.Color.Green"] = Input { Value = 0.8682170542636, },
+						["Diffuse.Color.Blue"] = Input { Value = 0.6201550387597, },
+						["Diffuse.Color.Material"] = Input {
+							SourceOp = "Texture2D1",
+							Source = "MaterialOutput",
+						},
+						["Specular.Nest"] = Input { Value = 1, },
+						["Specular.Intensity"] = Input { Value = 0, },
+						["Specular.SpreadU"] = Input { Value = 0.5, },
+						["Bumpmap.Material"] = Input {
+							SourceOp = "TextureTransform1",
+							Source = "MaterialOutput",
+						},
+						MaterialID = Input { Value = 18, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 4675, -313.5, }, },
+				},
+			},
+		},
+	},
+	ActiveTool = "Sand",
+}

@@ -1,0 +1,391 @@
+{
+	Tools = ordered() {
+		Spin = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "ImagePlane3D1_1",
+					Source = "MaterialInput",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "ImagePlane3D2_1",
+					Source = "MaterialInput",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "ImagePlane3D2_1",
+					Source = "Transform3DOp.Rotate.X",
+					Name = "X",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ImagePlane3D2_1",
+					Source = "Transform3DOp.Rotate.Y",
+					Name = "Y",
+					Default = -180,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "AnimCurves2_1",
+					Source = "Scale",
+					Name = "Vertical Scale",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "AnimCurves1_1",
+					Source = "Scale",
+					Name = "Horizontal Scale",
+					Default = 180,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "AnimCurves1_1",
+					Source = "Curve",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "AnimCurves1_1",
+					Source = "EaseIn",
+					Width = 0.5,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "AnimCurves1_1",
+					Source = "EaseOut",
+					Width = 0.5,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Renderer3D1_1",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Renderer3D1_1",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Renderer3D1_1",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Renderer3D1_1",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Renderer3D1_1",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Buttons_1",
+					Source = "Button01",
+					Width = 0.5,
+					Page = "Controls",
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Buttons_1",
+					Source = "Button02",
+					Width = 0.5,
+					Page = "Controls",
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Buttons_1",
+					Source = "Button03",
+					Width = 0.5,
+					Page = "Controls",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Buttons_1",
+					Source = "Button04",
+					Width = 0.5,
+					Page = "Controls",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Renderer3D1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ImagePlane3D1_1 = ImagePlane3D {
+					CtrlWShown = false,
+					Inputs = {
+						["SurfacePlaneInputs.ObjectID.ObjectID"] = Input { Value = 1, },
+						["MtlStdInputs.MaterialID"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 107.258 } },
+				},
+				ImagePlane3D2_1 = ImagePlane3D {
+					CtrlWShown = false,
+					Inputs = {
+						["Transform3DOp.Translate.Z"] = Input { Value = -0.00015, },
+						["Transform3DOp.Rotate.Y"] = Input { Value = -180, },
+						["SurfacePlaneInputs.ObjectID.ObjectID"] = Input { Value = 3, },
+						["MtlStdInputs.MaterialID"] = Input { Value = 3, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 8.25758 } },
+				},
+				Transform3D1_1 = Transform3D {
+					CtrlWShown = false,
+					Inputs = {
+						SceneInput = Input {
+							SourceOp = "ImagePlane3D1_1",
+							Source = "Output",
+						},
+						["Transform3DOp.Rotate.X"] = Input {
+							SourceOp = "AnimCurves2_1",
+							Source = "Value",
+						},
+						["Transform3DOp.Rotate.Y"] = Input {
+							SourceOp = "AnimCurves1_1",
+							Source = "Value",
+						},
+						["Transform3DOp.PivotNest"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 107.258 } },
+				},
+				AnimCurves2_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input {
+							SourceOp = "Publish1_1",
+							Source = "Value",
+						},
+						EaseIn = Input {
+							SourceOp = "Publish2_1",
+							Source = "Value",
+						},
+						EaseOut = Input {
+							SourceOp = "Publish3_1",
+							Source = "Value",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup_1",
+							Source = "Value",
+						},
+						Scale = Input { Value = 0, },
+					},
+				},
+				Publish1_1 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "Linear" }, }
+					},
+				},
+				Publish2_1 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "None" }, }
+					},
+				},
+				Publish3_1 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "None" }, }
+					},
+				},
+				AnimCurves2Lookup_1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				AnimCurves1_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input {
+							SourceOp = "Publish1_1",
+							Source = "Value",
+						},
+						EaseIn = Input {
+							SourceOp = "Publish2_1",
+							Source = "Value",
+						},
+						EaseOut = Input {
+							SourceOp = "Publish3_1",
+							Source = "Value",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup_1",
+							Source = "Value",
+						},
+						Scale = Input { Value = 180, },
+					},
+				},
+				AnimCurves1Lookup_1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Instance_Transform3D1_1 = Transform3D {
+					CtrlWShown = false,
+					SourceOp = "Transform3D1_1",
+					Inputs = {
+						SceneInput = Input {
+							SourceOp = "ImagePlane3D2_1",
+							Source = "Output",
+						},
+						["Transform3DOp.Translation"] = Input { },
+						["Transform3DOp.Rotation"] = Input { },
+						["Transform3DOp.PivotNest"] = Input { },
+						["Transform3DOp.ScaleNest"] = Input { },
+						["Transform3DOp.TargetNest"] = Input { },
+						["Transform3DOp.Import"] = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 8.25758 } },
+				},
+				Merge3D1_1 = Merge3D {
+					CtrlWShown = false,
+					Inputs = {
+						SceneInput1 = Input {
+							SourceOp = "Transform3D1_1",
+							Source = "Output",
+						},
+						SceneInput2 = Input {
+							SourceOp = "Camera3D1_1",
+							Source = "Output",
+						},
+						SceneInput3 = Input {
+							SourceOp = "Instance_Transform3D1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 107.258 } },
+				},
+				Camera3D1_1 = Camera3D {
+					CtrlWShown = false,
+					Inputs = {
+						["Transform3DOp.Translate.Z"] = Input { Value = 1.657, },
+						AoV = Input { Value = 19.26427, },
+						FLength = Input { Value = 34.9999968656307, },
+						["Stereo.Mode"] = Input { Value = FuID { "OffAxis" }, },
+						FilmGate = Input { Value = FuID { "BMD_URSA_4K_16x9" }, },
+						ApertureW = Input { Value = 0.831496062992126, },
+						ApertureH = Input { Value = 0.467716535433071, },
+						["SurfacePlaneInputs.ObjectID.ObjectID"] = Input { Value = 2, },
+						["MtlStdInputs.MaterialID"] = Input { Value = 2, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 173.258 } },
+				},
+				Renderer3D1_1 = Renderer3D {
+					CtrlWShown = false,
+					CustomData = {
+						ToolVersion = 2
+					},
+					Inputs = {
+						Width = Input { Value = 3840, },
+						Height = Input { Value = 2160, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						SceneInput = Input {
+							SourceOp = "Merge3D1_1",
+							Source = "Output",
+						},
+						RendererType = Input { Value = FuID { "RendererOpenGL" }, },
+						["RendererOpenGL.AntiAliasing.Channels.RGBA.HighQuality.Enable"] = Input { Value = 1, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Supersampling.HighQuality.RateX"] = Input { Value = 3, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Supersampling.HighQuality.RateY"] = Input { Value = 3, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Multisampling.LowQuality.SampleCount"] = Input { Value = 2, },
+						["RendererOpenGL.AntiAliasing.Presets.Color.Multisampling.HighQuality.SampleCount"] = Input { Value = 3, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Supersampling.HighQuality.RateX"] = Input { Value = 3, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Supersampling.HighQuality.RateY"] = Input { Value = 3, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Multisampling.LowQuality.SampleCount"] = Input { Value = 2, },
+						["RendererOpenGL.AntiAliasing.Presets.Aux.Multisampling.HighQuality.SampleCount"] = Input { Value = 3, },
+						["RendererOpenGL.AccumQuality"] = Input { Value = 32, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 165, 107.258 } },
+					SubInputsData = {
+						RendererOpenGL = {
+							Version = 1
+						}
+					}
+				},
+				Buttons_1 = Fuse.Wireless {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "C:\\Users\\qa\\Desktop\\Fu Settings\\Transitions\\Tools\\"
+							}
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 8.25758 } },
+					UserControls = ordered() {
+						Button01 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input7',-180)\n tool:SetInput('Input1',0)\n tool:SetInput('Input2',-180)\n tool:SetInput('Input3',0)",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Spin Left",
+						},
+						Button02 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input7',180)\n tool:SetInput('Input1',0)\n tool:SetInput('Input2',-180)\n tool:SetInput('Input3',0)",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Spin Right",
+						},
+						Button03 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input7',0)\n tool:SetInput('Input1',-180)\n tool:SetInput('Input2',0)\n tool:SetInput('Input3',-180)",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Spin Up",
+						},
+						Button04 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							BTNCS_Execute = "tool:SetInput('Input7',0)\n tool:SetInput('Input1',-180)\n tool:SetInput('Input2',0)\n tool:SetInput('Input3',180)",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Spin Down",
+						},
+						Button05 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Button05",
+						},
+						Button06 = {
+							ICD_Width = 0.5,
+							INP_Integer = false,
+							INP_External = false,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "ButtonControl",
+							LINKS_Name = "Button06",
+						}
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "Spin1"
+}

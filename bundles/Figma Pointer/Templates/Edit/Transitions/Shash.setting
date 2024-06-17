@@ -1,0 +1,406 @@
+{
+	Tools = ordered() {
+		Shash = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "PipeRouter2",
+					Source = "Input",
+				},
+				MainInput2 = InstanceInput {
+					SourceOp = "PipeRouter1",
+					Source = "Input",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Dissolve2",
+					Source = "Color",
+					Page = "Controls",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "AnimCurves1",
+					Source = "Curve",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "AnimCurves1",
+					Source = "EaseIn",
+					Width = 0.5,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "AnimCurves1",
+					Source = "EaseOut",
+					Width = 0.5,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Dissolve2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				PipeRouter2 = PipeRouter {
+					ViewInfo = PipeRouterInfo { Pos = { 324.128, 102.692 } },
+				},
+				PipeRouter1 = PipeRouter {
+					ViewInfo = PipeRouterInfo { Pos = { 320.344, 147.988 } },
+				},
+				Dissolve2 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					CtrlWZoom = false,
+					Inputs = {
+						Mix = Input { Expression = "Color", },
+						Background = Input {
+							SourceOp = "AnalogDamage1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "AnalogDamage1",
+							Source = "Output",
+						},
+						Color = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 880, 148.5 } },
+					UserControls = ordered() {
+						Color = {
+							LINKS_Name = "Color",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "CheckboxControl",
+							INP_Integer = false,
+							CBC_TriState = false,
+							ICS_ControlPage = "Controls",
+						}
+					}
+				},
+				AnalogDamage1 = ofx.com.blackmagicdesign.resolvefx.AnalogDamage {
+					Inputs = {
+						Source = Input {
+							SourceOp = "Dissolve1",
+							Source = "Output",
+						},
+						pluginPreset = Input { Value = FuID { "PRESET_CUSTOM" }, },
+						telecineGroup = Input { Value = 0, },
+						telecineVignetting = Input { Value = 0, },
+						telecineVignettingAspect = Input { Value = 1.33, },
+						telecineShutterWeave = Input { Value = 0, },
+						signalGroup = Input { Value = 1, },
+						signalNoiseScale = Input { Value = 0.7, },
+						signalNoise = Input {
+							SourceOp = "AnimCurves1",
+							Source = "Value",
+						},
+						signalChromaNoise = Input {
+							SourceOp = "AnimCurves2",
+							Source = "Value",
+						},
+						signalDetailLoss = Input { Value = 0, },
+						signalChromaDetailLoss = Input { Value = 0, },
+						signalGhosting = Input { Value = 0, },
+						signalGhostOffset = Input { Value = 0.3, },
+						signalChromaOffset = Input { Value = 0, },
+						dialsGroup = Input { Value = 0, },
+						dialsBrightness = Input { Value = 0, },
+						dialsContrast = Input { Value = 1, },
+						dialsSaturation = Input { Value = 1, },
+						dialsTint = Input { Value = 0, },
+						scanGroup = Input { Value = 0, },
+						scanHShift = Input { Value = 0, },
+						scanVShift = Input { Value = 0, },
+						scanVHold = Input { Value = 0, },
+						scanVHoldLatch = Input { Value = 0.1, },
+						scanOverscan = Input { Value = 1, },
+						scanVScale = Input { Value = 1, },
+						scanVBlanking = Input { Value = 0.5, },
+						lineGroup = Input { Value = 0, },
+						lineSharp = Input { Value = 0, },
+						lineFreq = Input { Value = 12, },
+						lineColor = Input { Value = 0, },
+						buildGroup = Input { Value = 0, },
+						buildPhosphBright = Input { Value = 0, },
+						buildPhosphTint = Input { Value = 0, },
+						buildDefocus = Input { Value = 0, },
+						buildCurvature = Input { Value = 0, },
+						buildIsMask = Input { Value = 0, },
+						buildIsMaskAlpha = Input { Value = 0, },
+						buildEdgeMask = Input { Value = 0, },
+						buildMaskAlpha = Input { Value = 1.33, },
+						vhsGroup = Input { Value = 0, },
+						vhsShakyFootHeight = Input { Value = 0, },
+						vhsShakyFootOffset = Input { Value = 0.2, },
+						vhsShakyFootJitter = Input { Value = 0, },
+						isNewlyCreated = Input { Value = 0, },
+						isLegacyAlphaBehavior = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.2", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 148.5 } },
+					UserControls = ordered() {
+						Color = {
+							LINKS_Name = "Color",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "CheckboxControl",
+							INP_Integer = false,
+							CBC_TriState = false,
+							ICS_ControlPage = "Controls",
+						}
+					}
+				},
+				AnimCurves1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						EaseIn = Input {
+							SourceOp = "Publish2",
+							Source = "Value",
+						},
+						EaseOut = Input {
+							SourceOp = "Publish3",
+							Source = "Value",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup",
+							Source = "Value",
+						},
+						Mirror = Input { Value = 1, },
+					},
+				},
+				Publish1 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "Easing" }, }
+					},
+				},
+				Publish2 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "Sine" }, }
+					},
+				},
+				Publish3 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "Sine" }, }
+					},
+				},
+				AnimCurves1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				AnimCurves2 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input {
+							SourceOp = "Publish1",
+							Source = "Value",
+						},
+						EaseIn = Input {
+							SourceOp = "Publish2",
+							Source = "Value",
+						},
+						EaseOut = Input {
+							SourceOp = "Publish3",
+							Source = "Value",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup",
+							Source = "Value",
+						},
+						Mirror = Input { Value = 1, },
+					},
+				},
+				AnimCurves2Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Dissolve1 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					Inputs = {
+						Mix = Input {
+							SourceOp = "AnimCurves3",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "PipeRouter1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "PipeRouter2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 148.5 } },
+				},
+				AnimCurves3 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input { Value = FuID { "Custom" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves4Lookup",
+							Source = "Value",
+						},
+					},
+				},
+				AnimCurves4Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0.5] = { 0, RH = { 0.500000000333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[0.500000001] = { 1, LH = { 0.500000000666667, 0.666666666666667 }, Flags = { Linear = true }, offset = 1e-09 }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				AnalogDamage1_1 = ofx.com.blackmagicdesign.resolvefx.AnalogDamage {
+					Inputs = {
+						Source = Input {
+							SourceOp = "Dissolve1",
+							Source = "Output",
+						},
+						pluginPreset = Input { Value = FuID { "PRESET_CUSTOM" }, },
+						telecineGroup = Input { Value = 0, },
+						telecineVignetting = Input { Value = 0, },
+						telecineVignettingAspect = Input { Value = 1.33, },
+						telecineShutterWeave = Input { Value = 0, },
+						signalGroup = Input { Value = 1, },
+						signalNoiseScale = Input { Value = 0.7, },
+						signalNoise = Input {
+							SourceOp = "AnimCurves1_1",
+							Source = "Value",
+						},
+						signalChromaNoise = Input { Value = 0, },
+						signalDetailLoss = Input { Value = 0, },
+						signalChromaDetailLoss = Input { Value = 0, },
+						signalGhosting = Input { Value = 0, },
+						signalGhostOffset = Input { Value = 0.3, },
+						signalChromaOffset = Input { Value = 0, },
+						dialsGroup = Input { Value = 0, },
+						dialsBrightness = Input { Value = 0, },
+						dialsContrast = Input { Value = 1, },
+						dialsSaturation = Input { Value = 1, },
+						dialsTint = Input { Value = 0, },
+						scanGroup = Input { Value = 0, },
+						scanHShift = Input { Value = 0, },
+						scanVShift = Input { Value = 0, },
+						scanVHold = Input { Value = 0, },
+						scanVHoldLatch = Input { Value = 0.1, },
+						scanOverscan = Input { Value = 1, },
+						scanVScale = Input { Value = 1, },
+						scanVBlanking = Input { Value = 0.5, },
+						lineGroup = Input { Value = 0, },
+						lineSharp = Input { Value = 0, },
+						lineFreq = Input { Value = 12, },
+						lineColor = Input { Value = 0, },
+						buildGroup = Input { Value = 0, },
+						buildPhosphBright = Input { Value = 0, },
+						buildPhosphTint = Input { Value = 0, },
+						buildDefocus = Input { Value = 0, },
+						buildCurvature = Input { Value = 0, },
+						buildIsMask = Input { Value = 0, },
+						buildIsMaskAlpha = Input { Value = 0, },
+						buildEdgeMask = Input { Value = 0, },
+						buildMaskAlpha = Input { Value = 1.33, },
+						vhsGroup = Input { Value = 0, },
+						vhsShakyFootHeight = Input { Value = 0, },
+						vhsShakyFootOffset = Input { Value = 0.2, },
+						vhsShakyFootJitter = Input { Value = 0, },
+						isNewlyCreated = Input { Value = 0, },
+						isLegacyAlphaBehavior = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "1.2", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 82.5 } },
+					UserControls = ordered() {
+						Color = {
+							CBC_TriState = false,
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							INPID_InputControl = "CheckboxControl",
+							LINKS_Name = "Color",
+						}
+					}
+				},
+				AnimCurves1_1 = LUTLookup {
+					CtrlWZoom = false,
+					Inputs = {
+						Curve = Input {
+							SourceOp = "Publish1_1",
+							Source = "Value",
+						},
+						EaseIn = Input {
+							SourceOp = "Publish2_1",
+							Source = "Value",
+						},
+						EaseOut = Input {
+							SourceOp = "Publish3_1",
+							Source = "Value",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup_1",
+							Source = "Value",
+						},
+						Mirror = Input { Value = 1, },
+					},
+				},
+				Publish1_1 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "Easing" }, }
+					},
+				},
+				Publish2_1 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "None" }, }
+					},
+				},
+				Publish3_1 = PublishFuID {
+					CtrlWZoom = false,
+					Inputs = {
+						Value = Input { Value = FuID { "None" }, }
+					},
+				},
+				AnimCurves1Lookup_1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "Shash"
+}

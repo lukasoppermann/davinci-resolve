@@ -1,0 +1,357 @@
+{
+	Tools = ordered() {
+		DigitalGlitch1 = GroupOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Center",
+					Name = "Glitch Position",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "XSize",
+					Name = "Glitch Width",
+					Default = 0.28,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "YSize",
+					Name = "Glitch Height",
+					Default = 0.66,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Transform2_1",
+					Source = "Input",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Displace1_1",
+					Source = "RefractionStrength",
+					Name = "Glitch Chroma Scale",
+					Default = 0.1,
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "Shake1_3_1",
+					Source = "X",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "Shake1_3_1",
+					Source = "Y",
+				},
+				Output3 = InstanceOutput {
+					SourceOp = "Shake1_2_1_1",
+					Source = "X",
+				},
+				Output4 = InstanceOutput {
+					SourceOp = "Shake1_2_1_1",
+					Source = "Y",
+				},
+				Output5 = InstanceOutput {
+					SourceOp = "Shake1_1_1_1",
+					Source = "X",
+				},
+				Output6 = InstanceOutput {
+					SourceOp = "Shake1_1_1_1",
+					Source = "Y",
+				},
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Displace1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FastNoise3_1 = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1280, },
+						Height = Input { Value = 720, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 8.03, },
+						Contrast = Input { Value = 2.65, },
+						XScale = Input { Value = 9.45, },
+						SeetheRate = Input { Value = 0.575, },
+						Color1Alpha = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 137.237, -67.0498 } },
+				},
+				MosaicBlur2_1 = ofx.com.blackmagicdesign.resolvefx.mosaicblur {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "FastNoise3_1",
+							Source = "Output",
+						},
+						PixelFrequency = Input { Value = 20, },
+						SmoothStrength = Input { Value = 0, },
+						advancedControlsGroup = Input { Value = 1, },
+						BorderType = Input { Value = FuID { "BORDER_TYPE_CONSTANT" }, },
+						BlendAmount = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						resolvefxVersion = Input { Value = "2.2", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 259.532, -67.0498 } },
+				},
+				Transform1_1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Size = Input { Value = 2.78, },
+						Input = Input {
+							SourceOp = "MosaicBlur2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 439.802, -67.0498 } },
+				},
+				ChannelBooleans1_1 = ChannelBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						Operation = Input { Value = 8, },
+						Background = Input {
+							SourceOp = "MosaicBlur2_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 431.802, -9.2132 } },
+				},
+				Rectangle2_3_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							SourceOp = "Shake1_3_1",
+							Source = "Position",
+						},
+						Width = Input { Value = 0.5776699029126, },
+						Height = Input { Value = 0.176724137931, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 147.225, -1.0802 } },
+				},
+				Shake1_3_1 = Shake {
+					CtrlWZoom = false,
+					Faster = true,
+					Inputs = {
+						RandomSeed = Input { Value = 20380, },
+						Smoothness = Input { Value = 0.001, },
+					},
+				},
+				Rectangle2_2_1_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle2_3_1",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							SourceOp = "Shake1_2_1_1",
+							Source = "Position",
+						},
+						Width = Input { Value = 0.8203883495146, },
+						Height = Input { Value = 0.176724137931, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 147.225, 32.8239 } },
+				},
+				Shake1_2_1_1 = Shake {
+					CtrlWZoom = false,
+					Faster = true,
+					Inputs = {
+						RandomSeed = Input { Value = 9550, },
+						Smoothness = Input { Value = 0.001, },
+					},
+				},
+				Rectangle2_1_1_1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle2_2_1_1",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							SourceOp = "Shake1_1_1_1",
+							Source = "Position",
+						},
+						Width = Input { Value = 1.031553, },
+						Height = Input { Value = 0.1508620689655, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 147.225, 58.5639 } },
+				},
+				Shake1_1_1_1 = Shake {
+					CtrlWZoom = false,
+					Faster = true,
+					Inputs = {
+						RandomSeed = Input { Value = 14190, },
+						Smoothness = Input { Value = 0.001, },
+					},
+				},
+				Transform1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						UseSizeAndAspect = Input { Value = 0, },
+						XSize = Input { Value = 0.28, },
+						YSize = Input { Value = 0.66, },
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "Rectangle2_1_1_1",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 295.775, 58.5639 } },
+				},
+				ChannelBooleans3_1_1 = ChannelBoolean {
+					CtrlWShown = false,
+					Inputs = {
+						Operation = Input { Value = 6, },
+						Background = Input {
+							SourceOp = "ChannelBooleans1_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 439.802, 58.5639 } },
+				},
+				Transform3_1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input { Value = { 0.5, 0.911637931034483 }, },
+						UseSizeAndAspect = Input { Value = 0, },
+						XSize = Input { Value = 2.33, },
+						YSize = Input { Value = 0.08, },
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "ChannelBooleans3_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 609.142, 121.032 } },
+				},
+				BrightnessContrast1_1 = BrightnessContrast {
+					CtrlWShown = false,
+					Inputs = {
+						Gain = Input { Value = 1.25, },
+						Lift = Input { Value = -1, },
+						Gamma = Input { Value = 0.08, },
+						Input = Input {
+							SourceOp = "PipeRouter2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 836.442, 121.032 } },
+				},
+				PipeRouter2_1 = PipeRouter {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "Transform1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = PipeRouterInfo { Pos = { 836.442, -67.0498 } },
+				},
+				Transform2_1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "ChannelBooleans3_1_1",
+							Source = "Output",
+						},
+						MaskChannel = Input { Value = 1, },
+						Size = Input { Value = 2, },
+						Edges = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 439.802, 177.061 } },
+				},
+				Transform5_1 = Transform {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "BrightnessContrast1_1",
+							Source = "Output",
+						},
+						Blend = Input { Value = 0.2, },
+						MaskChannel = Input { Value = 1, },
+						Center = Input { Value = { 0.50121359223301, -0.0781896551724448 }, },
+						Edges = Input { Value = 2, },
+						Input = Input {
+							SourceOp = "Transform4_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 836.442, 177.061 } },
+				},
+				Transform4_1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Transform3_1",
+							Source = "Output",
+						},
+						Blend = Input { Value = 0.512, },
+						MaskChannel = Input { Value = 1, },
+						Center = Input { Value = { 0.5, 0.523 }, },
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "Transform2_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 609.142, 177.061 } },
+				},
+				Displace1_1 = Displace {
+					CtrlWShown = false,
+					Inputs = {
+						ProcessRed = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "Transform5_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "PipeRouter1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1003.44, 177.061 } },
+				},
+				PipeRouter1_1 = PipeRouter {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "ChannelBooleans3_1_1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = PipeRouterInfo { Pos = { 1003.44, 58.5639 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "DigitalGlitch1"
+}
