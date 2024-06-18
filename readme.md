@@ -9,9 +9,16 @@ All properties of an instance point to its _parent_ and will update with them. A
 To _deinstance_ a property and change it independent of the _parent_, right click on the name of the property to open the context menu and choose _Deinstance_.
 
 # Writing Expressions in Davinci Resolve
-You can use simple expressions or more complex [`lua`](https://lua.org/) script expressions.
+Expressions can be used in the `Fusion` page of Davinci Resolve. You can use simple expressions or more complex [`lua`](https://lua.org/) script expressions.
 
 ## Simple expressions
+A simple condition is just a calulation or similar and automatically returns the result. To show the expression field, type `=` into the value field and hit return or right-click the property name and choose `Expression`. 
+To remove the expression, right-click the property name and choose `Remove Expression`.
+
+### Connect two values on the same node.
+The simples expression is connecting two fields together. For example if you want `Width` to always equal `Height` you can just add `Height` into the expression field of `Width`.
+
+![connect with and height](assets/connect_width_height.png)
 
 ## LUA basics
 
