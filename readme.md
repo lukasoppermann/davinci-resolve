@@ -139,4 +139,7 @@ Number of current frame | `time`
 | The tangent of x assumed to be in radians | `tan(x)` |
 | The hyperbolic tangent of x | `tanh(x)` |
 
-#
+# Sources
+- [Blackmagic Fusion Simple Expressions-Cookbook + Tutorial](https://noahhaehnel.com/blog/fusion-simple-expressions-cookbook/3/#Get_Maximum_or_Minimum_of_different_values)
+- [lua.org](https://www.lua.org)
+- [Jayaretv: Fusion Expressions](https://jayaretv.com/tips/fusion-expressions/)
