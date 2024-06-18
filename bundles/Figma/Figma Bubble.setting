@@ -4,12 +4,12 @@
 			CtrlWZoom = false,
 			NameSet = true,
 			Inputs = ordered() {
-				Tip = Input { Value = 3, },
+				Tip = Input { Value = 0, },
 				Text = Input { Value = "Lukas\nOppermann", },
-				Size = Input { Value = 1.102, },
+				Size = Input { Value = 1, },
 				ColorRed = Input { Value = 0.6, },
-				ColorGreen = Input { Value = 0.52152, },
-				ColorBlue = Input { Value = 0.984, },
+				ColorGreen = Input { Value = 0.5, },
+				ColorBlue = Input { Value = 0.9, },
 			},
 			Outputs = {
 				Output1 = InstanceOutput {

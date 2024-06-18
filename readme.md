@@ -23,12 +23,33 @@ To _deinstance_ a property and change it independent of the _parent_, right clic
 `2` | Right viewer
 `3`, `4`,... | Additional viewers if available (e.g. I/O card)
 `~` | Clear all viewers
+|  |  |
+`cmd` + `f` | Find nodes in flow
+`cmd` + `a` | Select all nodes in flow
+`v` | Display Navigator
+`cmd` + `shift` + `v` | Paste instance
+copy of copied tool
 | | **For all selected nodes do:** |
 `F2` | Rename
 `cmd` + `g` | Group
 `cmd` + `t` | Swap FG/BG input
 `cmd` + `l` | Lock/unlock
 `cmd` + `p` | Pass Through / deactivate
+</details>
+
+<details>
+<summary>
+
+### Keyframes & Render Range
+</summary>
+
+| Shortcut | Description |
+| --- | --- |
+| `cmd` + `<-` | First Keyframe |
+| `cmd` + `->` | Last Keyframe |
+| `cmd` + drag mouse | select range |
+| `cmd` + drag mouse | select range |
+
 </details>
 
 # Writing Expressions in Davinci Resolve
@@ -176,12 +197,12 @@ ImgRectI = { left = 1733, bottom = 1013, right = 2104, top = 1147 }
 
 You can retrieve an individual value using an index staring with 1. So `Text1.Output.DataWindow[1]` will give you the value for `left`, `1733` in the example above.
 
-If you want to get the width you need to calculate the difference between the `left` and `right` values. But this gives you the pixel value. To turn this into the correct decimal value you need to devide it by the width of the composition `Text1.Output.Width` devided by two (I am not sure why it needs to be devided by two, if you know, please tell me).
+If you want to get the width you need to calculate the difference between the `left` and `right` values. But this gives you the pixel value. To turn this into the correct decimal value you need to devide it by the width of the composition `Text1.Output.Width`.
 
 | Value | Expression |
 | --- | --- |
-Width | `(Text1.Output.DataWindow[3]-Text1.Output.DataWindow[1])/(Text1.Output.Width/2)`
-Height | `(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/(Text1.Output.Height/2)`
+Width | `(Text1.Output.DataWindow[3]-Text1.Output.DataWindow[1])/Text1.Output.Width`
+Height | `(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/Text1.Output.Height`
 
 ## Composition values
 | Description | Value |
@@ -236,3 +257,4 @@ Exponent | ^
 - [Blackmagic Fusion Simple Expressions-Cookbook + Tutorial](https://noahhaehnel.com/blog/fusion-simple-expressions-cookbook/3/#Get_Maximum_or_Minimum_of_different_values)
 - [lua.org](https://www.lua.org)
 - [Jayaretv: Fusion Expressions](https://jayaretv.com/tips/fusion-expressions/)
+- [Keyboard shortcuts](https://vfxstudy.com/wp-content/uploads/2020/02/Fusion-Keyboard-Shortcuts-v1.pdf)
