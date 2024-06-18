@@ -9,7 +9,13 @@ All properties of an instance point to its _parent_ and will update with them. A
 To _deinstance_ a property and change it independent of the _parent_, right click on the name of the property to open the context menu and choose _Deinstance_.
 
 ## Shortcuts
+
+<details>
+<summary>
+
 ### Nodes Editor
+</summary>
+
 | Shortcut | Description |
 | --- | --- |
 | | **View selected node on:** |
@@ -23,6 +29,7 @@ To _deinstance_ a property and change it independent of the _parent_, right clic
 `cmd` + `t` | Swap FG/BG input
 `cmd` + `l` | Lock/unlock
 `cmd` + `p` | Pass Through / deactivate
+</details>
 
 # Writing Expressions in Davinci Resolve
 Expressions can be used in the `Fusion` page of Davinci Resolve. You can use simple expressions or more complex [`lua`](https://lua.org/) script expressions.
