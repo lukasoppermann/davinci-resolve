@@ -110,25 +110,6 @@ Below we have an `sRectangle` named `Box` which we want to change to fit below t
 We need to adjust the width and height of the `Box` using expressions:
 - Width: `:tWidth=Text.Output.Width;return tWidth`
 
-# Reference
-
-## Get height and width of a text
-Sadly `Text1.Width` and `Height` return the timeline resolution, and not the actual size of the text box.
-To get this you need to do some calculations using the `Text1.Output.DataWindow` property. The `DataWindow` prop is an object with four values:
-
-```
-ImgRectI = { left = 1733, bottom = 1013, right = 2104, top = 1147 }
-```
-
-You can retrieve an individual value using an index staring with 1. So `Text1.Output.DataWindow[1]` will give you the value for `left`, `1733` in the example above.
-
-If you want to get the width you need to calculate the difference between the `left` and `right` values. But this gives you the pixel value. To turn this into the correct decimal value you need to devide it by the width of the composition `Text1.Output.Width` devided by two (I am not sure why it needs to be devided by two, if you know, please tell me).
-
-| Value | Expression |
-| --- | --- |
-Width | `(Text1.Output.DataWindow[3]-Text1.Output.DataWindow[1])/(Text1.Output.Width/2)`
-Height | `(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/(Text1.Output.Height/2)`
-
 ## Set text color to balck or white depending on bg color
 To know when we need to change the text color we must know the _luminosity_ of the background color of our `Bubble` element.
 
@@ -159,6 +140,25 @@ iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((
 ```
 
 You need to add this expression to the `Red`, `Green` and `Blue` channel of the Text element.
+
+# Reference
+
+## Get height and width of a text
+Sadly `Text1.Width` and `Height` return the timeline resolution, and not the actual size of the text box.
+To get this you need to do some calculations using the `Text1.Output.DataWindow` property. The `DataWindow` prop is an object with four values:
+
+```
+ImgRectI = { left = 1733, bottom = 1013, right = 2104, top = 1147 }
+```
+
+You can retrieve an individual value using an index staring with 1. So `Text1.Output.DataWindow[1]` will give you the value for `left`, `1733` in the example above.
+
+If you want to get the width you need to calculate the difference between the `left` and `right` values. But this gives you the pixel value. To turn this into the correct decimal value you need to devide it by the width of the composition `Text1.Output.Width` devided by two (I am not sure why it needs to be devided by two, if you know, please tell me).
+
+| Value | Expression |
+| --- | --- |
+Width | `(Text1.Output.DataWindow[3]-Text1.Output.DataWindow[1])/(Text1.Output.Width/2)`
+Height | `(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/(Text1.Output.Height/2)`
 
 ## Composition values
 | Description | Value |
