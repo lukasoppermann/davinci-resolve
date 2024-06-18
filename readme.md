@@ -99,7 +99,66 @@ On the `Instance_BubbdleCorner` we use the following expressions:
 - X offset is set to: `:if(Bubble.Tip == 1 or Bubble.Tip == 3) then return BubbleBody.Translate.X + Width/2 else return BubbleBody.Translate.X - Width/2 end`
 - Y Offset is set to: `:if(Bubble.Tip == 0 or Bubble.Tip == 1) then return BubbleBody.Translate.Y + Height/2 else return BubbleBody.Translate.Y - Height/2 end`
 
+## A box that resizes to fit text
+![nodes for the text on top of a box](assets/text-in-box.png)
+
+## Setup
+We have a text node called `Text` and we expose the `Styled Text` property so the user can change it.
+Below we have an `sRectangle` named `Box` which we want to change to fit below the text with some spacing all around.
+
+## Expressions
+We need to adjust the width and height of the `Box` using expressions:
+- Width: `:tWidth=Text.Output.Width;return tWidth`
+
 # Reference
+
+## Get height and width of a text
+Sadly `Text1.Width` and `Height` return the timeline resolution, and not the actual size of the text box.
+To get this you need to do some calculations using the `Text1.Output.DataWindow` property. The `DataWindow` prop is an object with four values:
+
+```
+ImgRectI = { left = 1733, bottom = 1013, right = 2104, top = 1147 }
+```
+
+You can retrieve an individual value using an index staring with 1. So `Text1.Output.DataWindow[1]` will give you the value for `left`, `1733` in the example above.
+
+If you want to get the width you need to calculate the difference between the `left` and `right` values. But this gives you the pixel value. To turn this into the correct decimal value you need to devide it by the width of the composition `Text1.Output.Width` devided by two (I am not sure why it needs to be devided by two, if you know, please tell me).
+
+| Value | Expression |
+| --- | --- |
+Width | `(Text1.Output.DataWindow[3]-Text1.Output.DataWindow[1])/(Text1.Output.Width/2)`
+Height | `(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/(Text1.Output.Height/2)`
+
+## Set text color to balck or white depending on bg color
+To know when we need to change the text color we must know the _luminosity_ of the background color of our `Bubble` element.
+
+Each channel needs to be multiplied with a specific number, if you want to learn more, there is a [W3C document with the algorithm](https://www.w3.org/TR/AERT/#color-contrast).
+- Red - `0.299`
+- Green - `0.587`
+- Blue - `0.114`
+
+
+The math behind it is the following
+```
+luminosity = Sqrt(
+		(background.R^2) * 0.299 +
+		(background.G^2) * 0.587 +
+		(background.B^2) * 0.114
+  )
+
+if luminosity > 186 use Black 
+else Colors.White;
+```
+
+We can solve this using an `iif` expression in the 3 color channels of the `Text` element. 
+But there is no `Sqrt` (square root) function. Luckily an alternative is to use power of 1/2 (`^0.5`).
+
+Our final formular is:
+```
+iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)
+```
+
+You need to add this expression to the `Red`, `Green` and `Blue` channel of the Text element.
 
 ## Composition values
 | Description | Value |
@@ -138,6 +197,17 @@ Number of current frame | `time`
 | The square root of x | `sqrt(x)` |
 | The tangent of x assumed to be in radians | `tan(x)` |
 | The hyperbolic tangent of x | `tanh(x)` |
+
+## Arithmetic Operators
+
+| Description | Operators |
+| --- | --- |
+Add | +
+Subtract | -
+Divide | /
+Multiply | *
+Modulus divides and returns remainder | %
+Exponent | ^
 
 # Sources
 - [Blackmagic Fusion Simple Expressions-Cookbook + Tutorial](https://noahhaehnel.com/blog/fusion-simple-expressions-cookbook/3/#Get_Maximum_or_Minimum_of_different_values)
