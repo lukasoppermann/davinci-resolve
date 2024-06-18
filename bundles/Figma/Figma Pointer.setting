@@ -1,0 +1,256 @@
+{
+	Tools = ordered() {
+		FigmaPointer1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "PointerPath",
+					Source = "Red",
+					Name = "Color",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "PointerPath",
+					Source = "Green",
+					ControlGroup = 1,
+					Default = 0.44,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "PointerPath",
+					Source = "Blue",
+					ControlGroup = 1,
+					Default = 0.32,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Controls",
+					Source = "Size",
+					Default = 0.5,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Controls",
+					Source = "Offset",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Controls",
+					Source = "Rotation",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Output",
+					Source = "Output",
+				},
+				MainOutput2 = InstanceOutput {
+					SourceOp = "Controls",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				FigmaPointer = GroupOperator {
+					NameSet = true,
+					Outputs = {
+						Output1 = InstanceOutput {
+							SourceOp = "sRender",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 197.18, 54.831 } },
+					Tools = ordered() {
+						sRender = sRender {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Input = Input {
+									SourceOp = "sTransform",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 2426.67, -159.458 } },
+						},
+						Instance_PointerPath = sPolygon {
+							DrawMode = "ModifyOnly",
+							CtrlWShown = false,
+							NameSet = true,
+							SourceOp = "PointerPath",
+							Inputs = {
+								Red = Input { },
+								Green = Input { },
+								Blue = Input { },
+								Alpha = Input { },
+								CommentsNest = Input { },
+								FrameRenderScriptNest = Input { },
+								StartRenderScripts = Input { },
+								EndRenderScripts = Input { },
+							},
+							ViewInfo = OperatorInfo { Pos = { 2425.51, -89.2198 } },
+						},
+						sOutline = sOutline {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Thickness = Input { Value = 0.005, },
+								JoinStyle = Input { Value = 2, },
+								CapStyle = Input { Value = 0, },
+								Input = Input {
+									SourceOp = "Instance_PointerPath",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 2426.09, -120.541 } },
+						},
+						sTransform = sTransform {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								XSize = Input {
+									Value = 0.63,
+									Expression = "Controls.Size",
+								},
+								YSize = Input {
+									Value = 0.63,
+									Expression = "XSize",
+								},
+								ZRotation = Input { Expression = "Controls.Rotation", },
+								Input = Input {
+									SourceOp = "sMerge",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 2320.17, -159.028 } },
+						},
+						sMerge = sMerge {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Input1 = Input {
+									SourceOp = "PointerPath",
+									Source = "Output",
+								},
+								Input2 = Input {
+									SourceOp = "sOutline",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 2321.12, -120.756 } },
+						},
+						PointerPath = sPolygon {
+							DrawMode = "ModifyOnly",
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Size = Input { Value = 0.07, },
+								Polyline = Input {
+									Value = Polyline {
+										Closed = true,
+										Points = {
+											{ Linear = true, X = 0.270122058823529, Y = -0.0339918918918919, LX = -0.100027450980392, LY = -0.021131981981982, RX = 0.0364676470588235, RY = 0.00770405405405394 },
+											{ Linear = true, X = 0.379525, Y = -0.0108797297297298, LX = -0.0364676470588234, LY = -0.00770405405405394, RX = -0.0324181372549019, RY = 0.017172972972973 },
+											{ Linear = true, X = 0.282270588235294, Y = 0.0406391891891892, LX = 0.0324181372549019, LY = -0.017172972972973, RX = -0.209110294117647, RY = 0.110773693693694 },
+											{ Linear = true, X = -0.345060294117647, Y = 0.37296027027027, LX = 0.209110294117647, LY = -0.110773693693694, RX = -0.0274996568627451, RY = 0.0145675675675676 },
+											{ Linear = true, X = -0.427559264705882, Y = 0.416662972972973, LX = 0.0274996568627451, LY = -0.0145675675675676, RX = 0.00568710784313725, RY = -0.0286962162162162 },
+											{ Linear = true, X = -0.410497941176471, Y = 0.330574324324324, LX = -0.00568710784313725, LY = 0.0286962162162162, RX = 0.0417248039215687, RY = -0.210536486486486 },
+											{ Linear = true, X = -0.285323529411765, Y = -0.301035135135135, LX = -0.0417248039215686, LY = 0.210536486486487, RX = 0.00610980392156862, RY = -0.0308283783783784 },
+											{ Linear = true, X = -0.266994117647059, Y = -0.39352027027027, LX = -0.00610980392156862, LY = 0.0308283783783784, RX = 0.0202049019607843, RY = 0.0252423423423423 },
+											{ Linear = true, X = -0.206379411764706, Y = -0.317793243243243, LX = -0.0202049019607843, LY = -0.0252423423423423, RX = 0.0588063725490196, RY = 0.0734684684684686 },
+											{ Linear = true, X = -0.0299602941176471, Y = -0.0973878378378379, LX = -0.0588063725490196, LY = -0.0734684684684684, RX = 0.100027450980392, RY = 0.0211319819819821 }
+										}
+									},
+								},
+								Green = Input { Value = 0.44, },
+								Blue = Input { Value = 0.32, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 2321, -90 } },
+						}
+					},
+				},
+				Clear = Background {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 226.568, 8.54269 } },
+					Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+				},
+				Output = Merge {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Clear",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "sRender",
+							Source = "Output",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 335.597, 7.80064 } },
+				},
+				Controls = Background {
+					NameSet = true,
+					Inputs = {
+						Angle = Input { Value = 282, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Size = Input { Value = 0.5, },
+						Offset = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 118.178, 9.80227 } },
+					Colors = { TileColor = { R = 0.584313725490196, G = 0.294117647058824, B = 0.803921568627451 }, },
+					UserControls = ordered() {
+						Size = {
+							INP_MaxAllowed = 2.5,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							IC_Steps = 0,
+							INP_MaxScale = 2.5,
+							INP_Default = 1.5,
+							INP_MinScale = 0.5,
+							INP_MinAllowed = 0.5,
+							LINKID_DataType = "Number",
+							ICD_Center = 1.5,
+							LINKS_Name = "Size",
+						},
+						Offset = {
+							INP_MaxAllowed = 1,
+							INP_Integer = false,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							INP_Default = 0.5,
+							INP_MinScale = 0,
+							INP_MaxScale = 1,
+							LINKS_Name = "Offset",
+						},
+						Rotation = {
+							INP_MaxAllowed = 360,
+							INP_Integer = true,
+							INPID_InputControl = "ScrewControl",
+							INP_MaxScale = 360,
+							INPID_PreviewControl = "AngleControl",
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							INP_MinScale = 0,
+							LINKS_Name = "Rotation",
+						}
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "FigmaPointer1"
+}
