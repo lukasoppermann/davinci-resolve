@@ -9,7 +9,7 @@ All properties of an instance point to its _parent_ and will update with them. A
 To _deinstance_ a property and change it independent of the _parent_, right click on the name of the property to open the context menu and choose _Deinstance_.
 
 # Writing Expressions in Davinci Resolve
-You can use simple expressions or more complex `lua` script expressions.
+You can use simple expressions or more complex [`lua`](https://lua.org/) script expressions.
 
 ## Simple expressions
 
@@ -19,7 +19,7 @@ To enable `lua` mode, add a colon `:` to the beginning of your code. Use semicol
 If you are in `lua` mode you need to `return` something from you script.
 
 ### If
-In `lua` you can use `if then` conditions. Make sure to use `end` after the last return.
+In `lua` you can use [`if then`](https://www.lua.org/pil/4.3.1.html) conditions. Make sure to use `end` after the last return.
 
 **Simple if else**
 ```lua
@@ -32,6 +32,8 @@ In `lua` you can use `if then` conditions. Make sure to use `end` after the last
 ```
 
 **multiple conditions**
+Use `and` if both conditions should be true or `or` if only one must be true.
+
 ```lua
 :if (a <= 1 and a >= 0) then return a elseif (a > 1) return 1 else 0 end
 ```
