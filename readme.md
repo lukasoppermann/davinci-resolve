@@ -1,3 +1,13 @@
+# General Davinci Resolve knowledge
+
+## Instances
+To create an instance copy a node and paste it with `cmd` + `shift` + `v`. A green line will point to the _"parent"_ element.
+
+![instanced border property](assets/instanced_property.png)
+
+All properties of an instance point to its _parent_ and will update with them. A green outline marks the propertries that are connected to the parent.
+To _deinstance_ a property and change it independent of the _parent_, right click on the name of the property to open the context menu and choose _Deinstance_.
+
 # Writing Expressions in Davinci Resolve
 You can use simple expressions or more complex `lua` script expressions.
 
@@ -31,8 +41,6 @@ Define a variable using an `=` and used it via its name.
 ```lua
 :a=1;b=2;c=b/a;
 ```
-
-:bMax=0.13;bMin=0.07; bWidth=0.09 * Controls.Size;if (bWidth <= bMax and bWidth >= bMin ) then return bWidth elseif(bWidth < bMin) then return bMin else return bMax end
 
 ## Custom controls
 
