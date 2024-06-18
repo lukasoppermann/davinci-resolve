@@ -8,6 +8,22 @@ To create an instance copy a node and paste it with `cmd` + `shift` + `v`. A gre
 All properties of an instance point to its _parent_ and will update with them. A green outline marks the propertries that are connected to the parent.
 To _deinstance_ a property and change it independent of the _parent_, right click on the name of the property to open the context menu and choose _Deinstance_.
 
+## Shortcuts
+### Nodes Editor
+| Shortcut | Description |
+| --- | --- |
+| | **View selected node on:** |
+`1` | Left viewer
+`2` | Right viewer
+`3`, `4`,... | Additional viewers if available (e.g. I/O card)
+`~` | Clear all viewers
+| | **For all selected nodes do:** |
+`F2` | Rename
+`cmd` + `g` | Group
+`cmd` + `t` | Swap FG/BG input
+`cmd` + `l` | Lock/unlock
+`cmd` + `p` | Pass Through / deactivate
+
 # Writing Expressions in Davinci Resolve
 Expressions can be used in the `Fusion` page of Davinci Resolve. You can use simple expressions or more complex [`lua`](https://lua.org/) script expressions.
 
