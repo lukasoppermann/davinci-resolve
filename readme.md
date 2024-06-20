@@ -55,6 +55,22 @@ copy of copied tool
 # Writing Expressions in Davinci Resolve
 Expressions can be used in the `Fusion` page of Davinci Resolve. You can use simple expressions or more complex [`lua`](https://lua.org/) script expressions.
 
+## General
+### Aspect ration
+Sometimes you need to account for the aspect ratio vs reference size. E.g. if you have a `16:9` composition but a `1:1` reference aspect ration.
+
+To position an `sRectangle` in the center you would use the following expression for the `Offset X`:
+
+```
+0.5
+```
+
+However for the `Offset Y` you need to divide this by `16/9`
+
+```
+0.5/(16/9)
+```
+
 ## Simple expressions
 A simple condition is just a calulation or similar and automatically returns the result. To show the expression field, type `=` into the value field and hit return or right-click the property name and choose `Expression`.
 To remove the expression, right-click the property name and choose `Remove Expression`.
