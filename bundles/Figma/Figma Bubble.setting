@@ -1,15 +1,16 @@
 {
 	Tools = ordered() {
-		Bubble = MacroOperator {
+		Bubble = GroupOperator {
 			CtrlWZoom = false,
 			NameSet = true,
+			CustomData = { Path = { Map = { ["Setting:"] = "/Users/lukasoppermann/Repos/Davinci Resolve/bundles/Figma/" } }, },
 			Inputs = ordered() {
-				Tip = Input { Value = 0, },
 				Text = Input { Value = "Lukas\nOppermann", },
-				Size = Input { Value = 1, },
-				ColorRed = Input { Value = 0.6, },
-				ColorGreen = Input { Value = 0.5, },
-				ColorBlue = Input { Value = 0.9, },
+				ColorRed = Input { Value = 0.35, },
+				ColorGreen = Input { Value = 0.3, },
+				ColorBlue = Input { Value = 0.8, },
+				Width = Input { Expression = "BubbleBody.Width", },
+				Height = Input { Expression = "BubbleBody.Height", }
 			},
 			Outputs = {
 				Output1 = InstanceOutput {
@@ -18,26 +19,42 @@
 				}
 			},
 			ViewInfo = GroupInfo {
-				Pos = { 891.826, -540.147 },
+				Pos = { 456.701, 128.757 },
 				Flags = {
 					Expanded = true,
 					AllowPan = false,
 					AutoSnap = true,
 					RemoveRouters = true
 				},
-				Size = { 497.384, 302.283, 200.021, 60.5057 },
+				Size = { 461.122, 236.901, 200.021, 60.5057 },
 				Direction = "Horizontal",
 				PipeStyle = "Direct",
 				Scale = 1,
 				Offset = { -859.686, 342.847 }
 			},
 			Tools = ordered() {
+				Bubble_sRender = sRender {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Input = Input {
+							SourceOp = "Bubble_Border_sMerge",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 978.941, -262.884 } },
+				},
 				Bubble_Border_sMerge = sMerge {
 					CtrlWShown = false,
 					NameSet = true,
 					Inputs = {
 						Input1 = Input {
-							SourceOp = "Bubble_sTransform",
+							SourceOp = "Color_sBoolean",
 							Source = "Output",
 						},
 						Input2 = Input {
@@ -45,7 +62,77 @@
 							Source = "Output",
 						},
 					},
-					ViewInfo = OperatorInfo { Pos = { 965.385, -227.902 } },
+					ViewInfo = OperatorInfo { Pos = { 979.89, -230.649 } },
+				},
+				SoftGlow1 = SoftGlow {
+					CtrlWShown = false,
+					Inputs = {
+						Blend = Input { Value = 0.5, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Gain = Input { Value = 1, },
+						XGlowSize = Input { Value = 20, },
+						YGlowSize = Input { Value = 20, },
+						ClippingMode = Input { Value = FuID { "Domain" }, },
+						Input = Input {
+							SourceOp = "Bubble_sRender",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1058.53, -298.175 } },
+				},
+				BubbleText = TextPlus {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LineSpacing = Input { Value = 0.8, },
+						TransformRotation = Input { Value = 1, },
+						Red1 = Input { Expression = "iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
+						Green1 = Input { Expression = "iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
+						Blue1 = Input { Expression = "iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input {
+							Value = "Text\nTest",
+							Expression = "Bubble.Text",
+						},
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input {
+							Value = 0.032,
+							Expression = "0.08*Bubble.Size",
+						},
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						End = Input { Expression = "iif(Bubble.TextAnimation == 0, 1, (1+time)/Bubble.TextAnimation)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 823.119, -346.882 } },
+				},
+				MultiMerge1 = MultiMerge {
+					CtrlWShown = false,
+					Inputs = {
+						LayerOrder = Input { Value = ScriptVal { { [0] = 1, 2 } }, },
+						Background = Input {
+							SourceOp = "SoftGlow1",
+							Source = "Output",
+						},
+						["Layer1.Foreground"] = Input {
+							SourceOp = "Bubble_sRender",
+							Source = "Output",
+						},
+						LayerName1 = Input { Value = "sRender_2 Layer", },
+						["Layer2.Foreground"] = Input {
+							SourceOp = "BubbleText",
+							Source = "Output",
+						},
+						LayerName2 = Input { Value = "sRender_2_1 Layer", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 978.564, -344.911 } },
 				},
 				Bubble_InnerBorder = GroupOperator {
 					CtrlWShown = false,
@@ -67,7 +154,7 @@
 						}
 					},
 					ViewInfo = GroupInfo {
-						Pos = { 961.768, -197.74 },
+						Pos = { 975.064, -196.092 },
 						Flags = {
 							AllowPan = false,
 							AutoSnap = true,
@@ -80,25 +167,12 @@
 						Offset = { -916.494, 153.374 }
 					},
 					Tools = ordered() {
-						Bubble_sOutline = sOutline {
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = {
-								JoinStyle = Input { Value = 2, },
-								CapStyle = Input { Value = 0, },
-								Input = Input {
-									SourceOp = "Bubble_sTransform",
-									Source = "Output",
-								},
-							},
-							ViewInfo = OperatorInfo { Pos = { 862.423, -144.738 } },
-						},
 						Bubble_InsideOutline_sBoolean = sBoolean {
 							CtrlWShown = false,
 							NameSet = true,
 							Inputs = {
 								Input1 = Input {
-									SourceOp = "Bubble_sTransform",
+									SourceOp = "Color_sBoolean",
 									Source = "Output",
 								},
 								Input2 = Input {
@@ -111,46 +185,24 @@
 								Alpha = Input { Value = 0.2, },
 							},
 							ViewInfo = OperatorInfo { Pos = { 970.564, -140.322 } },
+						},
+						Bubble_sOutline = sOutline {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								JoinStyle = Input { Value = 2, },
+								CapStyle = Input { Value = 0, },
+								Input = Input {
+									SourceOp = "Color_sBoolean",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 862.423, -144.738 } },
 						}
 					},
 				},
-				Bubble_sRender = sRender {
-					CtrlWShown = false,
-					NameSet = true,
-					Inputs = {
-						GlobalOut = Input { Value = 119, },
-						Width = Input { Value = 1920, },
-						Height = Input { Value = 1080, },
-						UseFrameFormatSettings = Input { Value = 1, },
-						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-						Input = Input {
-							SourceOp = "Bubble_Border_sMerge",
-							Source = "Output",
-						},
-					},
-					ViewInfo = OperatorInfo { Pos = { 966.249, -262.884 } },
-				},
-				Bubble_sTransform = sTransform {
-					CtrlWShown = false,
-					NameSet = true,
-					Inputs = {
-						XSize = Input {
-							Value = 0.5,
-							Expression = "Controls.Size",
-						},
-						YSize = Input {
-							Value = 0.5,
-							Expression = "XSize",
-						},
-						ZRotation = Input { Expression = "Controls.Rotation", },
-						Input = Input {
-							SourceOp = "Color_sBoolean",
-							Source = "Output",
-						},
-					},
-					ViewInfo = OperatorInfo { Pos = { 843.499, -191.613 } },
-				},
 				BubbleShape = GroupOperator {
+					CtrlWShown = false,
 					NameSet = true,
 					Outputs = {
 						Output1 = InstanceOutput {
@@ -173,35 +225,6 @@
 						Offset = { -742.068, 247.988 }
 					},
 					Tools = ordered() {
-						Instance_BubbleConer = sRectangle {
-							CtrlWShown = false,
-							NameSet = true,
-							SourceOp = "BubbleBody",
-							Inputs = {
-								["Translate.X"] = Input {
-									Value = 0.191434583333333,
-									Expression = ":if(Bubble.Tip == 1 or Bubble.Tip == 3) then return BubbleBody.Translate.X + Width/2 else return BubbleBody.Translate.X - Width/2 end"
-								},
-								["Translate.Y"] = Input {
-									Value = -0.0787738888888889,
-									Expression = ":if(Bubble.Tip == 0 or Bubble.Tip == 1) then return BubbleBody.Translate.Y + Height/2 else return BubbleBody.Translate.Y - Height/2 end"
-								},
-								Width = Input {
-									Value = 0.382869166666667,
-									Expression = "BubbleBody.Width/2"
-								},
-								Height = Input {
-									Value = 0.157547777777778,
-									Expression = "BubbleBody.Height/2"
-								},
-								CornerRadius = Input { },
-								CommentsNest = Input { },
-								FrameRenderScriptNest = Input { },
-								StartRenderScripts = Input { },
-								EndRenderScripts = Input { },
-							},
-							ViewInfo = OperatorInfo { Pos = { 689.219, -209.002 } },
-						},
 						Color_sBoolean = sBoolean {
 							CtrlWShown = false,
 							NameSet = true,
@@ -233,103 +256,76 @@
 						BubbleBody = sRectangle {
 							NameSet = true,
 							Inputs = {
-								["Translate.X"] = Input { Expression = "Width/2-BubbleText.Size*0.875", },
-								["Translate.Y"] = Input { Expression = ":tHeight=(BubbleText.Output.DataWindow[4]-BubbleText.Output.DataWindow[2])/(BubbleText.Output.Height/2);if(tHeight / BubbleText.Size > 2) then return -(BubbleText.Size/3)*(tHeight / BubbleText.Size - 1) else return (BubbleText.Size/2.5)*-1 end", },
+								["Translate.X"] = Input { Expression = "Width/2-(Bubble.Pad*Bubble.Size)", },
+								["Translate.Y"] = Input { Expression = ":tHeight=(BubbleText.Output.DataWindow[4]-BubbleText.Output.DataWindow[2])/BubbleText.Output.Height;if(tHeight / BubbleText.Size > 2) then return -Bubble.Size*Bubble.Pad*(BubbleText.LineSpacingClone*1.4) else return -Bubble.Size*Bubble.Pad/2 end", },
 								Width = Input {
 									Value = 0.765738333333333,
-									Expression = "(BubbleText.Output.DataWindow[3]-BubbleText.Output.DataWindow[1])/(BubbleText.Output.Width/2)+BubbleText.Size*1.75",
+									Expression = "(BubbleText.Output.DataWindow[3]-BubbleText.Output.DataWindow[1])/BubbleText.Output.Width+(Bubble.Pad*2*Bubble.Size)",
 								},
 								Height = Input {
 									Value = 0.315095555555556,
-									Expression = ":tHeight=(BubbleText.Output.DataWindow[4]-BubbleText.Output.DataWindow[2])/(BubbleText.Output.Height/2);if(tHeight / BubbleText.Size > 2) then return tHeight-(BubbleText.Size/4)*(tHeight / BubbleText.Size - 1) else return tHeight+BubbleText.Size/2 end",
+									Expression = ":tHeight=(BubbleText.Output.DataWindow[4]-BubbleText.Output.DataWindow[2])/BubbleText.Output.Height;if(tHeight / BubbleText.Size > 2) then return tHeight-Bubble.Size*Bubble.Pad else return tHeight+Bubble.Size*Bubble.Pad end",
 								},
 								CornerRadius = Input { Value = 0.575, },
 							},
 							ViewInfo = OperatorInfo { Pos = { 695.671, -240.507 } },
+						},
+						Instance_BubbleConer = sRectangle {
+							CtrlWShown = false,
+							NameSet = true,
+							SourceOp = "BubbleBody",
+							Inputs = {
+								["Translate.X"] = Input {
+									Value = 0.191434583333333,
+									Expression = ":if(Bubble.Tip == 1 or Bubble.Tip == 3) then return BubbleBody.Translate.X + Width/2 else return BubbleBody.Translate.X - Width/2 end"
+								},
+								["Translate.Y"] = Input {
+									Value = -0.0787738888888889,
+									Expression = ":if(Bubble.Tip == 0 or Bubble.Tip == 1) then return BubbleBody.Translate.Y + Height/2 else return BubbleBody.Translate.Y - Height/2 end"
+								},
+								Width = Input {
+									Value = 0.382869166666667,
+									Expression = "BubbleBody.Width/2"
+								},
+								Height = Input {
+									Value = 0.157547777777778,
+									Expression = "BubbleBody.Height/2"
+								},
+								CornerRadius = Input { },
+								CommentsNest = Input { },
+								FrameRenderScriptNest = Input { },
+								StartRenderScripts = Input { },
+								EndRenderScripts = Input { },
+							},
+							ViewInfo = OperatorInfo { Pos = { 689.219, -209.002 } },
 						}
 					},
-				},
-				BubbleText = TextPlus {
-					NameSet = true,
-					Inputs = {
-						GlobalOut = Input { Value = 119, },
-						Width = Input { Value = 1920, },
-						Height = Input { Value = 1080, },
-						UseFrameFormatSettings = Input { Value = 1, },
-						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-						LineSpacing = Input { Value = 0.8, },
-						TransformRotation = Input { Value = 1, },
-						Red1 = Input { Expression = "iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
-						Green1 = Input { Expression = "iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
-						Blue1 = Input { Expression = "iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
-						Softness1 = Input { Value = 1, },
-						StyledText = Input {
-							Value = "Text\nTest",
-							Expression = "Bubble.Text",
-						},
-						Font = Input { Value = "Open Sans", },
-						Style = Input { Value = "Bold", },
-						Size = Input {
-							Value = 0.08816,
-							Expression = "0.08*Bubble.Size",
-						},
-						VerticalTopCenterBottom = Input { Value = -1, },
-						VerticalJustificationNew = Input { Value = 3, },
-						HorizontalLeftCenterRight = Input { Value = -1, },
-						HorizontalJustificationNew = Input { Value = 3, },
-						End = Input { Expression = "iif(Bubble.TextAnimation == 0, 1, (1+time)/Bubble.TextAnimation)", },
-					},
-					ViewInfo = OperatorInfo { Pos = { 823.119, -346.882 } },
-				},
-				MultiMerge1 = MultiMerge {
-					CtrlWShown = false,
-					Inputs = {
-						LayerOrder = Input { Value = ScriptVal { { [0] = 1, 2 } }, },
-						Background = Input {
-							SourceOp = "SoftGlow1",
-							Source = "Output",
-						},
-						["Layer1.Foreground"] = Input {
-							SourceOp = "Bubble_sRender",
-							Source = "Output",
-						},
-						LayerName1 = Input { Value = "sRender_2 Layer", },
-						["Layer2.Foreground"] = Input {
-							SourceOp = "BubbleText",
-							Source = "Output",
-						},
-						LayerName2 = Input { Value = "sRender_2_1 Layer", },
-					},
-					ViewInfo = OperatorInfo { Pos = { 954.389, -345.46 } },
-				},
-				SoftGlow1 = SoftGlow {
-					CtrlWShown = false,
-					Inputs = {
-						Blend = Input { Value = 0.5, },
-						Filter = Input { Value = FuID { "Fast Gaussian" }, },
-						Gain = Input { Value = 1, },
-						XGlowSize = Input { Value = 20, },
-						YGlowSize = Input { Value = 20, },
-						ClippingMode = Input { Value = FuID { "Domain" }, },
-						Input = Input {
-							SourceOp = "Bubble_sRender",
-							Source = "Output",
-						},
-					},
-					ViewInfo = OperatorInfo { Pos = { 1058.53, -298.175 } },
 				}
 			},
-			UserControls = ordered() { Tip = { { CCS_AddString = "Top Left" }, { CCS_AddString = "Top Right" }, { CCS_AddString = "Bottom Left" }, { CCS_AddString = "Bottom Right" }, INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ComboControl", CC_LabelPosition = "Horizontal", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", LINKS_Name = "Tip", }, Text = { TEC_ReadOnly = false, LINKID_DataType = "Text", TEC_Wrap = true, INPID_InputControl = "TextEditControl", TEC_Lines = 6, LINKS_Name = "Text", }, Size = { INP_MaxAllowed = 2, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 2, INP_Default = 1, INP_MinScale = 0.5, INP_MinAllowed = 0.5, LINKID_DataType = "Number", LINKS_Name = "Size", }, ColorRed = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 0, CLRC_ShowWheel = false, LINKS_Name = "Color", }, ColorGreen = { CLRC_ColorSpace = "HSV", INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", IC_ControlID = 1, IC_ControlGroup = 1, INPID_InputControl = "ColorControl", LINKS_Name = "Green", }, ColorBlue = { CLRC_ColorSpace = "HSV", INP_Integer = false, CLRC_ShowWheel = true, LINKID_DataType = "Number", IC_ControlID = 2, IC_ControlGroup = 1, INPID_InputControl = "ColorControl", LINKS_Name = "Blue", }, TextAnimation = {
-					LINKS_Name = "Text Animation Duration",
+			UserControls = ordered() {
+				Tip = { { CCS_AddString = "Top Left" }, { CCS_AddString = "Top Right" }, { CCS_AddString = "Bottom Left" }, { CCS_AddString = "Bottom Right" }, INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ComboControl", CC_LabelPosition = "Horizontal", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", LINKS_Name = "Tip", },
+				Text = { TEC_ReadOnly = false, LINKID_DataType = "Text", LINKS_Name = "Text", INPID_InputControl = "TextEditControl", TEC_Lines = 2, TEC_Wrap = true, },
+				Size = { INP_MaxAllowed = 2, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 2, INP_Default = 0.4, INP_MinScale = 0.2, INP_MinAllowed = 0.2, LINKID_DataType = "Number", LINKS_Name = "Size", },
+				ColorRed = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 0, CLRC_ShowWheel = false, LINKS_Name = "Color", },
+				ColorGreen = { LINKS_Name = "Green", INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", INPID_InputControl = "ColorControl", IC_ControlID = 1, IC_ControlGroup = 1, },
+				ColorBlue = { LINKS_Name = "Blue", INP_Integer = false, CLRC_ShowWheel = true, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", INPID_InputControl = "ColorControl", IC_ControlID = 2, IC_ControlGroup = 1, },
+				TextAnimation = { INP_MaxAllowed = 100, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MaxScale = 100, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", LINKS_Name = "Text Animation Duration", },
+				Pad = { INP_MaxAllowed = 0.0399999991059303, INP_Integer = false, INP_MaxScale = 0.0399999991059303, INP_Default = 0.0399999991059303, INP_MinScale = 0.0399999991059303, INP_MinAllowed = 0.0399999991059303, LINKID_DataType = "Number", INP_Passive = true, INP_External = false, LINKS_Name = "Padding", },
+				Width = {
+					LINKS_Name = "Width",
 					LINKID_DataType = "Number",
 					INPID_InputControl = "SliderControl",
-					INP_Default = 0,
-					INP_Integer = true,
-					INP_MinScale = 0,
-					INP_MaxScale = 100,
-					INP_MinAllowed = 0,
-					INP_MaxAllowed = 100,
-				} }
+					INP_Integer = false,
+					ICS_ControlPage = "Common",
+				},
+				Height = {
+					LINKS_Name = "Height",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					ICS_ControlPage = "Common",
+				}
+			}
 		}
 	},
 	ActiveTool = "Bubble"

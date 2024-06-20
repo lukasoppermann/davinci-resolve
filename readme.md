@@ -112,6 +112,10 @@ Define a variable using an `=` and used it via its name.
 
 ## Custom controls
 
+### UI Explained
+- `Passive` checkbox: The value of this input will not affect the rendered result, and does not create an Undo event if changed.
+- `Animatable` checkbox: Allows you to keyframe a control AND to control it via expressions
+
 ### Dropdown menu
 To create a dropdown menu use a `combo box` control. You can provide any label you want, but the value you get will be the index of the selected item, starting with `0`.
 
@@ -121,6 +125,22 @@ So if you dropdown has 4 items you get the following:
 - bottom -> `2`
 - left -> `3`
 
+## Global Variables
+While you can't really define global variables, you can fake it by using a node to hold them. This works especially well within `MacroOperators` (Macros) as the details will be hidden within it.
+
+### Setup
+- Create a new node, this can be any node, but `AlphaDivide` is a good one, as it has no properties on it's own.
+- Give the node a good name (make it short as you will refer to it often).
+  - `Global` or simply `G` could be good if you only use the values interally
+  - I use `Control` or `Ctrl` when I make some of the properties available to the user of the macro
+- add controls on this node using the `Edit Controls...` context menu
+- if those variables don't need to change, e.g. a global `Padding` variable, you set all values, `default`, `range` and `allowed` to the same value
+- if you want to calculate the value, make sure the control is set to `Animatable` and the `allowed` range is set to allow any possible value
+  - now select the control node, right-click the control and choose `Expression`
+  - any any expression to calculate this value, for example you could calculate the text box width and height and store it here to easily use it in other expressions
+
+### Usage
+Whenever you need one of those variables in an expression, you can now simply refer to them as `Ctrl.Padding` or `G.TextHeight`. This makes your expressions a lot cleaner, especially if you reuse the same value a lot.
 
 # Examples
 
@@ -152,9 +172,10 @@ Below we have an `sRectangle` named `Box` which we want to change to fit below t
 
 ## Expressions
 We need to adjust the width and height of the `Box` using expressions:
-- Width: `:tWidth=Text.Output.Width;return tWidth`
+- Width: `(Text1.Output.DataWindow[3]-Text1.Output.DataWindow[1])/Text1.Output.Width`
+- Height: `(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/Text1.Output.Height`
 
-## Set text color to balck or white depending on bg color
+## Set text color to black or white depending on bg color
 To know when we need to change the text color we must know the _luminosity_ of the background color of our `Bubble` element.
 
 Each channel needs to be multiplied with a specific number, if you want to learn more, there is a [W3C document with the algorithm](https://www.w3.org/TR/AERT/#color-contrast).
