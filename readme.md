@@ -40,6 +40,26 @@ copy of copied tool
 <details>
 <summary>
 
+### Edit View
+</summary>
+
+| Shortcut | Description |
+| --- | --- |
+| `option` + `↑` | Move clip to higher row in timeline |
+| `option` + `↓` | Move clip to lower row in timeline |
+| `1` (customized) | **Split clip** |
+| `2` (customized) | Trim/Ripple/**Start to playhead** removes everything in the selected clip piece from the start of the clip to the playhead. |
+| `3` (customized) | Trim/Ripple/**End to playhead** removes everything in the selected clip piece from the end of the clip to the playhead. |
+| `4` (customized) or `shift` + `delete` | Edit Timeline/**Ripple delete** |
+
+### Workflow
+Use `1` to split the timeline twice so that the part to remove is separated. Now select it and use `4` to remove it and move the clips together without a gap.
+
+</details>
+
+<details>
+<summary>
+
 ### Keyframes & Render Range
 </summary>
 
