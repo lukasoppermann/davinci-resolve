@@ -12,60 +12,27 @@
 				CapStyle = Input { Value = 2, },
 				["Translate.X"] = Input {
 					Value = 0.240000000223517,
-					Expression = "Width/2+Corner_sRectangle.Width*1.5",
+					Expression = "-0.5+Width/2+Corner_TL.Width*1.5",
 				},
 				["Translate.Y"] = Input {
 					Value = -0.240000000223517,
-					Expression = "0.5/(16/9)-(Height/2+Corner_sRectangle.Width*1.5)",
+					Expression = "0.5/Ctrl.yMod-(Height/2+Corner_TL.Width)\n",
 				},
 				["Translate.Z"] = Input { Value = 4, },
-				Width = Input { Expression = "Ctrl.tWidth+(Ctrl.Padding+Ctrl.BorderWidth)*2", },
-				Height = Input { Expression = "Ctrl.tHeight+(Ctrl.Padding+Ctrl.BorderWidth)*2", },
+				Width = Input { Expression = "Ctrl.bWidth", },
+				Height = Input { Expression = "Ctrl.bHeight", },
 			},
-			ViewInfo = OperatorInfo { Pos = { 2210.54, -760.904 } },
-		},
-		Corner_sRectangle = sRectangle {
-			NameSet = true,
-			Inputs = {
-				JoinStyle = Input { Value = 2, },
-				["Translate.X"] = Input {
-					Value = -0.011,
-					Expression = "Border.Translate.X-Border.Width/2",
-				},
-				["Translate.Y"] = Input {
-					Value = 0.011,
-					Expression = "Height/2+Ctrl.BorderWidth/4",
-				},
-				Width = Input { Value = 0.016, },
-				Height = Input {
-					Value = 0.016,
-					Expression = "Width",
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 2134.85, -694.904 } },
-		},
-		sBoolean1 = sBoolean {
-			Inputs = {
-				Operation = Input { Value = FuID { "Union" }, },
-				Input1 = Input {
-					SourceOp = "sOutline1",
-					Source = "Output",
-				},
-				Input2 = Input {
-					SourceOp = "Border",
-					Source = "Output",
-				},
-				Red = Input {
-					Value = 0.488,
-					Expression = "Ctrl.ColorRed",
-				},
-				Green = Input {
-					Value = 0.693,
-					Expression = "Ctrl.ColorGreen",
-				},
-				Blue = Input { Expression = "Ctrl.ColorBlue", },
-			},
-			ViewInfo = OperatorInfo { Pos = { 2257.54, -694.904 } },
+			ViewInfo = OperatorInfo { Pos = { 2258.94, 263.85 } },
+			UserControls = ordered() {
+				Variables = {
+					INP_Integer = false,
+					LBLC_DropDownButton = false,
+					LINKID_DataType = "Number",
+					LBLC_NumInputs = 4,
+					INPID_InputControl = "LabelControl",
+					LINKS_Name = "Variables",
+				}
+			}
 		},
 		Text1 = TextPlus {
 			Inputs = {
@@ -74,13 +41,14 @@
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-				Center = Input { Value = { 0.0424650440186432, 0.925291589932474 }, },
-				LayoutSize = Input {
-					Value = 1.114,
-					Expression = "Ctrl.Size",
+				Center = Input {
+					Value = { 0.0249999997764826, 0.962375000200855 },
+					Expression = "\nPoint(-0.003+Corner_TL.Width+Ctrl.BorderWidth+Ctrl.xPad, 1-(Corner_TL.Height/Ctrl.yMod+Ctrl.BorderWidth*Ctrl.yMod+Ctrl.xPad*Ctrl.yMod))",
 				},
+				LayoutSize = Input { Expression = "Ctrl.Size", },
 				LayoutRotation = Input { Value = 1, },
-				CharacterSpacing = Input { Value = 0.98, },
+				LineSpacing = Input { Value = 1.031, },
+				CharacterSpacing = Input { Value = 1.01038, },
 				TransformRotation = Input { Value = 1, },
 				Softness1 = Input { Value = 1, },
 				StyledText = Input {
@@ -90,7 +58,7 @@
 				Font = Input { Value = "Inter", },
 				Style = Input { Value = "Bold", },
 				Size = Input {
-					Value = 0.17824,
+					Value = 0.16,
 					Expression = "0.16*Ctrl.Size",
 				},
 				VerticalTopCenterBottom = Input { Value = -1, },
@@ -98,39 +66,80 @@
 				HorizontalLeftCenterRight = Input { Value = -1, },
 				HorizontalJustificationNew = Input { Value = 3, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 2389.9, -752.314 } },
+			ViewInfo = OperatorInfo { Pos = { 2455.77, 239.587 } },
 		},
-		sMerge1 = sMerge {
+		Corner_TL = sRectangle {
+			CtrlWZoom = false,
+			NameSet = true,
 			Inputs = {
-				Input1 = Input {
-					SourceOp = "sBoolean1",
-					Source = "Output",
+				JoinStyle = Input { Value = 2, },
+				["Translate.X"] = Input {
+					Value = -0.011,
+					Expression = "Border.Translate.X-Border.Width/2",
 				},
-				Input2 = Input {
-					SourceOp = "sMerge2",
-					Source = "Output",
+				["Translate.Y"] = Input {
+					Value = 0.011,
+					Expression = "0.5/Ctrl.yMod-Height",
+				},
+				Width = Input {
+					Value = 0.012,
+					Expression = "0.01*Ctrl.Size",
+				},
+				Height = Input {
+					Value = 0.016,
+					Expression = "Width",
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 2386.27, -690.159 } },
+			ViewInfo = OperatorInfo { Pos = { 2139.85, 276.316 } },
+		},
+		MultiMerge1 = MultiMerge {
+			Inputs = {
+				LayerOrder = Input { Value = ScriptVal { {
+							[0] = 1,
+							2
+						} }, },
+				Background = Input {
+					SourceOp = "sRender1",
+					Source = "Output",
+				},
+				LayerName1 = Input { Value = "sRender1 Layer", },
+				["Layer2.Foreground"] = Input {
+					SourceOp = "Text1",
+					Source = "Output",
+				},
+				LayerName2 = Input { Value = "MediaIn1 Layer", },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2742.33, 300.094 } },
+			UserControls = ordered() {
+				bWidth = {
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					LINKID_DataType = "Number",
+					LINKS_Name = "bWidth",
+				}
+			}
 		},
 		Ctrl = AlphaDivide {
-			CtrlWZoom = false,
 			NameSet = true,
 			Inputs = {
 				borderThickness = Input { Expression = "Border.BorderWidth", },
 				SettingsNest = Input { Value = 0, },
 				CommentsNest = Input { Value = 0, },
 				FrameRenderScriptNest = Input { Value = 0, },
-				ColorRed = Input { Value = 0.488, },
-				ColorGreen = Input { Value = 0.693, },
+				ColorRed = Input { Value = 0.654, },
+				ColorGreen = Input { Value = 0.378, },
 				ColorBlue = Input { Value = 1, },
-				Size = Input { Value = 1.114, },
+				Text = Input { Value = "SBanner", },
+				BorderWidth = Input { Value = 0.008, },
+				Variables = Input { Value = 1, },
+				xPad = Input { Expression = "0.00999999977648258*Ctrl.Size", },
+				yPad = Input { Expression = "0.005624999851*Ctrl.Size", },
+				bHeight = Input { Expression = "Ctrl.tHeight/Ctrl.yMod+Ctrl.BorderWidth/Ctrl.yMod+(Ctrl.yPad*Ctrl.yMod)*2", },
+				bWidth = Input { Expression = "Ctrl.tWidth+Ctrl.BorderWidth+Ctrl.xPad*2", },
 				tWidth = Input { Expression = "(Text1.Output.DataWindow[3]-Text1.Output.DataWindow[1])/Text1.Output.Width", },
 				tHeight = Input { Expression = "(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/Text1.Output.Height", },
-				Text = Input { Value = "Banner", },
-				BorderWidth = Input { Value = 0.01, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 2399.39, -802.763 } },
+			ViewInfo = OperatorInfo { Pos = { 2465.87, 189.151 } },
 			Colors = { TileColor = { R = 0, G = 0.596078431372549, B = 0.6 }, },
 			UserControls = ordered() {
 				ColorRed = {
@@ -181,31 +190,6 @@
 					LINKID_DataType = "Number",
 					LINKS_Name = "Size",
 				},
-				Padding = {
-					INP_MaxAllowed = 0.00999999977648258,
-					INP_Integer = false,
-					INPID_InputControl = "SliderControl",
-					INP_MaxScale = 0.00999999977648258,
-					INP_Default = 0.00999999977648258,
-					INP_MinScale = 0.00999999977648258,
-					INP_MinAllowed = 0.00999999977648258,
-					LINKID_DataType = "Number",
-					INP_Passive = true,
-					INP_External = false,
-					LINKS_Name = "Padding",
-				},
-				tWidth = {
-					INPID_InputControl = "SliderControl",
-					INP_Integer = false,
-					LINKID_DataType = "Number",
-					LINKS_Name = "tWidth",
-				},
-				tHeight = {
-					INPID_InputControl = "SliderControl",
-					INP_Integer = false,
-					LINKID_DataType = "Number",
-					LINKS_Name = "tHeight",
-				},
 				Text = {
 					TEC_ReadOnly = false,
 					LINKID_DataType = "Text",
@@ -223,58 +207,150 @@
 					INP_MinScale = 0,
 					INP_MaxScale = 1,
 					LINKS_Name = "BorderWidth",
+				},
+				Variables = {
+					LBLC_DropDownButton = true,
+					INPID_InputControl = "LabelControl",
+					LBLC_NumInputs = 7,
+					ICS_ControlPage = "User",
+					LINKS_Name = "Variables",
+				},
+				yMod = {
+					INP_MaxAllowed = 1.77777779102325,
+					INP_Integer = false,
+					INPID_InputControl = "SliderControl",
+					INP_MaxScale = 1.77777779102325,
+					INP_Default = 1.77777779102325,
+					INP_MinScale = 1.77777779102325,
+					INP_MinAllowed = 1.77777779102325,
+					LINKID_DataType = "Number",
+					INP_External = false,
+					LINKS_Name = "yMod",
+				},
+				xPad = {
+					INP_MaxAllowed = 0.1,
+					INP_Integer = false,
+					INPID_InputControl = "SliderControl",
+					INP_MaxScale = 0.00999999977648258,
+					INP_Default = 0.00999999977648258,
+					INP_MinScale = 0.00999999977648258,
+					INP_MinAllowed = 0,
+					LINKID_DataType = "Number",
+					LINKS_Name = "xPad",
+				},
+				yPad = {
+					INP_MaxAllowed = 0.1,
+					INP_Integer = false,
+					INPID_InputControl = "SliderControl",
+					INP_MaxScale = 0.00562499985098839,
+					INP_Default = 0.00562499985098839,
+					INP_MinScale = 0.00562499985098839,
+					INP_MinAllowed = 0,
+					LINKID_DataType = "Number",
+					LINKS_Name = "yPad",
+				},
+				bHeight = {
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					LINKID_DataType = "Number",
+					LINKS_Name = "bHeight",
+				},
+				bWidth = {
+					LINKS_Name = "bWidth",
+					INP_Integer = false,
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+				},
+				tWidth = {
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					LINKID_DataType = "Number",
+					LINKS_Name = "tWidth",
+				},
+				tHeight = {
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					LINKID_DataType = "Number",
+					LINKS_Name = "tHeight",
 				}
 			}
 		},
-		sOutline1 = sOutline {
+		sBoolean1 = sBoolean {
 			Inputs = {
-				Thickness = Input {
-					Value = 0.002,
-					Expression = "Ctrl.BorderWidth",
+				Operation = Input { Value = FuID { "Union" }, },
+				Input1 = Input {
+					SourceOp = "sOutline1",
+					Source = "Output",
 				},
-				JoinStyle = Input { Value = 2, },
-				CapStyle = Input { Value = 0, },
-				Input = Input {
-					SourceOp = "sMerge2",
+				Input2 = Input {
+					SourceOp = "Border",
+					Source = "Output",
+				},
+				Red = Input {
+					Value = 0.488,
+					Expression = "Ctrl.ColorRed",
+				},
+				Green = Input {
+					Value = 0.693,
+					Expression = "Ctrl.ColorGreen",
+				},
+				Blue = Input { Expression = "Ctrl.ColorBlue", },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2323.41, 296.997 } },
+		},
+		Corner_TR = sRectangle {
+			NameSet = true,
+			SourceOp = "Corner_TL",
+			Inputs = {
+				["Translate.X"] = Input {
+					Value = -0.011,
+					Expression = "Border.Translate.X-Border.Width/2+Ctrl.bWidth"
+				},
+				["Translate.Y"] = Input { Expression = "0.5/Ctrl.yMod-Height", },
+				Width = Input { Expression = "0.01*Ctrl.Size", },
+				Height = Input { Expression = "Width", },
+				CommentsNest = Input { },
+				FrameRenderScriptNest = Input { },
+				StartRenderScripts = Input { },
+				EndRenderScripts = Input { },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2241.61, 357.934 } },
+		},
+		Corner_BR = sRectangle {
+			NameSet = true,
+			SourceOp = "Corner_BL",
+			Inputs = {
+				["Translate.X"] = Input { Expression = "Border.Translate.X-Border.Width/2+Ctrl.bWidth" },
+				["Translate.Y"] = Input { Expression = "0.5/Ctrl.yMod-Height-Ctrl.bHeight", },
+				Width = Input { Expression = "0.01*Ctrl.Size", },
+				Height = Input { Expression = "Width", },
+				CommentsNest = Input { },
+				FrameRenderScriptNest = Input { },
+				StartRenderScripts = Input { },
+				EndRenderScripts = Input { },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2131.8, 395.899 } },
+		},
+		sMerge2 = sMerge {
+			Inputs = {
+				Input1 = Input {
+					SourceOp = "Corner_TL",
+					Source = "Output",
+				},
+				Input2 = Input {
+					SourceOp = "Corner_BL",
+					Source = "Output",
+				},
+				Input3 = Input {
+					SourceOp = "Corner_TR",
+					Source = "Output",
+				},
+				Input4 = Input {
+					SourceOp = "Corner_BR",
 					Source = "Output",
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 2305.88, -661.904 } },
-		},
-		Instance_sRectangle1_1 = sRectangle {
-			SourceOp = "Corner_sRectangle",
-			Inputs = {
-				["Translate.X"] = Input { Expression = "Border.Translate.X-Border.Width/2", },
-				["Translate.Y"] = Input {
-					Value = 0.011,
-					Expression = "-(Ctrl.tHeight+Height/4+Ctrl.BorderWidth/2+Ctrl.Padding*2)"
-				},
-				Height = Input {
-					Value = 0.016,
-					Expression = "Width"
-				},
-				CommentsNest = Input { },
-				FrameRenderScriptNest = Input { },
-				StartRenderScripts = Input { },
-				EndRenderScripts = Input { },
-			},
-			ViewInfo = OperatorInfo { Pos = { 2136.06, -663.552 } },
-		},
-		Instance_Instance_sRectangle1_1 = sRectangle {
-			SourceOp = "Instance_sRectangle1_1",
-			Inputs = {
-				["Translate.X"] = Input { Expression = "Border.Translate.X-Border.Width/2", },
-				["Translate.Y"] = Input { Expression = "-(Ctrl.tHeight+Height/2+Border.BorderWidth/2)" },
-				Height = Input {
-					Value = 0.016,
-					Expression = "Width"
-				},
-				CommentsNest = Input { },
-				FrameRenderScriptNest = Input { },
-				StartRenderScripts = Input { },
-				EndRenderScripts = Input { },
-			},
-			ViewInfo = OperatorInfo { Pos = { 2136.06, -630.552 } },
+			ViewInfo = OperatorInfo { Pos = { 2384.46, 399.026 } },
 		},
 		sRender1 = sRender {
 			Inputs = {
@@ -288,78 +364,330 @@
 					Source = "Output",
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 2570.62, -685.215 } },
+			ViewInfo = OperatorInfo { Pos = { 2606.39, 311.068 } },
 		},
-		Instance_Instance_Instance_sRectangle1_1 = sRectangle {
-			SourceOp = "Instance_Instance_sRectangle1_1",
+		Corner_BL = sRectangle {
+			NameSet = true,
+			SourceOp = "Corner_TL",
 			Inputs = {
-				["Translate.X"] = Input { Expression = "-(Width+Border.BorderWidth)/2" },
-				["Translate.Y"] = Input { Expression = "-(Ctrl.tHeight+Height/2+Border.BorderWidth/2)" },
-				Height = Input {
-					Value = 0.016,
-					Expression = "Width"
+				["Translate.X"] = Input { Expression = "Border.Translate.X-Border.Width/2" },
+				["Translate.Y"] = Input {
+					Value = 0.011,
+					Expression = "0.5/Ctrl.yMod-Height-Ctrl.bHeight"
 				},
+				Width = Input { Expression = "0.01*Ctrl.Size", },
+				Height = Input { Expression = "Width", },
 				CommentsNest = Input { },
 				FrameRenderScriptNest = Input { },
 				StartRenderScripts = Input { },
 				EndRenderScripts = Input { },
 			},
-			ViewInfo = OperatorInfo { Pos = { 2136.06, -597.552 } },
+			ViewInfo = OperatorInfo { Pos = { 2134.53, 326.121 } },
 		},
-		sMerge2 = sMerge {
+		sOutline1 = sOutline {
+			Inputs = {
+				Thickness = Input {
+					Value = 0.002,
+					Expression = "Ctrl.BorderWidth*0.5",
+				},
+				JoinStyle = Input { Value = 2, },
+				CapStyle = Input { Value = 0, },
+				Input = Input {
+					SourceOp = "sMerge2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 2371.75, 329.997 } },
+		},
+		sMerge1 = sMerge {
 			Inputs = {
 				Input1 = Input {
-					SourceOp = "Corner_sRectangle",
+					SourceOp = "sBoolean1",
 					Source = "Output",
 				},
 				Input2 = Input {
-					SourceOp = "Instance_sRectangle1_1",
+					SourceOp = "sMerge2",
 					Source = "Output",
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 2318.59, -592.876 } },
-		},
-		MultiMerge1 = MultiMerge {
-			Inputs = {
-				LayerOrder = Input { Value = ScriptVal { {
-							[0] = 1,
-							2
-						} }, },
-				Background = Input {
-					SourceOp = "Text1",
-					Source = "Output",
-				},
-				["Layer1.Foreground"] = Input {
-					SourceOp = "sRender1",
-					Source = "Output",
-				},
-				["Layer1.Center"] = Input { Value = { 0, 0.5 }, },
-				LayerName1 = Input { Value = "sRender1 Layer", },
-				LayerName2 = Input { Value = "MediaIn1 Layer", },
-			},
-			ViewInfo = OperatorInfo { Pos = { 2676.45, -691.808 } },
-		},
-		Transform1 = Transform {
-			PassThrough = true,
-			Inputs = {
-				Center = Input { Expression = "Ctrl.Position", },
-				ReferenceSize = Input { Value = 1, },
-				Input = Input {
-					SourceOp = "MultiMerge1",
-					Source = "Output",
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 2767.61, -722.094 } },
+			ViewInfo = OperatorInfo { Pos = { 2493.7, 303.932 } },
 		},
 		MediaOut1 = MediaOut {
 			Inputs = {
 				Index = Input { Value = "0", },
 				Input = Input {
-					SourceOp = "Transform1",
+					SourceOp = "MultiMerge1",
 					Source = "Output",
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 2848.64, -687.811 } },
+			ViewInfo = OperatorInfo { Pos = { 2913.91, 301.872 } },
+		},
+		Pointer = GroupOperator {
+			Inputs = ordered() {
+				Red = InstanceInput {
+					SourceOp = "Clear",
+					Source = "TopLeftRed",
+				},
+				Green = InstanceInput {
+					SourceOp = "Clear",
+					Source = "TopLeftGreen",
+				},
+				Blue = InstanceInput {
+					SourceOp = "Clear",
+					Source = "TopLeftBlue",
+				},
+				Alpha = InstanceInput {
+					SourceOp = "Clear",
+					Source = "TopLeftAlpha",
+				},
+				UseFrameFormatSettings = InstanceInput {
+					SourceOp = "Clear",
+					Source = "UseFrameFormatSettings",
+				},
+				Width = InstanceInput {
+					SourceOp = "Clear",
+					Source = "Width",
+				},
+				Height = InstanceInput {
+					SourceOp = "Clear",
+					Source = "Height",
+				},
+				Depth = InstanceInput {
+					SourceOp = "Clear",
+					Source = "Depth",
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "Output",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 3692.76, -22.4918 },
+				Flags = {
+					AllowPan = false,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 343.419, 113.394, 171.709, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
+			Tools = ordered() {
+				Controls = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Angle = Input { Value = 282, },
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Size = Input { Value = 0.5, },
+						Offset = Input {
+							Value = Point {
+								X = 0,
+								Y = 0
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -109.419, 10.244 } },
+					Colors = { TileColor = { R = 0.584313725490196, G = 0.294117647058824, B = 0.803921568627451 }, },
+					UserControls = ordered() { Size = { INP_MaxAllowed = 2.5, INP_Integer = false, INPID_InputControl = "SliderControl", IC_Steps = 0, INP_MaxScale = 2.5, INP_Default = 1.5, INP_MinScale = 0.5, INP_MinAllowed = 0.5, LINKID_DataType = "Number", ICD_Center = 1.5, LINKS_Name = "Size", }, Offset = { INP_MaxAllowed = 1, INP_Integer = false, INP_MinAllowed = 0, LINKID_DataType = "Number", INP_Default = 0.5, INP_MinScale = 0, INP_MaxScale = 1, LINKS_Name = "Offset", }, Rotation = { INP_MaxAllowed = 360, INP_Integer = true, INPID_InputControl = "ScrewControl", INP_MaxScale = 360, INPID_PreviewControl = "AngleControl", INP_MinAllowed = 0, LINKID_DataType = "Number", INP_MinScale = 0, LINKS_Name = "Rotation", } }
+				},
+				Output = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Clear",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "sRender",
+							Source = "Output",
+						},
+						Width = InstanceInput {
+							SourceOp = "Pointer",
+							Source = "Width",
+						},
+						Height = InstanceInput {
+							SourceOp = "Pointer",
+							Source = "Height",
+						},
+						UseFrameFormatSettings = InstanceInput {
+							SourceOp = "Pointer",
+							Source = "UseFrameFormatSettings",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 108, 8.2424 } },
+				},
+				Clear = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -1.02899, 8.98445 } },
+					Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+				},
+				FigmaPointer = GroupOperator {
+					CtrlWShown = false,
+					NameSet = true,
+					Outputs = {
+						Output1 = InstanceOutput {
+							SourceOp = "sRender",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo {
+						Pos = { -30.417, 55.2728 },
+						Flags = {
+							AllowPan = false,
+							AutoSnap = true,
+							RemoveRouters = true
+						},
+						Size = { 232.5, 136.602, 116.25, 24.2424 },
+						Direction = "Horizontal",
+						PipeStyle = "Direct",
+						Scale = 1,
+						Offset = { 0, 0 }
+					},
+					Tools = ordered() {
+						PointerPath = sPolygon {
+							DrawMode = "ModifyOnly",
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Size = Input { Value = 0.07, },
+								Polyline = Input {
+									SourceOp = "Publish1",
+									Source = "Value",
+								},
+								Green = Input { Value = 0.44, },
+								Blue = Input { Value = 0.32, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -52.6699, 78.0965 } },
+						},
+						sMerge = sMerge {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Input1 = Input {
+									SourceOp = "PointerPath",
+									Source = "Output",
+								},
+								Input2 = Input {
+									SourceOp = "sOutline",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -52.5498, 47.3405 } },
+						},
+						sTransform = sTransform {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								XSize = Input {
+									Value = 0.63,
+									Expression = "Controls.Size",
+								},
+								YSize = Input {
+									Value = 0.63,
+									Expression = "XSize",
+								},
+								ZRotation = Input { Expression = "Controls.Rotation", },
+								Input = Input {
+									SourceOp = "sMerge",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -53.5, 9.06847 } },
+						},
+						sOutline = sOutline {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Thickness = Input { Value = 0.005, },
+								JoinStyle = Input { Value = 2, },
+								CapStyle = Input { Value = 0, },
+								Input = Input {
+									SourceOp = "Instance_PointerPath",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 52.4202, 47.5555 } },
+						},
+						Instance_PointerPath = sPolygon {
+							DrawMode = "ModifyOnly",
+							CtrlWShown = false,
+							NameSet = true,
+							SourceOp = "PointerPath",
+							Inputs = {
+								Red = Input { },
+								Green = Input { },
+								Blue = Input { },
+								Alpha = Input { },
+								CommentsNest = Input { },
+								FrameRenderScriptNest = Input { },
+								StartRenderScripts = Input { },
+								EndRenderScripts = Input { },
+							},
+							ViewInfo = OperatorInfo { Pos = { 51.8401, 78.8767 } },
+						},
+						sRender = sRender {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								GlobalOut = Input { Value = 119, },
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Input = Input {
+									SourceOp = "sTransform",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 53, 8.63847 } },
+						}
+					},
+				}
+			},
+			UserControls = ordered() { Color = ControlPage { CTID_DIB_ID = "Icons.Tools.Tabs.Color" }, BackgroundNest = BeginNest { LINKS_Name = "Background", ICS_ControlPage = "Color", }, Red = InstanceInput { Source = "TopLeftRed", ICS_ControlPage = "Color", SourceOp = "Clear", INP_Default = 0, }, Green = InstanceInput { Source = "TopLeftGreen", ICS_ControlPage = "Color", SourceOp = "Clear", INP_Default = 0, }, Blue = InstanceInput { Source = "TopLeftBlue", ICS_ControlPage = "Color", SourceOp = "Clear", INP_Default = 0, }, Alpha = InstanceInput { Source = "TopLeftAlpha", ICS_ControlPage = "Color", SourceOp = "Clear", INP_Default = 0, }, EndBackgroundNest = EndNest {
+				}, Image = ControlPage { CTID_DIB_ID = "Icons.Tools.Tabs.Image" }, ImageNest = BeginNest { LINKS_Name = "Image", ICS_ControlPage = "Image", }, UseFrameFormatSettings = InstanceInput { SourceOp = "Clear", Source = "UseFrameFormatSettings", ICS_ControlPage = "Image", }, Width = InstanceInput { Source = "Width", ICS_ControlPage = "Image", SourceOp = "Clear", INP_Default = 68, }, Height = InstanceInput { Source = "Height", ICS_ControlPage = "Image", SourceOp = "Clear", INP_Default = 74, }, Depth = InstanceInput { SourceOp = "Clear", Source = "Depth", ICS_ControlPage = "Image", }, EndImageNest = EndNest {
+				} }
+		},
+		Publish1 = PublishPolyLine {
+			CtrlWZoom = false,
+			Inputs = {
+				Value = Input {
+					Value = Polyline {
+						Closed = true,
+						Points = {
+							{ Linear = true, X = 0.270122058823529, Y = -0.0339918918918919, LX = -0.100027450980392, LY = -0.021131981981982, RX = 0.0364676470588235, RY = 0.00770405405405394 },
+							{ Linear = true, X = 0.379525, Y = -0.0108797297297298, LX = -0.0364676470588234, LY = -0.00770405405405394, RX = -0.0324181372549019, RY = 0.017172972972973 },
+							{ Linear = true, X = 0.282270588235294, Y = 0.0406391891891892, LX = 0.0324181372549019, LY = -0.017172972972973, RX = -0.209110294117647, RY = 0.110773693693694 },
+							{ Linear = true, X = -0.345060294117647, Y = 0.37296027027027, LX = 0.209110294117647, LY = -0.110773693693694, RX = -0.0274996568627451, RY = 0.0145675675675676 },
+							{ Linear = true, X = -0.427559264705882, Y = 0.416662972972973, LX = 0.0274996568627451, LY = -0.0145675675675676, RX = 0.00568710784313725, RY = -0.0286962162162162 },
+							{ Linear = true, X = -0.410497941176471, Y = 0.330574324324324, LX = -0.00568710784313725, LY = 0.0286962162162162, RX = 0.0417248039215687, RY = -0.210536486486486 },
+							{ Linear = true, X = -0.285323529411765, Y = -0.301035135135135, LX = -0.0417248039215686, LY = 0.210536486486487, RX = 0.00610980392156862, RY = -0.0308283783783784 },
+							{ Linear = true, X = -0.266994117647059, Y = -0.39352027027027, LX = -0.00610980392156862, LY = 0.0308283783783784, RX = 0.0202049019607843, RY = 0.0252423423423423 },
+							{ Linear = true, X = -0.206379411764706, Y = -0.317793243243243, LX = -0.0202049019607843, LY = -0.0252423423423423, RX = 0.0588063725490196, RY = 0.0734684684684686 },
+							{ Linear = true, X = -0.0299602941176471, Y = -0.0973878378378379, LX = -0.0588063725490196, LY = -0.0734684684684684, RX = 0.100027450980392, RY = 0.0211319819819821 }
+						}
+					},
+				},
+			},
 		}
 	}
 }
