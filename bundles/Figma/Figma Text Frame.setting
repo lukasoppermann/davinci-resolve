@@ -1,6 +1,7 @@
 {
 	Tools = ordered() {
 		FigmaTextFrame = MacroOperator {
+			CtrlWZoom = false,
 			Inputs = ordered() {
 				Input1 = InstanceInput {
 					SourceOp = "Ctrl",
@@ -37,7 +38,7 @@
 					SourceOp = "Ctrl",
 					Source = "BorderWidth",
 					Default = 0.008,
-				},
+				}
 			},
 			Outputs = {
 				MainOutput1 = InstanceOutput {
@@ -45,9 +46,23 @@
 					Source = "Output",
 				}
 			},
-			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			ViewInfo = GroupInfo {
+				Pos = { 2498.88, 435.068 },
+				Flags = {
+					Expanded = true,
+					AllowPan = false,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 736.53, 276.239, 368.265, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
 			Tools = ordered() {
 				Border = sRectangle {
+					CtrlWShown = false,
 					NameSet = true,
 					Inputs = {
 						Solid = Input { Value = 0, },
@@ -69,20 +84,12 @@
 						Width = Input { Expression = "Ctrl.bWidth", },
 						Height = Input { Expression = "Ctrl.bHeight", },
 					},
-					ViewInfo = OperatorInfo { Pos = { 2258.94, 263.85 } },
-					UserControls = ordered() {
-						Variables = {
-							INP_Integer = false,
-							LBLC_DropDownButton = false,
-							LINKID_DataType = "Number",
-							LBLC_NumInputs = 4,
-							INPID_InputControl = "LabelControl",
-							LINKS_Name = "Variables",
-						}
-					}
+					ViewInfo = OperatorInfo { Pos = { -178.39, 83.5191 } },
+					UserControls = ordered() { Variables = { INP_Integer = false, LBLC_DropDownButton = false, LINKID_DataType = "Number", LBLC_NumInputs = 4, INPID_InputControl = "LabelControl", LINKS_Name = "Variables", } }
 				},
 				Corner_TL = sRectangle {
 					CtrlWZoom = false,
+					CtrlWShown = false,
 					NameSet = true,
 					Inputs = {
 						JoinStyle = Input { Value = 2, },
@@ -103,9 +110,10 @@
 							Expression = "Width",
 						},
 					},
-					ViewInfo = OperatorInfo { Pos = { 2139.85, 276.316 } },
+					ViewInfo = OperatorInfo { Pos = { -297.48, 95.9851 } },
 				},
 				sBoolean1 = sBoolean {
+					CtrlWShown = false,
 					Inputs = {
 						Operation = Input { Value = FuID { "Union" }, },
 						Input1 = Input {
@@ -126,11 +134,11 @@
 						},
 						Blue = Input { Expression = "Ctrl.ColorBlue", },
 					},
-					ViewInfo = OperatorInfo { Pos = { 2323.41, 296.997 } },
+					ViewInfo = OperatorInfo { Pos = { -113.92, 116.666 } },
 				},
 				Text1 = TextPlus {
-					CtrlWZoom = false,
 					Inputs = {
+						GlobalOut = Input { Value = 119, },
 						Width = Input { Value = 1920, },
 						Height = Input { Value = 1080, },
 						UseFrameFormatSettings = Input { Value = 1, },
@@ -144,6 +152,9 @@
 						LineSpacing = Input { Value = 1.031, },
 						CharacterSpacing = Input { Value = 1.01038, },
 						TransformRotation = Input { Value = 1, },
+						Red1 = Input { Expression = "Ctrl.TextColorRed", },
+						Green1 = Input { Expression = "Ctrl.TextColorGreen", },
+						Blue1 = Input { Expression = "Ctrl.TextColorBlue", },
 						Softness1 = Input { Value = 1, },
 						StyledText = Input {
 							Value = "Banner",
@@ -160,9 +171,10 @@
 						HorizontalLeftCenterRight = Input { Value = -1, },
 						HorizontalJustificationNew = Input { Value = 3, },
 					},
-					ViewInfo = OperatorInfo { Pos = { 2455.77, 239.587 } },
+					ViewInfo = OperatorInfo { Pos = { 18.4399, 59.2561 } },
 				},
 				Ctrl = AlphaDivide {
+					CtrlWZoom = false,
 					NameSet = true,
 					Inputs = {
 						borderThickness = Input { Expression = "Border.BorderWidth", },
@@ -180,144 +192,17 @@
 						bWidth = Input { Expression = "Ctrl.tWidth+Ctrl.BorderWidth+Ctrl.xPad*2", },
 						tWidth = Input { Expression = "(Text1.Output.DataWindow[3]-Text1.Output.DataWindow[1])/Text1.Output.Width", },
 						tHeight = Input { Expression = "(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/Text1.Output.Height", },
+						TextColor = Input { Value = 1, },
+						TextColorGreen = Input { Value = 1, },
+						TextColorRed = Input { Value = 1, },
+						TextColorBlue = Input { Value = 1, },
 					},
-					ViewInfo = OperatorInfo { Pos = { 2465.87, 189.151 } },
+					ViewInfo = OperatorInfo { Pos = { 28.54, 8.82007 } },
 					Colors = { TileColor = { R = 0, G = 0.596078431372549, B = 0.6 }, },
-					UserControls = ordered() {
-						ColorRed = {
-							LINKS_Name = "Color",
-							INP_Integer = false,
-							CLRC_ShowWheel = false,
-							LINKID_DataType = "Number",
-							CLRC_ColorSpace = "HSV",
-							INPID_InputControl = "ColorControl",
-							IC_ControlID = 0,
-							IC_ControlGroup = 1,
-						},
-						ColorGreen = {
-							LINKS_Name = "ColorGreen",
-							INP_Integer = false,
-							CLRC_ShowWheel = false,
-							LINKID_DataType = "Number",
-							CLRC_ColorSpace = "HSV",
-							INPID_InputControl = "ColorControl",
-							IC_ControlID = 1,
-							IC_ControlGroup = 1,
-						},
-						ColorBlue = {
-							LINKS_Name = "ColorBlue",
-							INP_Integer = false,
-							CLRC_ShowWheel = false,
-							LINKID_DataType = "Number",
-							CLRC_ColorSpace = "HSV",
-							INPID_InputControl = "ColorControl",
-							IC_ControlID = 2,
-							IC_ControlGroup = 1,
-						},
-						Position = {
-							INPID_PreviewControl = "CrosshairControl",
-							LINKID_DataType = "Point",
-							INPID_InputControl = "OffsetControl",
-							CHC_Style = "NormalCross",
-							LINKS_Name = "Position",
-						},
-						Size = {
-							INP_MaxAllowed = 2,
-							INP_Integer = false,
-							INPID_InputControl = "SliderControl",
-							INP_MaxScale = 2,
-							INP_Default = 1,
-							INP_MinScale = 0.5,
-							INP_MinAllowed = 0.5,
-							LINKID_DataType = "Number",
-							LINKS_Name = "Size",
-						},
-						Text = {
-							TEC_ReadOnly = false,
-							LINKID_DataType = "Text",
-							TEC_Wrap = false,
-							INPID_InputControl = "TextEditControl",
-							TEC_Lines = 2,
-							LINKS_Name = "Text",
-						},
-						BorderWidth = {
-							INP_MaxAllowed = 1000000,
-							INP_Integer = false,
-							INP_MinAllowed = -1000000,
-							LINKID_DataType = "Number",
-							INPID_InputControl = "SliderControl",
-							INP_MinScale = 0,
-							INP_MaxScale = 1,
-							LINKS_Name = "BorderWidth",
-						},
-						Variables = {
-							LBLC_DropDownButton = true,
-							INPID_InputControl = "LabelControl",
-							LBLC_NumInputs = 7,
-							ICS_ControlPage = "User",
-							LINKS_Name = "Variables",
-						},
-						yMod = {
-							INP_MaxAllowed = 1.77777779102325,
-							INP_Integer = false,
-							INPID_InputControl = "SliderControl",
-							INP_MaxScale = 1.77777779102325,
-							INP_Default = 1.77777779102325,
-							INP_MinScale = 1.77777779102325,
-							INP_MinAllowed = 1.77777779102325,
-							LINKID_DataType = "Number",
-							INP_External = false,
-							LINKS_Name = "yMod",
-						},
-						xPad = {
-							INP_MaxAllowed = 0.1,
-							INP_Integer = false,
-							INPID_InputControl = "SliderControl",
-							INP_MaxScale = 0.00999999977648258,
-							INP_Default = 0.00999999977648258,
-							INP_MinScale = 0.00999999977648258,
-							INP_MinAllowed = 0,
-							LINKID_DataType = "Number",
-							LINKS_Name = "xPad",
-						},
-						yPad = {
-							INP_MaxAllowed = 0.1,
-							INP_Integer = false,
-							INPID_InputControl = "SliderControl",
-							INP_MaxScale = 0.00562499985098839,
-							INP_Default = 0.00562499985098839,
-							INP_MinScale = 0.00562499985098839,
-							INP_MinAllowed = 0,
-							LINKID_DataType = "Number",
-							LINKS_Name = "yPad",
-						},
-						bHeight = {
-							INPID_InputControl = "SliderControl",
-							INP_Integer = false,
-							LINKID_DataType = "Number",
-							LINKS_Name = "bHeight",
-						},
-						bWidth = {
-							LINKS_Name = "bWidth",
-							INP_Integer = false,
-							LINKID_DataType = "Number",
-							INPID_InputControl = "SliderControl",
-						},
-						tWidth = {
-							INPID_InputControl = "SliderControl",
-							INP_Integer = false,
-							LINKID_DataType = "Number",
-							LINKS_Name = "tWidth",
-						},
-						tHeight = {
-							INPID_InputControl = "SliderControl",
-							INP_Integer = false,
-							LINKID_DataType = "Number",
-							LINKS_Name = "tHeight",
-						}
-					}
+					UserControls = ordered() { ColorRed = { IC_ControlGroup = 1, INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", IC_ControlID = 0, INPID_InputControl = "ColorControl", LINKS_Name = "Color", }, ColorGreen = { IC_ControlGroup = 1, INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", IC_ControlID = 1, INPID_InputControl = "ColorControl", LINKS_Name = "ColorGreen", }, ColorBlue = { IC_ControlGroup = 1, INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", IC_ControlID = 2, INPID_InputControl = "ColorControl", LINKS_Name = "ColorBlue", }, Position = { INPID_PreviewControl = "CrosshairControl", LINKID_DataType = "Point", INPID_InputControl = "OffsetControl", CHC_Style = "NormalCross", LINKS_Name = "Position", }, Size = { INP_MaxAllowed = 2, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 2, INP_Default = 1, INP_MinScale = 0.5, INP_MinAllowed = 0.5, LINKID_DataType = "Number", LINKS_Name = "Size", }, Text = { TEC_ReadOnly = false, LINKID_DataType = "Text", LINKS_Name = "Text", INPID_InputControl = "TextEditControl", TEC_Lines = 2, TEC_Wrap = false, }, BorderWidth = { INP_MaxAllowed = 1000000, INP_Integer = false, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_MinScale = 0, INP_MaxScale = 1, LINKS_Name = "BorderWidth", }, Variables = { LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", LBLC_NumInputs = 7, ICS_ControlPage = "User", LINKS_Name = "Variables", }, yMod = { INP_MaxAllowed = 1.77777779102325, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1.77777779102325, INP_Default = 1.77777779102325, INP_MinScale = 1.77777779102325, INP_MinAllowed = 1.77777779102325, LINKID_DataType = "Number", INP_External = false, LINKS_Name = "yMod", }, xPad = { INP_MaxAllowed = 0.1, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 0.00999999977648258, INP_Default = 0.00999999977648258, INP_MinScale = 0.00999999977648258, INP_MinAllowed = 0, LINKID_DataType = "Number", LINKS_Name = "xPad", }, yPad = { INP_MaxAllowed = 0.1, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 0.00562499985098839, INP_Default = 0.00562499985098839, INP_MinScale = 0.00562499985098839, INP_MinAllowed = 0, LINKID_DataType = "Number", LINKS_Name = "yPad", }, bHeight = { LINKS_Name = "bHeight", INP_Integer = false, LINKID_DataType = "Number", INPID_InputControl = "SliderControl", }, bWidth = { INPID_InputControl = "SliderControl", INP_Integer = false, LINKID_DataType = "Number", LINKS_Name = "bWidth", }, tWidth = { LINKS_Name = "tWidth", INP_Integer = false, LINKID_DataType = "Number", INPID_InputControl = "SliderControl", }, tHeight = { LINKS_Name = "tHeight", INP_Integer = false, LINKID_DataType = "Number", INPID_InputControl = "SliderControl", }, TextColor = { LINKS_Name = "TextColorRed", INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", INPID_InputControl = "ColorControl", IC_ControlID = 0, IC_ControlGroup = 2, }, TextColorGreen = { LINKS_Name = "TextColorGreen", INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", INPID_InputControl = "ColorControl", IC_ControlID = 1, IC_ControlGroup = 2, }, TextColorRed = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 2, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 0, CLRC_ShowWheel = false, LINKS_Name = "TextColor", }, TextColorBlue = { LINKS_Name = "TextColorBlue", INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", INPID_InputControl = "ColorControl", IC_ControlID = 2, IC_ControlGroup = 2, } }
 				},
 				Corner_BL = sRectangle {
+					CtrlWShown = false,
 					NameSet = true,
 					SourceOp = "Corner_TL",
 					Inputs = {
@@ -333,9 +218,10 @@
 						StartRenderScripts = Input { },
 						EndRenderScripts = Input { },
 					},
-					ViewInfo = OperatorInfo { Pos = { 2134.53, 326.121 } },
+					ViewInfo = OperatorInfo { Pos = { -302.8, 145.79 } },
 				},
 				sOutline1 = sOutline {
+					CtrlWShown = false,
 					Inputs = {
 						Thickness = Input {
 							Value = 0.002,
@@ -348,9 +234,10 @@
 							Source = "Output",
 						},
 					},
-					ViewInfo = OperatorInfo { Pos = { 2371.75, 329.997 } },
+					ViewInfo = OperatorInfo { Pos = { -65.5801, 149.666 } },
 				},
 				sMerge1 = sMerge {
+					CtrlWShown = false,
 					Inputs = {
 						Input1 = Input {
 							SourceOp = "sBoolean1",
@@ -361,9 +248,10 @@
 							Source = "Output",
 						},
 					},
-					ViewInfo = OperatorInfo { Pos = { 2493.7, 303.932 } },
+					ViewInfo = OperatorInfo { Pos = { 56.3699, 123.601 } },
 				},
 				Corner_TR = sRectangle {
+					CtrlWShown = false,
 					NameSet = true,
 					SourceOp = "Corner_TL",
 					Inputs = {
@@ -379,10 +267,12 @@
 						StartRenderScripts = Input { },
 						EndRenderScripts = Input { },
 					},
-					ViewInfo = OperatorInfo { Pos = { 2241.61, 357.934 } },
+					ViewInfo = OperatorInfo { Pos = { -195.72, 177.603 } },
 				},
 				sRender1 = sRender {
+					CtrlWShown = false,
 					Inputs = {
+						GlobalOut = Input { Value = 119, },
 						Width = Input { Value = 1920, },
 						Height = Input { Value = 1080, },
 						UseFrameFormatSettings = Input { Value = 1, },
@@ -392,9 +282,10 @@
 							Source = "Output",
 						},
 					},
-					ViewInfo = OperatorInfo { Pos = { 2606.39, 311.068 } },
+					ViewInfo = OperatorInfo { Pos = { 169.06, 130.737 } },
 				},
 				Corner_BR = sRectangle {
+					CtrlWShown = false,
 					NameSet = true,
 					SourceOp = "Corner_BL",
 					Inputs = {
@@ -407,9 +298,10 @@
 						StartRenderScripts = Input { },
 						EndRenderScripts = Input { },
 					},
-					ViewInfo = OperatorInfo { Pos = { 2131.8, 395.899 } },
+					ViewInfo = OperatorInfo { Pos = { -305.53, 215.568 } },
 				},
 				sMerge2 = sMerge {
+					CtrlWShown = false,
 					Inputs = {
 						Input1 = Input {
 							SourceOp = "Corner_TL",
@@ -419,24 +311,22 @@
 							SourceOp = "Corner_BL",
 							Source = "Output",
 						},
-						Input3 = Input {
-							SourceOp = "Corner_TR",
-							Source = "Output",
-						},
 						Input4 = Input {
 							SourceOp = "Corner_BR",
 							Source = "Output",
 						},
+						Input3 = Input {
+							SourceOp = "Corner_TR",
+							Source = "Output",
+						},
 					},
-					ViewInfo = OperatorInfo { Pos = { 2384.46, 399.026 } },
+					ViewInfo = OperatorInfo { Pos = { -52.8701, 218.695 } },
 				},
 				Output = MultiMerge {
+					CtrlWShown = false,
 					NameSet = true,
 					Inputs = {
-						LayerOrder = Input { Value = ScriptVal { {
-									[0] = 1,
-									2
-								} }, },
+						LayerOrder = Input { Value = ScriptVal { { [0] = 1, 2 } }, },
 						Background = Input {
 							SourceOp = "sRender1",
 							Source = "Output",
@@ -448,15 +338,8 @@
 						},
 						LayerName2 = Input { Value = "MediaIn1 Layer", },
 					},
-					ViewInfo = OperatorInfo { Pos = { 2742.33, 300.094 } },
-					UserControls = ordered() {
-						bWidth = {
-							INPID_InputControl = "SliderControl",
-							INP_Integer = false,
-							LINKID_DataType = "Number",
-							LINKS_Name = "bWidth",
-						}
-					}
+					ViewInfo = OperatorInfo { Pos = { 305, 119.763 } },
+					UserControls = ordered() { bWidth = { LINKS_Name = "bWidth", INP_Integer = false, LINKID_DataType = "Number", INPID_InputControl = "SliderControl", } }
 				}
 			},
 		}
