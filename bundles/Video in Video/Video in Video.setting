@@ -1,0 +1,515 @@
+{
+	Tools = ordered() {
+		MacroTool1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Position",
+					Default = 2,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Size",
+					Default = 5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Border",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "CornerRadius",
+					Default = 9,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BorderWidth",
+					Default = 4,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Red",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Green",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Blue",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Video",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Zoom",
+					Default = 3,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "OffsetX",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "OffsetY",
+					Default = 10,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "MediaOut1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				MediaOut1 = MediaOut {
+					Inputs = {
+						Index = Input { Value = "0", },
+						Input = Input {
+							SourceOp = "TransformAll",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 759.968, -38.3825 } },
+				},
+				TransparentBG = Background {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 320.53, 82.8075 } },
+				},
+				TransformAll = Transform {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input { Expression = "Point(Ctrl.PositionX, Ctrl.PositionY)", },
+						Size = Input {
+							Value = 0.8,
+							Expression = "0.3+0.05*Ctrl.Size",
+						},
+						Input = Input {
+							SourceOp = "MergeBorderandMaskedVideo",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 635.248, -38.9184 } },
+				},
+				MergeMaskandResizedVideo = Merge {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Mask",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "TransparentBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TransformInput",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 446.348, 54.1195 } },
+				},
+				MediaIn1 = MediaIn {
+					ExtentSet = true,
+					CustomData = {
+						MediaProps = {
+							MEDIA_HAS_AUDIO = true,
+							MEDIA_NUM_LAYERS = 1,
+							MEDIA_FORMAT_TYPE = "QuickTime",
+							MEDIA_PAR = 1,
+							MEDIA_HEIGHT = 720,
+							MEDIA_AUDIO_TRACKS_DESC = {
+								{
+									MEDIA_AUDIO_BIT_DEPTH = 32,
+									MEDIA_AUDIO_TRACK_ID = "07ec8685-c3fa-4374-bc26-321446e18527",
+									MEDIA_AUDIO_TRACK_NAME = "Link face recording.mov",
+									MEDIA_AUDIO_NUM_CHANNELS = 1,
+									MEDIA_AUDIO_START_TIME = 0,
+									MEDIA_AUDIO_SAMPLE_RATE = 48000,
+									MEDIA_AUDIO_FRAME_RATE = 13
+								},
+								{
+									MEDIA_AUDIO_BIT_DEPTH = 32,
+									MEDIA_AUDIO_TRACK_ID = "Timeline Audio",
+									MEDIA_AUDIO_TRACK_NAME = "Timeline Audio [Timeline 1]",
+									MEDIA_AUDIO_NUM_CHANNELS = 2,
+									MEDIA_AUDIO_START_TIME = 0,
+									MEDIA_AUDIO_SAMPLE_RATE = 48000,
+									MEDIA_AUDIO_FRAME_RATE = 13
+								}
+							},
+							MEDIA_NAME = "Link face recording.mov",
+							MEDIA_START_FRAME = 0,
+							MEDIA_AUDIO_TRACKS_NUM = 2,
+							MEDIA_IS_SOURCE_RES = true,
+							MEDIA_SRC_FRAME_RATE = 24,
+							MEDIA_MARK_OUT = 1404,
+							MEDIA_WIDTH = 1280,
+							MEDIA_NUM_FRAMES = 1405,
+							MEDIA_MARK_IN = 0,
+							MEDIA_PATH = "/Users/lukasoppermann/Desktop/Link face recording.mov"
+						},
+					},
+					Inputs = {
+						GlobalOut = Input { Value = 1404, },
+						AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+						Layer = Input { Value = "0", },
+						ClipTimeEnd = Input { Value = 1404, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LeftAudio = Input {
+							SourceOp = "Left",
+							Source = "Data",
+						},
+						RightAudio = Input {
+							SourceOp = "Right",
+							Source = "Data",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 218.39, 53.5435 } },
+					Version = 1
+				},
+				Left = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Right = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				TransformInput = Transform {
+					NameSet = true,
+					Inputs = {
+						Center = Input { Expression = "Point(0.5+(Ctrl.OffsetX*0.002 * (Ctrl.Zoom - 1 )), 0.5+(Ctrl.OffsetY*0.002 * (Ctrl.Zoom - 1 )))", },
+						Size = Input { Expression = "0.45+Ctrl.Zoom*0.05", },
+						Input = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 328.04, 53.4046 } },
+				},
+				Border = RectangleMask {
+					NameSet = true,
+					SourceOp = "Mask",
+					Inputs = {
+						EffectMask = Input {
+						},
+						SettingsNest = Input {
+						},
+						BorderWidth = Input {
+							Value = 0.004,
+							Expression = "Ctrl.BorderWidth/1000"
+						},
+						Solid = Input {
+							Value = 0,
+						},
+						CornerRadius = Input {
+							Value = 0.09,
+							Expression = "Ctrl.CornerRadius/100"
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 390.02, -89.2055 } },
+				},
+				BorderFill = Background {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Border",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input {
+							Value = 1,
+							Expression = "Ctrl.Red",
+						},
+						TopLeftGreen = Input {
+							Value = 1,
+							Expression = "Ctrl.Green",
+						},
+						TopLeftBlue = Input {
+							Value = 1,
+							Expression = "Ctrl.Blue",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 391.56, -53.8285 } },
+				},
+				Mask = RectangleMask {
+					NameSet = true,
+					Inputs = {
+						ShowViewControls = Input { Value = 0, },
+						CapStyle = Input { Value = 0, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.45, },
+						CornerRadius = Input {
+							Value = 0.09,
+							Expression = "Ctrl.CornerRadius/100",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 421.228, 8.50455 } },
+				},
+				MergeBorderandMaskedVideo = MultiMerge {
+					NameSet = true,
+					Inputs = {
+						LayerOrder = Input { Value = ScriptVal { {
+									[0] = 1,
+									2
+								} }, },
+						Background = Input {
+							SourceOp = "MergeMaskandResizedVideo",
+							Source = "Output",
+						},
+						["Layer1.Foreground"] = Input {
+							SourceOp = "BorderFill",
+							Source = "Output",
+						},
+						["Layer1.Nest"] = Input { Value = 0, },
+						LayerName1 = Input { Value = "Instance_Mask_1 Layer", },
+						LayerName2 = Input { Value = "MediaIn1 Layer", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 532.958, -40.0345 } },
+				},
+				Ctrl = AlphaDivide {
+					NameSet = true,
+					Inputs = {
+						Position = Input { Value = 2, },
+						Border = Input { Value = 1, },
+						CornerRadius = Input { Value = 9, },
+						BorderWidth = Input { Value = 4, },
+						Red = Input { Value = 1, },
+						Green = Input { Value = 1, },
+						Blue = Input { Value = 1, },
+						Zoom = Input { Value = 3, },
+						OffsetY = Input { Value = 10, },
+						Variables = Input { Value = 1, },
+						PositionX = Input {
+							Value = 0.5,
+							Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 2) then return (0.195 - (10 - Ctrl.Size) / 90) else return 1+-1*(0.195 - (10 - Ctrl.Size) / 90) end",
+						},
+						PositionY = Input {
+							Value = 0.5,
+							Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 1) then return 1 - (0.225 - (10 - Ctrl.Size) / 80) else return 0.225 - (10 - Ctrl.Size) / 80 end",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 532.668, -83.7585 } },
+					UserControls = ordered() {
+						Position = {
+							{ MBTNC_AddButton = "Top left" },
+							{ MBTNC_AddButton = "Top Right" },
+							{ MBTNC_AddButton = "Bottom Left" },
+							{ MBTNC_AddButton = "Bottom Right" },
+							LINKID_DataType = "Number",
+							INP_Integer = false,
+							MBTNC_ShowBasicButton = false,
+							INPID_InputControl = "MultiButtonControl",
+							MBTNC_ShowName = false,
+							MBTNC_StretchToFit = false,
+							MBTNC_ShowToolTip = false,
+							LINKS_Name = "Position",
+						},
+						Size = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 5,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICD_Center = 5,
+							LINKS_Name = "Size",
+						},
+						Border = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							LBLC_DropDownButton = false,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 3,
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							LBLC_NestLevel = 0,
+							LINKS_Name = "Border",
+						},
+						CornerRadius = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							IC_Steps = 1,
+							INP_MaxScale = 10,
+							INP_Default = 0,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICD_Center = 5,
+							LINKS_Name = "Corner Radius",
+						},
+						BorderWidth = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 0,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICD_Center = 5,
+							LINKS_Name = "BorderWidth",
+						},
+						Red = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							CLRC_NoSliders = true,
+							INPID_InputControl = "ColorControl",
+							CLRC_ColorSpace = "HSV",
+							INP_MaxScale = 1,
+							IC_ControlGroup = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							IC_ControlID = 0,
+							CLRC_ShowWheel = false,
+							LINKS_Name = "Color",
+						},
+						Green = {
+							INP_Integer = false,
+							CLRC_NoSliders = true,
+							INPID_InputControl = "ColorControl",
+							CLRC_ColorSpace = "HSV",
+							IC_ControlGroup = 1,
+							CLRC_ShowWheel = false,
+							LINKID_DataType = "Number",
+							IC_ControlID = 1,
+							LINKS_Name = "Color",
+						},
+						Blue = {
+							INP_Integer = false,
+							CLRC_NoSliders = true,
+							INPID_InputControl = "ColorControl",
+							CLRC_ColorSpace = "HSV",
+							IC_ControlGroup = 1,
+							CLRC_ShowWheel = false,
+							LINKID_DataType = "Number",
+							IC_ControlID = 2,
+							LINKS_Name = "Color",
+						},
+						Video = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							LBLC_DropDownButton = false,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 3,
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							LBLC_NestLevel = 0,
+							LINKS_Name = "Video",
+						},
+						Zoom = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 1,
+							INP_MinScale = 1,
+							INP_MinAllowed = 1,
+							LINKID_DataType = "Number",
+							ICD_Center = 5,
+							LINKS_Name = "Zoom",
+						},
+						OffsetX = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 0,
+							INP_MinScale = -10,
+							INP_MinAllowed = -10,
+							LINKID_DataType = "Number",
+							ICD_Center = 0,
+							LINKS_Name = "OffsetX",
+						},
+						OffsetY = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 0,
+							INP_MinScale = -10,
+							INP_MinAllowed = -10,
+							LINKID_DataType = "Number",
+							ICD_Center = 0,
+							LINKS_Name = "OffsetY",
+						},
+						Variables = {
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 4,
+							INP_Passive = true,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Variables",
+						},
+						PositionX = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							LINKS_Name = "Position X",
+						},
+						PositionY = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							LINKS_Name = "Position Y",
+						}
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "MacroTool1"
+}
