@@ -1,6 +1,7 @@
 {
 	Tools = ordered() {
 		MacroTool1 = MacroOperator {
+			CtrlWZoom = false,
 			Inputs = ordered() {
 				Input1 = InstanceInput {
 					SourceOp = "Ctrl",
@@ -67,13 +68,26 @@
 			},
 			Outputs = {
 				MainOutput1 = InstanceOutput {
-					SourceOp = "MediaOut1",
+					SourceOp = "MediaOut1_1",
 					Source = "Output",
 				}
 			},
-			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			ViewInfo = GroupInfo {
+				Pos = { 1254.24, -77.7975 },
+				Flags = {
+					Expanded = true,
+					AllowPan = false,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 667.578, 236.899, 333.789, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { 0, 0 }
+			},
 			Tools = ordered() {
-				MediaOut1 = MediaOut {
+				MediaOut1_1 = MediaOut {
 					Inputs = {
 						Index = Input { Value = "0", },
 						Input = Input {
@@ -81,26 +95,32 @@
 							Source = "Output",
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 759.968, -38.3825 } },
+					ViewInfo = OperatorInfo { Pos = { 269.383, 58.5741 } },
 				},
 				TransparentBG = Background {
 					NameSet = true,
 					Inputs = {
-						Width = Input { Value = 1920, },
-						Height = Input { Value = 1080, },
+						GlobalOut = Input { Value = 3729, },
+						Width = Input { Value = 4096, },
+						Height = Input { Value = 2304, },
 						UseFrameFormatSettings = Input { Value = 1, },
 						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.25, },
+						TopLeftGreen = Input { Value = 0.2, },
+						TopLeftBlue = Input { Value = 1, },
 						TopLeftAlpha = Input { Value = 0, }
 					},
-					ViewInfo = OperatorInfo { Pos = { 320.53, 82.8075 } },
+					ViewInfo = OperatorInfo { Pos = { -169.438, 179.764 } },
 				},
 				TransformAll = Transform {
-					CtrlWZoom = false,
 					NameSet = true,
 					Inputs = {
-						Center = Input { Expression = "Point(Ctrl.PositionX, Ctrl.PositionY)", },
+						Center = Input {
+							Value = { 0.139444444444444, 0.1625 },
+							Expression = "Point(Ctrl.PositionX, Ctrl.PositionY)",
+						},
 						Size = Input {
-							Value = 0.8,
+							Value = 0.55,
 							Expression = "0.3+0.05*Ctrl.Size",
 						},
 						Input = Input {
@@ -108,7 +128,7 @@
 							Source = "Output",
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 635.248, -38.9184 } },
+					ViewInfo = OperatorInfo { Pos = { 145.28, 58.0382 } },
 				},
 				MergeMaskandResizedVideo = Merge {
 					NameSet = true,
@@ -127,54 +147,45 @@
 						},
 						PerformDepthMerge = Input { Value = 0, }
 					},
-					ViewInfo = OperatorInfo { Pos = { 446.348, 54.1195 } },
+					ViewInfo = OperatorInfo { Pos = { -43.62, 151.076 } },
 				},
-				MediaIn1 = MediaIn {
+				MediaIn1_1 = MediaIn {
 					ExtentSet = true,
 					CustomData = {
 						MediaProps = {
-							MEDIA_HAS_AUDIO = true,
-							MEDIA_NUM_LAYERS = 1,
-							MEDIA_FORMAT_TYPE = "QuickTime",
-							MEDIA_PAR = 1,
-							MEDIA_HEIGHT = 720,
 							MEDIA_AUDIO_TRACKS_DESC = {
 								{
 									MEDIA_AUDIO_BIT_DEPTH = 32,
-									MEDIA_AUDIO_TRACK_ID = "07ec8685-c3fa-4374-bc26-321446e18527",
-									MEDIA_AUDIO_TRACK_NAME = "Link face recording.mov",
-									MEDIA_AUDIO_NUM_CHANNELS = 1,
-									MEDIA_AUDIO_START_TIME = 0,
-									MEDIA_AUDIO_SAMPLE_RATE = 48000,
-									MEDIA_AUDIO_FRAME_RATE = 13
-								},
-								{
-									MEDIA_AUDIO_BIT_DEPTH = 32,
-									MEDIA_AUDIO_TRACK_ID = "Timeline Audio",
-									MEDIA_AUDIO_TRACK_NAME = "Timeline Audio [Timeline 1]",
+									MEDIA_AUDIO_FRAME_RATE = 45,
 									MEDIA_AUDIO_NUM_CHANNELS = 2,
-									MEDIA_AUDIO_START_TIME = 0,
 									MEDIA_AUDIO_SAMPLE_RATE = 48000,
-									MEDIA_AUDIO_FRAME_RATE = 13
+									MEDIA_AUDIO_START_TIME = 0,
+									MEDIA_AUDIO_TRACK_ID = "Timeline Audio",
+									MEDIA_AUDIO_TRACK_NAME = "Timeline Audio [Timeline 1]"
 								}
 							},
-							MEDIA_NAME = "Link face recording.mov",
-							MEDIA_START_FRAME = 0,
-							MEDIA_AUDIO_TRACKS_NUM = 2,
+							MEDIA_AUDIO_TRACKS_NUM = 1,
+							MEDIA_FORMAT_TYPE = "QuickTime",
+							MEDIA_HAS_AUDIO = true,
+							MEDIA_HEIGHT = 2304,
 							MEDIA_IS_SOURCE_RES = true,
-							MEDIA_SRC_FRAME_RATE = 24,
-							MEDIA_MARK_OUT = 1404,
-							MEDIA_WIDTH = 1280,
-							MEDIA_NUM_FRAMES = 1405,
 							MEDIA_MARK_IN = 0,
-							MEDIA_PATH = "/Users/lukasoppermann/Desktop/Link face recording.mov"
+							MEDIA_MARK_OUT = 3727,
+							MEDIA_NAME = "Link Screen Recording.mov",
+							MEDIA_NUM_FRAMES = 3730,
+							MEDIA_NUM_LAYERS = 1,
+							MEDIA_PAR = 1,
+							MEDIA_PATH = "/Users/lukasoppermann/Desktop/Link Screen Recording.mov",
+							MEDIA_SRC_FRAME_RATE = 24,
+							MEDIA_START_FRAME = 0,
+							MEDIA_WIDTH = 4096
 						},
 					},
 					Inputs = {
-						GlobalOut = Input { Value = 1404, },
+						GlobalOut = Input { Value = 3729, },
 						AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
 						Layer = Input { Value = "0", },
-						ClipTimeEnd = Input { Value = 1404, },
+						ClipTimeEnd = Input { Value = 3729, },
 						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 						LeftAudio = Input {
 							SourceOp = "Left",
@@ -185,14 +196,8 @@
 							Source = "Data",
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 218.39, 53.5435 } },
+					ViewInfo = OperatorInfo { Pos = { -271.578, 150.5 } },
 					Version = 1
-				},
-				Left = AudioDisplay {
-					CtrlWZoom = false,
-				},
-				Right = AudioDisplay {
-					CtrlWZoom = false,
 				},
 				TransformInput = Transform {
 					NameSet = true,
@@ -200,11 +205,11 @@
 						Center = Input { Expression = "Point(0.5+(Ctrl.OffsetX*0.002 * (Ctrl.Zoom - 1 )), 0.5+(Ctrl.OffsetY*0.002 * (Ctrl.Zoom - 1 )))", },
 						Size = Input { Expression = "0.45+Ctrl.Zoom*0.05", },
 						Input = Input {
-							SourceOp = "MediaIn1",
+							SourceOp = "MediaIn1_1",
 							Source = "Output",
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 328.04, 53.4046 } },
+					ViewInfo = OperatorInfo { Pos = { -161.928, 150.361 } },
 				},
 				Border = RectangleMask {
 					NameSet = true,
@@ -234,7 +239,7 @@
 						EndRenderScripts = Input {
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 390.02, -89.2055 } },
+					ViewInfo = OperatorInfo { Pos = { -99.948, 7.75108 } },
 				},
 				BorderFill = Background {
 					NameSet = true,
@@ -243,8 +248,9 @@
 							SourceOp = "Border",
 							Source = "Mask",
 						},
-						Width = Input { Value = 1920, },
-						Height = Input { Value = 1080, },
+						GlobalOut = Input { Value = 3729, },
+						Width = Input { Value = 4096, },
+						Height = Input { Value = 2304, },
 						UseFrameFormatSettings = Input { Value = 1, },
 						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 						TopLeftRed = Input {
@@ -260,15 +266,15 @@
 							Expression = "Ctrl.Blue",
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 391.56, -53.8285 } },
+					ViewInfo = OperatorInfo { Pos = { -98.408, 43.1281 } },
 				},
 				Mask = RectangleMask {
 					NameSet = true,
 					Inputs = {
 						ShowViewControls = Input { Value = 0, },
 						CapStyle = Input { Value = 0, },
-						MaskWidth = Input { Value = 1920, },
-						MaskHeight = Input { Value = 1080, },
+						MaskWidth = Input { Value = 4096, },
+						MaskHeight = Input { Value = 2304, },
 						PixelAspect = Input { Value = { 1, 1 }, },
 						UseFrameFormatSettings = Input { Value = 1, },
 						ClippingMode = Input { Value = FuID { "None" }, },
@@ -278,7 +284,7 @@
 							Expression = "Ctrl.CornerRadius/100",
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 421.228, 8.50455 } },
+					ViewInfo = OperatorInfo { Pos = { -68.74, 105.461 } },
 				},
 				MergeBorderandMaskedVideo = MultiMerge {
 					NameSet = true,
@@ -288,7 +294,7 @@
 									2
 								} }, },
 						Background = Input {
-							SourceOp = "MergeMaskandResizedVideo",
+							SourceOp = "DropShadow",
 							Source = "Output",
 						},
 						["Layer1.Foreground"] = Input {
@@ -299,13 +305,13 @@
 						LayerName1 = Input { Value = "Instance_Mask_1 Layer", },
 						LayerName2 = Input { Value = "MediaIn1 Layer", }
 					},
-					ViewInfo = OperatorInfo { Pos = { 532.958, -40.0345 } },
+					ViewInfo = OperatorInfo { Pos = { 42.99, 56.9221 } },
 				},
 				Ctrl = AlphaDivide {
 					NameSet = true,
 					Inputs = {
 						Position = Input { Value = 2, },
-						Border = Input { Value = 1, },
+            Border = Input { Value = 1, },
 						CornerRadius = Input { Value = 9, },
 						BorderWidth = Input { Value = 4, },
 						Red = Input { Value = 1, },
@@ -313,7 +319,7 @@
 						Blue = Input { Value = 1, },
 						Zoom = Input { Value = 3, },
 						OffsetY = Input { Value = 10, },
-						Variables = Input { Value = 1, },
+            Variables = Input { Value = 1, },
 						PositionX = Input {
 							Value = 0.5,
 							Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 2) then return (0.195 - (10 - Ctrl.Size) / 90) else return 1+-1*(0.195 - (10 - Ctrl.Size) / 90) end",
@@ -323,7 +329,7 @@
 							Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 1) then return 1 - (0.225 - (10 - Ctrl.Size) / 80) else return 0.225 - (10 - Ctrl.Size) / 80 end",
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 532.668, -83.7585 } },
+					ViewInfo = OperatorInfo { Pos = { 42.7, 13.1981 } },
 					UserControls = ordered() {
 						Position = {
 							{ MBTNC_AddButton = "Top left" },
@@ -352,17 +358,19 @@
 							LINKS_Name = "Size",
 						},
 						Border = {
-							INP_MaxAllowed = 1000000,
-							INP_Integer = false,
-							LBLC_DropDownButton = false,
-							INPID_InputControl = "LabelControl",
-							LBLC_NumInputs = 3,
-							INP_MaxScale = 1,
-							INP_MinScale = 0,
-							INP_MinAllowed = -1000000,
-							LINKID_DataType = "Number",
-							LBLC_NestLevel = 0,
 							LINKS_Name = "Border",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "LabelControl",
+							INP_Integer = false,
+							INP_MinScale = 0,
+							INP_MaxScale = 1,
+							INP_MinAllowed = -1000000,
+							INP_MaxAllowed = 1000000,
+							LBLC_DropDownButton = false,
+							LBLC_NumInputs = 3,
+							LBLC_NestLevel = 0,
+							INP_External = false,
+							INP_Passive = true,
 						},
 						CornerRadius = {
 							INP_MaxAllowed = 10,
@@ -427,17 +435,19 @@
 							LINKS_Name = "Color",
 						},
 						Video = {
-							INP_MaxAllowed = 1000000,
-							INP_Integer = false,
-							LBLC_DropDownButton = false,
-							INPID_InputControl = "LabelControl",
-							LBLC_NumInputs = 3,
-							INP_MaxScale = 1,
-							INP_MinScale = 0,
-							INP_MinAllowed = -1000000,
-							LINKID_DataType = "Number",
-							LBLC_NestLevel = 0,
 							LINKS_Name = "Video",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "LabelControl",
+							INP_Integer = false,
+							INP_MinScale = 0,
+							INP_MaxScale = 1,
+							INP_MinAllowed = -1000000,
+							INP_MaxAllowed = 1000000,
+							LBLC_DropDownButton = false,
+							LBLC_NumInputs = 3,
+							LBLC_NestLevel = 0,
+							INP_External = false,
+							INP_Passive = true,
 						},
 						Zoom = {
 							INP_MaxAllowed = 10,
@@ -476,13 +486,18 @@
 							LINKS_Name = "OffsetY",
 						},
 						Variables = {
-							INP_Integer = false,
-							LBLC_DropDownButton = true,
-							LINKID_DataType = "Number",
-							LBLC_NumInputs = 4,
-							INP_Passive = true,
-							INPID_InputControl = "LabelControl",
 							LINKS_Name = "Variables",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "LabelControl",
+							INP_Integer = false,
+							INP_MinScale = 0,
+							INP_MaxScale = 1,
+							INP_MinAllowed = -1000000,
+							INP_MaxAllowed = 1000000,
+							LBLC_DropDownButton = true,
+							LBLC_NumInputs = 4,
+							INP_External = false,
+							INP_Passive = true,
 						},
 						PositionX = {
 							INP_MaxAllowed = 1000000,
@@ -507,8 +522,42 @@
 							LINKS_Name = "Position Y",
 						}
 					}
+				},
+				DropShadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					NameSet = true,
+					Inputs = {
+						Source = Input {
+							SourceOp = "MergeMaskandResizedVideo",
+							Source = "Output",
+						},
+						shadowStrength = Input { Value = 0.5, },
+						shadowAngle = Input { Value = 90, },
+						ShadowDistance = Input { Value = 0.05, },
+						shadowBlur = Input { Value = 0.8, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 48.1245, 110.496 } },
 				}
 			},
+		},
+		Left = AudioDisplay {
+			CtrlWZoom = false,
+		},
+		Right = AudioDisplay {
+			CtrlWZoom = false,
 		}
 	},
 	ActiveTool = "MacroTool1"
