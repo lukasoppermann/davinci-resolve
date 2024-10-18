@@ -1,6 +1,6 @@
 {
 	Tools = ordered() {
-		MacroTool1 = MacroOperator {
+		MacroTool1 = GroupOperator {
 			CtrlWZoom = false,
 			Inputs = ordered() {
 				Input1 = InstanceInput {

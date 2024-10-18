@@ -1,0 +1,325 @@
+{
+	Tools = ordered() {
+		Shadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+			NameSet = true,
+			Inputs = {
+				Source = Input {
+					SourceOp = "ApplyMasktosource",
+					Source = "Output",
+				},
+				shadowStrength = Input {
+					Value = 0.5,
+					Expression = "iif(Ctrl.Shadow == 1, 0.5, 0)",
+				},
+				shadowAngle = Input { Value = 90, },
+				ShadowDistance = Input { Value = 0.02500000007451, },
+				shadowBlur = Input { Value = 0.5, },
+				shadowColorRed = Input { Value = 0, },
+				shadowColorGreen = Input { Value = 0, },
+				shadowColorBlue = Input { Value = 0, },
+				isLegacyComp = Input { Value = 0, },
+				blendGroup = Input { Value = 0, },
+				blendIn = Input { Value = 1, },
+				blend = Input { Value = 0, },
+				ignoreContentShape = Input { Value = 0, },
+				legacyIsProcessRGBOnly = Input { Value = 0, },
+				IsNoTemporalFramesReqd = Input { Value = 0, },
+				refreshTrigger = Input { Value = 1, },
+				srcProcessingAlphaMode = Input { Value = 2, },
+				dstProcessingAlphaMode = Input { Value = 2, },
+				resolvefxVersion = Input { Value = "2.0", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 422.002, 48.3296 } },
+		},
+		ApplyMasktosource = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input {
+					SourceOp = "Transparent",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "TransformSource",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input {
+					SourceOp = "MaskSource",
+					Source = "Mask",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 284.519, 47.2813 } },
+		},
+		Ctrl = AlphaDivide {
+			CtrlWZoom = false,
+			NameSet = true,
+			Inputs = {
+				Width = Input { Value = 0.841, },
+				OffsetY = Input { Value = 0.484, },
+				OffsetTop = Input { Value = 0.778, },
+				OffsetBottom = Input { Value = 0.133, },
+				OffsetX = Input { Value = 0.398, },
+				CutBottom = Input { Value = 0.133, },
+				CutTop = Input { Value = 0.778, },
+				Variables = Input { Value = 1, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 413.926, -37.5145 } },
+			UserControls = ordered() {
+				Shadow = {
+					LINKS_Name = "Shadow",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "CheckboxControl",
+					INP_Default = 1,
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = 0,
+					INP_MaxAllowed = 1,
+					CBC_TriState = false,
+				},
+				Size = {
+					LINKS_Name = "Size",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+					INP_Default = 100,
+					INP_Integer = true,
+					INP_MinScale = 1,
+					INP_MaxScale = 100,
+					INP_MinAllowed = 1,
+					INP_MaxAllowed = 100,
+					ICD_Center = 50,
+					IC_Steps = 0,
+				},
+				Mask = {
+					LINKS_Name = "Mask",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "LabelControl",
+					INP_Integer = false,
+					LBLC_DropDownButton = false,
+					LBLC_NumInputs = 2,
+					INP_External = false,
+					INP_Passive = true,
+				},
+				CornerRadius = {
+					LINKS_Name = "Corner Radius",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+					INP_Default = 0,
+					INP_Integer = true,
+					INP_MinScale = 0,
+					INP_MaxScale = 10,
+					INP_MinAllowed = 0,
+					INP_MaxAllowed = 10,
+					ICD_Center = 5,
+				},
+				CropTop = {
+					LINKS_Name = "Crop Top",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "RangeControl",
+					INP_Default = 0.5,
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = 0,
+					INP_MaxAllowed = 1,
+					IC_ControlGroup = 1,
+					IC_ControlID = 1,
+				},
+				CropBottom = {
+					LINKS_Name = "Crop Bottom",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "RangeControl",
+					INP_Default = 0.5,
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = 0,
+					INP_MaxAllowed = 1,
+					IC_ControlGroup = 1,
+					IC_ControlID = 0,
+				},
+				CropRight = {
+					LINKS_Name = "Crop Right",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "RangeControl",
+					INP_Default = 0.5,
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = 0,
+					INP_MaxAllowed = 1,
+					IC_ControlGroup = 2,
+					IC_ControlID = 1,
+				},
+				CropLeft = {
+					LINKS_Name = "Crop Left",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "RangeControl",
+					INP_Default = 0.5,
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = 0,
+					INP_MaxAllowed = 1,
+					IC_ControlGroup = 2,
+					IC_ControlID = 0,
+				},
+				Variables = {
+					LINKS_Name = "Variables",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "LabelControl",
+					INP_Integer = false,
+					LBLC_DropDownButton = true,
+					LBLC_NumInputs = 4,
+					INP_External = false,
+					INP_Passive = true,
+				},
+				MaskHeight = {
+					LINKS_Name = "MaskHeight",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = -1000000,
+					INP_MaxAllowed = 1000000,
+					INP_Passive = true,
+				},
+				MaskWidth = {
+					LINKS_Name = "MaskHeight",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = -1000000,
+					INP_MaxAllowed = 1000000,
+					INP_Passive = true,
+				},
+				MaskOffsetX = {
+					LINKS_Name = "MaskOffsetX",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = -1000000,
+					INP_MaxAllowed = 1000000,
+					INP_Passive = true,
+				},
+				MaskOffsetY = {
+					LINKS_Name = "MaskOffsetY",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = -1000000,
+					INP_MaxAllowed = 1000000,
+					INP_Passive = true,
+				},
+				MaskCornerRadius = {
+					LINKS_Name = "MaskCornerRadius",
+					LINKID_DataType = "Number",
+					INPID_InputControl = "SliderControl",
+					INP_Integer = false,
+					INP_MinScale = 0,
+					INP_MaxScale = 1,
+					INP_MinAllowed = -1000000,
+					INP_MaxAllowed = 1000000,
+					INP_Passive = true,
+				}
+			}
+		},
+		MaskSource = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				Filter = Input { Value = FuID { "Fast Gaussian" }, },
+				MaskWidth = Input { Value = 4096, },
+				MaskHeight = Input { Value = 2304, },
+				PixelAspect = Input { Value = { 1, 1 }, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				ClippingMode = Input { Value = FuID { "None" }, },
+				Width = Input {
+					Value = 0.841,
+					Expression = "Ctrl.Width",
+				},
+				Height = Input {
+					Value = 0.645,
+					Expression = "1-Ctrl.OffsetBottom-(1-Ctrl.OffsetTop)",
+				},
+				CornerRadius = Input { Expression = "Ctrl.CornerRadius/200", }
+			},
+			ViewInfo = OperatorInfo { Pos = { 285.029, -16.0898 } },
+		},
+		TransformSource = Transform {
+			NameSet = true,
+			Inputs = {
+				Center = Input { Expression = "Point(Ctrl.OffsetX, 0.5-(Ctrl.OffsetBottom+1-Ctrl.OffsetTop)/2)", },
+				Input = Input {
+					SourceOp = "MediaIn1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 174.519, 47.2813 } },
+		},
+		Transform1 = Transform {
+			Inputs = {
+				Size = Input { Expression = "1.0 * Ctrl.Size/100", },
+				Input = Input {
+					SourceOp = "Shadow",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 548.114, 46.0705 } },
+		},
+		MediaOut1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input {
+					SourceOp = "Transform1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 703.156, 46.1114 } },
+		},
+		MediaIn1 = MediaIn {
+			ExtentSet = true,
+			CustomData = { MediaProps = { MEDIA_WIDTH = 4096, MEDIA_NUM_LAYERS = 1, MEDIA_FORMAT_TYPE = "QuickTime", MEDIA_START_FRAME = 0, MEDIA_IS_SOURCE_RES = true, MEDIA_PATH = "/Users/lukasoppermann/Desktop/Link Screen Recording.mov", MEDIA_NAME = "Link Screen Recording.mov", MEDIA_HEIGHT = 2304, MEDIA_PAR = 1, MEDIA_AUDIO_TRACKS_NUM = 1, MEDIA_SRC_FRAME_RATE = 24, MEDIA_MARK_OUT = 3727, MEDIA_AUDIO_TRACKS_DESC = { { MEDIA_AUDIO_BIT_DEPTH = 32, MEDIA_AUDIO_TRACK_ID = "Timeline Audio", MEDIA_AUDIO_TRACK_NAME = "Timeline Audio [Timeline 1]", MEDIA_AUDIO_START_TIME = 0, MEDIA_AUDIO_FRAME_RATE = 45, MEDIA_AUDIO_SAMPLE_RATE = 48000, MEDIA_AUDIO_NUM_CHANNELS = 2 } }, MEDIA_NUM_FRAMES = 3730, MEDIA_MARK_IN = 0, MEDIA_HAS_AUDIO = true }, },
+			Inputs = {
+				GlobalOut = Input { Value = 3729, },
+				AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+				Layer = Input { Value = "0", },
+				ClipTimeEnd = Input { Value = 3729, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				LeftAudio = Input {
+					SourceOp = "Left",
+					Source = "Data",
+				},
+				RightAudio = Input {
+					SourceOp = "Right",
+					Source = "Data",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 30.9378, 44.4481 } },
+			Version = 1
+		},
+		Left = AudioDisplay {
+		},
+		Right = AudioDisplay {
+			CtrlWZoom = false,
+		},
+		Transparent = Background {
+			NameSet = true,
+			Inputs = {
+				GlobalOut = Input { Value = 3729, },
+				Width = Input { Value = 4096, },
+				Height = Input { Value = 2304, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TopLeftAlpha = Input { Value = 0, }
+			},
+			ViewInfo = OperatorInfo { Pos = { 282.223, 91.8164 } },
+		}
+	}
+}
