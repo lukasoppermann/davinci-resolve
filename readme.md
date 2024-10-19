@@ -312,6 +312,30 @@ Exponent | ^
 
 # Creating Macros / Templates
 
+## Folder structure
+To make a `.setting` file work correctly in Davinci Resolve you need to either generate a `.drfx` file or place it directly in the correct folder.
+**Important:** You **MUST NOT** create subfolders. This will prevent your templates to work correct.
+
+**DO:**
+`Edit/Effects/Simple Title.setting`
+
+**DON'T:**
+~~`Edit/Effects/{Subfolder}/Simple Title.setting`~~
+
+## Preview image
+To get a small preview image for your template in Davinci Resolve you need to add a `.png` file with the same name as your template next to it.
+
+E.g.
+- `Edit/Effects/Simple Title.setting`
+- `Edit/Effects/Simple Title.png` <- This is the preview image
+
+The image has to have a size of `104px` x `58px`.
+
+## Create a template / macro
+After you create the nodes you want, select them and from the context menu choose create macro. Give it a name and make sure to select all inputs you want to be exposed in the sidebar when folks use your template.
+
+**TIP:** You can select all nodes and copy (`cmd` + `c`) and paste them into a code editor. You can also copy the code from your editor and paste it into the fusion page.
+
 ## Create bundles / drfx
 
 1. Create the following folder structure:
