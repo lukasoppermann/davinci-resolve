@@ -310,8 +310,28 @@ Multiply | *
 Modulus divides and returns remainder | %
 Exponent | ^
 
+# Creating Macros / Templates
+
+## Create bundles / drfx
+
+1. Create the following folder structure:
+
+```
+  - Edit
+    - Effects
+    - Generators
+    - Titles
+    - Transitions
+```
+
+2. Place your `.setting` file and the `.png` for the preview image in the correct folder, e.g. `Edit/Effects`.
+3. Compress the `Edit` folder to a zip file
+4. Rename the zip archive to the name of the Template e.g. `Simple Title` and change the extension to `.drfx`
+5. You can now install the bundle by simple double-clicking it
+
 # Sources
 - [Blackmagic Fusion Simple Expressions-Cookbook + Tutorial](https://noahhaehnel.com/blog/fusion-simple-expressions-cookbook/3/#Get_Maximum_or_Minimum_of_different_values)
 - [lua.org](https://www.lua.org)
 - [Jayaretv: Fusion Expressions](https://jayaretv.com/tips/fusion-expressions/)
 - [Keyboard shortcuts](https://vfxstudy.com/wp-content/uploads/2020/02/Fusion-Keyboard-Shortcuts-v1.pdf)
+- [Making Fusion Templates in DaVinci Resolve](https://www.youtube.com/watch?v=fLVIynCwQKM)

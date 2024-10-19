@@ -1,0 +1,565 @@
+{
+	Tools = ordered() {
+		VinV = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Position",
+					Default = 2,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Size",
+					Default = 5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Border",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "CornerRadius",
+					Default = 9,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BorderWidth",
+					Default = 4,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Red",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Green",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Blue",
+					ControlGroup = 6,
+					Default = 1,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Video",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Zoom",
+					Default = 3,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "OffsetX",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "OffsetY",
+					Default = 10,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "PositionX",
+					Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 2) then return (0.195 - (10 - Ctrl.Size) / 90) else return 1+-1*(0.195 - (10 - Ctrl.Size) / 90) end",
+					Default = 0.5,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "PositionY",
+					Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 1) then return 1 - (0.225 - (10 - Ctrl.Size) / 80) else return 0.225 - (10 - Ctrl.Size) / 80 end",
+					Default = 0.5,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "TransformInput",
+					Source = "Input",
+				}
+			},
+			Outputs = {
+				MainOutput2 = InstanceOutput {
+					SourceOp = "TransformAll",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Border = RectangleMask {
+					CtrlWZoom = false,
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						},
+					},
+					SourceOp = "Mask",
+					Inputs = {
+						EffectMask = Input {
+						},
+						SettingsNest = Input {
+						},
+						BorderWidth = Input {
+							Value = 0.004,
+							Expression = "Ctrl.BorderWidth/1000"
+						},
+						Solid = Input {
+							Value = 0,
+						},
+						CornerRadius = Input {
+							Value = 0.09,
+							Expression = "Ctrl.CornerRadius/100"
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 295.876, 121.758 } },
+				},
+				Ctrl = AlphaDivide {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						Position = Input { Value = 2, },
+						Border = Input { Value = 1, },
+						CornerRadius = Input { Value = 9, },
+						BorderWidth = Input { Value = 4, },
+						Red = Input { Value = 1, },
+						Green = Input { Value = 1, },
+						Blue = Input { Value = 1, },
+						Zoom = Input { Value = 3, },
+						OffsetY = Input { Value = 10, },
+						Variables = Input { Value = 1, },
+						PositionX = Input {
+							Value = 0.5,
+							Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 2) then return (0.195 - (10 - Ctrl.Size) / 90) else return 1+-1*(0.195 - (10 - Ctrl.Size) / 90) end",
+						},
+						PositionY = Input {
+							Value = 0.5,
+							Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 1) then return 1 - (0.225 - (10 - Ctrl.Size) / 80) else return 0.225 - (10 - Ctrl.Size) / 80 end",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 438.524, 127.205 } },
+					UserControls = ordered() {
+						Position = {
+							{ MBTNC_AddButton = "Top left" },
+							{ MBTNC_AddButton = "Top Right" },
+							{ MBTNC_AddButton = "Bottom Left" },
+							{ MBTNC_AddButton = "Bottom Right" },
+							INPID_InputControl = "MultiButtonControl",
+							INP_Integer = false,
+							MBTNC_StretchToFit = false,
+							LINKID_DataType = "Number",
+							MBTNC_ShowName = false,
+							MBTNC_ShowBasicButton = false,
+							MBTNC_ShowToolTip = false,
+							LINKS_Name = "Position",
+						},
+						Size = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 5,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICD_Center = 5,
+							LINKS_Name = "Size",
+						},
+						Border = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							LBLC_DropDownButton = false,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 3,
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							LBLC_NestLevel = 0,
+							INP_External = false,
+							LINKS_Name = "Border",
+						},
+						CornerRadius = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							IC_Steps = 1,
+							INP_MaxScale = 10,
+							INP_Default = 0,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICD_Center = 5,
+							LINKS_Name = "Corner Radius",
+						},
+						BorderWidth = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 0,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICD_Center = 5,
+							LINKS_Name = "BorderWidth",
+						},
+						Red = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							CLRC_NoSliders = true,
+							INPID_InputControl = "ColorControl",
+							CLRC_ColorSpace = "HSV",
+							INP_MaxScale = 1,
+							IC_ControlGroup = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							IC_ControlID = 0,
+							CLRC_ShowWheel = false,
+							LINKS_Name = "Color",
+						},
+						Green = {
+							INP_Integer = false,
+							CLRC_NoSliders = true,
+							INPID_InputControl = "ColorControl",
+							CLRC_ColorSpace = "HSV",
+							IC_ControlGroup = 1,
+							CLRC_ShowWheel = false,
+							LINKID_DataType = "Number",
+							IC_ControlID = 1,
+							LINKS_Name = "Color",
+						},
+						Blue = {
+							INP_Integer = false,
+							CLRC_NoSliders = true,
+							INPID_InputControl = "ColorControl",
+							CLRC_ColorSpace = "HSV",
+							IC_ControlGroup = 1,
+							CLRC_ShowWheel = false,
+							LINKID_DataType = "Number",
+							IC_ControlID = 2,
+							LINKS_Name = "Color",
+						},
+						Video = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							LBLC_DropDownButton = false,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 3,
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							LBLC_NestLevel = 0,
+							INP_External = false,
+							LINKS_Name = "Video",
+						},
+						Zoom = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 1,
+							INP_MinScale = 1,
+							INP_MinAllowed = 1,
+							LINKID_DataType = "Number",
+							ICD_Center = 5,
+							LINKS_Name = "Zoom",
+						},
+						OffsetX = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 0,
+							INP_MinScale = -10,
+							INP_MinAllowed = -10,
+							LINKID_DataType = "Number",
+							ICD_Center = 0,
+							LINKS_Name = "OffsetX",
+						},
+						OffsetY = {
+							INP_MaxAllowed = 10,
+							INP_Integer = true,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 10,
+							INP_Default = 0,
+							INP_MinScale = -10,
+							INP_MinAllowed = -10,
+							LINKID_DataType = "Number",
+							ICD_Center = 0,
+							LINKS_Name = "OffsetY",
+						},
+						Variables = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 4,
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							INP_External = false,
+							LINKS_Name = "Variables",
+						},
+						PositionX = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							LINKS_Name = "Position X",
+						},
+						PositionY = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
+							LINKS_Name = "Position Y",
+						}
+					}
+				},
+				TransparentBG = Background {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.25, },
+						TopLeftGreen = Input { Value = 0.2, },
+						TopLeftBlue = Input { Value = 1, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 226.386, 293.771 } },
+				},
+				MergeMaskandResizedVideo = Merge {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Mask",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "TransparentBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TransformInput",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 352.204, 265.083 } },
+				},
+				TransformInput = Transform {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						Center = Input { Expression = "Point(0.5+(Ctrl.OffsetX*0.002 * (Ctrl.Zoom - 1 )), 0.5+(Ctrl.OffsetY*0.002 * (Ctrl.Zoom - 1 )))", },
+						Size = Input { Expression = "0.45+Ctrl.Zoom*0.05", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 233.896, 264.368 } },
+				},
+				DropShadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						Source = Input {
+							SourceOp = "MergeMaskandResizedVideo",
+							Source = "Output",
+						},
+						shadowStrength = Input { Value = 0.5, },
+						shadowAngle = Input { Value = 90, },
+						ShadowDistance = Input { Value = 0.05, },
+						shadowBlur = Input { Value = 0.8, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 443.949, 224.503 } },
+				},
+				Mask = RectangleMask {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						ShowViewControls = Input { Value = 0, },
+						CapStyle = Input { Value = 0, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.45, },
+						CornerRadius = Input {
+							Value = 0.09,
+							Expression = "Ctrl.CornerRadius/100",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 327.084, 219.468 } },
+				},
+				BorderFill = Background {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Border",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input {
+							Value = 1,
+							Expression = "Ctrl.Red",
+						},
+						TopLeftGreen = Input {
+							Value = 1,
+							Expression = "Ctrl.Green",
+						},
+						TopLeftBlue = Input {
+							Value = 1,
+							Expression = "Ctrl.Blue",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 297.416, 157.135 } },
+				},
+				MergeBorderandMaskedVideo = MultiMerge {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						LayerOrder = Input { Value = ScriptVal { {
+									[0] = 1,
+									2
+								} }, },
+						Background = Input {
+							SourceOp = "DropShadow",
+							Source = "Output",
+						},
+						["Layer1.Foreground"] = Input {
+							SourceOp = "BorderFill",
+							Source = "Output",
+						},
+						["Layer1.Nest"] = Input { Value = 0, },
+						LayerName1 = Input { Value = "Instance_Mask_1 Layer", },
+						LayerName2 = Input { Value = "MediaIn1 Layer", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 438.814, 170.929 } },
+				},
+				TransformAll = Transform {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						Center = Input {
+							Value = { 0.139444444444444, 0.1625 },
+							Expression = "Point(Ctrl.PositionX, Ctrl.PositionY)",
+						},
+						Size = Input {
+							Value = 0.55,
+							Expression = "0.3+0.05*Ctrl.Size",
+						},
+						Input = Input {
+							SourceOp = "MergeBorderandMaskedVideo",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 541.104, 172.045 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "Video in video"
+}

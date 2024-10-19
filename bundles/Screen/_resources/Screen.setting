@@ -1,0 +1,373 @@
+{
+	Tools = ordered() {
+		MacroTool1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Shadow",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Size",
+					Default = 100,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Mask",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "CornerRadius",
+					Default = 5,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "CropTop",
+					ControlGroup = 5,
+					Default = 0.952,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "CropBottom",
+					ControlGroup = 5,
+					Default = 0.083,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "CropRight",
+					ControlGroup = 6,
+					Default = 0.968,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "CropLeft",
+					ControlGroup = 6,
+					Default = 0.032,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BorderWidth",
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BorderRed",
+					ControlGroup = 8,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BorderGreen",
+					ControlGroup = 8,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BorderBlue",
+					ControlGroup = 8,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BgRed",
+					ControlGroup = 9,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BgGreen",
+					ControlGroup = 9,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BgBlue",
+					ControlGroup = 9,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BgAlpha",
+					ControlGroup = 9,
+					Default = 0,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "BackgroundImage",
+					Source = "Clip",
+					Name = "Background Image",
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "TransformSource",
+					Source = "Input",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Output",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				BackgroundImage = Loader {
+					Clips = {
+					},
+					NameSet = true,
+					Inputs = {
+						["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 88.6462, 316.993 } },
+				},
+				Ctrl = AlphaDivide {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						FinalSize = Input { Expression = "1.0 * Size/100", },
+						CornerRadius = Input { Value = 5, },
+						CropTop = Input { Value = 0.952, },
+						CropBottom = Input { Value = 0.083, },
+						CropRight = Input { Value = 0.968, },
+						CropLeft = Input { Value = 0.032, },
+						Variables = Input { Value = 1, },
+						MaskHeight = Input { Expression = "1-CropBottom-(1-CropTop)", },
+						MaskWidth = Input { Expression = "1-CropLeft-(1-CropRight)", },
+						MaskOffsetX = Input { Expression = "0.5-CropLeft*0.5+(1-CropRight)*0.5", },
+						MaskOffsetY = Input { Expression = "0.5-CropBottom*0.5+(1-CropTop)*0.5", },
+						MaskCornerRadius = Input { Expression = "CornerRadius/200", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 244.686, 83.3827 } },
+					Colors = { TileColor = { R = 0.623529411764706, G = 0.776470588235294, B = 0.0823529411764706 }, },
+					UserControls = ordered() { Shadow = { INP_MaxAllowed = 1, INP_Integer = false, INPID_InputControl = "CheckboxControl", INP_MaxScale = 1, INP_Default = 1, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", CBC_TriState = false, LINKS_Name = "Shadow", }, Size = { INP_MaxAllowed = 100, INP_Integer = true, INPID_InputControl = "SliderControl", IC_Steps = 0, INP_MaxScale = 100, INP_Default = 100, INP_MinScale = 1, INP_MinAllowed = 1, LINKID_DataType = "Number", ICD_Center = 50, LINKS_Name = "Size", }, Mask = { LBLC_DropDownButton = false, INP_Integer = false, INP_External = false, LINKID_DataType = "Number", LBLC_NumInputs = 2, INP_Passive = true, INPID_InputControl = "LabelControl", LINKS_Name = "Mask", }, CornerRadius = { INP_MaxAllowed = 10, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MaxScale = 10, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", ICD_Center = 5, LINKS_Name = "Corner Radius", }, CropTop = { INP_MaxAllowed = 1, INP_Integer = false, INPID_InputControl = "RangeControl", INP_MaxScale = 1, INP_Default = 0.5, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", IC_ControlID = 1, IC_ControlGroup = 1, LINKS_Name = "Crop Top", }, CropBottom = { INP_MaxAllowed = 1, INP_Integer = false, INPID_InputControl = "RangeControl", INP_MaxScale = 1, INP_Default = 0.5, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", IC_ControlID = 0, IC_ControlGroup = 1, LINKS_Name = "Crop Bottom", }, CropRight = { INP_MaxAllowed = 1, INP_Integer = false, INPID_InputControl = "RangeControl", INP_MaxScale = 1, INP_Default = 0.5, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", IC_ControlID = 1, IC_ControlGroup = 2, LINKS_Name = "Crop Right", }, CropLeft = { INP_MaxAllowed = 1, INP_Integer = false, INPID_InputControl = "RangeControl", INP_MaxScale = 1, INP_Default = 0.5, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", IC_ControlID = 0, IC_ControlGroup = 2, LINKS_Name = "Crop Left", }, BorderWidth = { INP_MaxAllowed = 10, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MaxScale = 10, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", ICD_Center = 5, LINKS_Name = "BorderWidth", }, BorderRed = { INP_Integer = false, CLRC_NoSliders = false, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", IC_ControlGroup = 3, CLRC_ShowWheel = false, LINKID_DataType = "Number", IC_ControlID = 0, LINKS_Name = "Border Color", }, BorderGreen = { INP_MaxAllowed = 1000000, INP_Integer = false, CLRC_NoSliders = true, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 3, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 1, CLRC_ShowWheel = false, LINKS_Name = "Border Color", }, BorderBlue = { INP_MaxAllowed = 1000000, INP_Integer = false, CLRC_NoSliders = true, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 3, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 2, CLRC_ShowWheel = false, LINKS_Name = "Border Color", }, BgRed = { INP_Integer = false, CLRC_NoSliders = false, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", IC_ControlGroup = 4, CLRC_ShowWheel = false, LINKID_DataType = "Number", IC_ControlID = 0, LINKS_Name = "Background Color", }, BgGreen = { INP_MaxAllowed = 1000000, INP_Integer = false, CLRC_NoSliders = true, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 4, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 1, CLRC_ShowWheel = false, LINKS_Name = "Background Color", }, BgBlue = { INP_MaxAllowed = 1000000, INP_Integer = false, CLRC_NoSliders = true, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 4, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 2, CLRC_ShowWheel = false, LINKS_Name = "Background Color", }, BgAlpha = { INP_MaxAllowed = 1000000, INP_Integer = false, CLRC_NoSliders = true, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 3, CLRC_ShowWheel = false, IC_ControlGroup = 4, LINKS_Name = "Background Color", }, Variables = { LBLC_DropDownButton = true, INP_Integer = false, INP_External = false, LINKID_DataType = "Number", LBLC_NumInputs = 5, INP_Passive = true, INPID_InputControl = "LabelControl", LINKS_Name = "Variables", }, MaskHeight = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INP_Passive = true, LINKS_Name = "Mask Height", }, MaskWidth = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INP_Passive = true, LINKS_Name = "Mask Width", }, MaskOffsetX = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INP_Passive = true, LINKS_Name = "MaskOffsetX", }, MaskOffsetY = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INP_Passive = true, LINKS_Name = "MaskOffsetY", }, MaskCornerRadius = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INP_Passive = true, LINKS_Name = "MaskCornerRadius", } }
+				},
+				Output = Merge {
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Shadow",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 208.546, 162.803 } },
+				},
+				BackgroundColor = Background {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "Ctrl.BgRed", },
+						TopLeftGreen = Input { Expression = "Ctrl.BgGreen", },
+						TopLeftBlue = Input { Expression = "Ctrl.BgBlue", },
+						TopLeftAlpha = Input {
+							Value = 0,
+							Expression = "Ctrl.BgAlpha",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 90.4462, 286.603 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "BackgroundColor",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BackgroundImage",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 208.286, 286.183 } },
+				},
+				Transform1 = Transform {
+					Inputs = {
+						Size = Input { Expression = "Ctrl.FinalSize", },
+						Input = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 5.9162, 149.923 } },
+					Colors = { TileColor = { R = 0.474509803921569, G = 0.658823529411765, B = 0.815686274509804 }, }
+				},
+				Shadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					NameSet = true,
+					Inputs = {
+						Source = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						shadowStrength = Input {
+							Value = 0.5,
+							Expression = "iif(Ctrl.Shadow == 1, 0.5, 0)",
+						},
+						shadowAngle = Input { Value = 90, },
+						ShadowDistance = Input { Value = 0.0250000000745, },
+						shadowBlur = Input { Value = 0.5, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 6.12619, 181.113 } },
+					Colors = { TileColor = { R = 0.474509803921569, G = 0.658823529411765, B = 0.815686274509804 }, }
+				},
+				Merge3 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "MultiMerge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BorderColor",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -23.7338, 90.0827 } },
+				},
+				BorderColor = Background {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Border",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "Ctrl.BorderRed", },
+						TopLeftGreen = Input { Expression = "Ctrl.BorderGreen", },
+						TopLeftBlue = Input { Expression = "Ctrl.BorderBlue", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -31.3838, 49.9925 } },
+				},
+				MultiMerge1 = MultiMerge {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "MaskSource",
+							Source = "Mask",
+						},
+						LayerOrder = Input { Value = ScriptVal { { [0] = 1, 2 } }, },
+						Background = Input {
+							SourceOp = "Transparent",
+							Source = "Output",
+						},
+						["Layer1.Foreground"] = Input {
+							SourceOp = "TransformSource",
+							Source = "Output",
+						},
+						LayerName1 = Input { Value = "Transparent Layer", },
+						LayerName2 = Input { Value = "Instance_MaskSource Layer", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -130.124, 116.923 } },
+				},
+				Transparent = Background {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -132.244, 167.883 } },
+					Colors = { TileColor = { R = 0.474509803921569, G = 0.658823529411765, B = 0.815686274509804 }, }
+				},
+				Border = RectangleMask {
+					NameSet = true,
+					SourceOp = "MaskSource",
+					Inputs = {
+						EffectMask = Input {
+						},
+						SettingsNest = Input {
+						},
+						BorderWidth = Input {
+							Expression = "Ctrl.BorderWidth/1000"
+						},
+						Solid = Input {
+							Value = 0,
+						},
+						Width = Input {
+							Value = 0.936,
+							Expression = "Ctrl.MaskWidth"
+						},
+						Height = Input {
+							Value = 0.869,
+							Expression = "Ctrl.MaskHeight"
+						},
+						CornerRadius = Input {
+							Value = 0.025,
+							Expression = "Ctrl.MaskCornerRadius"
+						},
+						CommentsNest = Input {
+						},
+						FrameRenderScriptNest = Input {
+						},
+						StartRenderScripts = Input {
+						},
+						EndRenderScripts = Input {
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -128.394, 49.8525 } },
+					Colors = { TileColor = { R = 0.474509803921569, G = 0.658823529411765, B = 0.815686274509804 }, }
+				},
+				TransformSource = Transform {
+					NameSet = true,
+					Inputs = {
+						Center = Input { Expression = "Point(Ctrl.MaskOffsetX, Ctrl.MaskOffsetY)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -240.124, 116.923 } },
+					Colors = { TileColor = { R = 0.474509803921569, G = 0.658823529411765, B = 0.815686274509804 }, }
+				},
+				MaskSource = RectangleMask {
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input {
+							Value = 0.936,
+							Expression = "Ctrl.MaskWidth",
+						},
+						Height = Input {
+							Value = 0.869,
+							Expression = "Ctrl.MaskHeight",
+						},
+						CornerRadius = Input {
+							Value = 0.025,
+							Expression = "Ctrl.MaskCornerRadius",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -245.114, 77.1027 } },
+					Colors = { TileColor = { R = 0.474509803921569, G = 0.658823529411765, B = 0.815686274509804 }, }
+				},
+				Screen = Underlay {
+					NameSet = true,
+					ViewInfo = UnderlayInfo {
+						Pos = { -96.7338, 20.5225 },
+						Size = { 462.016, 203.781 }
+					},
+					Colors = { TileColor = { R = 0.474509803921569, G = 0.658823529411765, B = 0.815686274509804 }, }
+				}
+			},
+		}
+	},
+	ActiveTool = "Screen"
+}

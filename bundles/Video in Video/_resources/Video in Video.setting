@@ -1,7 +1,6 @@
 {
 	Tools = ordered() {
-		MacroTool1 = GroupOperator {
-			CtrlWZoom = false,
+		VinV = MacroOperator {
 			Inputs = ordered() {
 				Input1 = InstanceInput {
 					SourceOp = "Ctrl",
@@ -64,155 +63,42 @@
 					SourceOp = "Ctrl",
 					Source = "OffsetY",
 					Default = 10,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "PositionX",
+					Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 2) then return (0.195 - (10 - Ctrl.Size) / 90) else return 1+-1*(0.195 - (10 - Ctrl.Size) / 90) end",
+					Default = 0.5,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "PositionY",
+					Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 1) then return 1 - (0.225 - (10 - Ctrl.Size) / 80) else return 0.225 - (10 - Ctrl.Size) / 80 end",
+					Default = 0.5,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "TransformInput",
+					Source = "Input",
 				}
 			},
 			Outputs = {
-				MainOutput1 = InstanceOutput {
-					SourceOp = "MediaOut1_1",
+				MainOutput2 = InstanceOutput {
+					SourceOp = "TransformAll",
 					Source = "Output",
 				}
 			},
-			ViewInfo = GroupInfo {
-				Pos = { 1254.24, -77.7975 },
-				Flags = {
-					Expanded = true,
-					AllowPan = false,
-					AutoSnap = true,
-					RemoveRouters = true
-				},
-				Size = { 667.578, 236.899, 333.789, 24.2424 },
-				Direction = "Horizontal",
-				PipeStyle = "Direct",
-				Scale = 1,
-				Offset = { 0, 0 }
-			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
 			Tools = ordered() {
-				MediaOut1_1 = MediaOut {
-					Inputs = {
-						Index = Input { Value = "0", },
-						Input = Input {
-							SourceOp = "TransformAll",
-							Source = "Output",
-						}
-					},
-					ViewInfo = OperatorInfo { Pos = { 269.383, 58.5741 } },
-				},
-				TransparentBG = Background {
-					NameSet = true,
-					Inputs = {
-						GlobalOut = Input { Value = 3729, },
-						Width = Input { Value = 4096, },
-						Height = Input { Value = 2304, },
-						UseFrameFormatSettings = Input { Value = 1, },
-						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-						TopLeftRed = Input { Value = 0.25, },
-						TopLeftGreen = Input { Value = 0.2, },
-						TopLeftBlue = Input { Value = 1, },
-						TopLeftAlpha = Input { Value = 0, }
-					},
-					ViewInfo = OperatorInfo { Pos = { -169.438, 179.764 } },
-				},
-				TransformAll = Transform {
-					NameSet = true,
-					Inputs = {
-						Center = Input {
-							Value = { 0.139444444444444, 0.1625 },
-							Expression = "Point(Ctrl.PositionX, Ctrl.PositionY)",
-						},
-						Size = Input {
-							Value = 0.55,
-							Expression = "0.3+0.05*Ctrl.Size",
-						},
-						Input = Input {
-							SourceOp = "MergeBorderandMaskedVideo",
-							Source = "Output",
-						}
-					},
-					ViewInfo = OperatorInfo { Pos = { 145.28, 58.0382 } },
-				},
-				MergeMaskandResizedVideo = Merge {
-					NameSet = true,
-					Inputs = {
-						EffectMask = Input {
-							SourceOp = "Mask",
-							Source = "Mask",
-						},
-						Background = Input {
-							SourceOp = "TransparentBG",
-							Source = "Output",
-						},
-						Foreground = Input {
-							SourceOp = "TransformInput",
-							Source = "Output",
-						},
-						PerformDepthMerge = Input { Value = 0, }
-					},
-					ViewInfo = OperatorInfo { Pos = { -43.62, 151.076 } },
-				},
-				MediaIn1_1 = MediaIn {
-					ExtentSet = true,
-					CustomData = {
-						MediaProps = {
-							MEDIA_AUDIO_TRACKS_DESC = {
-								{
-									MEDIA_AUDIO_BIT_DEPTH = 32,
-									MEDIA_AUDIO_FRAME_RATE = 45,
-									MEDIA_AUDIO_NUM_CHANNELS = 2,
-									MEDIA_AUDIO_SAMPLE_RATE = 48000,
-									MEDIA_AUDIO_START_TIME = 0,
-									MEDIA_AUDIO_TRACK_ID = "Timeline Audio",
-									MEDIA_AUDIO_TRACK_NAME = "Timeline Audio [Timeline 1]"
-								}
-							},
-							MEDIA_AUDIO_TRACKS_NUM = 1,
-							MEDIA_FORMAT_TYPE = "QuickTime",
-							MEDIA_HAS_AUDIO = true,
-							MEDIA_HEIGHT = 2304,
-							MEDIA_IS_SOURCE_RES = true,
-							MEDIA_MARK_IN = 0,
-							MEDIA_MARK_OUT = 3727,
-							MEDIA_NAME = "Link Screen Recording.mov",
-							MEDIA_NUM_FRAMES = 3730,
-							MEDIA_NUM_LAYERS = 1,
-							MEDIA_PAR = 1,
-							MEDIA_PATH = "/Users/lukasoppermann/Desktop/Link Screen Recording.mov",
-							MEDIA_SRC_FRAME_RATE = 24,
-							MEDIA_START_FRAME = 0,
-							MEDIA_WIDTH = 4096
-						},
-					},
-					Inputs = {
-						GlobalOut = Input { Value = 3729, },
-						AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
-						Layer = Input { Value = "0", },
-						ClipTimeEnd = Input { Value = 3729, },
-						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-						LeftAudio = Input {
-							SourceOp = "Left",
-							Source = "Data",
-						},
-						RightAudio = Input {
-							SourceOp = "Right",
-							Source = "Data",
-						}
-					},
-					ViewInfo = OperatorInfo { Pos = { -271.578, 150.5 } },
-					Version = 1
-				},
-				TransformInput = Transform {
-					NameSet = true,
-					Inputs = {
-						Center = Input { Expression = "Point(0.5+(Ctrl.OffsetX*0.002 * (Ctrl.Zoom - 1 )), 0.5+(Ctrl.OffsetY*0.002 * (Ctrl.Zoom - 1 )))", },
-						Size = Input { Expression = "0.45+Ctrl.Zoom*0.05", },
-						Input = Input {
-							SourceOp = "MediaIn1_1",
-							Source = "Output",
-						}
-					},
-					ViewInfo = OperatorInfo { Pos = { -161.928, 150.361 } },
-				},
 				Border = RectangleMask {
+					CtrlWZoom = false,
 					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						},
+					},
 					SourceOp = "Mask",
 					Inputs = {
 						EffectMask = Input {
@@ -239,79 +125,20 @@
 						EndRenderScripts = Input {
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { -99.948, 7.75108 } },
-				},
-				BorderFill = Background {
-					NameSet = true,
-					Inputs = {
-						EffectMask = Input {
-							SourceOp = "Border",
-							Source = "Mask",
-						},
-						GlobalOut = Input { Value = 3729, },
-						Width = Input { Value = 4096, },
-						Height = Input { Value = 2304, },
-						UseFrameFormatSettings = Input { Value = 1, },
-						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-						TopLeftRed = Input {
-							Value = 1,
-							Expression = "Ctrl.Red",
-						},
-						TopLeftGreen = Input {
-							Value = 1,
-							Expression = "Ctrl.Green",
-						},
-						TopLeftBlue = Input {
-							Value = 1,
-							Expression = "Ctrl.Blue",
-						}
-					},
-					ViewInfo = OperatorInfo { Pos = { -98.408, 43.1281 } },
-				},
-				Mask = RectangleMask {
-					NameSet = true,
-					Inputs = {
-						ShowViewControls = Input { Value = 0, },
-						CapStyle = Input { Value = 0, },
-						MaskWidth = Input { Value = 4096, },
-						MaskHeight = Input { Value = 2304, },
-						PixelAspect = Input { Value = { 1, 1 }, },
-						UseFrameFormatSettings = Input { Value = 1, },
-						ClippingMode = Input { Value = FuID { "None" }, },
-						Width = Input { Value = 0.45, },
-						CornerRadius = Input {
-							Value = 0.09,
-							Expression = "Ctrl.CornerRadius/100",
-						}
-					},
-					ViewInfo = OperatorInfo { Pos = { -68.74, 105.461 } },
-				},
-				MergeBorderandMaskedVideo = MultiMerge {
-					NameSet = true,
-					Inputs = {
-						LayerOrder = Input { Value = ScriptVal { {
-									[0] = 1,
-									2
-								} }, },
-						Background = Input {
-							SourceOp = "DropShadow",
-							Source = "Output",
-						},
-						["Layer1.Foreground"] = Input {
-							SourceOp = "BorderFill",
-							Source = "Output",
-						},
-						["Layer1.Nest"] = Input { Value = 0, },
-						LayerName1 = Input { Value = "Instance_Mask_1 Layer", },
-						LayerName2 = Input { Value = "MediaIn1 Layer", }
-					},
-					ViewInfo = OperatorInfo { Pos = { 42.99, 56.9221 } },
+					ViewInfo = OperatorInfo { Pos = { 295.876, 121.758 } },
 				},
 				Ctrl = AlphaDivide {
 					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
 					Inputs = {
 						Position = Input { Value = 2, },
-            Border = Input { Value = 1, },
+						Border = Input { Value = 1, },
 						CornerRadius = Input { Value = 9, },
 						BorderWidth = Input { Value = 4, },
 						Red = Input { Value = 1, },
@@ -319,7 +146,7 @@
 						Blue = Input { Value = 1, },
 						Zoom = Input { Value = 3, },
 						OffsetY = Input { Value = 10, },
-            Variables = Input { Value = 1, },
+						Variables = Input { Value = 1, },
 						PositionX = Input {
 							Value = 0.5,
 							Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 2) then return (0.195 - (10 - Ctrl.Size) / 90) else return 1+-1*(0.195 - (10 - Ctrl.Size) / 90) end",
@@ -329,19 +156,19 @@
 							Expression = ":if(Ctrl.Position == 0 or Ctrl.Position == 1) then return 1 - (0.225 - (10 - Ctrl.Size) / 80) else return 0.225 - (10 - Ctrl.Size) / 80 end",
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 42.7, 13.1981 } },
+					ViewInfo = OperatorInfo { Pos = { 438.524, 127.205 } },
 					UserControls = ordered() {
 						Position = {
 							{ MBTNC_AddButton = "Top left" },
 							{ MBTNC_AddButton = "Top Right" },
 							{ MBTNC_AddButton = "Bottom Left" },
 							{ MBTNC_AddButton = "Bottom Right" },
-							LINKID_DataType = "Number",
-							INP_Integer = false,
-							MBTNC_ShowBasicButton = false,
 							INPID_InputControl = "MultiButtonControl",
-							MBTNC_ShowName = false,
+							INP_Integer = false,
 							MBTNC_StretchToFit = false,
+							LINKID_DataType = "Number",
+							MBTNC_ShowName = false,
+							MBTNC_ShowBasicButton = false,
 							MBTNC_ShowToolTip = false,
 							LINKS_Name = "Position",
 						},
@@ -358,19 +185,19 @@
 							LINKS_Name = "Size",
 						},
 						Border = {
-							LINKS_Name = "Border",
-							LINKID_DataType = "Number",
-							INPID_InputControl = "LabelControl",
-							INP_Integer = false,
-							INP_MinScale = 0,
-							INP_MaxScale = 1,
-							INP_MinAllowed = -1000000,
 							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
 							LBLC_DropDownButton = false,
+							INPID_InputControl = "LabelControl",
 							LBLC_NumInputs = 3,
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
 							LBLC_NestLevel = 0,
 							INP_External = false,
-							INP_Passive = true,
+							LINKS_Name = "Border",
 						},
 						CornerRadius = {
 							INP_MaxAllowed = 10,
@@ -435,19 +262,19 @@
 							LINKS_Name = "Color",
 						},
 						Video = {
-							LINKS_Name = "Video",
-							LINKID_DataType = "Number",
-							INPID_InputControl = "LabelControl",
-							INP_Integer = false,
-							INP_MinScale = 0,
-							INP_MaxScale = 1,
-							INP_MinAllowed = -1000000,
 							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
 							LBLC_DropDownButton = false,
+							INPID_InputControl = "LabelControl",
 							LBLC_NumInputs = 3,
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INP_Passive = true,
 							LBLC_NestLevel = 0,
 							INP_External = false,
-							INP_Passive = true,
+							LINKS_Name = "Video",
 						},
 						Zoom = {
 							INP_MaxAllowed = 10,
@@ -486,18 +313,18 @@
 							LINKS_Name = "OffsetY",
 						},
 						Variables = {
-							LINKS_Name = "Variables",
-							LINKID_DataType = "Number",
-							INPID_InputControl = "LabelControl",
-							INP_Integer = false,
-							INP_MinScale = 0,
-							INP_MaxScale = 1,
-							INP_MinAllowed = -1000000,
 							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
 							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
 							LBLC_NumInputs = 4,
-							INP_External = false,
+							INP_MaxScale = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
 							INP_Passive = true,
+							INP_External = false,
+							LINKS_Name = "Variables",
 						},
 						PositionX = {
 							INP_MaxAllowed = 1000000,
@@ -523,8 +350,77 @@
 						}
 					}
 				},
+				TransparentBG = Background {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.25, },
+						TopLeftGreen = Input { Value = 0.2, },
+						TopLeftBlue = Input { Value = 1, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 226.386, 293.771 } },
+				},
+				MergeMaskandResizedVideo = Merge {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Mask",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "TransparentBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TransformInput",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 352.204, 265.083 } },
+				},
+				TransformInput = Transform {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						Center = Input { Expression = "Point(0.5+(Ctrl.OffsetX*0.002 * (Ctrl.Zoom - 1 )), 0.5+(Ctrl.OffsetY*0.002 * (Ctrl.Zoom - 1 )))", },
+						Size = Input { Expression = "0.45+Ctrl.Zoom*0.05", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 233.896, 264.368 } },
+				},
 				DropShadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
 					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
 					Inputs = {
 						Source = Input {
 							SourceOp = "MergeMaskandResizedVideo",
@@ -549,16 +445,121 @@
 						dstProcessingAlphaMode = Input { Value = 2, },
 						resolvefxVersion = Input { Value = "2.0", }
 					},
-					ViewInfo = OperatorInfo { Pos = { 48.1245, 110.496 } },
+					ViewInfo = OperatorInfo { Pos = { 443.949, 224.503 } },
+				},
+				Mask = RectangleMask {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						ShowViewControls = Input { Value = 0, },
+						CapStyle = Input { Value = 0, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.45, },
+						CornerRadius = Input {
+							Value = 0.09,
+							Expression = "Ctrl.CornerRadius/100",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 327.084, 219.468 } },
+				},
+				BorderFill = Background {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Border",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input {
+							Value = 1,
+							Expression = "Ctrl.Red",
+						},
+						TopLeftGreen = Input {
+							Value = 1,
+							Expression = "Ctrl.Green",
+						},
+						TopLeftBlue = Input {
+							Value = 1,
+							Expression = "Ctrl.Blue",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 297.416, 157.135 } },
+				},
+				MergeBorderandMaskedVideo = MultiMerge {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						LayerOrder = Input { Value = ScriptVal { {
+									[0] = 1,
+									2
+								} }, },
+						Background = Input {
+							SourceOp = "DropShadow",
+							Source = "Output",
+						},
+						["Layer1.Foreground"] = Input {
+							SourceOp = "BorderFill",
+							Source = "Output",
+						},
+						["Layer1.Nest"] = Input { Value = 0, },
+						LayerName1 = Input { Value = "Instance_Mask_1 Layer", },
+						LayerName2 = Input { Value = "MediaIn1 Layer", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 438.814, 170.929 } },
+				},
+				TransformAll = Transform {
+					NameSet = true,
+					CustomData = {
+						Path = {
+							Map = {
+								["Setting:"] = "Templates:/Edit/Effects/Video in Video/"
+							}
+						}
+					},
+					Inputs = {
+						Center = Input {
+							Value = { 0.139444444444444, 0.1625 },
+							Expression = "Point(Ctrl.PositionX, Ctrl.PositionY)",
+						},
+						Size = Input {
+							Value = 0.55,
+							Expression = "0.3+0.05*Ctrl.Size",
+						},
+						Input = Input {
+							SourceOp = "MergeBorderandMaskedVideo",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 541.104, 172.045 } },
 				}
 			},
-		},
-		Left = AudioDisplay {
-			CtrlWZoom = false,
-		},
-		Right = AudioDisplay {
-			CtrlWZoom = false,
 		}
 	},
-	ActiveTool = "MacroTool1"
+	ActiveTool = "Video in video"
 }
