@@ -1,0 +1,465 @@
+{
+	Tools = ordered() {
+		FigmaTextFrame = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "ColorRed",
+					ControlGroup = 1,
+					Default = 0.654,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "ColorGreen",
+					ControlGroup = 1,
+					Default = 0.378,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "ColorBlue",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Position",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Size",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "Text",
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Ctrl",
+					Source = "BorderWidth",
+					Default = 0.008,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Output",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Border = sRectangle {
+					NameSet = true,
+					Inputs = {
+						Solid = Input { Value = 0, },
+						BorderWidth = Input {
+							Value = 0.006,
+							Expression = "Ctrl.BorderWidth/2",
+						},
+						JoinStyle = Input { Value = 2, },
+						CapStyle = Input { Value = 2, },
+						["Translate.X"] = Input {
+							Value = 0.240000000223517,
+							Expression = "-0.5+Width/2+Corner_TL.Width*1.5",
+						},
+						["Translate.Y"] = Input {
+							Value = -0.240000000223517,
+							Expression = "0.5/Ctrl.yMod-(Height/2+Corner_TL.Width)\n",
+						},
+						["Translate.Z"] = Input { Value = 4, },
+						Width = Input { Expression = "Ctrl.bWidth", },
+						Height = Input { Expression = "Ctrl.bHeight", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2258.94, 263.85 } },
+					UserControls = ordered() {
+						Variables = {
+							INP_Integer = false,
+							LBLC_DropDownButton = false,
+							LINKID_DataType = "Number",
+							LBLC_NumInputs = 4,
+							INPID_InputControl = "LabelControl",
+							LINKS_Name = "Variables",
+						}
+					}
+				},
+				Corner_TL = sRectangle {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						JoinStyle = Input { Value = 2, },
+						["Translate.X"] = Input {
+							Value = -0.011,
+							Expression = "Border.Translate.X-Border.Width/2",
+						},
+						["Translate.Y"] = Input {
+							Value = 0.011,
+							Expression = "0.5/Ctrl.yMod-Height",
+						},
+						Width = Input {
+							Value = 0.012,
+							Expression = "0.01*Ctrl.Size",
+						},
+						Height = Input {
+							Value = 0.016,
+							Expression = "Width",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2139.85, 276.316 } },
+				},
+				sBoolean1 = sBoolean {
+					Inputs = {
+						Operation = Input { Value = FuID { "Union" }, },
+						Input1 = Input {
+							SourceOp = "sOutline1",
+							Source = "Output",
+						},
+						Input2 = Input {
+							SourceOp = "Border",
+							Source = "Output",
+						},
+						Red = Input {
+							Value = 0.488,
+							Expression = "Ctrl.ColorRed",
+						},
+						Green = Input {
+							Value = 0.693,
+							Expression = "Ctrl.ColorGreen",
+						},
+						Blue = Input { Expression = "Ctrl.ColorBlue", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2323.41, 296.997 } },
+				},
+				Text1 = TextPlus {
+					CtrlWZoom = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input {
+							Value = { 0.0249999997764826, 0.962375000200855 },
+							Expression = "\nPoint(-0.003+Corner_TL.Width+Ctrl.BorderWidth+Ctrl.xPad, 1-(Corner_TL.Height/Ctrl.yMod+Ctrl.BorderWidth*Ctrl.yMod+Ctrl.xPad*Ctrl.yMod))",
+						},
+						LayoutSize = Input { Expression = "Ctrl.Size", },
+						LayoutRotation = Input { Value = 1, },
+						LineSpacing = Input { Value = 1.031, },
+						CharacterSpacing = Input { Value = 1.01038, },
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input {
+							Value = "Banner",
+							Expression = "Ctrl.Text",
+						},
+						Font = Input { Value = "Inter", },
+						Style = Input { Value = "Bold", },
+						Size = Input {
+							Value = 0.16,
+							Expression = "0.16*Ctrl.Size",
+						},
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2455.77, 239.587 } },
+				},
+				Ctrl = AlphaDivide {
+					NameSet = true,
+					Inputs = {
+						borderThickness = Input { Expression = "Border.BorderWidth", },
+						SettingsNest = Input { Value = 0, },
+						CommentsNest = Input { Value = 0, },
+						FrameRenderScriptNest = Input { Value = 0, },
+						ColorRed = Input { Value = 0.654, },
+						ColorGreen = Input { Value = 0.378, },
+						ColorBlue = Input { Value = 1, },
+						Text = Input { Value = "Banner", },
+						BorderWidth = Input { Value = 0.008, },
+						xPad = Input { Expression = "0.00999999977648258*Ctrl.Size", },
+						yPad = Input { Expression = "0.005624999851*Ctrl.Size", },
+						bHeight = Input { Expression = "Ctrl.tHeight/Ctrl.yMod+Ctrl.BorderWidth/Ctrl.yMod+(Ctrl.yPad*Ctrl.yMod)*2", },
+						bWidth = Input { Expression = "Ctrl.tWidth+Ctrl.BorderWidth+Ctrl.xPad*2", },
+						tWidth = Input { Expression = "(Text1.Output.DataWindow[3]-Text1.Output.DataWindow[1])/Text1.Output.Width", },
+						tHeight = Input { Expression = "(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/Text1.Output.Height", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2465.87, 189.151 } },
+					Colors = { TileColor = { R = 0, G = 0.596078431372549, B = 0.6 }, },
+					UserControls = ordered() {
+						ColorRed = {
+							LINKS_Name = "Color",
+							INP_Integer = false,
+							CLRC_ShowWheel = false,
+							LINKID_DataType = "Number",
+							CLRC_ColorSpace = "HSV",
+							INPID_InputControl = "ColorControl",
+							IC_ControlID = 0,
+							IC_ControlGroup = 1,
+						},
+						ColorGreen = {
+							LINKS_Name = "ColorGreen",
+							INP_Integer = false,
+							CLRC_ShowWheel = false,
+							LINKID_DataType = "Number",
+							CLRC_ColorSpace = "HSV",
+							INPID_InputControl = "ColorControl",
+							IC_ControlID = 1,
+							IC_ControlGroup = 1,
+						},
+						ColorBlue = {
+							LINKS_Name = "ColorBlue",
+							INP_Integer = false,
+							CLRC_ShowWheel = false,
+							LINKID_DataType = "Number",
+							CLRC_ColorSpace = "HSV",
+							INPID_InputControl = "ColorControl",
+							IC_ControlID = 2,
+							IC_ControlGroup = 1,
+						},
+						Position = {
+							INPID_PreviewControl = "CrosshairControl",
+							LINKID_DataType = "Point",
+							INPID_InputControl = "OffsetControl",
+							CHC_Style = "NormalCross",
+							LINKS_Name = "Position",
+						},
+						Size = {
+							INP_MaxAllowed = 2,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 2,
+							INP_Default = 1,
+							INP_MinScale = 0.5,
+							INP_MinAllowed = 0.5,
+							LINKID_DataType = "Number",
+							LINKS_Name = "Size",
+						},
+						Text = {
+							TEC_ReadOnly = false,
+							LINKID_DataType = "Text",
+							TEC_Wrap = false,
+							INPID_InputControl = "TextEditControl",
+							TEC_Lines = 2,
+							LINKS_Name = "Text",
+						},
+						BorderWidth = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "SliderControl",
+							INP_MinScale = 0,
+							INP_MaxScale = 1,
+							LINKS_Name = "BorderWidth",
+						},
+						Variables = {
+							LBLC_DropDownButton = true,
+							INPID_InputControl = "LabelControl",
+							LBLC_NumInputs = 7,
+							ICS_ControlPage = "User",
+							LINKS_Name = "Variables",
+						},
+						yMod = {
+							INP_MaxAllowed = 1.77777779102325,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 1.77777779102325,
+							INP_Default = 1.77777779102325,
+							INP_MinScale = 1.77777779102325,
+							INP_MinAllowed = 1.77777779102325,
+							LINKID_DataType = "Number",
+							INP_External = false,
+							LINKS_Name = "yMod",
+						},
+						xPad = {
+							INP_MaxAllowed = 0.1,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 0.00999999977648258,
+							INP_Default = 0.00999999977648258,
+							INP_MinScale = 0.00999999977648258,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							LINKS_Name = "xPad",
+						},
+						yPad = {
+							INP_MaxAllowed = 0.1,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 0.00562499985098839,
+							INP_Default = 0.00562499985098839,
+							INP_MinScale = 0.00562499985098839,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							LINKS_Name = "yPad",
+						},
+						bHeight = {
+							INPID_InputControl = "SliderControl",
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							LINKS_Name = "bHeight",
+						},
+						bWidth = {
+							LINKS_Name = "bWidth",
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "SliderControl",
+						},
+						tWidth = {
+							INPID_InputControl = "SliderControl",
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							LINKS_Name = "tWidth",
+						},
+						tHeight = {
+							INPID_InputControl = "SliderControl",
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							LINKS_Name = "tHeight",
+						}
+					}
+				},
+				Corner_BL = sRectangle {
+					NameSet = true,
+					SourceOp = "Corner_TL",
+					Inputs = {
+						["Translate.X"] = Input { Expression = "Border.Translate.X-Border.Width/2" },
+						["Translate.Y"] = Input {
+							Value = 0.011,
+							Expression = "0.5/Ctrl.yMod-Height-Ctrl.bHeight"
+						},
+						Width = Input { Expression = "0.01*Ctrl.Size" },
+						Height = Input { Expression = "Width" },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2134.53, 326.121 } },
+				},
+				sOutline1 = sOutline {
+					Inputs = {
+						Thickness = Input {
+							Value = 0.002,
+							Expression = "Ctrl.BorderWidth*0.5",
+						},
+						JoinStyle = Input { Value = 2, },
+						CapStyle = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "sMerge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2371.75, 329.997 } },
+				},
+				sMerge1 = sMerge {
+					Inputs = {
+						Input1 = Input {
+							SourceOp = "sBoolean1",
+							Source = "Output",
+						},
+						Input2 = Input {
+							SourceOp = "sMerge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2493.7, 303.932 } },
+				},
+				Corner_TR = sRectangle {
+					NameSet = true,
+					SourceOp = "Corner_TL",
+					Inputs = {
+						["Translate.X"] = Input {
+							Value = -0.011,
+							Expression = "Border.Translate.X-Border.Width/2+Ctrl.bWidth"
+						},
+						["Translate.Y"] = Input { Expression = "0.5/Ctrl.yMod-Height" },
+						Width = Input { Expression = "0.01*Ctrl.Size" },
+						Height = Input { Expression = "Width" },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2241.61, 357.934 } },
+				},
+				sRender1 = sRender {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Input = Input {
+							SourceOp = "sMerge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2606.39, 311.068 } },
+				},
+				Corner_BR = sRectangle {
+					NameSet = true,
+					SourceOp = "Corner_BL",
+					Inputs = {
+						["Translate.X"] = Input { Expression = "Border.Translate.X-Border.Width/2+Ctrl.bWidth" },
+						["Translate.Y"] = Input { Expression = "0.5/Ctrl.yMod-Height-Ctrl.bHeight" },
+						Width = Input { Expression = "0.01*Ctrl.Size" },
+						Height = Input { Expression = "Width" },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2131.8, 395.899 } },
+				},
+				sMerge2 = sMerge {
+					Inputs = {
+						Input1 = Input {
+							SourceOp = "Corner_TL",
+							Source = "Output",
+						},
+						Input2 = Input {
+							SourceOp = "Corner_BL",
+							Source = "Output",
+						},
+						Input3 = Input {
+							SourceOp = "Corner_TR",
+							Source = "Output",
+						},
+						Input4 = Input {
+							SourceOp = "Corner_BR",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 2384.46, 399.026 } },
+				},
+				Output = MultiMerge {
+					NameSet = true,
+					Inputs = {
+						LayerOrder = Input { Value = ScriptVal { {
+									[0] = 1,
+									2
+								} }, },
+						Background = Input {
+							SourceOp = "sRender1",
+							Source = "Output",
+						},
+						LayerName1 = Input { Value = "sRender1 Layer", },
+						["Layer2.Foreground"] = Input {
+							SourceOp = "Text1",
+							Source = "Output",
+						},
+						LayerName2 = Input { Value = "MediaIn1 Layer", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 2742.33, 300.094 } },
+					UserControls = ordered() {
+						bWidth = {
+							INPID_InputControl = "SliderControl",
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							LINKS_Name = "bWidth",
+						}
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "FigmaTextFrame"
+}

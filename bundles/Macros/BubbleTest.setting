@@ -1,0 +1,259 @@
+{
+	Tools = ordered() {
+		BubbleTest = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "BubbleText_2",
+					Source = "Center",
+					Name = "Center",
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "MultiMerge1_2",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				BubbleShape_2 = GroupOperator {
+					NameSet = true,
+					Outputs = {
+						Output1 = InstanceOutput {
+							SourceOp = "Color_sBoolean_2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 794.629, -292.992 } },
+					Tools = ordered() {
+						Color_sBoolean_2 = sBoolean {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Operation = Input { Value = FuID { "Union" }, },
+								Input1 = Input {
+									SourceOp = "BubbleBody_2",
+									Source = "Output",
+								},
+								Input2 = Input {
+									SourceOp = "Instance_BubbleConer_2",
+									Source = "Output",
+								},
+								Red = Input {
+									Value = 0.6,
+									Expression = "Bubble_2.ColorRed",
+								},
+								Green = Input {
+									Value = 0.52152,
+									Expression = "Bubble_2.ColorGreen",
+								},
+								Blue = Input {
+									Value = 0.984,
+									Expression = "Bubble_2.ColorBlue",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 799.219, -219.884 } },
+						},
+						BubbleBody_2 = sRectangle {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								["Translate.X"] = Input { Expression = "Width/2-(Bubble_2.Pad*Bubble_2.Size)", },
+								["Translate.Y"] = Input { Expression = ":tHeight=(BubbleText_2.Output.DataWindow[4]-BubbleText_2.Output.DataWindow[2])/BubbleText_2.Output.Height;if(tHeight / BubbleText_2.Size > 2) then return -Bubble_2.Size*Bubble_2.Pad*(BubbleText_2.LineSpacingClone*1.4) else return -Bubble_2.Size*Bubble_2.Pad/2 end", },
+								Width = Input {
+									Value = 0.765738333333333,
+									Expression = "(BubbleText_2.Output.DataWindow[3]-BubbleText_2.Output.DataWindow[1])/BubbleText_2.Output.Width+(Bubble_2.Pad*2*Bubble_2.Size)",
+								},
+								Height = Input {
+									Value = 0.315095555555556,
+									Expression = ":tHeight=(BubbleText_2.Output.DataWindow[4]-BubbleText_2.Output.DataWindow[2])/BubbleText_2.Output.Height;if(tHeight / BubbleText_2.Size > 2) then return tHeight-Bubble_2.Size*Bubble_2.Pad else return tHeight+Bubble_2.Size*Bubble_2.Pad end",
+								},
+								CornerRadius = Input { Value = 0.575, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 695.671, -240.507 } },
+						},
+						Instance_BubbleConer_2 = sRectangle {
+							CtrlWShown = false,
+							NameSet = true,
+							SourceOp = "BubbleBody_2",
+							Inputs = {
+								["Translate.X"] = Input {
+									Value = 0.191434583333333,
+									Expression = ":if(Bubble_2.Tip == 1 or Bubble_2.Tip == 3) then return BubbleBody_2.Translate.X + Width/2 else return BubbleBody_2.Translate.X - Width/2 end"
+								},
+								["Translate.Y"] = Input {
+									Value = -0.0787738888888889,
+									Expression = ":if(Bubble_2.Tip == 0 or Bubble_2.Tip == 1) then return BubbleBody_2.Translate.Y + Height/2 else return BubbleBody_2.Translate.Y - Height/2 end"
+								},
+								Width = Input {
+									Value = 0.382869166666667,
+									Expression = "BubbleBody_2.Width/2"
+								},
+								Height = Input {
+									Value = 0.157547777777778,
+									Expression = "BubbleBody_2.Height/2"
+								},
+								CornerRadius = Input { },
+								CommentsNest = Input { },
+								FrameRenderScriptNest = Input { },
+								StartRenderScripts = Input { },
+								EndRenderScripts = Input { },
+							},
+							ViewInfo = OperatorInfo { Pos = { 689.219, -209.002 } },
+						}
+					},
+				},
+				BubbleText_2 = TextPlus {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LineSpacing = Input { Value = 0.8, },
+						TransformRotation = Input { Value = 1, },
+						Red1 = Input { Expression = "iif( ( (((Bubble_2.ColorRed*255)^2)*0.299 + ((Bubble_2.ColorGreen*255)^2)*0.587 + ((Bubble_2.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
+						Green1 = Input { Expression = "iif( ( (((Bubble_2.ColorRed*255)^2)*0.299 + ((Bubble_2.ColorGreen*255)^2)*0.587 + ((Bubble_2.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
+						Blue1 = Input { Expression = "iif( ( (((Bubble_2.ColorRed*255)^2)*0.299 + ((Bubble_2.ColorGreen*255)^2)*0.587 + ((Bubble_2.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input {
+							Value = "Text\nTest",
+							Expression = "Bubble_2.Text",
+						},
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input {
+							Value = 0.032,
+							Expression = "0.08*Bubble_2.Size",
+						},
+						VerticalTopCenterBottom = Input { Value = -1, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						End = Input { Expression = "iif(Bubble_2.TextAnimation == 0, 1, (1+time)/Bubble_2.TextAnimation)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 823.119, -346.882 } },
+				},
+				MultiMerge1_2 = MultiMerge {
+					CtrlWZoom = false,
+					Inputs = {
+						LayerOrder = Input { Value = ScriptVal { { [0] = 1, 2 } }, },
+						Background = Input {
+							SourceOp = "SoftGlow1_2",
+							Source = "Output",
+						},
+						["Layer1.Foreground"] = Input {
+							SourceOp = "Bubble_sRender_2",
+							Source = "Output",
+						},
+						LayerName1 = Input { Value = "sRender_2 Layer", },
+						["Layer2.Foreground"] = Input {
+							SourceOp = "BubbleText_2",
+							Source = "Output",
+						},
+						LayerName2 = Input { Value = "sRender_2_1 Layer", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 978.564, -344.911 } },
+				},
+				SoftGlow1_2 = SoftGlow {
+					Inputs = {
+						Blend = Input { Value = 0.5, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Gain = Input { Value = 1, },
+						XGlowSize = Input { Value = 20, },
+						YGlowSize = Input { Value = 20, },
+						ClippingMode = Input { Value = FuID { "Domain" }, },
+						Input = Input {
+							SourceOp = "Bubble_sRender_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1058.53, -298.175 } },
+				},
+				Bubble_sRender_2 = sRender {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Input = Input {
+							SourceOp = "Bubble_Border_sMerge_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 978.941, -262.884 } },
+				},
+				Bubble_Border_sMerge_2 = sMerge {
+					NameSet = true,
+					Inputs = {
+						Input1 = Input {
+							SourceOp = "Color_sBoolean_2",
+							Source = "Output",
+						},
+						Input2 = Input {
+							SourceOp = "Bubble_InsideOutline_sBoolean_2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 979.89, -230.649 } },
+				},
+				Bubble_InnerBorder_2 = GroupOperator {
+					NameSet = true,
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "Bubble_InsideOutline_sBoolean_2",
+							Source = "Input1",
+						},
+						Input2 = InstanceInput {
+							SourceOp = "Bubble_sOutline_2",
+							Source = "Input",
+						}
+					},
+					Outputs = {
+						Output1 = InstanceOutput {
+							SourceOp = "Bubble_InsideOutline_sBoolean_2",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 975.064, -196.092 } },
+					Tools = ordered() {
+						Bubble_InsideOutline_sBoolean_2 = sBoolean {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Input1 = Input {
+									SourceOp = "Color_sBoolean_2",
+									Source = "Output",
+								},
+								Input2 = Input {
+									SourceOp = "Bubble_sOutline_2",
+									Source = "Output",
+								},
+								Red = Input { Value = 0, },
+								Green = Input { Value = 0, },
+								Blue = Input { Value = 0, },
+								Alpha = Input { Value = 0.2, },
+							},
+							ViewInfo = OperatorInfo { Pos = { 970.564, -140.322 } },
+						},
+						Bubble_sOutline_2 = sOutline {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								JoinStyle = Input { Value = 2, },
+								CapStyle = Input { Value = 0, },
+								Input = Input {
+									SourceOp = "Color_sBoolean_2",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 862.423, -144.738 } },
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "BubbleTest"
+}

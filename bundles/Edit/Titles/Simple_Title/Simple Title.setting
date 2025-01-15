@@ -1,0 +1,1104 @@
+{
+	Tools = ordered() {
+		SimpleTitle = GroupOperator {
+			CtrlWZoom = false,
+			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "MediaOut1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo {
+				Pos = { 478.354, 174.147 },
+				Flags = {
+					Expanded = true,
+					AllowPan = false,
+					AutoSnap = true,
+					RemoveRouters = true
+				},
+				Size = { 1083.75, 303.56, 541.875, 24.2424 },
+				Direction = "Horizontal",
+				PipeStyle = "Direct",
+				Scale = 1,
+				Offset = { -475.911, -104.646 }
+			},
+			Tools = ordered() {
+				LoaderIcon = Loader {
+					Clips = {
+						Clip {
+							ID = "Clip1",
+							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/Primitives.png",
+							FormatID = "PNGFormat",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 0,
+							AspectMode = 0,
+							Depth = 0,
+							TimeCode = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0
+						}
+					},
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 607.326, 350.479 } },
+				},
+				Loader5 = Loader {
+					Clips = {
+						Clip {
+							ID = "Clip1",
+							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/PointerGreen.png",
+							FormatID = "PNGFormat",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 0,
+							AspectMode = 0,
+							Depth = 0,
+							TimeCode = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0
+						}
+					},
+					CtrlWShown = false,
+					CustomData = {
+						MEDIA_ID = "d28566f6-51fb-40a2-b37a-a36f89980010",
+						MediaProps = {
+							MEDIA_NUM_LAYERS = 0,
+							MEDIA_FORMAT_TYPE = "PNG",
+							MEDIA_NAME = "PointerGreen.png",
+							MEDIA_LAYER_DESC = {
+							},
+							MEDIA_PAR = 1,
+							MEDIA_HEIGHT = 147,
+							MEDIA_START_FRAME = 0,
+							MEDIA_IS_SOURCE_RES = true,
+							MEDIA_SRC_FRAME_RATE = 24,
+							MEDIA_MARK_OUT = 0,
+							MEDIA_WIDTH = 135,
+							MEDIA_NUM_FRAMES = 1,
+							MEDIA_MARK_IN = 0,
+							MEDIA_PATH = "Setting:PointerGreen.png"
+						}
+					},
+					Inputs = {
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 954.786, 349.297 } },
+				},
+				Loader4 = Loader {
+					Clips = {
+						Clip {
+							ID = "Clip1",
+							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/Avatar_Lukas.png",
+							FormatID = "PNGFormat",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 0,
+							AspectMode = 0,
+							Depth = 0,
+							TimeCode = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0
+						}
+					},
+					CtrlWShown = false,
+					CustomData = { MEDIA_ID = "f8cfe3f6-3dd4-46c0-88b4-9c0d1c907533", MediaProps = { MEDIA_NUM_LAYERS = 0, MEDIA_FORMAT_TYPE = "PNG", MEDIA_PAR = 1, MEDIA_LAYER_DESC = {
+							}, MEDIA_NAME = "Avatar-Lukas.png", MEDIA_PATH = "Setting:Avatar_Lukas.png", MEDIA_START_FRAME = 0, MEDIA_IS_SOURCE_RES = true, MEDIA_SRC_FRAME_RATE = 24, MEDIA_MARK_OUT = 0, MEDIA_WIDTH = 160, MEDIA_NUM_FRAMES = 1, MEDIA_MARK_IN = 0, MEDIA_HEIGHT = 160 } },
+					Inputs = {
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 313.087, 279.123 } },
+				},
+				Loader2 = Loader {
+					Clips = {
+						Clip {
+							ID = "Clip1",
+							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/PointerBlue.png",
+							FormatID = "PNGFormat",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 0,
+							AspectMode = 0,
+							Depth = 0,
+							TimeCode = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0
+						}
+					},
+					CtrlWShown = false,
+					CustomData = {
+						MEDIA_ID = "44067f89-520a-4013-a763-3d25ae501a86",
+						MediaProps = {
+							MEDIA_NUM_LAYERS = 0,
+							MEDIA_FORMAT_TYPE = "PNG",
+							MEDIA_NAME = "PointerBlue.png",
+							MEDIA_LAYER_DESC = {
+							},
+							MEDIA_PAR = 1,
+							MEDIA_HEIGHT = 147,
+							MEDIA_START_FRAME = 0,
+							MEDIA_IS_SOURCE_RES = true,
+							MEDIA_SRC_FRAME_RATE = 24,
+							MEDIA_MARK_OUT = 0,
+							MEDIA_WIDTH = 135,
+							MEDIA_NUM_FRAMES = 1,
+							MEDIA_MARK_IN = 0,
+							MEDIA_PATH = "Setting:PointerBlue.png"
+						}
+					},
+					Inputs = {
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 14.856, 157.828 } },
+				},
+				Loader1 = Loader {
+					Clips = {
+						Clip {
+							ID = "Clip1",
+							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/PrimerLogo.png",
+							FormatID = "PNGFormat",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 0,
+							AspectMode = 0,
+							Depth = 0,
+							TimeCode = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0
+						}
+					},
+					CtrlWShown = false,
+					CustomData = {
+						MEDIA_ID = "440528b1-c34e-4a76-82ad-eb9a69f1b42c",
+						MediaProps = {
+							MEDIA_NUM_LAYERS = 0,
+							MEDIA_FORMAT_TYPE = "PNG",
+							MEDIA_NAME = "PrimerLogo.png",
+							MEDIA_LAYER_DESC = {
+							},
+							MEDIA_PAR = 1,
+							MEDIA_HEIGHT = 2160,
+							MEDIA_START_FRAME = 0,
+							MEDIA_IS_SOURCE_RES = true,
+							MEDIA_SRC_FRAME_RATE = 24,
+							MEDIA_MARK_OUT = 0,
+							MEDIA_WIDTH = 3841,
+							MEDIA_NUM_FRAMES = 1,
+							MEDIA_MARK_IN = 0,
+							MEDIA_PATH = "Setting:PrimerLogo.png"
+						}
+					},
+					Inputs = {
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -2.96399, 239.98 } },
+				},
+				Loader3 = Loader {
+					Clips = {
+						Clip {
+							ID = "Clip1",
+							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/PointerRed.png",
+							FormatID = "PNGFormat",
+							StartFrame = -1,
+							LengthSetManually = true,
+							TrimIn = 0,
+							TrimOut = 0,
+							ExtendFirst = 0,
+							ExtendLast = 0,
+							Loop = 0,
+							AspectMode = 0,
+							Depth = 0,
+							TimeCode = 0,
+							GlobalStart = 0,
+							GlobalEnd = 0
+						}
+					},
+					CtrlWShown = false,
+					CustomData = { MEDIA_ID = "40a53904-8917-4be2-889d-aa998bd7505f", MediaProps = { MEDIA_NUM_LAYERS = 0, MEDIA_FORMAT_TYPE = "PNG", MEDIA_PATH = "Setting:PointerRed.png", MEDIA_LAYER_DESC = {
+							}, MEDIA_NAME = "PointerRed.png", MEDIA_HEIGHT = 147, MEDIA_START_FRAME = 0, MEDIA_IS_SOURCE_RES = true, MEDIA_SRC_FRAME_RATE = 24, MEDIA_MARK_OUT = 0, MEDIA_WIDTH = 136, MEDIA_NUM_FRAMES = 1, MEDIA_MARK_IN = 0, MEDIA_PAR = 1 } },
+					Inputs = {
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 359.816, 242.762 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Loader4",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform4",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.897643593519881, 0.0729712041884816 }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 475.35, 278.005 } },
+				},
+				Transform4 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path4",
+							Source = "Position",
+						},
+						Size = Input { Value = 0.8, },
+						Input = Input {
+							SourceOp = "Loader3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 478.876, 241.64 } },
+				},
+				MultiMerge1 = MultiMerge {
+					CtrlWShown = false,
+					Inputs = {
+						LayerOrder = Input { Value = ScriptVal { { [0] = 1, 2, 3, 4, 5, 6, 7, 8 } }, },
+						Background = Input {
+							SourceOp = "BG",
+							Source = "Output",
+						},
+						["Layer1.Foreground"] = Input {
+							SourceOp = "Transform3",
+							Source = "Output",
+						},
+						LayerName1 = Input { Value = "Duplicate1_1 Layer", },
+						["Layer2.Foreground"] = Input {
+							SourceOp = "Duplicate_Horizontal",
+							Source = "Output",
+						},
+						LayerName2 = Input { Value = "Duplicate1 Layer", },
+						["Layer3.Foreground"] = Input {
+							SourceOp = "LogoTransform",
+							Source = "Output",
+						},
+						LayerName3 = Input { Value = "Merge5 Layer", },
+						["Layer4.Foreground"] = Input {
+							SourceOp = "Transform2",
+							Source = "Output",
+						},
+						LayerName4 = Input { Value = "Avatar Layer", },
+						["Layer5.Foreground"] = Input {
+							SourceOp = "Kicker",
+							Source = "Output",
+						},
+						LayerName5 = Input { Value = "Text1 Layer", },
+						["Layer6.Foreground"] = Input {
+							SourceOp = "Title",
+							Source = "Output",
+						},
+						LayerName6 = Input { Value = "Text1_1 Layer", },
+						["Layer7.Foreground"] = Input {
+							SourceOp = "Author",
+							Source = "Output",
+						},
+						LayerName7 = Input { Value = "Kicker_1 Layer", },
+						["Layer8.Foreground"] = Input {
+							SourceOp = "Transform5",
+							Source = "Output",
+						},
+						LayerName8 = Input { Value = "Primitives Layer", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 643.896, 207.099 } },
+				},
+				BGLines = GroupOperator {
+					CtrlWShown = false,
+					NameSet = true,
+					Outputs = {
+						Output2 = InstanceOutput {
+							SourceOp = "Duplicate_Horizontal",
+							Source = "Output",
+						},
+						Output1 = InstanceOutput {
+							SourceOp = "Transform3",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo {
+						Pos = { 652.886, 149.463 },
+						Flags = {
+							AllowPan = false,
+							AutoSnap = true,
+							RemoveRouters = true
+						},
+						Size = { 532.8, 167.137, 266.4, 24.2424 },
+						Direction = "Horizontal",
+						PipeStyle = "Direct",
+						Scale = 1,
+						Offset = { 0, 0 }
+					},
+					Tools = ordered() {
+						Duplicate_Horizontal = Fuse.Duplicate {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Copies = Input { Value = 9, },
+								TimeOffset = Input { Value = -1, },
+								Center = Input { Value = { 0.5, 0.4 }, },
+								Background = Input {
+									SourceOp = "sRender1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 203, 44.5231 } },
+						},
+						Transform3 = Transform {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "Duplicate_Vertical",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 59.8601, 109.883 } },
+						},
+						sRender1 = sRender {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "path1",
+									Source = "Mask",
+								},
+								GlobalOut = Input { Value = 71, },
+								Width = Input { Value = 3840, },
+								Height = Input { Value = 2160, },
+								UseFrameFormatSettings = Input { Value = 1, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								Input = Input {
+									SourceOp = "sRectangle1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 26.4102, 20.4881 } },
+						},
+						Duplicate_Vertical = Fuse.Duplicate {
+							CtrlWShown = false,
+							NameSet = true,
+							Inputs = {
+								Copies = Input { Value = 18, },
+								TimeOffset = Input { Value = -1, },
+								Center = Input { Value = { 0.567, 0.5 }, },
+								Background = Input {
+									SourceOp = "Instance_sRender1",
+									Source = "Output",
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { 54.3, 77.4441 } },
+						},
+						Instance_sRender1 = sRender {
+							CtrlWShown = false,
+							SourceOp = "sRender1",
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "Instance_path1",
+									Source = "Mask",
+								},
+								SettingsNest = Input { },
+								ImageNest = Input { },
+								["Gamut.ColorSpaceNest"] = Input { },
+								["Gamut.GammaSpaceNest"] = Input { },
+								Input = Input {
+									SourceOp = "sRectangle1",
+									Source = "Output",
+								},
+								["ShapeRasterizer.Nest"] = Input { },
+								CommentsNest = Input { },
+								FrameRenderScriptNest = Input { },
+								StartRenderScripts = Input { },
+								EndRenderScripts = Input { },
+							},
+							ViewInfo = OperatorInfo { Pos = { -72.03, 79.7381 } },
+						},
+						Instance_path1 = PolylineMask {
+							DrawMode = "InsertAndModify",
+							Color = { Red = 255, Green = 226, Blue = 118 },
+							DrawMode2 = "InsertAndModify",
+							CtrlWShown = false,
+							SourceOp = "path1",
+							Inputs = {
+								EffectMask = Input { },
+								SettingsNest = Input { },
+								WriteLength = Input {
+									Value = 0.8,
+									Expression = "(time/20)"
+								},
+								Center = Input { Value = { 0, 0.8 }, },
+								ZRotation = Input { Value = -90, },
+								Polyline2 = Input {
+									Value = Polyline {
+									},
+									Disabled = true,
+								},
+								["ShapeRasterizer.Nest"] = Input { },
+								CommentsNest = Input { },
+								FrameRenderScriptNest = Input { },
+								StartRenderScripts = Input { },
+								EndRenderScripts = Input { },
+							},
+							ViewInfo = OperatorInfo { Pos = { -196.11, 73.5891 } },
+						},
+						path1 = PolylineMask {
+							DrawMode = "InsertAndModify",
+							Color = { Red = 255, Green = 226, Blue = 118 },
+							DrawMode2 = "InsertAndModify",
+							CtrlWShown = false,
+							Inputs = {
+								Level = Input { Value = 0.6, },
+								BorderWidth = Input { Value = 0.001, },
+								Solid = Input { Value = 0, },
+								JoinStyle = Input { Value = 2, },
+								MiterLimit = Input { Value = 4, },
+								CapStyle = Input { Value = 0, },
+								WriteLength = Input {
+									Value = 1.4,
+									Expression = "(time/20)",
+								},
+								MaskWidth = Input { Value = 320, },
+								MaskHeight = Input { Value = 240, },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input { Value = { 0.5, 0.9 }, },
+								Polyline = Input {
+									Value = Polyline {
+										Points = {
+											{ Linear = true, X = -0.5, Y = 0, RX = 0.333333333333333, RY = 0 },
+											{ Linear = true, X = 0.5, Y = 0, LX = -0.333333333333333, LY = 0 }
+										}
+									},
+								},
+								Polyline2 = Input {
+									Value = Polyline {
+									},
+									Disabled = true,
+								},
+							},
+							ViewInfo = OperatorInfo { Pos = { -185.53, 7.63208 } },
+						},
+						sRectangle1 = sRectangle {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1, },
+								Height = Input { Value = 0.5625, },
+								Red = Input { Value = 0.1882352941176, },
+								Green = Input { Value = 0.2117647058824, },
+								Blue = Input { Value = 0.243137254902, },
+								Alpha = Input { Value = 0.7, },
+							},
+							ViewInfo = OperatorInfo { Pos = { -203.8, 40.0731 } },
+						}
+					},
+				},
+				Transform2 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path3",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 579.176, 276.979 } },
+				},
+				Transform5 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path5",
+							Source = "Position",
+						},
+						Size = Input { Value = 0.75, },
+						Input = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 716.146, 272.932 } },
+				},
+				Merge3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "LoaderIcon",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform6",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 715.056, 345.85 } },
+				},
+				Transform6 = Transform {
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path6",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "Loader5",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 829.516, 346.983 } },
+				},
+				BG = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 71, },
+						Width = Input { Value = 3840, },
+						Height = Input { Value = 2160, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.0509803921569, },
+						TopLeftGreen = Input { Value = 0.0666666666667, },
+						TopLeftBlue = Input { Value = 0.0901960784314, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 532.046, 165.83 } },
+				},
+				LogoTransform = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path2",
+							Source = "Position",
+						},
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 258.966, 206.419 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Loader1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						Center = Input { Value = { 0.480819, 0.186593 }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 122.416, 206.3 } },
+				},
+				Transform1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path1_1",
+							Source = "Position",
+						},
+						Size = Input { Value = 0.8, },
+						Input = Input {
+							SourceOp = "Loader2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 123.386, 158.738 } },
+				},
+				Title = TextPlus {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 71, },
+						Width = Input { Value = 3840, },
+						Height = Input { Value = 2160, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.196303696303696, 0.468028419182948 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Red1 = Input { Value = 0.9411764705882, },
+						Green1 = Input { Value = 0.9607843137255, },
+						Blue1 = Input { Value = 0.9803921568627, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "High Contrast", },
+						Font = Input { Value = "Inter", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.1496, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Start = Input {
+							SourceOp = "TitleWriteOnStart",
+							Source = "Value",
+						},
+						End = Input {
+							SourceOp = "TitleWriteOnEnd",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 311.406, 160.745 } },
+				},
+				Kicker = TextPlus {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 71, },
+						Width = Input { Value = 3840, },
+						Height = Input { Value = 2160, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.199300699300699, 0.636767317939609 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Red1 = Input { Value = 0.3921568627451, },
+						Green1 = Input { Value = 0.4235294117647, },
+						Blue1 = Input { Value = 0.4627450980392, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "Primitives", },
+						Font = Input { Value = "Inter", },
+						Style = Input { Value = "Bold", },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Start = Input {
+							SourceOp = "KickerWriteOnStart",
+							Source = "Value",
+						},
+						End = Input {
+							SourceOp = "KickerWriteOnEnd",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 312.046, 128.902 } },
+				},
+				Author = TextPlus {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 71, },
+						Width = Input { Value = 3840, },
+						Height = Input { Value = 2160, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.870438155594405, 0.924227024537859 }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Red1 = Input { Value = 0.3921568627451, },
+						Green1 = Input { Value = 0.4235294117647, },
+						Blue1 = Input { Value = 0.4627450980392, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input { Value = "Lukas\nOppermann", },
+						Font = Input { Value = "Inter", },
+						Style = Input { Value = "Medium", },
+						Size = Input { Value = 0.02, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Start = Input {
+							SourceOp = "AuthorWriteOnStart",
+							Source = "Value",
+						},
+						End = Input {
+							SourceOp = "AuthorWriteOnEnd",
+							Source = "Value",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 472.416, 113.282 } },
+				},
+				MediaOut1 = MediaOut {
+					CtrlWShown = false,
+					Inputs = {
+						Index = Input { Value = "0", },
+						Input = Input {
+							SourceOp = "MultiMerge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 755.386, 207.867 } },
+				}
+			},
+		},
+		Path4 = PolyPath {
+			DrawMode = "InsertAndModify",
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path4Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = 0, Y = 0, RX = -0.0579238825648678, RY = -0.0245277211507908 },
+							{ LockY = true, X = -0.169171204435035, Y = -0.0730509653103066, LX = 0.0548752829369377, LY = 0.0241750466439349, RX = -2.26391706921383, RY = -0.99735796914506 },
+							{ LockY = true, X = -3.186515037811, Y = -2.62848594935356, LX = 1.03703490004407, LY = 0.855427208536774 }
+						}
+					},
+				},
+			},
+		},
+		Path4Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[29] = { 0, RH = { 30.947202116251, 0.00354036768401672 }, Flags = { LockedY = true } },
+				[34] = { 0.0438814658158428, LH = { 32.5977614536713, 0.0190857161094271 }, RH = { 44.479890222392, 0.229197365757463 }, Flags = { LockedY = true } },
+				[44] = { 1, LH = { 41.0894404232502, 0.931204955636938 }, Flags = { LockedY = true } }
+			}
+		},
+		Path3 = PolyPath {
+			DrawMode = "ModifyOnly",
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path3Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = -4.68125, Y = -4.046875, RX = -0.0163424200062131, RY = 0.0374941752096915 },
+							{ Linear = true, X = -4.73027726001864, Y = -3.93439247437092, LX = 0.0163424200062131, LY = -0.0374941752096915, RX = 0.05420888238573, RY = 0.348675439517948 },
+							{ X = -4.56765061286145, Y = -2.88836615581708, LX = 0.0593027647590112, LY = -0.282441648019903, RX = -0.112472508537678, RY = 0.268555409333812 },
+							{ LockY = true, X = -5.21875, Y = -2.671875, LX = 0.217033129046183, LY = -0.0721637186056937 }
+						}
+					},
+				},
+			},
+		},
+		Path3Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[-8] = { 0, RH = { 7.25000000000001, 0.09625 }, Flags = { Linear = true, LockedY = true } },
+				[27] = { 1, LH = { 15.515625, 0.65 }, Flags = { LockedY = true } }
+			}
+		},
+		Path5 = PolyPath {
+			DrawMode = "InsertAndModify",
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path5Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = 8.93333333333333, Y = -3.78241619228337, RX = -0.633333333333333, RY = 0.196078431372549 },
+							{ LockY = true, X = 7.03333333333333, Y = -3.19418089816572, LX = 0.7, LY = -0.0343137254901964, RZ = -7.86983921370564e-17 }
+						}
+					},
+				},
+			},
+		},
+		Path5Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[36] = { 0, RH = { 40.6666666666667, 0.333333333333333 }, Flags = { Linear = true, LockedY = true } },
+				[50] = { 1, LH = { 45.3333333333333, 0.666666666666667 }, Flags = { Linear = true, LockedY = true } }
+			}
+		},
+		Path6 = PolyPath {
+			DrawMode = "InsertAndModify",
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				},
+			},
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path6Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = 0.414814814814815, Y = -0.36281179138322, RX = 0.981069958847734, RY = 0.0967498110355255 },
+							{ Linear = true, LockY = true, X = 3.35802469135802, Y = -0.0725623582766435, LX = -0.981069958847734, LY = -0.0967498110355255 }
+						}
+					},
+				},
+			},
+		},
+		Path6Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255 },
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[52] = { 0, RH = { 55.3333333333333, 0.333333333333333 }, Flags = { LockedY = true } },
+				[62] = { 1, LH = { 58.6666666666667, 0.666666666666667 }, Flags = { Linear = true, LockedY = true } }
+			}
+		},
+		Path2 = PolyPath {
+			DrawMode = "InsertAndModify",
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path2Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = -1.9947073974594, Y = 6.98793035560478, RX = 0.0554711079210332, RY = -0.775278387361213 },
+							{ Linear = true, LockY = true, X = -1.8282940736963, Y = 4.66209519352114, LX = -0.0554711079210332, LY = 0.775278387361213, RX = -0.0778547931346854, RY = -0.106494829734067 },
+							{ Linear = true, LockY = true, X = -2.06185845310036, Y = 4.34261070431894, LX = 0.0778547931346854, LY = 0.106494829734067 }
+						}
+					},
+				},
+			},
+		},
+		Path2Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 178 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[0] = { 0, RH = { 5, 0.284967862277451 }, Flags = { Linear = true, LockedY = true } },
+				[15] = { 0.854903586832354, LH = { 10, 0.569935724554903 }, RH = { 18.3333333333333, 0.903269057888236 }, Flags = { Linear = true, LockedY = true } },
+				[25] = { 1, LH = { 21.6666666666667, 0.951634528944118 }, Flags = { Linear = true, LockedY = true } }
+			}
+		},
+		Path1_1 = PolyPath {
+			DrawMode = "InsertAndModify",
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path1_1Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = 0, Y = 0, RX = 0.234787661034063, RY = 0.382678889010266 },
+							{ X = 0.303546690636022, Y = 0.844046557908202, LX = -0.0509711884891917, LY = -0.208340663940783, RX = 0.0771316914412186, RY = 0.315269631375116 },
+							{ LockY = true, X = 0.876354895104895, Y = 1.72292907690015, LX = -0.400263843771916, LY = -0.301655833053482, RX = 0.225485924478323, RY = 0.21158062567509 },
+							{ Linear = true, X = 1.55281266853986, Y = 2.35767095392542, LX = -0.225485924478323, LY = -0.21158062567509, RX = 0.228835063175998, RY = 0.214723229200193 },
+							{ Linear = true, LockY = true, X = 2.23931785806786, Y = 3.001840641526, LX = -0.228835063175998, LY = -0.214723229200193, RX = 0.123456790123456, RY = 0.136054421768707 },
+							{ Linear = true, LockY = true, X = 2.60968822843823, Y = 3.41000390683212, LX = -0.123456790123456, LY = -0.136054421768707 }
+						}
+					},
+				},
+			},
+		},
+		Path1_1Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[27] = { 0, RH = { 34.9631578947368, 0.0362207500853531 }, Flags = { LockedY = true } },
+				[44] = { 0.449800164458634, LH = { 42.2, 0.356 }, RH = { 45, 0.591434029445302 }, Flags = { LockedY = true } },
+				[47] = { 0.874701759418639, LH = { 46, 0.733067894431971 }, RH = { 49.6666666666667, 0.916467839612426 }, Flags = { Linear = true, LockedY = true } },
+				[55] = { 1, LH = { 51.8, 0.991999999999999 }, Flags = { LockedY = true } }
+			}
+		},
+		TitleWriteOnStart = BezierSpline {
+			SplineColor = { Red = 249, Green = 211, Blue = 150 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[16] = { 0, RH = { 27.3333333333333, 0 }, Flags = { Linear = true } },
+				[50] = { 0, LH = { 38.6666666666667, 0 }, Flags = { Linear = true } }
+			}
+		},
+		TitleWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 218, Green = 249, Blue = 145 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[16] = { 0, RH = { 27.3333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+				[50] = { 1, LH = { 38.6666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+			}
+		},
+		KickerWriteOnStart = BezierSpline {
+			SplineColor = { Red = 249, Green = 211, Blue = 150 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[8] = { 0, RH = { 12, 0 }, Flags = { Linear = true } },
+				[20] = { 0, LH = { 16, 0 }, Flags = { Linear = true } }
+			}
+		},
+		KickerWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 218, Green = 249, Blue = 145 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[8] = { 0, RH = { 14.3333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+				[27] = { 1, LH = { 20.6666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+			}
+		},
+		AuthorWriteOnStart = BezierSpline {
+			SplineColor = { Red = 249, Green = 211, Blue = 150 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[8] = { 0, RH = { 12, 0 }, Flags = { Linear = true } },
+				[20] = { 0, LH = { 16, 0 }, Flags = { Linear = true } }
+			}
+		},
+		AuthorWriteOnEnd = BezierSpline {
+			SplineColor = { Red = 218, Green = 249, Blue = 145 },
+			CtrlWZoom = false,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+					}
+				}
+			},
+			KeyFrames = {
+				[30] = { 0, RH = { 38, 0.333333333333333 }, Flags = { Linear = true } },
+				[54] = { 1, LH = { 46, 0.666666666666667 }, Flags = { Linear = true } }
+			}
+		}
+	}
+}

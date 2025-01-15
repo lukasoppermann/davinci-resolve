@@ -1,606 +1,228 @@
 {
 	Tools = ordered() {
 		FigmaPointer = MacroOperator {
-			CtrlWZoom = false,
-			NameSet = true,
 			Inputs = ordered() {
-				Text = Input { Value = "Test", },
-				Size = Input { Value = 0.648, },
-				ColorRed = Input { Value = 0.385434, },
-				ColorGreen = Input { Value = 0.393379056, },
-				ColorBlue = Input { Value = 0.882, }
+				Input1 = InstanceInput {
+					SourceOp = "FillColor",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 1,
+					Default = 0.9960784313725,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "FillColor",
+					Source = "TopLeftGreen",
+					ControlGroup = 1,
+					Default = 0.443137254902,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "FillColor",
+					Source = "TopLeftBlue",
+					ControlGroup = 1,
+					Default = 0.3333333333333,
+				},
 			},
 			Outputs = {
-				Output1 = InstanceOutput {
-					SourceOp = "Merge",
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge2",
 					Source = "Output",
 				}
 			},
-			ViewInfo = GroupInfo {
-				Pos = { 1771.47, -690.505 },
-				Flags = {
-					Expanded = true,
-					AllowPan = false,
-					AutoSnap = true,
-					RemoveRouters = true
-				},
-				Size = { 264.37, 110.41, 132.185, 24.2424 },
-				Direction = "Horizontal",
-				PipeStyle = "Direct",
-				Scale = 1,
-				Offset = { -1160.98, 647.094 }
-			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
 			Tools = ordered() {
-				Merge = Merge {
-					NameSet = true,
+				Merge2 = Merge {
+					CtrlWZoom = false,
 					Inputs = {
-						Blend = Input { Expression = ":if(string.len(FigmaPointer.Text.Value) > 0) then return 1 else return 0 end", },
 						Background = Input {
-							SourceOp = "sRender_1",
+							SourceOp = "Clear",
 							Source = "Output",
 						},
 						Foreground = Input {
-							SourceOp = "BubblePosition",
+							SourceOp = "Merge1",
 							Source = "Output",
 						},
-						Center = Input { Value = { 0.49375, 0.504255319148936 }, },
-						PerformDepthMerge = Input { Value = 0, },
+						Width = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Width",
+						},
+						Height = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Height",
+						},
+						UseFrameFormatSettings = InstanceInput {
+							SourceOp = "Clear",
+							Source = "UseFrameFormatSettings",
+						},
 					},
-					ViewInfo = OperatorInfo { Pos = { 1223.48, -595.325 } },
+					ViewInfo = OperatorInfo { Pos = { 110, 41.7576 } },
 				},
-				Pointer = MacroOperator {
-					NameSet = true,
-					Inputs = ordered() {
-						Tip = Input {
-							Value = 1,
-							Expression = "FigmaPointer.Tip",
-						},
-						Size = Input {
-							Value = 0.5,
-							Expression = "FigmaPointer.Size",
-						},
-						ColorRed = Input {
-							Value = 0.385434,
-							Expression = "FigmaPointer.ColorRed",
-						},
-						ColorGreen = Input {
-							Value = 0.393379056,
-							Expression = "FigmaPointer.ColorGreen",
-						},
-						ColorBlue = Input {
-							Value = 0.882,
-							Expression = "FigmaPointer.ColorBlue",
-						},
-						Width = Input { Expression = "0.07*Pointer.Size", },
-						Height = Input { Expression = "0.13*Pointer.Size", }
-					},
-					Outputs = {
-						Output1 = InstanceOutput {
-							SourceOp = "sRender_1",
-							Source = "Output",
-						}
-					},
-					ViewInfo = GroupInfo { Pos = { 1098.56, -594.148 } },
-					Tools = ordered() {
-						sRender_1 = sRender {
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = {
-								GlobalOut = Input { Value = 119, },
-								Width = Input { Value = 1920, },
-								Height = Input { Value = 1080, },
-								UseFrameFormatSettings = Input { Value = 1, },
-								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-								Input = Input {
-									SourceOp = "sTransform_1",
-									Source = "Output",
-								},
-							},
-							ViewInfo = OperatorInfo { Pos = { 53, 8.69818 } },
-						},
-						sTransform_1 = sTransform {
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = {
-								XSize = Input {
-									Value = 0.4,
-									Expression = "Pointer.Size",
-								},
-								YSize = Input { Expression = "XSize", },
-								ZRotation = Input { Expression = "Pointer.Tip * -90", },
-								Input = Input {
-									SourceOp = "sMerge_1",
-									Source = "Output",
-								},
-							},
-							ViewInfo = OperatorInfo { Pos = { -54.1671, 8.57875 } },
-						},
-						sMerge_1 = sMerge {
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = {
-								Input1 = Input {
-									SourceOp = "PointerPath_1",
-									Source = "Output",
-								},
-								Input2 = Input {
-									SourceOp = "sOutline_1",
-									Source = "Output",
-								},
-							},
-							ViewInfo = OperatorInfo { Pos = { -51.9454, 47.4002 } },
-						},
-						sOutline_1 = sOutline {
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = {
-								Thickness = Input { Value = 0.005, },
-								JoinStyle = Input { Value = 2, },
-								CapStyle = Input { Value = 0, },
-								Input = Input {
-									SourceOp = "Instance_PointerPath_1",
-									Source = "Output",
-								},
-							},
-							ViewInfo = OperatorInfo { Pos = { 52.4202, 47.6152 } },
-						},
-						PointerPath_1 = sPolygon {
-							DrawMode = "ModifyOnly",
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = {
-								Size = Input { Value = 0.07, },
-								Polyline = Input {
-									Value = Polyline {
-										Closed = true,
-										Points = {
-											{ Linear = true, X = 0.270122058823529, Y = -0.0339918918918919, LX = -0.100027450980392, LY = -0.021131981981982, RX = 0.0364676470588235, RY = 0.00770405405405394 },
-											{ Linear = true, X = 0.379525, Y = -0.0108797297297298, LX = -0.0364676470588234, LY = -0.00770405405405394, RX = -0.0324181372549019, RY = 0.017172972972973 },
-											{ Linear = true, X = 0.282270588235294, Y = 0.0406391891891892, LX = 0.0324181372549019, LY = -0.017172972972973, RX = -0.209110294117647, RY = 0.110773693693694 },
-											{ Linear = true, X = -0.345060294117647, Y = 0.37296027027027, LX = 0.209110294117647, LY = -0.110773693693694, RX = -0.0274996568627451, RY = 0.0145675675675676 },
-											{ Linear = true, X = -0.427559264705882, Y = 0.416662972972973, LX = 0.0274996568627451, LY = -0.0145675675675676, RX = 0.00568710784313725, RY = -0.0286962162162162 },
-											{ Linear = true, X = -0.410497941176471, Y = 0.330574324324324, LX = -0.00568710784313725, LY = 0.0286962162162162, RX = 0.0417248039215687, RY = -0.210536486486486 },
-											{ Linear = true, X = -0.285323529411765, Y = -0.301035135135135, LX = -0.0417248039215686, LY = 0.210536486486487, RX = 0.00610980392156862, RY = -0.0308283783783784 },
-											{ Linear = true, X = -0.266994117647059, Y = -0.39352027027027, LX = -0.00610980392156862, LY = 0.0308283783783784, RX = 0.0202049019607843, RY = 0.0252423423423423 },
-											{ Linear = true, X = -0.206379411764706, Y = -0.317793243243243, LX = -0.0202049019607843, LY = -0.0252423423423423, RX = 0.0588063725490196, RY = 0.0734684684684686 },
-											{ Linear = true, X = -0.0299602941176471, Y = -0.0973878378378379, LX = -0.0588063725490196, LY = -0.0734684684684684, RX = 0.100027450980392, RY = 0.0211319819819821 }
-										}
-									},
-								},
-								Red = Input { Expression = "Pointer.ColorRed", },
-								Green = Input {
-									Value = 0.44,
-									Expression = "Pointer.ColorGreen",
-								},
-								Blue = Input {
-									Value = 0.32,
-									Expression = "Pointer.ColorBlue",
-								},
-							},
-							ViewInfo = OperatorInfo { Pos = { -52.6699, 78.1562 } },
-						},
-						Instance_PointerPath_1 = sPolygon {
-							DrawMode = "ModifyOnly",
-							CtrlWShown = false,
-							NameSet = true,
-							SourceOp = "PointerPath_1",
-							Inputs = {
-								Red = Input { },
-								Green = Input { },
-								Blue = Input { },
-								Alpha = Input { },
-								CommentsNest = Input { },
-								FrameRenderScriptNest = Input { },
-								StartRenderScripts = Input { },
-								EndRenderScripts = Input { },
-							},
-							ViewInfo = OperatorInfo { Pos = { 51.8401, 78.9364 } },
-						}
-					},
-					UserControls = ordered() {
-						Tip = {
-							{ CCS_AddString = "Top Left" },
-							{ CCS_AddString = "Top Right" },
-							{ CCS_AddString = "Bottom Right" },
-							{ CCS_AddString = "Bottom Left" },
-							INP_MaxAllowed = 1000000,
-							INP_Integer = false,
-							INPID_InputControl = "ComboControl",
-							CC_LabelPosition = "Horizontal",
-							INP_MaxScale = 1,
-							INP_MinScale = 0,
-							INP_MinAllowed = -1000000,
-							LINKID_DataType = "Number",
-							LINKS_Name = "Tip",
-						},
-						Size = { INP_MaxAllowed = 2, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 2, INP_Default = 0.4, INP_MinScale = 0.2, INP_MinAllowed = 0.2, LINKID_DataType = "Number", LINKS_Name = "Size", },
-						ColorRed = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 0, CLRC_ShowWheel = false, LINKS_Name = "Color", },
-						ColorGreen = { IC_ControlGroup = 1, INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", IC_ControlID = 1, INPID_InputControl = "ColorControl", LINKS_Name = "Green", },
-						ColorBlue = { IC_ControlGroup = 1, INP_Integer = false, CLRC_ShowWheel = true, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", IC_ControlID = 2, INPID_InputControl = "ColorControl", LINKS_Name = "Blue", },
-						Width = {
-							INP_Integer = false,
-							LINKID_DataType = "Number",
-							ICS_ControlPage = "Common",
-							INPID_InputControl = "SliderControl",
-							LINKS_Name = "Width",
-						},
-						Height = {
-							INP_Integer = false,
-							LINKID_DataType = "Number",
-							ICS_ControlPage = "Common",
-							INPID_InputControl = "SliderControl",
-							LINKS_Name = "Height",
-						}
-					}
-				},
-				BubblePosition = Transform {
+				FillPath = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
 					NameSet = true,
 					Inputs = {
-						Center = Input { Value = { 0.54, 0.43 }, },
-						Input = Input {
-							SourceOp = "MultiMerge1",
-							Source = "Output",
+						JoinStyle = Input { Value = 2, },
+						MiterLimit = Input { Value = 4, },
+						CapStyle = Input { Value = 0, },
+						MaskWidth = Input { Value = 320, },
+						MaskHeight = Input { Value = 240, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						Polyline = Input {
+							Value = Polyline {
+								Closed = true,
+								Points = {
+									{ Linear = true, X = 0.270122058823529, Y = -0.0339918918918919, LX = -0.100027450980392, LY = -0.021131981981982, RX = 0.0364676470588235, RY = 0.00770405405405394 },
+									{ Linear = true, X = 0.379525, Y = -0.0108797297297298, LX = -0.0364676470588234, LY = -0.00770405405405394, RX = -0.0324181372549019, RY = 0.017172972972973 },
+									{ Linear = true, X = 0.282270588235294, Y = 0.0406391891891892, LX = 0.0324181372549019, LY = -0.017172972972973, RX = -0.209110294117647, RY = 0.110773693693694 },
+									{ Linear = true, X = -0.345060294117647, Y = 0.37296027027027, LX = 0.209110294117647, LY = -0.110773693693694, RX = -0.0274996568627451, RY = 0.0145675675675676 },
+									{ Linear = true, X = -0.427559264705882, Y = 0.416662972972973, LX = 0.0274996568627451, LY = -0.0145675675675676, RX = 0.00568710784313725, RY = -0.0286962162162162 },
+									{ Linear = true, X = -0.410497941176471, Y = 0.330574324324324, LX = -0.00568710784313725, LY = 0.0286962162162162, RX = 0.0417248039215687, RY = -0.210536486486486 },
+									{ Linear = true, X = -0.285323529411765, Y = -0.301035135135135, LX = -0.0417248039215686, LY = 0.210536486486487, RX = 0.00610980392156862, RY = -0.0308283783783784 },
+									{ Linear = true, X = -0.266994117647059, Y = -0.39352027027027, LX = -0.00610980392156862, LY = 0.0308283783783784, RX = 0.0202049019607843, RY = 0.0252423423423423 },
+									{ Linear = true, X = -0.206379411764706, Y = -0.317793243243243, LX = -0.0202049019607843, LY = -0.0252423423423423, RX = 0.0588063725490196, RY = 0.0734684684684686 },
+									{ Linear = true, X = -0.0299602941176471, Y = -0.0973878378378379, LX = -0.0588063725490196, LY = -0.0734684684684684, RX = 0.100027450980392, RY = 0.0211319819819821 }
+								}
+							},
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
 						},
 					},
-					ViewInfo = OperatorInfo { Pos = { 1219.15, -629.352 } },
+					ViewInfo = OperatorInfo { Pos = { -110, 8.75758 } },
 				},
-				Bubble = MacroOperator {
+				FillColor = Background {
 					NameSet = true,
-					CustomData = { Path = { Map = { ["Setting:"] = "/Users/lukasoppermann/Repos/Davinci Resolve/bundles/Figma/" } }, },
-					Inputs = ordered() {
-						Tip = Input {
-							Value = 1,
-							Expression = "FigmaPointer.Tip",
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "FillPath",
+							Source = "Mask",
 						},
-						Text = Input {
-							Value = "Test",
-							Expression = "FigmaPointer.Text",
+						Width = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Width",
 						},
-						Size = Input {
-							Value = 0.5,
-							Expression = "FigmaPointer.Size",
+						Height = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Height",
 						},
-						ColorRed = Input {
-							Value = 0.385434,
-							Expression = "FigmaPointer.ColorRed",
+						UseFrameFormatSettings = InstanceInput {
+							SourceOp = "Clear",
+							Source = "UseFrameFormatSettings",
 						},
-						ColorGreen = Input {
-							Value = 0.393379056,
-							Expression = "FigmaPointer.ColorGreen",
+						Depth = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Depth",
 						},
-						ColorBlue = Input {
-							Value = 0.882,
-							Expression = "FigmaPointer.ColorBlue",
-						},
-						TextAnimation = Input { Expression = "FigmaPointer.TextAnimation", },
-						Width = Input { Expression = "BubbleBody.Width", },
-						Height = Input { Expression = "BubbleBody.Height", }
+						TopLeftRed = Input { Value = 0.9960784313725, },
+						TopLeftGreen = Input { Value = 0.443137254902, },
+						TopLeftBlue = Input { Value = 0.3333333333333, },
 					},
-					Outputs = {
-						Output1 = InstanceOutput {
-							SourceOp = "MultiMerge1",
+					ViewInfo = OperatorInfo { Pos = { -110, 41.7576 } },
+				},
+				Border = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
+					NameSet = true,
+					Inputs = {
+						BorderWidth = Input { Value = 0.0882352941176, },
+						Solid = Input { Value = 0, },
+						JoinStyle = Input { Value = 2, },
+						MiterLimit = Input { Value = 4, },
+						CapStyle = Input { Value = 0, },
+						MaskWidth = Input { Value = 320, },
+						MaskHeight = Input { Value = 240, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						Polyline = Input {
+							Value = Polyline {
+								Closed = true,
+								Points = {
+									{ Linear = true, X = 0.270122058823529, Y = -0.0339918918918919, LX = -0.100027450980392, LY = -0.021131981981982, RX = 0.0364676470588235, RY = 0.00770405405405394 },
+									{ Linear = true, X = 0.379525, Y = -0.0108797297297298, LX = -0.0364676470588234, LY = -0.00770405405405394, RX = -0.0324181372549019, RY = 0.017172972972973 },
+									{ Linear = true, X = 0.282270588235294, Y = 0.0406391891891892, LX = 0.0324181372549019, LY = -0.017172972972973, RX = -0.209110294117647, RY = 0.110773693693694 },
+									{ Linear = true, X = -0.345060294117647, Y = 0.37296027027027, LX = 0.209110294117647, LY = -0.110773693693694, RX = -0.0274996568627451, RY = 0.0145675675675676 },
+									{ Linear = true, X = -0.427559264705882, Y = 0.416662972972973, LX = 0.0274996568627451, LY = -0.0145675675675676, RX = 0.00568710784313725, RY = -0.0286962162162162 },
+									{ Linear = true, X = -0.410497941176471, Y = 0.330574324324324, LX = -0.00568710784313725, LY = 0.0286962162162162, RX = 0.0417248039215687, RY = -0.210536486486486 },
+									{ Linear = true, X = -0.285323529411765, Y = -0.301035135135135, LX = -0.0417248039215686, LY = 0.210536486486487, RX = 0.00610980392156862, RY = -0.0308283783783784 },
+									{ Linear = true, X = -0.266994117647059, Y = -0.39352027027027, LX = -0.00610980392156862, LY = 0.0308283783783784, RX = 0.0202049019607843, RY = 0.0252423423423423 },
+									{ Linear = true, X = -0.206379411764706, Y = -0.317793243243243, LX = -0.0202049019607843, LY = -0.0252423423423423, RX = 0.0588063725490196, RY = 0.0734684684684686 },
+									{ Linear = true, X = -0.0299602941176471, Y = -0.0973878378378379, LX = -0.0588063725490196, LY = -0.0734684684684684, RX = 0.100027450980392, RY = 0.0211319819819821 }
+								}
+							},
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 8.75758 } },
+				},
+				BorderColor = Background {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Border",
+							Source = "Mask",
+						},
+						Width = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Width",
+						},
+						Height = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Height",
+						},
+						UseFrameFormatSettings = InstanceInput {
+							SourceOp = "Clear",
+							Source = "UseFrameFormatSettings",
+						},
+						Depth = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Depth",
+						},
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 41.7576 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "FillColor",
 							Source = "Output",
-						}
+						},
+						Foreground = Input {
+							SourceOp = "BorderColor",
+							Source = "Output",
+						},
+						Width = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Width",
+						},
+						Height = InstanceInput {
+							SourceOp = "Clear",
+							Source = "Height",
+						},
+						UseFrameFormatSettings = InstanceInput {
+							SourceOp = "Clear",
+							Source = "UseFrameFormatSettings",
+						},
 					},
-					ViewInfo = GroupInfo { Pos = { 1101.22, -630.17 } },
-					Tools = ordered() {
-						Bubble_InnerBorder = GroupOperator {
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = ordered() {
-								Input1 = InstanceInput {
-									SourceOp = "Bubble_InsideOutline_sBoolean",
-									Source = "Input1",
-								},
-								Input2 = InstanceInput {
-									SourceOp = "Bubble_sOutline",
-									Source = "Input",
-								}
-							},
-							Outputs = {
-								Output1 = InstanceOutput {
-									SourceOp = "Bubble_InsideOutline_sBoolean",
-									Source = "Output",
-								}
-							},
-							ViewInfo = GroupInfo {
-								Pos = { 48.109, 159.153 },
-								Flags = {
-									AllowPan = false,
-									AutoSnap = true,
-									RemoveRouters = true
-								},
-								Size = { 234.141, 70.7793, 117.071, 24.2424 },
-								Direction = "Horizontal",
-								PipeStyle = "Direct",
-								Scale = 1,
-								Offset = { -916.494, 153.374 }
-							},
-							Tools = ordered() {
-								Bubble_sOutline = sOutline {
-									CtrlWShown = false,
-									NameSet = true,
-									Inputs = {
-										JoinStyle = Input { Value = 2, },
-										CapStyle = Input { Value = 0, },
-										Input = Input {
-											SourceOp = "Color_sBoolean",
-											Source = "Output",
-										},
-									},
-									ViewInfo = OperatorInfo { Pos = { 862.423, -144.738 } },
-								},
-								Bubble_InsideOutline_sBoolean = sBoolean {
-									CtrlWShown = false,
-									NameSet = true,
-									Inputs = {
-										Input1 = Input {
-											SourceOp = "Color_sBoolean",
-											Source = "Output",
-										},
-										Input2 = Input {
-											SourceOp = "Bubble_sOutline",
-											Source = "Output",
-										},
-										Red = Input { Value = 0, },
-										Green = Input { Value = 0, },
-										Blue = Input { Value = 0, },
-										Alpha = Input { Value = 0.2, },
-									},
-									ViewInfo = OperatorInfo { Pos = { 970.564, -140.322 } },
-								}
-							},
-						},
-						MultiMerge1 = MultiMerge {
-							CtrlWShown = false,
-							Inputs = {
-								LayerOrder = Input { Value = ScriptVal { { [0] = 1, 2 } }, },
-								Background = Input {
-									SourceOp = "SoftGlow1",
-									Source = "Output",
-								},
-								["Layer1.Foreground"] = Input {
-									SourceOp = "Bubble_sRender",
-									Source = "Output",
-								},
-								LayerName1 = Input { Value = "sRender_2 Layer", },
-								["Layer2.Foreground"] = Input {
-									SourceOp = "BubbleText",
-									Source = "Output",
-								},
-								LayerName2 = Input { Value = "sRender_2_1 Layer", },
-							},
-							ViewInfo = OperatorInfo { Pos = { 51.609, 10.3334 } },
-						},
-						BubbleText = TextPlus {
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = {
-								GlobalOut = Input { Value = 119, },
-								Width = Input { Value = 1920, },
-								Height = Input { Value = 1080, },
-								UseFrameFormatSettings = Input { Value = 1, },
-								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-								LineSpacing = Input { Value = 0.8, },
-								TransformRotation = Input { Value = 1, },
-								Red1 = Input { Expression = "iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
-								Green1 = Input { Expression = "iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
-								Blue1 = Input { Expression = "iif( ( (((Bubble.ColorRed*255)^2)*0.299 + ((Bubble.ColorGreen*255)^2)*0.587 + ((Bubble.ColorBlue*255)^2)*0.114 ))^0.5 > 186, 0, 1)", },
-								Softness1 = Input { Value = 1, },
-								StyledText = Input {
-									Value = "Text\nTest",
-									Expression = "Bubble.Text",
-								},
-								Font = Input { Value = "Open Sans", },
-								Style = Input { Value = "Bold", },
-								Size = Input {
-									Value = 0.05184,
-									Expression = "0.08*Bubble.Size",
-								},
-								VerticalTopCenterBottom = Input { Value = -1, },
-								VerticalJustificationNew = Input { Value = 3, },
-								HorizontalLeftCenterRight = Input { Value = -1, },
-								HorizontalJustificationNew = Input { Value = 3, },
-								End = Input { Expression = "iif(Bubble.TextAnimation == 0, 1, (1+time)/Bubble.TextAnimation)", },
-							},
-							ViewInfo = OperatorInfo { Pos = { -103.837, 8.36237 } },
-						},
-						SoftGlow1 = SoftGlow {
-							CtrlWShown = false,
-							Inputs = {
-								Blend = Input { Value = 0.5, },
-								Filter = Input { Value = FuID { "Fast Gaussian" }, },
-								Gain = Input { Value = 1, },
-								XGlowSize = Input { Value = 20, },
-								YGlowSize = Input { Value = 20, },
-								ClippingMode = Input { Value = FuID { "Domain" }, },
-								Input = Input {
-									SourceOp = "Bubble_sRender",
-									Source = "Output",
-								},
-							},
-							ViewInfo = OperatorInfo { Pos = { 131.576, 57.0694 } },
-						},
-						Bubble_Border_sMerge = sMerge {
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = {
-								Input1 = Input {
-									SourceOp = "Color_sBoolean",
-									Source = "Output",
-								},
-								Input2 = Input {
-									SourceOp = "Bubble_InsideOutline_sBoolean",
-									Source = "Output",
-								},
-							},
-							ViewInfo = OperatorInfo { Pos = { 52.935, 124.596 } },
-						},
-						Bubble_sRender = sRender {
-							CtrlWShown = false,
-							NameSet = true,
-							Inputs = {
-								GlobalOut = Input { Value = 119, },
-								Width = Input { Value = 1920, },
-								Height = Input { Value = 1080, },
-								UseFrameFormatSettings = Input { Value = 1, },
-								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-								Input = Input {
-									SourceOp = "Bubble_Border_sMerge",
-									Source = "Output",
-								},
-							},
-							ViewInfo = OperatorInfo { Pos = { 51.986, 92.3604 } },
-						},
-						BubbleShape = GroupOperator {
-							CtrlWShown = false,
-							NameSet = true,
-							Outputs = {
-								Output1 = InstanceOutput {
-									SourceOp = "Color_sBoolean",
-									Source = "Output",
-								}
-							},
-							ViewInfo = GroupInfo {
-								Pos = { -132.327, 62.2524 },
-								Flags = {
-									Expanded = true,
-									AllowPan = false,
-									AutoSnap = true,
-									RemoveRouters = true
-								},
-								Size = { 231.699, 96.7129, 115.849, 24.2424 },
-								Direction = "Horizontal",
-								PipeStyle = "Direct",
-								Scale = 1,
-								Offset = { -742.068, 247.988 }
-							},
-							Tools = ordered() {
-								BubbleBody = sRectangle {
-									CtrlWShown = false,
-									NameSet = true,
-									Inputs = {
-										["Translate.X"] = Input { Expression = "Width/2-(Bubble.Pad*Bubble.Size)", },
-										["Translate.Y"] = Input { Expression = ":tHeight=(BubbleText.Output.DataWindow[4]-BubbleText.Output.DataWindow[2])/BubbleText.Output.Height;if(tHeight / BubbleText.Size > 2) then return -Bubble.Size*Bubble.Pad*(BubbleText.LineSpacingClone*1.4) else return -Bubble.Size*Bubble.Pad/2 end", },
-										Width = Input {
-											Value = 0.765738333333333,
-											Expression = "(BubbleText.Output.DataWindow[3]-BubbleText.Output.DataWindow[1])/BubbleText.Output.Width+(Bubble.Pad*2*Bubble.Size)",
-										},
-										Height = Input {
-											Value = 0.315095555555556,
-											Expression = ":tHeight=(BubbleText.Output.DataWindow[4]-BubbleText.Output.DataWindow[2])/BubbleText.Output.Height;if(tHeight / BubbleText.Size > 2) then return tHeight-Bubble.Size*Bubble.Pad else return tHeight+Bubble.Size*Bubble.Pad end",
-										},
-										CornerRadius = Input { Value = 0.575, },
-									},
-									ViewInfo = OperatorInfo { Pos = { 695.671, -240.507 } },
-								},
-								Instance_BubbleConer = sRectangle {
-									CtrlWShown = false,
-									NameSet = true,
-									SourceOp = "BubbleBody",
-									Inputs = {
-										["Translate.X"] = Input {
-											Value = 0.191434583333333,
-											Expression = ":if(Bubble.Tip == 1 or Bubble.Tip == 3) then return BubbleBody.Translate.X + Width/2 else return BubbleBody.Translate.X - Width/2 end"
-										},
-										["Translate.Y"] = Input {
-											Value = -0.0787738888888889,
-											Expression = ":if(Bubble.Tip == 0 or Bubble.Tip == 1) then return BubbleBody.Translate.Y + Height/2 else return BubbleBody.Translate.Y - Height/2 end"
-										},
-										Width = Input {
-											Value = 0.382869166666667,
-											Expression = "BubbleBody.Width/2"
-										},
-										Height = Input {
-											Value = 0.157547777777778,
-											Expression = "BubbleBody.Height/2"
-										},
-										CornerRadius = Input { },
-										CommentsNest = Input { },
-										FrameRenderScriptNest = Input { },
-										StartRenderScripts = Input { },
-										EndRenderScripts = Input { },
-									},
-									ViewInfo = OperatorInfo { Pos = { 689.219, -209.002 } },
-								},
-								Color_sBoolean = sBoolean {
-									CtrlWShown = false,
-									NameSet = true,
-									Inputs = {
-										Operation = Input { Value = FuID { "Union" }, },
-										Input1 = Input {
-											SourceOp = "BubbleBody",
-											Source = "Output",
-										},
-										Input2 = Input {
-											SourceOp = "Instance_BubbleConer",
-											Source = "Output",
-										},
-										Red = Input {
-											Value = 0.6,
-											Expression = "Bubble.ColorRed",
-										},
-										Green = Input {
-											Value = 0.52152,
-											Expression = "Bubble.ColorGreen",
-										},
-										Blue = Input {
-											Value = 0.984,
-											Expression = "Bubble.ColorBlue",
-										},
-									},
-									ViewInfo = OperatorInfo { Pos = { 799.219, -219.884 } },
-								}
-							},
-						}
+					ViewInfo = OperatorInfo { Pos = { 0, 74.7576 } },
+				},
+				Clear = Background {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 68, },
+						Height = Input { Value = 74, },
+						TopLeftAlpha = Input { Value = 0, },
 					},
-					UserControls = ordered() {
-						Tip = { { CCS_AddString = "Top Left" }, { CCS_AddString = "Top Right" }, { CCS_AddString = "Bottom Left" }, { CCS_AddString = "Bottom Right" }, INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ComboControl", CC_LabelPosition = "Horizontal", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", LINKS_Name = "Tip", },
-						Text = { TEC_ReadOnly = false, LINKID_DataType = "Text", LINKS_Name = "Text", INPID_InputControl = "TextEditControl", TEC_Lines = 2, TEC_Wrap = true, },
-						Size = { INP_MaxAllowed = 2, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 2, INP_Default = 0.4, INP_MinScale = 0.2, INP_MinAllowed = 0.2, LINKID_DataType = "Number", LINKS_Name = "Size", },
-						ColorRed = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 0, CLRC_ShowWheel = false, LINKS_Name = "Color", },
-						ColorGreen = { LINKS_Name = "Green", INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", INPID_InputControl = "ColorControl", IC_ControlID = 1, IC_ControlGroup = 1, },
-						ColorBlue = { LINKS_Name = "Blue", INP_Integer = false, CLRC_ShowWheel = true, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", INPID_InputControl = "ColorControl", IC_ControlID = 2, IC_ControlGroup = 1, },
-						TextAnimation = { INP_MaxAllowed = 100, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MaxScale = 100, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", LINKS_Name = "Text Animation Duration", },
-						Pad = { INP_MaxAllowed = 0.0399999991059303, INP_Integer = false, INP_MaxScale = 0.0399999991059303, INP_Default = 0.0399999991059303, INP_MinScale = 0.0399999991059303, INP_MinAllowed = 0.0399999991059303, LINKID_DataType = "Number", INP_Passive = true, INP_External = false, LINKS_Name = "Padding", },
-						Width = {
-							INP_Integer = false,
-							LINKID_DataType = "Number",
-							ICS_ControlPage = "Common",
-							INPID_InputControl = "SliderControl",
-							LINKS_Name = "Width",
-						},
-						Height = {
-							INP_Integer = false,
-							LINKID_DataType = "Number",
-							ICS_ControlPage = "Common",
-							INPID_InputControl = "SliderControl",
-							LINKS_Name = "Height",
-						}
-					}
+					ViewInfo = OperatorInfo { Pos = { 110, 8.75758 } },
 				}
 			},
-			UserControls = ordered() {
-				Text = { TEC_ReadOnly = false, LINKID_DataType = "Text", LINKS_Name = "Text", INPID_InputControl = "TextEditControl", TEC_Lines = 2, TEC_Wrap = true, },
-				TextAnimation = { INP_MaxAllowed = 100, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MaxScale = 100, INP_Default = 0, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", LINKS_Name = "Text Animation Duration", },
-				Tip = { { CCS_AddString = "Top Left" }, { CCS_AddString = "Top Right" }, { CCS_AddString = "Bottom Left" }, { CCS_AddString = "Bottom Right" }, INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ComboControl", CC_LabelPosition = "Horizontal", INP_MaxScale = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", LINKS_Name = "Tip", },
-				Size = {
-					LINKS_Name = "Size",
-					LINKID_DataType = "Number",
-					INPID_InputControl = "SliderControl",
-					INP_Default = 0.5,
-					INP_Integer = false,
-					INP_MinScale = 0.5,
-					INP_MaxScale = 1,
-					INP_MinAllowed = 0.5,
-					INP_MaxAllowed = 1,
-					ICD_Center = 0.75,
-					IC_Steps = 0,
-				},
-				ColorRed = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "ColorControl", CLRC_ColorSpace = "HSV", INP_MaxScale = 1, IC_ControlGroup = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", IC_ControlID = 0, CLRC_ShowWheel = false, LINKS_Name = "Color", },
-				ColorGreen = { IC_ControlGroup = 1, INP_Integer = false, CLRC_ShowWheel = false, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", IC_ControlID = 1, INPID_InputControl = "ColorControl", LINKS_Name = "Green", },
-				ColorBlue = { IC_ControlGroup = 1, INP_Integer = false, CLRC_ShowWheel = true, LINKID_DataType = "Number", CLRC_ColorSpace = "HSV", IC_ControlID = 2, INPID_InputControl = "ColorControl", LINKS_Name = "Blue", }
-			}
 		}
 	},
 	ActiveTool = "FigmaPointer"
