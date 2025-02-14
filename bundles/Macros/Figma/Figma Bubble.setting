@@ -1,6 +1,6 @@
 {
 	Tools = ordered() {
-		Bubble = MacroOperator {
+		Bubble = GroupOperator {
 			CtrlWZoom = false,
 			NameSet = true,
 			CustomData = { Path = { Map = { ["Setting:"] = "/Users/lukasoppermann/Repos/Davinci Resolve/bundles/Figma/" } }, },

@@ -1,6 +1,6 @@
 {
 	Tools = ordered() {
-		FigmaTextFrame = MacroOperator {
+		FigmaTextFrame = GroupOperator {
 			CtrlWZoom = false,
 			Inputs = ordered() {
 				Input1 = InstanceInput {

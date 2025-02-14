@@ -1,12 +1,12 @@
 {
 	Tools = ordered() {
-		SimpleTitle = GroupOperator {
+		FigmaTitle = GroupOperator {
 			CtrlWZoom = false,
 			NameSet = true,
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				},
 			},
@@ -35,7 +35,7 @@
 					Clips = {
 						Clip {
 							ID = "Clip1",
-							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/Primitives.png",
+							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Figma_Title/Primitives.png",
 							FormatID = "PNGFormat",
 							StartFrame = -1,
 							LengthSetManually = true,
@@ -63,7 +63,7 @@
 					Clips = {
 						Clip {
 							ID = "Clip1",
-							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/PointerGreen.png",
+							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Figma_Title/PointerGreen.png",
 							FormatID = "PNGFormat",
 							StartFrame = -1,
 							LengthSetManually = true,
@@ -110,7 +110,7 @@
 					Clips = {
 						Clip {
 							ID = "Clip1",
-							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/Avatar_Lukas.png",
+							Filename = "Setting:assets/Avatar_Lukas.png",
 							FormatID = "PNGFormat",
 							StartFrame = -1,
 							LengthSetManually = true,
@@ -128,7 +128,7 @@
 					},
 					CtrlWShown = false,
 					CustomData = { MEDIA_ID = "f8cfe3f6-3dd4-46c0-88b4-9c0d1c907533", MediaProps = { MEDIA_NUM_LAYERS = 0, MEDIA_FORMAT_TYPE = "PNG", MEDIA_PAR = 1, MEDIA_LAYER_DESC = {
-							}, MEDIA_NAME = "Avatar-Lukas.png", MEDIA_PATH = "Setting:Avatar_Lukas.png", MEDIA_START_FRAME = 0, MEDIA_IS_SOURCE_RES = true, MEDIA_SRC_FRAME_RATE = 24, MEDIA_MARK_OUT = 0, MEDIA_WIDTH = 160, MEDIA_NUM_FRAMES = 1, MEDIA_MARK_IN = 0, MEDIA_HEIGHT = 160 } },
+							}, MEDIA_NAME = "Avatar-Lukas.png", MEDIA_PATH = "Setting:assets/Avatar_Lukas.png", MEDIA_START_FRAME = 0, MEDIA_IS_SOURCE_RES = true, MEDIA_SRC_FRAME_RATE = 24, MEDIA_MARK_OUT = 0, MEDIA_WIDTH = 160, MEDIA_NUM_FRAMES = 1, MEDIA_MARK_IN = 0, MEDIA_HEIGHT = 160 } },
 					Inputs = {
 						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 						["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, },
@@ -139,7 +139,7 @@
 					Clips = {
 						Clip {
 							ID = "Clip1",
-							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/PointerBlue.png",
+							Filename = "Setting:PointerBlue.png",
 							FormatID = "PNGFormat",
 							StartFrame = -1,
 							LengthSetManually = true,
@@ -186,7 +186,7 @@
 					Clips = {
 						Clip {
 							ID = "Clip1",
-							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/PrimerLogo.png",
+							Filename = "Setting:assets/PrimerLogo.png",
 							FormatID = "PNGFormat",
 							StartFrame = -1,
 							LengthSetManually = true,
@@ -220,7 +220,7 @@
 							MEDIA_WIDTH = 3841,
 							MEDIA_NUM_FRAMES = 1,
 							MEDIA_MARK_IN = 0,
-							MEDIA_PATH = "Setting:PrimerLogo.png"
+							MEDIA_PATH = "Setting:assets/PrimerLogo.png"
 						}
 					},
 					Inputs = {
@@ -233,7 +233,7 @@
 					Clips = {
 						Clip {
 							ID = "Clip1",
-							Filename = "/Users/lukasoppermann/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Templates/Edit/Titles/Simple_Title/PointerRed.png",
+							Filename = "Setting:assets/PointerRed.png",
 							FormatID = "PNGFormat",
 							StartFrame = -1,
 							LengthSetManually = true,
@@ -765,7 +765,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -791,7 +791,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -807,7 +807,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -834,7 +834,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -849,7 +849,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -874,7 +874,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -889,7 +889,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				},
 			},
@@ -913,7 +913,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -928,7 +928,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -954,7 +954,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -970,7 +970,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -999,7 +999,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -1016,7 +1016,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -1031,7 +1031,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -1046,7 +1046,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -1061,7 +1061,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -1076,7 +1076,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
@@ -1091,7 +1091,7 @@
 			CustomData = {
 				Path = {
 					Map = {
-						["Setting:"] = "Templates:/Edit/Titles/Simple_Title/"
+						["Setting:"] = "Templates:/Edit/Titles/Figma_Title/"
 					}
 				}
 			},
