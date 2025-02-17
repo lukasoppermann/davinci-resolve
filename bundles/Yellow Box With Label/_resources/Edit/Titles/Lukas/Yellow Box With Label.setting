@@ -1,0 +1,257 @@
+{
+	Tools = ordered() {
+		YelloBoxWithLabel = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ctrl",
+					Source = "Text",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ctrl",
+					Source = "TextSize",
+					Default = 0.08,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ctrl",
+					Source = "Output",
+				},
+				MainOutput2 = InstanceOutput {
+					SourceOp = "MediaOut1_1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ctrl = AlphaDivide {
+					NameSet = true,
+					Inputs = {
+						Text = Input { Value = "Lukas Oppermann", },
+						TextSize = Input { Value = 0.08, },
+						TextWidth = Input { Expression = "(TextLabel.Output.DataWindow[3]-TextLabel.Output.DataWindow[1])/TextLabel.Output.Width", },
+						TextHeight = Input { Expression = "(TextLabel.Output.DataWindow[4]-TextLabel.Output.DataWindow[2])/TextLabel.Output.Height", },
+						BoxPad = Input { Expression = "TextHeight*0.4", },
+						BoxWidth = Input { Expression = "TextWidth+BoxPad", },
+						BoxHeight = Input { Expression = "TextHeight+BoxPad*2", },
+						MaskPivotRight = Input { Expression = "Point(0.5+BoxWidth/2, 0.5)", },
+						MaskPivotLeft = Input { Expression = "Point(0.5-BoxWidth/2, 0.5)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 334, -34.4545 } },
+					UserControls = ordered() {
+						Text = {
+							TEC_ReadOnly = false,
+							LINKID_DataType = "Text",
+							LINKS_Name = "Text",
+							INPID_InputControl = "TextEditControl",
+							TEC_Lines = 1,
+							TEC_Wrap = false,
+						},
+						TextSize = {
+							INP_MaxAllowed = 1000000,
+							INP_Integer = false,
+							INPID_InputControl = "SliderControl",
+							INP_MaxScale = 0.5,
+							INP_Default = 0.100000001490116,
+							INP_MinScale = 0,
+							INP_MinAllowed = -1000000,
+							LINKID_DataType = "Number",
+							ICD_Center = 0.100000001490116,
+							INP_SplineType = "Default",
+							LINKS_Name = "TextSize",
+						},
+						TextWidth = {
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "SliderControl",
+							INP_SplineType = "Default",
+							LINKS_Name = "TextWidth",
+						},
+						TextHeight = {
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "SliderControl",
+							INP_SplineType = "Default",
+							LINKS_Name = "TextHeight",
+						},
+						BoxPad = {
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "SliderControl",
+							INP_SplineType = "Default",
+							LINKS_Name = "BoxPad",
+						},
+						BoxWidth = {
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "SliderControl",
+							INP_SplineType = "Default",
+							LINKS_Name = "BoxWidth",
+						},
+						BoxHeight = {
+							INP_Integer = false,
+							LINKID_DataType = "Number",
+							INPID_InputControl = "SliderControl",
+							INP_SplineType = "Default",
+							LINKS_Name = "BoxHeight",
+						},
+						MaskPivotRight = {
+							LINKS_Name = "MaskPivotRight",
+							LINKID_DataType = "Point",
+							INPID_InputControl = "OffsetControl",
+						},
+						MaskPivotLeft = {
+							LINKS_Name = "MaskPivotLeft",
+							LINKID_DataType = "Point",
+							INPID_InputControl = "OffsetControl",
+						}
+					}
+				},
+				MultiMerge1 = MultiMerge {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "KeyframeStretcher1",
+							Source = "Result",
+						},
+						LayerOrder = Input { Value = ScriptVal { { [0] = 2, 1, 3, 4 } }, },
+						Background = Input {
+							SourceOp = "BG",
+							Source = "Output",
+						},
+						LayerName1 = Input { Value = "Mask Layer", },
+						LayerName2 = Input { Value = "Background1 Layer", },
+						["Layer3.Foreground"] = Input {
+							SourceOp = "Color",
+							Source = "Output",
+						},
+						LayerName3 = Input { Value = "Color Layer", },
+						["Layer4.Foreground"] = Input {
+							SourceOp = "TextLabel",
+							Source = "Output",
+						},
+						LayerName4 = Input { Value = "TextLabel", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 430.667, 48.5757 } },
+				},
+				BG = Background {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 230, 2.51515 } },
+				},
+				MediaOut1_1 = MediaOut {
+					CtrlWZoom = false,
+					Inputs = {
+						Index = Input { Value = "0", },
+						Input = Input {
+							SourceOp = "MultiMerge1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 558, 45.2576 } },
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "MaskTransform",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 45, },
+						StretchStart = Input { Value = 20, },
+						StretchEnd = Input { Value = 30, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 427.938, 100.742 } },
+				},
+				MaskTransform = Transform {
+					NameSet = true,
+					Inputs = {
+						Pivot = Input { Expression = "iif(time < 28, ctrl.MaskPivotLeft, ctrl.MaskPivotRight)", },
+						UseSizeAndAspect = Input { Value = 0, },
+						XSize = Input {
+							SourceOp = "MaskTransformXSize",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "Mask",
+							Source = "Mask",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 315.938, 75.8939 } },
+				},
+				MaskTransformXSize = BezierSpline {
+					SplineColor = { Red = 251, Green = 94, Blue = 44 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 5.6, 0 }, Flags = { Linear = true } },
+						[20] = { 1, LH = { 5.4, 1 }, RH = { 23.3333333333333, 1 } },
+						[30] = { 1, LH = { 26.6666666666667, 1 }, RH = { 34.0900641245622, 1 }, Flags = { Linear = true } },
+						[39] = { 0.688052354826013, LH = { 36.9358503905519, 0.86174690460305 }, RH = { 42.4872960452953, 0.394605072749273 } },
+						[45] = { 0, LH = { 43, 0 } }
+					}
+				},
+				Color = Background {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 0.8470588235294, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, 41.9091 } },
+				},
+				Mask = RectangleMask {
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input {
+							Value = 0.461006944444444,
+							Expression = "ctrl.TextWidth+ctrl.BoxPad",
+						},
+						Height = Input {
+							Value = 0.155,
+							Expression = "ctrl.TextHeight+2*ctrl.BoxPad",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 214.667, 75.8939 } },
+				},
+				TextLabel = TextPlus {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LayoutRotation = Input { Value = 1, },
+						TransformRotation = Input { Value = 1, },
+						Red1 = Input { Value = 0, },
+						Green1 = Input { Value = 0, },
+						Blue1 = Input { Value = 0, },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input {
+							Value = "Lukas Oppermann\n",
+							Expression = "ctrl.Text",
+						},
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Expression = "ctrl.TextSize", },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 292.667, 125.53 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "YelloBoxWithLabel"
+}

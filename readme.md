@@ -18,6 +18,8 @@ To _deinstance_ a property and change it independent of the _parent_, right clic
 
 | Shortcut | Description |
 | --- | --- |
+| | **General:** |
+`shift` + `space` | Add tool palette
 | | **View selected node on:** |
 `1` | Left viewer
 `2` | Right viewer
@@ -266,7 +268,7 @@ Height | `(Text1.Output.DataWindow[4]-Text1.Output.DataWindow[2])/Text1.Output.H
 | --- | --- |
 Composition start (number of first frame) | `comp.RenderStart`
 Composition end (number of last frame) | `comp.RenderEnd`
-Number of current frame | `time`
+Number of current frame (kreyframne) | `time`
 
 ## Fusion expressions math library
 
@@ -309,6 +311,10 @@ Divide | /
 Multiply | *
 Modulus divides and returns remainder | %
 Exponent | ^
+
+# Make macros stretchable / flexible / extendable
+
+Use a `keyframe stretcher` node. Select the entire clip for source and the part that should be stretched for `Stretch Start` and `Stretch End`.
 
 # Creating Macros / Templates
 
