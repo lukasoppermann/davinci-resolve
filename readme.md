@@ -359,6 +359,11 @@ After you create the nodes you want, select them and from the context menu choos
 4. Rename the zip archive to the name of the Template e.g. `Simple Title` and change the extension to `.drfx`
 5. You can now install the bundle by simple double-clicking it
 
+# Audio
+
+## Voice
+Always use mono sound for spoken audio as most microphones record in mono. Otherwise the sound is panned to one side.
+
 # Sources
 - [Blackmagic Fusion Simple Expressions-Cookbook + Tutorial](https://noahhaehnel.com/blog/fusion-simple-expressions-cookbook/3/#Get_Maximum_or_Minimum_of_different_values)
 - [lua.org](https://www.lua.org)
