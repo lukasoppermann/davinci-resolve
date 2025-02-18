@@ -3,238 +3,44 @@
 		DuplicateOutline = MacroOperator {
 			Inputs = ordered() {
 				Input1 = InstanceInput {
-					SourceOp = "Text1",
+					SourceOp = "Instance_Text1",
 					Source = "StyledText",
-					Name = "Text ",
+					Name = "Text",
 				},
 				Input2 = InstanceInput {
-					SourceOp = "Text1",
+					SourceOp = "Instance_Text1",
 					Source = "Font",
 					ControlGroup = 2,
 				},
 				Input3 = InstanceInput {
-					SourceOp = "Text1",
+					SourceOp = "Instance_Text1",
 					Source = "Style",
 					ControlGroup = 2,
 				},
 				Input4 = InstanceInput {
-					SourceOp = "Text1",
-					Source = "Red1Clone",
-					Name = "Color",
-					ControlGroup = 3,
-					Default = 1,
-				},
-				Input5 = InstanceInput {
-					SourceOp = "Text1",
-					Source = "Size",
-					Default = 0.08,
-				},
-				Input6 = InstanceInput {
 					SourceOp = "BG",
 					Source = "TopLeftRed",
-					Name = "BG Color",
-					ControlGroup = 5,
+					Name = "Color",
+					ControlGroup = 3,
 					Default = 0,
 				}
 			},
 			Outputs = {
-				MainOutput1 = InstanceOutput {
-					SourceOp = "MediaOut1",
-					Source = "Output",
-				},
 				Output1 = InstanceOutput {
-					SourceOp = "Path1",
-					Source = "Heading",
-				},
-				Output2 = InstanceOutput {
 					SourceOp = "Path2",
 					Source = "Heading",
 				},
-				Output3 = InstanceOutput {
-					SourceOp = "Path2Displacement",
-					Source = "Value",
+				Output2 = InstanceOutput {
+					SourceOp = "Path1",
+					Source = "Heading",
+				},
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
 				}
 			},
 			ViewInfo = GroupInfo { Pos = { 0, 0 } },
 			Tools = ordered() {
-				MediaOut1 = MediaOut {
-					Inputs = {
-						Index = Input { Value = "0", },
-						Input = Input {
-							SourceOp = "MultiMerge1",
-							Source = "Output",
-						}
-					},
-					ViewInfo = OperatorInfo { Pos = { 1055.33, 110.712 } },
-				},
-				DuplicateUp = Fuse.Duplicate {
-					CtrlWZoom = false,
-					NameSet = true,
-					Inputs = {
-						Copies = Input {
-							SourceOp = "DuplicateUpCopies",
-							Source = "Value",
-						},
-						Center = Input {
-							SourceOp = "Path1",
-							Source = "Position",
-						},
-						Polyline = Input {
-							Value = Polyline {
-							},
-						},
-						Background = Input {
-							SourceOp = "Instance_Text1",
-							Source = "Output",
-						}
-					},
-					ViewInfo = OperatorInfo { Pos = { 778.667, 31.2727 } },
-				},
-				DuplicateUpCopies = BezierSpline {
-					SplineColor = { Red = 38, Green = 236, Blue = 71 },
-					CtrlWZoom = false,
-					KeyFrames = {
-						[0] = { 0, RH = { 5.2, -0.04 }, Flags = { Linear = true } },
-						[20] = { 5, LH = { 13.3340001106262, 5 }, RH = { 23.3329999446869, 5 } },
-						[30] = { 0, LH = { 26.2, 0 } }
-					}
-				},
-				Path1 = PolyPath {
-					DrawMode = "InsertAndModify",
-					CtrlWZoom = false,
-					Inputs = {
-						Displacement = Input {
-							SourceOp = "Path1Displacement",
-							Source = "Value",
-						},
-						PolyLine = Input {
-							Value = Polyline {
-								Points = {
-									{ Linear = true, LockY = true, X = 0, Y = 0.11, RX = 0, RY = 0.01 },
-									{ Linear = true, LockY = true, X = 0, Y = 0.14, LX = 0, LY = -0.01, RX = 0, RY = -0.01 },
-									{ Linear = true, LockY = true, X = 0, Y = 0.11, LX = 0, LY = 0.01 }
-								}
-							},
-						}
-					},
-				},
-				Path1Displacement = BezierSpline {
-					SplineColor = { Red = 255, Green = 0, Blue = 255 },
-					CtrlWZoom = false,
-					KeyFrames = {
-						[0] = { 0, RH = { 6.66666666666667, 0.166666666666667 }, Flags = { LockedY = true } },
-						[20] = { 0.5, LH = { 13.3333333333333, 0.333333333333333 }, RH = { 23.3333333333333, 0.666666666666667 }, Flags = { Linear = true, LockedY = true } },
-						[30] = { 1, LH = { 26.6666666666667, 0.833333333333333 }, Flags = { Linear = true, LockedY = true } }
-					}
-				},
-				DuplicateDown = Fuse.Duplicate {
-					NameSet = true,
-					Inputs = {
-						Copies = Input {
-							SourceOp = "DuplicateDownCopies",
-							Source = "Value",
-						},
-						Center = Input {
-							SourceOp = "Path2",
-							Source = "Position",
-						},
-						Polyline = Input {
-							Value = Polyline {
-							},
-						},
-						Background = Input {
-							SourceOp = "Instance_Text1",
-							Source = "Output",
-						}
-					},
-					ViewInfo = OperatorInfo { Pos = { 720.667, 63.3333 } },
-				},
-				DuplicateDownCopies = BezierSpline {
-					SplineColor = { Red = 38, Green = 236, Blue = 71 },
-					CtrlWZoom = false,
-					KeyFrames = {
-						[0] = { 0, RH = { 4.4, 0 }, Flags = { Linear = true } },
-						[20] = { 5, LH = { 13.3340001106262, 5 }, RH = { 23.3329999446869, 5 } },
-						[30] = { 0, LH = { 26.6, 0 } }
-					}
-				},
-				Path2 = PolyPath {
-					DrawMode = "InsertAndModify",
-					CtrlWZoom = false,
-					Inputs = {
-						Displacement = Input {
-							SourceOp = "Path2Displacement",
-							Source = "Value",
-						},
-						PolyLine = Input {
-							Value = Polyline {
-								Points = {
-									{ Linear = true, LockY = true, X = 0, Y = -0.13, RX = 0, RY = -0.00333333333333334 },
-									{ Linear = true, LockY = true, X = 0, Y = -0.14, LX = 0, LY = 0.00333333333333334, RX = 0, RY = 0.00333333333333334 },
-									{ Linear = true, LockY = true, X = 0, Y = -0.13, LX = 0, LY = -0.00333333333333334 }
-								}
-							},
-						}
-					},
-				},
-				Path2Displacement = BezierSpline {
-					SplineColor = { Red = 255, Green = 0, Blue = 255 },
-					CtrlWZoom = false,
-					NameSet = true,
-					KeyFrames = {
-						[0] = { 0, RH = { 6.66666666666667, 0.166666666666667 }, Flags = { Linear = true, LockedY = true } },
-						[20] = { 0.5, LH = { 13.3333333333333, 0.333333333333333 }, RH = { 23.3333333333333, 0.666666666666667 }, Flags = { Linear = true, LockedY = true } },
-						[30] = { 1, LH = { 26.6666666666667, 0.833333333333333 }, Flags = { Linear = true, LockedY = true } }
-					}
-				},
-				Text1 = TextPlus {
-					Inputs = {
-						Width = Input { Value = 1920, },
-						Height = Input { Value = 1080, },
-						UseFrameFormatSettings = Input { Value = 1, },
-						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
-						LayoutRotation = Input { Value = 1, },
-						CharacterSpacing = Input { Value = 1.02, },
-						TransformRotation = Input { Value = 1, },
-						SelectElement = Input { Value = 1, },
-						Select = Input { Value = 1, },
-						Name2 = Input { Value = "White Outline", },
-						Softness1 = Input { Value = 1, },
-						StyledText = Input {
-							SourceOp = "Follower1",
-							Source = "StyledText",
-						},
-						Font = Input { Value = "Gotham", },
-						Style = Input { Value = "Black", },
-						VerticalJustificationNew = Input { Value = 3, },
-						HorizontalJustificationNew = Input { Value = 3, },
-						Red2 = Input { Value = 0.5529411764706, },
-						Green2 = Input { Value = 0.5529411764706, },
-						Blue2 = Input { Value = 0.5529411764706, },
-						Softness2 = Input { Value = 1, }
-					},
-					ViewInfo = OperatorInfo { Pos = { 595.333, 81.9091 } },
-				},
-				Follower1 = StyledTextFollower {
-					CtrlWZoom = false,
-					Inputs = {
-						Order = Input { Value = 7, },
-						Text = Input {
-							Value = StyledText {
-								Value = "What is Code Connect?"
-							},
-						},
-						TransformRotation = Input { Value = 1, },
-						Softness1 = Input { Value = 1, },
-						Softness2 = Input { Value = 1, },
-						Softness3 = Input { Value = 1, },
-						Softness4 = Input { Value = 1, },
-						Softness5 = Input { Value = 1, },
-						Softness6 = Input { Value = 1, },
-						Softness7 = Input { Value = 1, },
-						Softness8 = Input { Value = 1, }
-					},
-				},
 				Instance_Text1 = TextPlus {
 					SourceOp = "Text1",
 					Inputs = {
@@ -330,7 +136,200 @@
 						Size2 = Input {
 						}
 					},
-					ViewInfo = OperatorInfo { Pos = { 604.667, 43.3939 } },
+					ViewInfo = OperatorInfo { Pos = { 367.335, -29.1667 } },
+				},
+				Follower1 = StyledTextFollower {
+					CtrlWZoom = false,
+					Inputs = {
+						Order = Input { Value = 7, },
+						Text = Input {
+							Value = StyledText {
+								Value = "What is Code Connect?"
+							},
+						},
+						TransformRotation = Input { Value = 1, },
+						Softness1 = Input { Value = 1, },
+						Softness2 = Input { Value = 1, },
+						Softness3 = Input { Value = 1, },
+						Softness4 = Input { Value = 1, },
+						Softness5 = Input { Value = 1, },
+						Softness6 = Input { Value = 1, },
+						Softness7 = Input { Value = 1, },
+						Softness8 = Input { Value = 1, }
+					},
+				},
+				DuplicateDown = Fuse.Duplicate {
+					NameSet = true,
+					Inputs = {
+						Copies = Input {
+							SourceOp = "DuplicateDownCopies",
+							Source = "Value",
+						},
+						Center = Input {
+							SourceOp = "Path2",
+							Source = "Position",
+						},
+						Polyline = Input {
+							Value = Polyline {
+							},
+						},
+						Background = Input {
+							SourceOp = "Instance_Text1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 498.002, -31.3182 } },
+				},
+				DuplicateDownCopies = BezierSpline {
+					SplineColor = { Red = 38, Green = 236, Blue = 71 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 5.5, 0 }, Flags = { Linear = true } },
+						[25] = { 3, LH = { 16.6592667579291, 6.71713604548032 }, RH = { 30, 2 } },
+						[40] = { 0, LH = { 35, 1 }, Flags = { Linear = true } }
+					}
+				},
+				Path2 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path2Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0, Y = -0.13, RX = 0, RY = -0.00666666666666667 },
+									{ Linear = true, LockY = true, X = 0, Y = -0.15, LX = 0, LY = 0.00666666666666667, RX = 0, RY = 0.00666666666666667 },
+									{ Linear = true, LockY = true, X = 0, Y = -0.13, LX = 0, LY = -0.00666666666666667 }
+								}
+							},
+						}
+					},
+				},
+				Path2Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 8.33333333333333, 0.166666666666667 }, Flags = { Linear = true, LockedY = true } },
+						[25] = { 0.5, LH = { 16.6666666666667, 0.333333333333333 }, RH = { 30, 0.666666666666667 }, Flags = { Linear = true, LockedY = true } },
+						[40] = { 1, LH = { 35, 0.833333333333333 }, Flags = { Linear = true, LockedY = true } }
+					}
+				},
+				Transform1 = Transform {
+					Inputs = {
+						Center = Input { Value = { 0.5, 0.36 }, },
+						Input = Input {
+							SourceOp = "DuplicateDown",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 505.333, 3.72727 } },
+				},
+				Text1 = TextPlus {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LayoutRotation = Input { Value = 1, },
+						CharacterSpacing = Input { Value = 1.02, },
+						TransformRotation = Input { Value = 1, },
+						SelectElement = Input { Value = 1, },
+						Select = Input { Value = 1, },
+						Name2 = Input { Value = "White Outline", },
+						Softness1 = Input { Value = 1, },
+						StyledText = Input {
+							SourceOp = "Follower1",
+							Source = "StyledText",
+						},
+						Font = Input { Value = "Gotham", },
+						Style = Input { Value = "Black", },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						OutsideOnly2 = Input { Value = 1, },
+						Red2 = Input { Value = 0.5882352941176, },
+						Green2 = Input { Value = 0.5882352941176, },
+						Blue2 = Input { Value = 0.5882352941176, },
+						Softness2 = Input { Value = 1, },
+						Size2 = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 367.335, 9.95452 } },
+				},
+				DuplicateUp = Fuse.Duplicate {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Copies = Input {
+							SourceOp = "DuplicateUpCopies",
+							Source = "Value",
+						},
+						Center = Input {
+							SourceOp = "Path1",
+							Source = "Position",
+						},
+						Polyline = Input {
+							Value = Polyline {
+							},
+						},
+						Background = Input {
+							SourceOp = "Instance_Text1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 583.335, -75.8334 } },
+				},
+				DuplicateUpCopies = BezierSpline {
+					SplineColor = { Red = 38, Green = 236, Blue = 71 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 6.65244958999522, -0.0511726891538094 }, Flags = { Linear = true } },
+						[25] = { 3, LH = { 15.4787134856879, 2.98823961659602 }, RH = { 30, 2 } },
+						[40] = { 0, LH = { 35, 1 }, Flags = { Linear = true } }
+					}
+				},
+				Path1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path1Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0, Y = 0.11, RX = 0, RY = 0.01 },
+									{ Linear = true, LockY = true, X = 0, Y = 0.14, LX = 0, LY = -0.01, RX = 0, RY = -0.01 },
+									{ Linear = true, LockY = true, X = 0, Y = 0.11, LX = 0, LY = 0.01 }
+								}
+							},
+						}
+					},
+				},
+				Path1Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 8.33333333333333, 0.166666666666666 }, Flags = { LockedY = true } },
+						[25] = { 0.499999999999999, LH = { 16.6666666666667, 0.333333333333333 }, RH = { 30, 0.666666666666666 }, Flags = { Linear = true, LockedY = true } },
+						[40] = { 1, LH = { 35, 0.833333333333333 }, Flags = { Linear = true, LockedY = true } }
+					}
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 570, 44.9394 } },
 				},
 				BG = Background {
 					NameSet = true,
@@ -340,7 +339,29 @@
 						UseFrameFormatSettings = Input { Value = 1, },
 						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
 					},
-					ViewInfo = OperatorInfo { Pos = { 603.333, 147.303 } },
+					ViewInfo = OperatorInfo { Pos = { 375.335, 75.3484 } },
+				},
+				Transform2 = Transform {
+					Inputs = {
+						Center = Input { Value = { 0.5, 0.64 }, },
+						Input = Input {
+							SourceOp = "DuplicateUp",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 643.335, 4.1666 } },
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "MultiMerge1",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 50, },
+						StretchStart = Input { Value = 40, },
+						StretchEnd = Input { Value = 50, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 725.333, 165.545 } },
 				},
 				MultiMerge1 = MultiMerge {
 					Inputs = {
@@ -353,10 +374,6 @@
 							SourceOp = "BG",
 							Source = "Output",
 						},
-						["Layer1.Foreground"] = Input {
-							SourceOp = "DuplicateUp",
-							Source = "Output",
-						},
 						LayerName1 = Input { Value = "Duplicate1 Layer", },
 						["Layer2.Foreground"] = Input {
 							SourceOp = "Text1",
@@ -364,12 +381,12 @@
 						},
 						LayerName2 = Input { Value = "Text1 Layer", },
 						["Layer3.Foreground"] = Input {
-							SourceOp = "DuplicateDown",
+							SourceOp = "Merge1",
 							Source = "Output",
 						},
 						LayerName3 = Input { Value = "Duplicate1 Layer", }
 					},
-					ViewInfo = OperatorInfo { Pos = { 768, 240.091 } },
+					ViewInfo = OperatorInfo { Pos = { 540.002, 168.136 } },
 				}
 			},
 		}
